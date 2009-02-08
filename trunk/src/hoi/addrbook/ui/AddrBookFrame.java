@@ -29,8 +29,8 @@ public class AddrBookFrame extends JFrame {
 	}
 
 	private static void setLookAndFeel() {
-		try {
-			com.jtattoo.plaf.acryl.AcrylLookAndFeel.setTheme("Lemmon", "??", "Hoi");
+		try { // Default, Green, Lemmon, Red
+			com.jtattoo.plaf.acryl.AcrylLookAndFeel.setTheme("Lemmon", "??", "Addrbooker");
 			UIManager.setLookAndFeel(new com.jtattoo.plaf.acryl.AcrylLookAndFeel());
 		} catch (UnsupportedLookAndFeelException e) {
 			e.printStackTrace();
