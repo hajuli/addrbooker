@@ -10,6 +10,8 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Insets;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.net.URL;
@@ -25,6 +27,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JToolBar;
@@ -36,7 +39,7 @@ import javax.swing.border.Border;
 public class AddrBookPanel extends JPanel {
 	private static final long serialVersionUID = -4479991916447167635L;
 
-	private AddrBookTextField filterField = new AddrBookTextField("搜索", false);
+	private JTextField filterField = new JTextField("搜索");
 	private JComboBox orderbyChoose = new JComboBox(new String[] { "排序", "aba" });
 	private JList contactList = new JList();
 	private JTextArea notesArea = new JTextArea();
@@ -75,18 +78,54 @@ public class AddrBookPanel extends JPanel {
 		//	orderbyChoose.setPreferredSize(new Dimension(-1, 25));
 		//	orderbyChoose.setRenderer(new MyCellRenderer());
 		tPanel.add(filterField, BorderLayout.CENTER);
-		orderbyChoose.setBorder(BorderFactory.createEmptyBorder());
+		filterField.setBorder(BorderFactory.createEmptyBorder());
 		//	tPanel.add(orderbyChoose, BorderLayout.EAST);
+		filterField.setBorder(BorderFactory.createEtchedBorder());
+		filterField.addFocusListener(new FocusListener(){
+
+			@Override
+			public void focusGained(FocusEvent e) {
+				filterField.setBackground(Color.WHITE);
+				filterField.setBorder(BorderFactory.createEtchedBorder());
+			}
+
+			@Override
+			public void focusLost(FocusEvent e) {
+				filterField.setBackground(new JLabel().getBackground());
+				filterField.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
+			}
+			
+		});
 
 		notesArea.setPreferredSize(new Dimension(-1, 100));
 
-		JPanel wPanel = new JPanel(new BorderLayout(5, 5));
+		JPanel wPanel = new JPanel(new BorderLayout(0,0));
 		wPanel.add(tPanel, BorderLayout.NORTH);
-		wPanel.add(new JScrollPane(contactList, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, //
-				JScrollPane.HORIZONTAL_SCROLLBAR_NEVER), BorderLayout.CENTER);
-		wPanel.add(new JScrollPane(notesArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, //
-				JScrollPane.HORIZONTAL_SCROLLBAR_NEVER), BorderLayout.SOUTH);
-		wPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 5));
+
+		JScrollPane a = new JScrollPane(contactList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, //
+				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		a.setBorder(BorderFactory.createEmptyBorder());
+		a.setPreferredSize(new Dimension(-1, 200));
+		//JSplitPane wsPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, a, b);
+		
+		contactList.addFocusListener(new FocusListener(){
+
+			@Override
+			public void focusGained(FocusEvent e) {
+				contactList.setBackground(Color.WHITE);
+				contactList.setBorder(BorderFactory.createEtchedBorder());
+			}
+
+			@Override
+			public void focusLost(FocusEvent e) {
+				contactList.setBackground(new JLabel().getBackground());
+				contactList.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
+			}
+			
+		});
+
+		wPanel.add(a, BorderLayout.CENTER);
+		//wPanel.setBorder(BorderFactory.createEtchedBorder());
 		wPanel.setPreferredSize(new Dimension(180, -1));
 
 		InfoPanel infoPanel = new InfoPanel();
@@ -105,7 +144,7 @@ public class AddrBookPanel extends JPanel {
 		JToolBar toolbar = new JToolBar();
 		toolbar.setFloatable(false);
 		toolbar.setLayout(new GridLayout(1, 9));
-		toolbar.add(sortButton);
+	//	toolbar.add(sortButton);
 		toolbar.add(addButton);
 		toolbar.add(saveButton);
 		toolbar.add(editButton);
@@ -113,29 +152,29 @@ public class AddrBookPanel extends JPanel {
 		toolbar.add(settingsButton);
 		toolbar.add(backupButton);
 		//toolbar.add(printButton);
-		toolbar.add(helpButton);
-		toolbar.add(exitButton);
+	//	toolbar.add(helpButton);
+	//	toolbar.add(exitButton);
 
 		setLayout(new BorderLayout());
 		add(toolbar, BorderLayout.NORTH);
-		add(wPanel, BorderLayout.WEST);
-		add(infoPanel, BorderLayout.CENTER);
+		JSplitPane wtPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, wPanel, infoPanel);
+		Border border = BorderFactory.createEmptyBorder(5, 5, 5, 5);
+		wtPane.setBorder(border);
+		add(wtPane, BorderLayout.CENTER);
 	}
 }
 
 class InfoPanel extends JPanel {
 	private static final long serialVersionUID = -2588763425591993699L;
-	private String[][] info = { { "姓名", "昵称", "性别", },//
-			{ "生日", "纪念日", "分组" }, //
+	private String[][] info = { { "姓名", "联系" },//
+			{ "生日", "年龄" }, //
 			{ "QQ", "MSN" },//ＭＳＮ
 			{ "手机", "飞信", },// 
-			{ "工作电话", "家庭电话", },//
 			{ "电子邮箱", },//
 			{ "个人主页", },//
-			{ "联系", "周期" },//
 			{ "公司名称", }, //
 			{ "公司地址" }, //
-			{ "邮政编码", "部门职务", "隶属行业" }, };
+	};
 
 	public InfoPanel() {
 		JPanel cp = new JPanel(new GridLayout(info.length, 1, 2, 3));
@@ -150,6 +189,27 @@ class InfoPanel extends JPanel {
 		JTextField k = new JTextField();
 		k.setEditable(false);
 		//add(k, BorderLayout.NORTH);
-		add(cp, BorderLayout.CENTER);
+		add(cp, BorderLayout.NORTH);
+
+		final JTextArea kd = new JTextArea();
+		JScrollPane b = new JScrollPane(kd, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, //
+				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		kd.setBackground(new JLabel().getBackground());
+		kd.addFocusListener(new FocusListener(){
+
+			@Override
+			public void focusGained(FocusEvent e) {
+				kd.setBackground(Color.WHITE);
+				kd.setBorder(BorderFactory.createEtchedBorder());
+			}
+
+			@Override
+			public void focusLost(FocusEvent e) {
+				kd.setBackground(new JLabel().getBackground());
+				kd.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
+			}
+			
+		});
+		add(kd, BorderLayout.CENTER);
 	}
 }
