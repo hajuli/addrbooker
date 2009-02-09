@@ -20,7 +20,7 @@ public class ImageHelper {
 
 	public static final ImageIcon ICON_LOGO = createImageIcon("128/kugar.png");
 
-	public static final ImageIcon ICON_ADD = createImageIcon("32/edit_add.png");
+	public static final ImageIcon ICON_ADD = createImageIcon("32/User1_Add.png");
 	public static final ImageIcon ICON_SAVE = createImageIcon("32/filesave.png");
 	public static final ImageIcon ICON_EDIT = createImageIcon("32/Edit.png");
 	public static final ImageIcon ICON_DELETE = createImageIcon("32/stop.png");
