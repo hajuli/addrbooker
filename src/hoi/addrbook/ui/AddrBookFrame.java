@@ -13,7 +13,7 @@ public class AddrBookFrame extends JFrame {
 
 	private static final long serialVersionUID = -3116155141455555134L;
 
-	public static final String TITLE = "海石通讯录";
+	public static final String TITLE = "??通讯录";
 
 	public AddrBookFrame() {
 		try {
@@ -40,7 +40,7 @@ public class AddrBookFrame extends JFrame {
 	public static void main(String[] args) {
 		setLookAndFeel();
 		AddrBookFrame frame = new AddrBookFrame();
-		frame.setSize(600, 450);
+		frame.setSize(500, 375);
 		frame.setLocationRelativeTo(null);
 		frame.setIconImage(ImageHelper.ICON_LOGO.getImage());
 		frame.setTitle(TITLE);
