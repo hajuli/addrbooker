@@ -37,13 +37,17 @@ import javax.swing.UIManager;
 import javax.swing.border.Border;
 
 public class AddrBookPanel extends JPanel {
+
 	private static final long serialVersionUID = -4479991916447167635L;
 
-	private JTextField filterField = new JTextField("搜索");
-	private JComboBox orderbyChoose = new JComboBox(new String[] { "排序", "aba" });
-	private JList contactList = new JList(new String[] {"abc", "sdafasf", "sdf", "safsa"});
-	private JTextArea notesArea = new JTextArea();
+	private JTextField filterField = new JTextField();
+	private JList contactList = new JList();
 	private JTextField nameField = new JTextField();
+	private JTextField contactField = new JTextField();
+	private JTextField birthdayField = new JTextField();
+	private JTextField ageField = new JTextField();
+	
+	private JTextArea notesArea = new JTextArea();
 	private JTextField[] infoFields = new JTextField[13];
 
 	private JTextField addrPathField = new JTextField("abcS");
@@ -84,7 +88,7 @@ public class AddrBookPanel extends JPanel {
 
 		notesArea.setPreferredSize(new Dimension(-1, 100));
 
-		JPanel wPanel = new JPanel(new BorderLayout(0,0));
+		JPanel wPanel = new JPanel(new BorderLayout(0, 0));
 		wPanel.add(tPanel, BorderLayout.NORTH);
 
 		JScrollPane a = new JScrollPane(contactList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, //
@@ -92,7 +96,7 @@ public class AddrBookPanel extends JPanel {
 		a.setBorder(BorderFactory.createEmptyBorder());
 		a.setPreferredSize(new Dimension(-1, 100));
 		//JSplitPane wsPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, a, b);
-		
+
 		contactList.setBackground(Color.WHITE);
 		contactList.setBorder(BorderFactory.createEtchedBorder());
 
@@ -108,15 +112,15 @@ public class AddrBookPanel extends JPanel {
 		JButton saveButton = new JButton("保存", ImageHelper.ICON_SAVE);
 		JButton editButton = new JButton("编辑", ImageHelper.ICON_EDIT);
 		JButton deleteButton = new JButton("删除", ImageHelper.ICON_DELETE);
-		JButton settingsButton = new JButton("设置", ImageHelper.ICON_SETTINGS);
+		JButton settingsButton = new JButton("设置", ImageHelper.ICON_SETTING);
 		JButton backupButton = new JButton("备份", ImageHelper.ICON_BACKUP);
 		JButton helpButton = new JButton("帮助", ImageHelper.ICON_HELP);
 		JButton exitButton = new JButton("退出", ImageHelper.ICON_EXIT);
 
 		JToolBar toolbar = new JToolBar();
 		toolbar.setFloatable(false);
-		toolbar.setLayout(new GridLayout(1, 9));
-	//	toolbar.add(sortButton);
+		toolbar.setLayout(new GridLayout(1, 6));
+		//	toolbar.add(sortButton);
 		toolbar.add(addButton);
 		toolbar.add(saveButton);
 		toolbar.add(editButton);
@@ -124,8 +128,8 @@ public class AddrBookPanel extends JPanel {
 		toolbar.add(settingsButton);
 		toolbar.add(backupButton);
 		//toolbar.add(printButton);
-	//	toolbar.add(helpButton);
-	//	toolbar.add(exitButton);
+		//	toolbar.add(helpButton);
+		//	toolbar.add(exitButton);
 
 		setLayout(new BorderLayout());
 		add(toolbar, BorderLayout.NORTH);
@@ -167,7 +171,7 @@ class InfoPanel extends JPanel {
 		JScrollPane b = new JScrollPane(kd, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, //
 				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		kd.setBackground(new JLabel().getBackground());
-		kd.addFocusListener(new FocusListener(){
+		kd.addFocusListener(new FocusListener() {
 
 			@Override
 			public void focusGained(FocusEvent e) {
@@ -180,7 +184,7 @@ class InfoPanel extends JPanel {
 				kd.setBackground(new JLabel().getBackground());
 				kd.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
 			}
-			
+
 		});
 		add(kd, BorderLayout.CENTER);
 	}

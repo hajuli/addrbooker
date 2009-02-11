@@ -72,7 +72,7 @@ public class AddrBookTextField extends JPanel {
 			}
 		};
 		//	c.setPreferredSize(new Dimension(60, -1) );
-		c.setForeground(Color.BLUE);
+		//c.setForeground(Color.BLUE);
 		c.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		c.addMouseListener(new MouseListener() {
 
@@ -92,7 +92,7 @@ public class AddrBookTextField extends JPanel {
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				c.setForeground(Color.GREEN);
+				c.setForeground(Color.BLACK);
 				//c.setText("link");
 			}
 
@@ -109,8 +109,8 @@ public class AddrBookTextField extends JPanel {
 			}
 
 		});
-		c.setForeground(Color.BLACK);
-		c.setForeground(Color.GREEN);
+		//c.setForeground(Color.BLACK);
+		//c.setForeground(Color.GREEN);
 		//c.setFont(c.getFont().deriveFont((float)16));
 		//	c.setBorderPainted(false);
 		//c.setFont(new Font("Dialog", Font.BOLD, 12));
