@@ -20,13 +20,13 @@ public class ImageHelper {
 
 	public static final ImageIcon ICON_LOGO = createImageIcon("128/kugar.png");
 
-	public static final ImageIcon ICON_ADD = createImageIcon("32/User1_Add.png");
-	public static final ImageIcon ICON_SAVE = createImageIcon("32/filesave.png");
-	public static final ImageIcon ICON_EDIT = createImageIcon("32/Edit.png");
-	public static final ImageIcon ICON_DELETE = createImageIcon("32/stop.png");
-	public static final ImageIcon ICON_SORT = createImageIcon("32/download4.png");
-	public static final ImageIcon ICON_HELP = createImageIcon("32/32px-Help.png");
+	public static final ImageIcon ICON_ADD = createImageIcon("32/add.png");
+	public static final ImageIcon ICON_SAVE = createImageIcon("32/save.png");
+	public static final ImageIcon ICON_EDIT = createImageIcon("32/edit.png");
+	public static final ImageIcon ICON_DELETE = createImageIcon("32/delete.png");
+	public static final ImageIcon ICON_SORT = createImageIcon("32/sort.png");
+	public static final ImageIcon ICON_HELP = createImageIcon("32/help.png");
 	public static final ImageIcon ICON_EXIT = createImageIcon("32/exit.png");
-	public static final ImageIcon ICON_SETTINGS = createImageIcon("32/settings.png");
-	public static final ImageIcon ICON_BACKUP = createImageIcon("32/order.png");
+	public static final ImageIcon ICON_SETTING = createImageIcon("32/setting.png");
+	public static final ImageIcon ICON_BACKUP = createImageIcon("32/backup.png");
 }
