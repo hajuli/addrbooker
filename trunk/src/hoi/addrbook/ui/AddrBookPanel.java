@@ -4,45 +4,27 @@ import hoi.addrbook.icons.ImageHelper;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Cursor;
 import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.Insets;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.net.URL;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JToolBar;
-import javax.swing.ListCellRenderer;
-import javax.swing.SwingConstants;
-import javax.swing.UIManager;
-import javax.swing.border.Border;
 
 public class AddrBookPanel extends JPanel {
 
 	private static final long serialVersionUID = -4479991916447167635L;
 
 	private static final Color BORDER_COLOR = new JLabel().getBackground();
+	private static final int GAP_SIZE = 2;
 
 	private JButton tbarAddButton = new JButton("添加", ImageHelper.ICON_ADD);
 	private JButton tbarSaveButton = new JButton("保存", ImageHelper.ICON_SAVE);
@@ -70,52 +52,51 @@ public class AddrBookPanel extends JPanel {
 	private JTextArea infoNoteArea = new JTextArea();
 
 	private JPanel createInfoPanel(String[] names, JComponent[] comps) {
-		JPanel aPanel = new JPanel(new GridLayout(names.length, 1, 3, 3));
+		JPanel aPanel = new JPanel(new GridLayout(names.length, 1, GAP_SIZE, GAP_SIZE));
 		for (String name : names) {
-			JLabel l = new JLabel(" " + name + ":", JLabel.RIGHT);
-			l.setBorder(BorderFactory.createEtchedBorder());
-			aPanel.add(l); // 两端对齐
+			JLabel label = new JLabel(" " + name + ":", JLabel.RIGHT);
+			// label.setBorder(BorderFactory.createEtchedBorder());
+			aPanel.add(label); // 两端对齐??
 		}
-		JPanel bPanel = new JPanel(new GridLayout(comps.length, 1, 3, 3));
+		JPanel bPanel = new JPanel(new GridLayout(comps.length, 1, GAP_SIZE, GAP_SIZE));
 		for (JComponent comp : comps) {
 			comp.setBorder(BorderFactory.createEtchedBorder());
 			bPanel.add(comp);
 		}
-		JPanel cPanel = new JPanel(new BorderLayout(3, 3));
+		JPanel cPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		cPanel.add(aPanel, BorderLayout.WEST);
 		cPanel.add(bPanel, BorderLayout.CENTER);
 		return cPanel;
 	}
 
 	private JPanel createInfoPanel() {
-		JPanel aPanel = new JPanel(new GridLayout(1, 2, 3, 0));
-		aPanel.add(createInfoPanel(new String[] { "姓名", "生日", "QQ", "手机" },//
+		JPanel aPanel = new JPanel(new GridLayout(1, 2, GAP_SIZE, GAP_SIZE));
+		aPanel.add(createInfoPanel(new String[] { "姓名", "生日", "QQ", "手机" }, //
 				new JComponent[] { infoNameField, infoBirthdayField, infoQQField, infoMobileField }));
-		aPanel.add(createInfoPanel(new String[] { "联系", "年龄", "MSN", "飞信" },//
+		aPanel.add(createInfoPanel(new String[] { "联系", "年龄", "MSN", "飞信" }, //
 				new JComponent[] { infoContactField, infoAgeField, infoMSNField, infoFetionField }));
 
-		JPanel bPanel = new JPanel(new BorderLayout(2, 2));
+		JPanel bPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		bPanel.add(aPanel, BorderLayout.NORTH);
-		bPanel.add(createInfoPanel(new String[] { "电子邮箱", "个人主页", "家庭住址", "公司名称", "公司地址" },//
-				new JComponent[] { infoEMailField, infoWebsiteField, infoHomeAddrField, infoCompanyNameField, infoCompanyAddrField })//
-				, BorderLayout.SOUTH);
+		bPanel.add(createInfoPanel(new String[] { "电子邮箱", "个人主页", "家庭住址", "公司名称", "公司地址" }, //
+				new JComponent[] { infoEMailField, infoWebsiteField, infoHomeAddrField, infoCompanyNameField, infoCompanyAddrField }), //
+				BorderLayout.CENTER);
 
-		JPanel cPanel = new JPanel(new BorderLayout(3, 3));
+		JPanel cPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		cPanel.add(bPanel, BorderLayout.NORTH);
 		infoNoteArea.setBorder(BorderFactory.createEtchedBorder());
 		cPanel.add(infoNoteArea, BorderLayout.CENTER);
-		cPanel.setBorder(BorderFactory.createEtchedBorder());
+		// cPanel.setBorder(BorderFactory.createEtchedBorder());
 		cPanel.setMinimumSize(new Dimension(320, -1));
 		return cPanel;
 	}
 
 	public AddrBookPanel() {
 		filterField.setBorder(BorderFactory.createEtchedBorder());
-		//	filterField.setInsets(new Insets(2,2,2,2));
 		contactList.setBorder(BorderFactory.createEmptyBorder());
 		JScrollPane scroll = new JScrollPane(contactList);
 		scroll.setBorder(BorderFactory.createEtchedBorder());
-		JPanel wPanel = new JPanel(new BorderLayout(0, 2));
+		JPanel wPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		wPanel.add(filterField, BorderLayout.NORTH);
 		wPanel.add(scroll, BorderLayout.CENTER);
 		wPanel.setMinimumSize(new Dimension(150, -1));
