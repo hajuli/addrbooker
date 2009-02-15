@@ -41,11 +41,12 @@ public class AddrBookFrame extends JFrame {
 	public static void main(String[] args) {
 		setLookAndFeel();
 		AddrBookFrame frame = new AddrBookFrame();
-		frame.setSize(500, 500 / 4 * 3);
+		Dimension size = new Dimension(500, 500 / 4 * 3);
+		frame.setSize(size);
+		frame.setMinimumSize(size);
 		frame.setLocationRelativeTo(null);
 		frame.setIconImage(ImageHelper.ICON_LOGO.getImage());
 		frame.setTitle(TITLE);
-		frame.setMinimumSize(new Dimension(520, 400));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 	}
