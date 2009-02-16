@@ -6,6 +6,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.Insets;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -18,6 +19,9 @@ import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JToolBar;
+import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
 public class AddrBookPanel extends JPanel {
 
@@ -25,6 +29,9 @@ public class AddrBookPanel extends JPanel {
 
 	private static final Color BORDER_COLOR = new JLabel().getBackground();
 	private static final int GAP_SIZE = 2;
+	private static final Border COMMON_BORDER = BorderFactory.createCompoundBorder( //
+			BorderFactory.createEtchedBorder(), //
+			new EmptyBorder(new Insets(1, 1, 1, 1)));
 
 	private JButton tbarAddButton = new JButton("添加", ImageHelper.ICON_ADD);
 	private JButton tbarSaveButton = new JButton("保存", ImageHelper.ICON_SAVE);
@@ -55,12 +62,15 @@ public class AddrBookPanel extends JPanel {
 		JPanel aPanel = new JPanel(new GridLayout(names.length, 1, GAP_SIZE, GAP_SIZE));
 		for (String name : names) {
 			JLabel label = new JLabel(" " + name + ":", JLabel.RIGHT);
-			// label.setBorder(BorderFactory.createEtchedBorder());
+			label.setBorder(BorderFactory.createEtchedBorder());
 			aPanel.add(label); // 两端对齐??
 		}
 		JPanel bPanel = new JPanel(new GridLayout(comps.length, 1, GAP_SIZE, GAP_SIZE));
 		for (JComponent comp : comps) {
-			comp.setBorder(BorderFactory.createEtchedBorder());
+			comp.setBorder(COMMON_BORDER);
+			//Dimension size = comp.getPreferredSize();
+			//size.height = size.height * 6 / 7;
+			//comp.setPreferredSize(size);
 			bPanel.add(comp);
 		}
 		JPanel cPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
@@ -84,15 +94,16 @@ public class AddrBookPanel extends JPanel {
 
 		JPanel cPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		cPanel.add(bPanel, BorderLayout.NORTH);
-		infoNoteArea.setBorder(BorderFactory.createEtchedBorder());
+		infoNoteArea.setBorder(COMMON_BORDER);
 		cPanel.add(infoNoteArea, BorderLayout.CENTER);
-		// cPanel.setBorder(BorderFactory.createEtchedBorder());
+		cPanel.setBorder(BorderFactory.createEtchedBorder());
 		cPanel.setMinimumSize(new Dimension(320, -1));
 		return cPanel;
 	}
 
 	public AddrBookPanel() {
-		filterField.setBorder(BorderFactory.createEtchedBorder());
+		filterField.setBorder(COMMON_BORDER);
+		filterField.getInsets();
 		contactList.setBorder(BorderFactory.createEmptyBorder());
 		JScrollPane scroll = new JScrollPane(contactList);
 		scroll.setBorder(BorderFactory.createEtchedBorder());
