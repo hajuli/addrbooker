@@ -259,6 +259,23 @@ public class Simple_Calendar extends JFrame implements ActionListener {
 		sFestival.put("1224", "平安夜");
 		sFestival.put("1225", "圣诞节");
 		sFestival.put("1226", "毛泽东诞辰纪念");
+		
+		sFestival.put("0101","  元旦");
+		sFestival.put("0214","情人节");
+		sFestival.put("0308","妇女节");
+		sFestival.put("0312","植树节");
+		sFestival.put("0401","愚人节");
+		sFestival.put("0501","劳动节");
+		sFestival.put("0504","青年节");
+		sFestival.put("0601","儿童节");
+		sFestival.put("0701","建党节");
+		sFestival.put("0801","建军节");
+		sFestival.put("0910","教师节");
+		sFestival.put("1001","国庆节");
+		sFestival.put("1031","万圣节");
+		sFestival.put("1112","孙中山诞辰");
+		sFestival.put("1225","圣诞节");
+		sFestival.put("1226","毛泽东诞辰");
 
 		//};
 		//某月第几个星期几
@@ -276,6 +293,10 @@ public class Simple_Calendar extends JFrame implements ActionListener {
 		wFestival.put("1011", "国际住房日");
 		wFestival.put("1013", "国际减轻自然灾害日(减灾日)");
 		wFestival.put("1144", "感恩节");
+		
+		wFestival.put("0520","母亲节");
+		wFestival.put("0630","父亲节");
+		wFestival.put("1144","感恩节");
 		//};
 		//农历 99表示月最后一天
 		HashMap<String, String> lFestival = new HashMap<String, String>();
@@ -292,6 +313,16 @@ public class Simple_Calendar extends JFrame implements ActionListener {
 		lFestival.put("1223", "小年");
 		lFestival.put("0100", "*除夕");
 
+		lFestival.put("0101","春 节");
+		lFestival.put("0102","大年初二");
+		lFestival.put("0103","大年初三");
+		lFestival.put("0115","元宵节");
+		lFestival.put("0505","端午节");
+		lFestival.put("0707","七 夕");
+		lFestival.put("0815","中秋节");
+		lFestival.put("0909","重阳节");
+		lFestival.put("1208","腊八节");
+		lFestival.put("1299","除 夕");
 		//};
 
 		/////////////////////////////////////////////////////////////
