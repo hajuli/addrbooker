@@ -133,7 +133,10 @@ public class AddrBookPanel extends JPanel {
 		//add(wtPane, BorderLayout.CENTER);
 		add(new JLabel() {
 			public void paint(Graphics g) {
-				new Arrow().draw((Graphics2D) g);
+				for (int i = 100; i <= 300; i += 100)
+					for (int j = 100; j <= 300; j += 100)
+						if (i != 200 || j != 200)
+							new Arrow().draw((Graphics2D) g, 200, 200, i, j, 15);
 			}
 		}, BorderLayout.CENTER);
 	}
@@ -141,23 +144,26 @@ public class AddrBookPanel extends JPanel {
 
 class Arrow // 箭头类   
 {
-	void draw(Graphics2D g2d) {
-		int R = 0, G = 0, B = 0;
-		int x1 = 10, y1 = 10, x2 = 250, y2 = 250;
-		float stroke = 2;
+	void draw(Graphics2D g2d, int x1, int y1, int x2, int y2, int arrow_size) {
+		g2d.drawLine(x1, y1, x2, y2);
+		x2 = (x1+x2) / 2;
+		y2 = (y1+y2) / 2;
+		//int R = 0, G = 0, B = 0;
+		//int x1 = 10, y1 = 10, x2 = 250, y2 = 250;
+		float stroke = 1;
 
-		g2d.setPaint(new Color(R, G, B));
-		g2d.setStroke(new BasicStroke(stroke, BasicStroke.CAP_ROUND, BasicStroke.JOIN_BEVEL));
+		//		g2d.setPaint(new Color(R, G, B));
+		//	g2d.setStroke(new BasicStroke(stroke, BasicStroke.CAP_ROUND, BasicStroke.JOIN_BEVEL));
 		// 利用向量来进行计算   
-		int len = 50; // 箭头的边长   
+		//int len = 20; // 箭头的边长   
 		int x0 = 0, y0 = 0;
 		double dx = x2 - x0, dy = y2 - y0;
 
 		//共线 模长为len   
 		//0 = (x2 -x1)*dy  - dx*(y2 -y1); dx*dx + dy*dy = len*len   
 		double mAB = (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
-		dx = (x2 - x1) * len / java.lang.Math.sqrt(mAB);
-		dy = (y2 - y1) * len / java.lang.Math.sqrt(mAB);
+		dx = (x2 - x1) * arrow_size / java.lang.Math.sqrt(mAB);
+		dy = (y2 - y1) * arrow_size / java.lang.Math.sqrt(mAB);
 		x0 = (int) (x2 - dx);
 		y0 = (int) (y2 - dy);
 
@@ -165,24 +171,33 @@ class Arrow // 箭头类
 		dx = x3 - x0;
 		dy = y3 - y0;
 		double mCB = (x2 - x0) * (x2 - x0) + (y2 - y0) * (y2 - y0);
-		dx = -(y2 - y0) * len / java.lang.Math.sqrt(mCB);
-		dy = (x2 - x0) * len / java.lang.Math.sqrt(mCB);
+		dx = -(y2 - y0) * arrow_size / java.lang.Math.sqrt(mCB);
+		dy = (x2 - x0) * arrow_size / java.lang.Math.sqrt(mCB);
 		x3 = (int) (dx + x0);
 		y3 = (int) (dy + y0);
 		x4 = 2 * x0 - x3;
 		y4 = 2 * y0 - y3;
 
-		g2d.drawLine(x1, y1, x0, y0);
-		g2d.setPaint(new Color(255, 0, 0));
-		Polygon p = new Polygon();
-		int x33 = (x3 * 1 + x4 * 3) / 4;
-		int y33 = (y3 * 1 + y4 * 3) / 4;
-		int x44 = (x3 * 3 + x4 * 1) / 4;
-		int y44 = (y3 * 3 + y4 * 1) / 4;
-		p.addPoint(x2, y2);
-		p.addPoint(x33, y33);
-		p.addPoint(x44, y44);
-		g2d.drawPolygon(p);
+		//	g2d.drawLine(x1, y1, x0, y0);
+		g2d.drawLine(x1, y1, x2, y2);
+		//	g2d.setPaint(new Color(255, 0, 0));
+		//	Polygon p = new Polygon();
+		int x33 = (x3 * 1 + x4 * 2) / 3;
+		int y33 = (y3 * 1 + y4 * 2) / 3;
+		int x44 = (x3 * 2 + x4 * 1) / 3;
+		int y44 = (y3 * 2 + y4 * 1) / 3;
+		//		p.addPoint(x2, y2);
+		//		p.addPoint(x33, y33);
+		//		p.addPoint(x44, y44);
+		g2d.drawLine(x2, y2, x33, y33);
+		g2d.drawLine(x2, y2, x44, y44);
+		//g2d.drawLine(x33, y33, x44, y44);
+
+		int cx = (x2 + x33 + x44) / 3;
+		int cy = (y2 + y33 + y44) / 3;
+		g2d.drawLine(cx, cy, x33, y33);
+		g2d.drawLine(cx, cy, x44, y44);
+		//g2d.drawPolygon(p);
 		//g2d.fillPolygon(p);
 	}
 }
