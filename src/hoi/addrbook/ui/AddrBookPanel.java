@@ -2,11 +2,15 @@ package hoi.addrbook.ui;
 
 import hoi.addrbook.icons.ImageHelper;
 
+import java.awt.BasicStroke;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.GridLayout;
 import java.awt.Insets;
+import java.awt.Polygon;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -126,6 +130,59 @@ public class AddrBookPanel extends JPanel {
 		add(toolbar, BorderLayout.NORTH);
 		JSplitPane wtPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, wPanel, createInfoPanel());
 		wtPane.setBorder(BorderFactory.createLineBorder(BORDER_COLOR, 5));
-		add(wtPane, BorderLayout.CENTER);
+		//add(wtPane, BorderLayout.CENTER);
+		add(new JLabel() {
+			public void paint(Graphics g) {
+				new Arrow().draw((Graphics2D) g);
+			}
+		}, BorderLayout.CENTER);
+	}
+}
+
+class Arrow // 箭头类   
+{
+	void draw(Graphics2D g2d) {
+		int R = 0, G = 0, B = 0;
+		int x1 = 10, y1 = 10, x2 = 250, y2 = 250;
+		float stroke = 2;
+
+		g2d.setPaint(new Color(R, G, B));
+		g2d.setStroke(new BasicStroke(stroke, BasicStroke.CAP_ROUND, BasicStroke.JOIN_BEVEL));
+		// 利用向量来进行计算   
+		int len = 50; // 箭头的边长   
+		int x0 = 0, y0 = 0;
+		double dx = x2 - x0, dy = y2 - y0;
+
+		//共线 模长为len   
+		//0 = (x2 -x1)*dy  - dx*(y2 -y1); dx*dx + dy*dy = len*len   
+		double mAB = (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
+		dx = (x2 - x1) * len / java.lang.Math.sqrt(mAB);
+		dy = (y2 - y1) * len / java.lang.Math.sqrt(mAB);
+		x0 = (int) (x2 - dx);
+		y0 = (int) (y2 - dy);
+
+		int x3 = 0, y3 = 0, x4, y4;
+		dx = x3 - x0;
+		dy = y3 - y0;
+		double mCB = (x2 - x0) * (x2 - x0) + (y2 - y0) * (y2 - y0);
+		dx = -(y2 - y0) * len / java.lang.Math.sqrt(mCB);
+		dy = (x2 - x0) * len / java.lang.Math.sqrt(mCB);
+		x3 = (int) (dx + x0);
+		y3 = (int) (dy + y0);
+		x4 = 2 * x0 - x3;
+		y4 = 2 * y0 - y3;
+
+		g2d.drawLine(x1, y1, x0, y0);
+		g2d.setPaint(new Color(255, 0, 0));
+		Polygon p = new Polygon();
+		int x33 = (x3 * 1 + x4 * 3) / 4;
+		int y33 = (y3 * 1 + y4 * 3) / 4;
+		int x44 = (x3 * 3 + x4 * 1) / 4;
+		int y44 = (y3 * 3 + y4 * 1) / 4;
+		p.addPoint(x2, y2);
+		p.addPoint(x33, y33);
+		p.addPoint(x44, y44);
+		g2d.drawPolygon(p);
+		//g2d.fillPolygon(p);
 	}
 }
