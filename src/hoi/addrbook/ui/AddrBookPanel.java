@@ -6,11 +6,14 @@ import java.awt.BasicStroke;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.Polygon;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -44,7 +47,23 @@ public class AddrBookPanel extends JPanel {
 	private JButton tbarSettingButton = new JButton("设置", ImageHelper.ICON_SETTING);
 	private JButton tbarBackupButton = new JButton("备份", ImageHelper.ICON_BACKUP);
 
-	private JTextField filterField = new JTextField();
+	private JTextField filterField = new JTextField() {
+		public void paint(Graphics g) {
+			super.paint(g);
+			if (getText().equals("")) {
+				g.setColor(Color.GRAY);
+				System.out.println(getSize());
+
+				String Info = "键入内容 搜索";
+				FontMetrics metrics = getFontMetrics(g.getFont());
+				int height = metrics.getHeight();
+				int width = metrics.stringWidth(Info);
+
+				//	g.drawRect(0, 0, getWidth() - 2, getHeight() - 2);
+				g.drawString(Info, 5, (getHeight() - 10 - height) / 2 + height);
+			}
+		}
+	};
 	private JList contactList = new JList();
 
 	private JTextField infoNameField = new JTextField();
@@ -101,7 +120,7 @@ public class AddrBookPanel extends JPanel {
 		infoNoteArea.setBorder(COMMON_BORDER);
 		cPanel.add(infoNoteArea, BorderLayout.CENTER);
 		cPanel.setBorder(BorderFactory.createEtchedBorder());
-		cPanel.setMinimumSize(new Dimension(320, -1));
+		cPanel.setMinimumSize(new Dimension(340, -1));
 		return cPanel;
 	}
 
@@ -114,7 +133,8 @@ public class AddrBookPanel extends JPanel {
 		JPanel wPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		wPanel.add(filterField, BorderLayout.NORTH);
 		wPanel.add(scroll, BorderLayout.CENTER);
-		wPanel.setMinimumSize(new Dimension(150, -1));
+		//	wPanel.setMinimumSize(new Dimension(150, -1));
+		wPanel.setBorder(BorderFactory.createEtchedBorder());
 
 		JToolBar toolbar = new JToolBar("工具条");
 		toolbar.setFloatable(false);
@@ -130,74 +150,6 @@ public class AddrBookPanel extends JPanel {
 		add(toolbar, BorderLayout.NORTH);
 		JSplitPane wtPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, wPanel, createInfoPanel());
 		wtPane.setBorder(BorderFactory.createLineBorder(BORDER_COLOR, 5));
-		//add(wtPane, BorderLayout.CENTER);
-		add(new JLabel() {
-			public void paint(Graphics g) {
-				for (int i = 100; i <= 300; i += 100)
-					for (int j = 100; j <= 300; j += 100)
-						if (i != 200 || j != 200)
-							new Arrow().draw((Graphics2D) g, 200, 200, i, j, 15);
-			}
-		}, BorderLayout.CENTER);
-	}
-}
-
-class Arrow // 箭头类   
-{
-	void draw(Graphics2D g2d, int x1, int y1, int x2, int y2, int arrow_size) {
-		g2d.drawLine(x1, y1, x2, y2);
-		x2 = (x1+x2) / 2;
-		y2 = (y1+y2) / 2;
-		//int R = 0, G = 0, B = 0;
-		//int x1 = 10, y1 = 10, x2 = 250, y2 = 250;
-		float stroke = 1;
-
-		//		g2d.setPaint(new Color(R, G, B));
-		//	g2d.setStroke(new BasicStroke(stroke, BasicStroke.CAP_ROUND, BasicStroke.JOIN_BEVEL));
-		// 利用向量来进行计算   
-		//int len = 20; // 箭头的边长   
-		int x0 = 0, y0 = 0;
-		double dx = x2 - x0, dy = y2 - y0;
-
-		//共线 模长为len   
-		//0 = (x2 -x1)*dy  - dx*(y2 -y1); dx*dx + dy*dy = len*len   
-		double mAB = (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
-		dx = (x2 - x1) * arrow_size / java.lang.Math.sqrt(mAB);
-		dy = (y2 - y1) * arrow_size / java.lang.Math.sqrt(mAB);
-		x0 = (int) (x2 - dx);
-		y0 = (int) (y2 - dy);
-
-		int x3 = 0, y3 = 0, x4, y4;
-		dx = x3 - x0;
-		dy = y3 - y0;
-		double mCB = (x2 - x0) * (x2 - x0) + (y2 - y0) * (y2 - y0);
-		dx = -(y2 - y0) * arrow_size / java.lang.Math.sqrt(mCB);
-		dy = (x2 - x0) * arrow_size / java.lang.Math.sqrt(mCB);
-		x3 = (int) (dx + x0);
-		y3 = (int) (dy + y0);
-		x4 = 2 * x0 - x3;
-		y4 = 2 * y0 - y3;
-
-		//	g2d.drawLine(x1, y1, x0, y0);
-		g2d.drawLine(x1, y1, x2, y2);
-		//	g2d.setPaint(new Color(255, 0, 0));
-		//	Polygon p = new Polygon();
-		int x33 = (x3 * 1 + x4 * 2) / 3;
-		int y33 = (y3 * 1 + y4 * 2) / 3;
-		int x44 = (x3 * 2 + x4 * 1) / 3;
-		int y44 = (y3 * 2 + y4 * 1) / 3;
-		//		p.addPoint(x2, y2);
-		//		p.addPoint(x33, y33);
-		//		p.addPoint(x44, y44);
-		g2d.drawLine(x2, y2, x33, y33);
-		g2d.drawLine(x2, y2, x44, y44);
-		//g2d.drawLine(x33, y33, x44, y44);
-
-		int cx = (x2 + x33 + x44) / 3;
-		int cy = (y2 + y33 + y44) / 3;
-		g2d.drawLine(cx, cy, x33, y33);
-		g2d.drawLine(cx, cy, x44, y44);
-		//g2d.drawPolygon(p);
-		//g2d.fillPolygon(p);
+		add(wtPane, BorderLayout.CENTER);
 	}
 }
