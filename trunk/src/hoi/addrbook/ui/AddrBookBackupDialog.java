@@ -37,7 +37,7 @@ public class AddrBookBackupDialog extends JDialog {
 
 	public AddrBookBackupDialog() {
 		JPanel aPanel = new JPanel();
-		final JButton b = new JButton(infoAddrBooker, ImageHelper.ICON_LOGO);
+		final JButton b = new JButton(infoAddrBooker, ImageHelper.ICON_LOGO_KUD);
 		aPanel.add(b);
 		aPanel.setBorder(BorderFactory.createEtchedBorder());
 		b.addMouseListener(new MouseListener() {
@@ -55,7 +55,7 @@ public class AddrBookBackupDialog extends JDialog {
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				b.setIcon(ImageHelper.ICON_LOGO);
+				b.setIcon(ImageHelper.ICON_LOGO_KUD);
 			}
 
 			@Override
