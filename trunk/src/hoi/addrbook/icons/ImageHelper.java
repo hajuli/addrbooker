@@ -19,6 +19,8 @@ public class ImageHelper {
 	}
 
 	public static final ImageIcon ICON_LOGO = createImageIcon("128/kugar.png");
+	public static final ImageIcon ICON_LOGO_KUD = createImageIcon("128/kugar_kud.png");
+	public static final ImageIcon ICON_LOGO_DATA = createImageIcon("128/kugar_data.png");
 
 	public static final ImageIcon ICON_ADD = createImageIcon("32/add.png");
 	public static final ImageIcon ICON_SAVE = createImageIcon("32/save.png");

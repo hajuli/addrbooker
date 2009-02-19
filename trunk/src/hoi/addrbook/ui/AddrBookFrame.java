@@ -31,7 +31,7 @@ public class AddrBookFrame extends JFrame {
 
 	private static void setLookAndFeel() {
 		try { // Default, Green, Lemmon, Red
-			com.jtattoo.plaf.acryl.AcrylLookAndFeel.setTheme("Lemmon", "??", "Addrbooker");
+			com.jtattoo.plaf.acryl.AcrylLookAndFeel.setTheme("Default", "??", "Addrbooker");
 			UIManager.setLookAndFeel(new com.jtattoo.plaf.acryl.AcrylLookAndFeel());
 		} catch (UnsupportedLookAndFeelException e) {
 			e.printStackTrace();
@@ -41,7 +41,7 @@ public class AddrBookFrame extends JFrame {
 	public static void main(String[] args) {
 		setLookAndFeel();
 		AddrBookFrame frame = new AddrBookFrame();
-		Dimension size = new Dimension(500, 500 / 4 * 3);
+		Dimension size = new Dimension(540, 520 / 5 * 4);
 		frame.setSize(size);
 		frame.setMinimumSize(size);
 		frame.setLocationRelativeTo(null);
