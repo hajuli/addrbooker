@@ -17,10 +17,17 @@ public class AddrBookFrame extends JFrame {
 	public static final String TITLE = "草根通讯录";
 
 	public AddrBookFrame() {
+		Dimension size = new Dimension(540, 520 / 5 * 4);
+		setSize(size);
+		setMinimumSize(size);
+		setLocationRelativeTo(null);
+		setIconImage(ImageHelper.ICON_LOGO.getImage());
+		setTitle(TITLE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		try {
 			SwingUtilities.invokeAndWait(new Runnable() {
 				public void run() {
-					setLayout(new BorderLayout());
+					setLayout(new BorderLayout(0, 0));
 					add(new AddrBookPanel(), BorderLayout.CENTER);
 				}
 			});
@@ -31,7 +38,7 @@ public class AddrBookFrame extends JFrame {
 
 	private static void setLookAndFeel() {
 		try { // Default, Green, Lemmon, Red
-			com.jtattoo.plaf.acryl.AcrylLookAndFeel.setTheme("Default", "??", "Addrbooker");
+			com.jtattoo.plaf.acryl.AcrylLookAndFeel.setTheme("Default", "??", "AddrBooker");
 			UIManager.setLookAndFeel(new com.jtattoo.plaf.acryl.AcrylLookAndFeel());
 		} catch (UnsupportedLookAndFeelException e) {
 			e.printStackTrace();
@@ -40,14 +47,6 @@ public class AddrBookFrame extends JFrame {
 
 	public static void main(String[] args) {
 		setLookAndFeel();
-		AddrBookFrame frame = new AddrBookFrame();
-		Dimension size = new Dimension(540, 520 / 5 * 4);
-		frame.setSize(size);
-		frame.setMinimumSize(size);
-		frame.setLocationRelativeTo(null);
-		frame.setIconImage(ImageHelper.ICON_LOGO.getImage());
-		frame.setTitle(TITLE);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
+		new AddrBookFrame().setVisible(true);
 	}
 }
