@@ -1,1720 +1,1238 @@
-From: <�� Windows Internet Explorer 7 ����>
-Subject: =?gb2312?B?y9G6/NDH1/k=?=
-Date: Sat, 21 Feb 2009 22:39:57 +0800
-MIME-Version: 1.0
-Content-Type: multipart/related;
-	type="text/html";
-	boundary="----=_NextPart_000_0000_01C99475.52EB3300"
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5512
-
-This is a multi-part message in MIME format.
-
-------=_NextPart_000_0000_01C99475.52EB3300
-Content-Type: text/html;
-	charset="gb2312"
-Content-Transfer-Encoding: quoted-printable
-Content-Location: http://act1.astro.women.sohu.com/search/calendar.htm
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML><HEAD><TITLE>=CB=D1=BA=FC=D0=C7=D7=F9</TITLE>
-<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dgb2312">
-<STYLE type=3Dtext/css>TD {
-	FONT-SIZE: 12px; LINE-HEIGHT: 17px; FONT-FAMILY: =CB=CE=CC=E5,arial
-}
-BODY {
-	FONT-SIZE: 12px; LINE-HEIGHT: 17px; FONT-FAMILY: =CB=CE=CC=E5,arial
-}
-INPUT {
-	FONT-SIZE: 12px; LINE-HEIGHT: 17px; FONT-FAMILY: =CB=CE=CC=E5,arial
-}
-SELECT {
-	FONT-SIZE: 12px; LINE-HEIGHT: 17px; FONT-FAMILY: =CB=CE=CC=E5,arial
-}
-A:link {
-	COLOR: #000000; TEXT-DECORATION: none
-}
-A:visited {
-	COLOR: #000000; TEXT-DECORATION: none
-}
-A:active {
-	COLOR: #000000; LETTER-SPACING: 0px
-}
-A:hover {
-	COLOR: #000000; TEXT-DECORATION: underline
-}
-A.title1 {
-	COLOR: #d70709; TEXT-DECORATION: none
-}
-A.title1:visited {
-	COLOR: #d70709; TEXT-DECORATION: none
-}
-A.title1:hover {
-	TEXT-DECORATION: underline
-}
-</STYLE>
-<LINK href=3D"http://act1.astro.women.sohu.com/css/style.css" =
-type=3Dtext/css=20
-rel=3Dstylesheet>
-<META content=3D"MSHTML 6.00.6000.16674" name=3DGENERATOR></HEAD>
-<BODY bgColor=3D#f0fbff leftMargin=3D0 topMargin=3D0 =
-onload=3Dinitialize()=20
-onunload=3Dterminate() marginheight=3D"0" marginwidth=3D"0">
-<SCRIPT language=3DJavaScript><!--=0A=
-   if(navigator.appName =3D=3D "Netscape" || =
-parseInt(navigator.appVersion) < 4)=0A=
-   =
-document.write("<h1>=C4=E3=B5=C4=E4=AF=C0=C0=C6=F7=CE=DE=B7=A8=D6=B4=D0=D0=
-=B4=CB=B3=CC=D0=F2=A1=A3</h1>=B4=CB=B3=CC=D0=F2=D0=E8=D4=DA IE4 =
-=D2=D4=BA=F3=B5=C4=B0=E6=B1=BE=B2=C5=C4=DC=D6=B4=D0=D0!!")=0A=
+<html>
+<head>
+<title>搜狐星座</title>
+<META http-equiv='Content-Type' content='text/html; charset=gb2312'>
+<style type=text/css>
+td,body,input,select {font-size: 12px;font-family:'宋体,arial';line-height:17px;}
+A:link {color:#000000;text-decoration:none;}
+A:Visited {color:#000000;text-decoration:none;}
+A:Active {color:#000000;letter-spacing:0px}
+A:Hover {color:#000000;TEXT-DECORATION: underline;}
+a.title1,a.title1:visited {color: #D70709;text-decoration:none;}
+a.title1:hover{text-decoration:underline;}
+</style>
+<link rel=stylesheet type=text/css href=../css/style.css>
+</head>
+<body bgcolor=#F0FBFF leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
+<SCRIPT language=JavaScript><!--
+   if(navigator.appName == "Netscape" || parseInt(navigator.appVersion) < 4)
+   document.write("<h1>你的浏览器无法执行此程序。</h1>此程序需在 IE4 以后的版本才能执行!!")
 //--></SCRIPT>
 
-<DIV id=3Ddetail=20
-style=3D"Z-INDEX: 3; FILTER: shadow(color=3D#333333,direction=3D135); =
-WIDTH: 140px; POSITION: absolute; HEIGHT: 120px"></DIV>
-<SCRIPT language=3DJScript>=0A=
-<!--=0A=
-/************************************************************************=
-*****=0A=
-                                   =B8=F6=C8=CB=C6=AB=BA=C3=C9=E8=B6=A8=0A=
-*************************************************************************=
-****/=0A=
-=0A=
-var conWeekend =3D 3;  // =D6=DC=C4=A9=D1=D5=C9=AB=CF=D4=CA=BE: =
-1=3D=BA=DA=C9=AB, 2=3D=C2=CC=C9=AB, 3=3D=BA=EC=C9=AB, =
-4=3D=B8=F4=D6=DC=D0=DD=0A=
-=0A=
-=0A=
-/************************************************************************=
-*****=0A=
-                                   =C8=D5=C6=DA=D7=CA=C1=CF=0A=
-*************************************************************************=
-****/=0A=
-=0A=
-var lunarInfo=3Dnew Array(=0A=
-0x4bd8,0x4ae0,0xa570,0x54d5,0xd260,0xd950,0x5554,0x56af,0x9ad0,0x55d2,=0A=
-0x4ae0,0xa5b6,0xa4d0,0xd250,0xd255,0xb54f,0xd6a0,0xada2,0x95b0,0x4977,=0A=
-0x497f,0xa4b0,0xb4b5,0x6a50,0x6d40,0xab54,0x2b6f,0x9570,0x52f2,0x4970,=0A=
-0x6566,0xd4a0,0xea50,0x6a95,0x5adf,0x2b60,0x86e3,0x92ef,0xc8d7,0xc95f,=0A=
-0xd4a0,0xd8a6,0xb55f,0x56a0,0xa5b4,0x25df,0x92d0,0xd2b2,0xa950,0xb557,=0A=
-0x6ca0,0xb550,0x5355,0x4daf,0xa5b0,0x4573,0x52bf,0xa9a8,0xe950,0x6aa0,=0A=
-0xaea6,0xab50,0x4b60,0xaae4,0xa570,0x5260,0xf263,0xd950,0x5b57,0x56a0,=0A=
-0x96d0,0x4dd5,0x4ad0,0xa4d0,0xd4d4,0xd250,0xd558,0xb540,0xb6a0,0x95a6,=0A=
-0x95bf,0x49b0,0xa974,0xa4b0,0xb27a,0x6a50,0x6d40,0xaf46,0xab60,0x9570,=0A=
-0x4af5,0x4970,0x64b0,0x74a3,0xea50,0x6b58,0x5ac0,0xab60,0x96d5,0x92e0,=0A=
-0xc960,0xd954,0xd4a0,0xda50,0x7552,0x56a0,0xabb7,0x25d0,0x92d0,0xcab5,=0A=
-0xa950,0xb4a0,0xbaa4,0xad50,0x55d9,0x4ba0,0xa5b0,0x5176,0x52bf,0xa930,=0A=
-0x7954,0x6aa0,0xad50,0x5b52,0x4b60,0xa6e6,0xa4e0,0xd260,0xea65,0xd530,=0A=
-0x5aa0,0x76a3,0x96d0,0x4afb,0x4ad0,0xa4d0,0xd0b6,0xd25f,0xd520,0xdd45,=0A=
-0xb5a0,0x56d0,0x55b2,0x49b0,0xa577,0xa4b0,0xaa50,0xb255,0x6d2f,0xada0,=0A=
-0x4b63,0x937f,0x49f8,0x4970,0x64b0,0x68a6,0xea5f,0x6b20,0xa6c4,0xaaef,=0A=
-0x92e0,0xd2e3,0xc960,0xd557,0xd4a0,0xda50,0x5d55,0x56a0,0xa6d0,0x55d4,=0A=
-0x52d0,0xa9b8,0xa950,0xb4a0,0xb6a6,0xad50,0x55a0,0xaba4,0xa5b0,0x52b0,=0A=
-0xb273,0x6930,0x7337,0x6aa0,0xad50,0x4b55,0x4b6f,0xa570,0x54e4,0xd260,=0A=
-0xe968,0xd520,0xdaa0,0x6aa6,0x56df,0x4ae0,0xa9d4,0xa4d0,0xd150,0xf252,=0A=
-0xd520);=0A=
-=0A=
-var solarMonth=3Dnew Array(31,28,31,30,31,30,31,31,30,31,30,31);=0A=
-var Gan=3Dnew =
-Array("=BC=D7","=D2=D2","=B1=FB","=B6=A1","=CE=EC","=BC=BA","=B8=FD","=D0=
-=C1","=C8=C9","=B9=EF");=0A=
-var Zhi=3Dnew =
-Array("=D7=D3","=B3=F3","=D2=FA","=C3=AE","=B3=BD","=CB=C8","=CE=E7","=CE=
-=B4","=C9=EA","=D3=CF","=D0=E7","=BA=A5");=0A=
-var Animals=3Dnew =
-Array("=CA=F3","=C5=A3","=BB=A2","=CD=C3","=C1=FA","=C9=DF","=C2=ED","=D1=
-=F2","=BA=EF","=BC=A6","=B9=B7","=D6=ED");=0A=
-var solarTerm =3D new =
-Array("=D0=A1=BA=AE","=B4=F3=BA=AE","=C1=A2=B4=BA","=D3=EA=CB=AE","=BE=AA=
-=D5=DD","=B4=BA=B7=D6","=C7=E5=C3=F7","=B9=C8=D3=EA","=C1=A2=CF=C4","=D0=A1=
-=C2=FA","=C3=A2=D6=D6","=CF=C4=D6=C1","=D0=A1=CA=EE","=B4=F3=CA=EE","=C1=A2=
-=C7=EF","=B4=A6=CA=EE","=B0=D7=C2=B6","=C7=EF=B7=D6","=BA=AE=C2=B6","=CB=AA=
-=BD=B5","=C1=A2=B6=AC","=D0=A1=D1=A9","=B4=F3=D1=A9","=B6=AC=D6=C1");=0A=
-var sTermInfo =3D new =
-Array(0,21208,42467,63836,85337,107014,128867,150921,173149,195551,218072=
-,240693,263343,285989,308563,331033,353350,375494,397447,419210,440795,46=
-2224,483532,504758);=0A=
-var nStr1 =3D new =
-Array('=C8=D5','=D2=BB','=B6=FE','=C8=FD','=CB=C4','=CE=E5','=C1=F9','=C6=
-=DF','=B0=CB','=BE=C5','=CA=AE');=0A=
-var nStr2 =3D new Array('=B3=F5','=CA=AE','=D8=A5','=D8=A6','=A1=F5');=0A=
-var monthName =3D new =
-Array("JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","=
-DEC");=0A=
-=0A=
-//=B9=AB=C0=FA=BD=DA=C8=D5 *=B1=ED=CA=BE=B7=C5=BC=D9=C8=D5=0A=
-var sFtv =3D new Array(=0A=
-"0101*=D0=C2=C4=EA=D4=AA=B5=A9",=0A=
-"0202 =CA=C0=BD=E7=CA=AA=B5=D8=C8=D5",=0A=
-"0207 =B9=FA=BC=CA=C9=F9=D4=AE=C4=CF=B7=C7=C8=D5",=0A=
-"0210 =B9=FA=BC=CA=C6=F8=CF=F3=BD=DA",=0A=
-"0214 =C7=E9=C8=CB=BD=DA",=0A=
-"0301 =B9=FA=BC=CA=BA=A3=B1=AA=C8=D5",=0A=
-"0303 =C8=AB=B9=FA=B0=AE=B6=FA=C8=D5",=0A=
-"0308 =B9=FA=BC=CA=B8=BE=C5=AE=BD=DA",=0A=
-"0312 =D6=B2=CA=F7=BD=DA =
-=CB=EF=D6=D0=C9=BD=CA=C5=CA=C0=BC=CD=C4=EE=C8=D5",=0A=
-"0314 =B9=FA=BC=CA=BE=AF=B2=EC=C8=D5",=0A=
-"0315 =B9=FA=BC=CA=CF=FB=B7=D1=D5=DF=C8=A8=D2=E6=C8=D5",=0A=
-"0317 =D6=D0=B9=FA=B9=FA=D2=BD=BD=DA =B9=FA=BC=CA=BA=BD=BA=A3=C8=D5",=0A=
-"0321 =CA=C0=BD=E7=C9=AD=C1=D6=C8=D5 =
-=CF=FB=B3=FD=D6=D6=D7=E5=C6=E7=CA=D3=B9=FA=BC=CA=C8=D5",=0A=
-"0321 =CA=C0=BD=E7=B6=F9=B8=E8=C8=D5",=0A=
-"0322 =CA=C0=BD=E7=CB=AE=C8=D5",=0A=
-"0323 =CA=C0=BD=E7=C6=F8=CF=F3=C8=D5",=0A=
-"0324 =CA=C0=BD=E7=B7=C0=D6=CE=BD=E1=BA=CB=B2=A1=C8=D5",=0A=
-"0325 =
-=C8=AB=B9=FA=D6=D0=D0=A1=D1=A7=C9=FA=B0=B2=C8=AB=BD=CC=D3=FD=C8=D5",=0A=
-"0330 =B0=CD=C0=D5=CB=B9=CC=B9=B9=FA=CD=C1=C8=D5",=0A=
-"0401 =D3=DE=C8=CB=BD=DA =
-=C8=AB=B9=FA=B0=AE=B9=FA=CE=C0=C9=FA=D4=CB=B6=AF=D4=C2(=CB=C4=D4=C2) =
-=CB=B0=CA=D5=D0=FB=B4=AB=D4=C2(=CB=C4=D4=C2)",=0A=
-"0407 =CA=C0=BD=E7=CE=C0=C9=FA=C8=D5",=0A=
-"0422 =CA=C0=BD=E7=B5=D8=C7=F2=C8=D5",=0A=
-"0423 =CA=C0=BD=E7=CD=BC=CA=E9=BA=CD=B0=E6=C8=A8=C8=D5",=0A=
-"0424 =D1=C7=B7=C7=D0=C2=CE=C5=B9=A4=D7=F7=D5=DF=C8=D5",=0A=
-"0501 =B9=FA=BC=CA=C0=CD=B6=AF=BD=DA",=0A=
-"0504 =D6=D0=B9=FA=CE=E5=CB=C4=C7=E0=C4=EA=BD=DA",=0A=
-"0505 =B5=E2=C8=B1=B7=A6=B2=A1=B7=C0=D6=CE=C8=D5",=0A=
-"0508 =CA=C0=BD=E7=BA=EC=CA=AE=D7=D6=C8=D5",=0A=
-"0512 =B9=FA=BC=CA=BB=A4=CA=BF=BD=DA",=0A=
-"0515 =B9=FA=BC=CA=BC=D2=CD=A5=C8=D5",=0A=
-"0517 =CA=C0=BD=E7=B5=E7=D0=C5=C8=D5",=0A=
-"0518 =B9=FA=BC=CA=B2=A9=CE=EF=B9=DD=C8=D5",=0A=
-"0520 =C8=AB=B9=FA=D1=A7=C9=FA=D3=AA=D1=F8=C8=D5",=0A=
-"0523 =B9=FA=BC=CA=C5=A3=C4=CC=C8=D5",=0A=
-"0531 =CA=C0=BD=E7=CE=DE=D1=CC=C8=D5", =0A=
-"0601 =B9=FA=BC=CA=B6=F9=CD=AF=BD=DA",=0A=
-"0605 =CA=C0=BD=E7=BB=B7=BE=B3=C8=D5",=0A=
-"0606 =C8=AB=B9=FA=B0=AE=D1=DB=C8=D5",=0A=
-"0617 =B7=C0=D6=CE=BB=C4=C4=AE=BB=AF=BA=CD=B8=C9=BA=B5=C8=D5",=0A=
-"0623 =B9=FA=BC=CA=B0=C2=C1=D6=C6=A5=BF=CB=C8=D5",=0A=
-"0625 =C8=AB=B9=FA=CD=C1=B5=D8=C8=D5",=0A=
-"0626 =B9=FA=BC=CA=B7=B4=B6=BE=C6=B7=C8=D5",=0A=
-"0701 =D6=D0=B9=FA=B9=B2=B2=FA=B5=B3=BD=A8=B5=B3=C8=D5 =
-=CA=C0=BD=E7=BD=A8=D6=FE=C8=D5",=0A=
-"0702 =B9=FA=BC=CA=CC=E5=D3=FD=BC=C7=D5=DF=C8=D5 =
-=BE=AB=C6=B7=CD=C6=BD=E9=D5=BE(http://www.21softs.com/)=D5=FD=CA=BD=B6=D4=
-=CD=E2=BF=AA=B7=C5=BC=CD=C4=EE=C8=D5",=0A=
-"0707 =
-=D6=D0=B9=FA=C8=CB=C3=F1=BF=B9=C8=D5=D5=BD=D5=F9=BC=CD=C4=EE=C8=D5",=0A=
-"0711 =CA=C0=BD=E7=C8=CB=BF=DA=C8=D5",=0A=
-"0730 =B7=C7=D6=DE=B8=BE=C5=AE=C8=D5",=0A=
-"0801 =D6=D0=B9=FA=BD=A8=BE=FC=BD=DA",=0A=
-"0808 =D6=D0=B9=FA=C4=D0=D7=D3=BD=DA(=B0=D6=B0=D6=BD=DA)",=0A=
-"0815 =
-=C8=D5=B1=BE=D5=FD=CA=BD=D0=FB=B2=BC=CE=DE=CC=F5=BC=FE=CD=B6=BD=B5=C8=D5"=
-,=0A=
-"0908 =B9=FA=BC=CA=C9=A8=C3=A4=C8=D5 =
-=B9=FA=BC=CA=D0=C2=CE=C5=B9=A4=D7=F7=D5=DF=C8=D5",=0A=
-"0910 =BD=CC=CA=A6=BD=DA",=0A=
-"0914 =CA=C0=BD=E7=C7=E5=BD=E0=B5=D8=C7=F2=C8=D5 =C3=B7=D6=F1=CB=C9 =
-=C9=FA=C8=D5^o^",=0A=
-"0916 =B9=FA=BC=CA=B3=F4=D1=F5=B2=E3=B1=A3=BB=A4=C8=D5",=0A=
-"0918 =BE=C5=A1=A4=D2=BB=B0=CB=CA=C2=B1=E4=BC=CD=C4=EE=C8=D5",=0A=
-"0920 =B9=FA=BC=CA=B0=AE=D1=C0=C8=D5",=0A=
-"0927 =CA=C0=BD=E7=C2=C3=D3=CE=C8=D5",=0A=
-"1001*=B9=FA=C7=EC=BD=DA =CA=C0=BD=E7=D2=F4=C0=D6=C8=D5 =
-=B9=FA=BC=CA=C0=CF=C8=CB=BD=DA",=0A=
-"1001 =B9=FA=BC=CA=D2=F4=C0=D6=C8=D5",=0A=
-"1002 =
-=B9=FA=BC=CA=BA=CD=C6=BD=D3=EB=C3=F1=D6=F7=D7=D4=D3=C9=B6=B7=D5=F9=C8=D5"=
-,=0A=
-"1004 =CA=C0=BD=E7=B6=AF=CE=EF=C8=D5",=0A=
-"1008 =C8=AB=B9=FA=B8=DF=D1=AA=D1=B9=C8=D5",=0A=
-"1008 =CA=C0=BD=E7=CA=D3=BE=F5=C8=D5",=0A=
-"1009 =CA=C0=BD=E7=D3=CA=D5=FE=C8=D5 =CD=F2=B9=FA=D3=CA=C1=AA=C8=D5",=0A=
-"1010 =D0=C1=BA=A5=B8=EF=C3=FC=BC=CD=C4=EE=C8=D5 =
-=CA=C0=BD=E7=BE=AB=C9=F1=CE=C0=C9=FA=C8=D5",=0A=
-"1013 =CA=C0=BD=E7=B1=A3=BD=A1=C8=D5 =B9=FA=BC=CA=BD=CC=CA=A6=BD=DA",=0A=
-"1014 =CA=C0=BD=E7=B1=EA=D7=BC=C8=D5",=0A=
-"1015 =B9=FA=BC=CA=C3=A4=C8=CB=BD=DA(=B0=D7=CA=D6=D5=C8=BD=DA)",=0A=
-"1016 =CA=C0=BD=E7=C1=B8=CA=B3=C8=D5",=0A=
-"1017 =CA=C0=BD=E7=CF=FB=B3=FD=C6=B6=C0=A7=C8=D5",=0A=
-"1022 =CA=C0=BD=E7=B4=AB=CD=B3=D2=BD=D2=A9=C8=D5",=0A=
-"1024 =C1=AA=BA=CF=B9=FA=C8=D5 =
-=CA=C0=BD=E7=B7=A2=D5=B9=D0=C5=CF=A2=C8=D5",=0A=
-"1031 =CA=C0=BD=E7=C7=DA=BC=F3=C8=D5",=0A=
-"1107 =
-=CA=AE=D4=C2=C9=E7=BB=E1=D6=F7=D2=E5=B8=EF=C3=FC=BC=CD=C4=EE=C8=D5",=0A=
-"1108 =D6=D0=B9=FA=BC=C7=D5=DF=C8=D5",=0A=
-"1109 =
-=C8=AB=B9=FA=CF=FB=B7=C0=B0=B2=C8=AB=D0=FB=B4=AB=BD=CC=D3=FD=C8=D5",=0A=
-"1110 =CA=C0=BD=E7=C7=E0=C4=EA=BD=DA",=0A=
-"1111 =
-=B9=FA=BC=CA=BF=C6=D1=A7=D3=EB=BA=CD=C6=BD=D6=DC(=B1=BE=C8=D5=CB=F9=CA=F4=
-=B5=C4=D2=BB=D6=DC)",=0A=
-"1112 =CB=EF=D6=D0=C9=BD=B5=AE=B3=BD=BC=CD=C4=EE=C8=D5",=0A=
-"1114 =CA=C0=BD=E7=CC=C7=C4=F2=B2=A1=C8=D5",=0A=
-"1117 =B9=FA=BC=CA=B4=F3=D1=A7=C9=FA=BD=DA =
-=CA=C0=BD=E7=D1=A7=C9=FA=BD=DA",=0A=
-"1121 =CA=C0=BD=E7=CE=CA=BA=F2=C8=D5 =CA=C0=BD=E7=B5=E7=CA=D3=C8=D5",=0A=
-"1129 =
-=B9=FA=BC=CA=C9=F9=D4=AE=B0=CD=C0=D5=CB=B9=CC=B9=C8=CB=C3=F1=B9=FA=BC=CA=C8=
-=D5",=0A=
-"1201 =CA=C0=BD=E7=B0=AC=D7=CC=B2=A1=C8=D5",=0A=
-"1203 =CA=C0=BD=E7=B2=D0=BC=B2=C8=CB=C8=D5",=0A=
-"1205 =
-=B9=FA=BC=CA=BE=AD=BC=C3=BA=CD=C9=E7=BB=E1=B7=A2=D5=B9=D6=BE=D4=B8=C8=CB=D4=
-=B1=C8=D5",=0A=
-"1208 =B9=FA=BC=CA=B6=F9=CD=AF=B5=E7=CA=D3=C8=D5",=0A=
-"1209 =CA=C0=BD=E7=D7=E3=C7=F2=C8=D5",=0A=
-"1210 =CA=C0=BD=E7=C8=CB=C8=A8=C8=D5",=0A=
-"1212 =CE=F7=B0=B2=CA=C2=B1=E4=BC=CD=C4=EE=C8=D5",=0A=
-"1213 =
-=C4=CF=BE=A9=B4=F3=CD=C0=C9=B1(1937=C4=EA)=BC=CD=C4=EE=C8=D5=A3=A1=BD=F4=BC=
-=C7=D1=AA=C0=E1=CA=B7=A3=A1",=0A=
-"1221 =B9=FA=BC=CA=C0=BA=C7=F2=C8=D5",=0A=
-"1224 =C6=BD=B0=B2=D2=B9",=0A=
-"1225 =CA=A5=B5=AE=BD=DA",=0A=
-"1229 =B9=FA=BC=CA=C9=FA=CE=EF=B6=E0=D1=F9=D0=D4=C8=D5");=0A=
-=0A=
-//=C4=B3=D4=C2=B5=C4=B5=DA=BC=B8=B8=F6=D0=C7=C6=DA=BC=B8=A1=A3 5,6,7,8 =
-=B1=ED=CA=BE=B5=BD=CA=FD=B5=DA 1,2,3,4 =B8=F6=D0=C7=C6=DA=BC=B8=0A=
-var wFtv =3D new Array(=0A=
-"0110 =BA=DA=C8=CB=C8=D5",=0A=
-"0150 =CA=C0=BD=E7=C2=E9=B7=E7=C8=D5", =
-//=D2=BB=D4=C2=B5=C4=D7=EE=BA=F3=D2=BB=B8=F6=D0=C7=C6=DA=C8=D5=A3=A8=D4=C2=
-=B5=B9=CA=FD=B5=DA=D2=BB=B8=F6=D0=C7=C6=DA=C8=D5=A3=A9=0A=
-"0520 =B9=FA=BC=CA=C4=B8=C7=D7=BD=DA",=0A=
-"0530 =C8=AB=B9=FA=D6=FA=B2=D0=C8=D5",=0A=
-"0630 =B8=B8=C7=D7=BD=DA",=0A=
-"0911 =C0=CD=B6=AF=BD=DA",=0A=
-"0932 =B9=FA=BC=CA=BA=CD=C6=BD=C8=D5",=0A=
-"0940 =B9=FA=BC=CA=C1=FB=C8=CB=BD=DA =CA=C0=BD=E7=B6=F9=CD=AF=C8=D5",=0A=
-"0950 =CA=C0=BD=E7=BA=A3=CA=C2=C8=D5",=0A=
-"1011 =B9=FA=BC=CA=D7=A1=B7=BF=C8=D5",=0A=
-"1013 =
-=B9=FA=BC=CA=BC=F5=C7=E1=D7=D4=C8=BB=D4=D6=BA=A6=C8=D5(=BC=F5=D4=D6=C8=D5=
-)",=0A=
-"1144 =B8=D0=B6=F7=BD=DA");=0A=
-=0A=
-//=C5=A9=C0=FA=BD=DA=C8=D5=0A=
-var lFtv =3D new Array(=0A=
-"0101*=B4=BA=BD=DA",=0A=
-"0115 =D4=AA=CF=FC=BD=DA",=0A=
-"0202 =C1=FA=CC=A7=CD=B7=BD=DA",=0A=
-"0323 =C2=E8=D7=E6=C9=FA=B3=BD (=CC=EC=C9=CF=CA=A5=C4=B8=B5=AE=B3=BD)",=0A=
-"0505 =B6=CB=CE=E7=BD=DA",=0A=
-"0707 =C6=DF=C6=DF=D6=D0=B9=FA=C7=E9=C8=CB=BD=DA",=0A=
-"0815 =D6=D0=C7=EF=BD=DA",=0A=
-"0909 =D6=D8=D1=F4=BD=DA",=0A=
-"1208 =C0=B0=B0=CB=BD=DA",=0A=
-"1223 =C0=B0=B0=CB=BD=DA",=0A=
-"0100*=B3=FD=CF=A6");=0A=
-=0A=
-//=CA=C0=BD=E7=CA=B1=BC=E4=D7=CA=C1=CF=0A=
-var timeData =3D {=0A=
-"Asia               =D1=C7=D6=DE": {   =
-//----------------------------------------------=0A=
-"Brunei             =CE=C4=C0=B3    =
-":["+0800","","=CB=B9=C0=EF=B0=CD=BC=D3=CD=E5=CA=D0"],=0A=
-"Burma              =C3=E5=B5=E9    ":["+0630","","=D1=F6=B9=E2"],=0A=
-"Cambodia           =BC=ED=C6=D2=D5=AF  ":["+0700","","=BD=F0=B1=DF"],=0A=
-"China              =D6=D0=B9=FA    =
-":["+0800","","=B1=B1=BE=A9=A1=A2=D6=D8=C7=EC=A1=A2=C9=CF=BA=A3=A1=A2=CC=EC=
-=BD=F2"],=0A=
-"Hong kong,Macau    =
-=CF=E3=B8=DB=A1=A4=B0=C4=C3=C5":["+0800","","=CF=E3=B8=DB=A1=A2=B0=C4=C3=C5=
-=CC=D8=C7=F8"],=0A=
-"Indonesia          =D3=A1=C4=E1    ":["+0700","","=D1=C5=BC=D3=B4=EF"],=0A=
-"Japan              =C8=D5=B1=BE    =
-":["+0900","","=B6=AB=BE=A9=A1=A2=B4=F3=DA=E6=A1=A2=D4=FD=BB=CF"],=0A=
-"Korea              =BA=AB=B9=FA    ":["+0900","","=BA=BA=B3=C7"],=0A=
-"Laos               =C0=CF=CE=CE    ":["+0700","","=CD=F2=CF=F3"],=0A=
-"Malaysia           =
-=C2=ED=C0=B4=CE=F7=D1=C7":["+0800","","=BC=AA=C2=A1=C6=C2"],=0A=
-"Mongolia           =C3=C9=B9=C5    =
-":["+0800","03L03|09L03","=CE=DA=C0=BC=B0=CD=CD=D0=A1=A2=BF=E2=C2=D7"],=0A=
-"Philippines        =B7=C6=C2=C9=B1=F6  =
-":["+0800","04F53|10F53","=C2=ED=C4=E1=C0=AD"],=0A=
-"Russia(Anadyr)     =B6=ED=C2=DE=CB=B9  =
-":["+1300","03L03|10L03","=B0=A2=C4=C9=B5=C2=B6=FB=BA=D3"],=0A=
-"Russia(Kamchatka)  =B6=ED=C2=DE=CB=B9  =
-":["+1200","03L03|10L03","=BF=B0=B2=EC=BC=D3=B0=EB=B5=BA"],=0A=
-"Russia(Magadan)    =B6=ED=C2=DE=CB=B9  =
-":["+1100","03L03|10L03","=C2=ED=BC=D3=B5=A4"],=0A=
-"Russia(Vladivostok)=B6=ED=C2=DE=CB=B9  =
-":["+1000","03L03|10L03","=B7=FB=C0=AD=B5=CF=CE=D6=CB=B9=CD=D0=BF=CB(=BA=A3=
-=B2=CE=E1=CB)"],=0A=
-"Russia(Yakutsk)    =B6=ED=C2=DE=CB=B9  =
-":["+0900","03L03|10L03","=D1=C5=BF=E2=B4=C4=BF=CB"],=0A=
-"Singapore          =D0=C2=BC=D3=C6=C2  =
-":["+0800","","=D0=C2=BC=D3=C6=C2"],=0A=
-"TaiPei             =
-=D6=D0=B9=FA=CC=A8=B1=B1":["+0800","","=CC=A8=B1=B1=A1=A2=B8=DF=D0=DB"],=0A=
-"Thailand           =CC=A9=B9=FA    ":["+0700","","=C2=FC=B9=C8"],=0A=
-"Urumchi            =
-=D6=D0=B9=FA=CE=DA=C2=B3=C4=BE=C6=EB":["+0700","","=CE=DA=C2=B3=C4=BE=C6=EB=
-"],=0A=
-"Vietnam            =D4=BD=C4=CF    ":["+0700","","=BA=D3=C4=DA"]=0A=
-},=0A=
-"ME, India pen.     =D6=D0=B6=AB=A1=A2=D3=A1=B6=C8=B0=EB=B5=BA": {   =
-//------------------------------------=0A=
-"Afghanistan        =B0=A2=B8=BB=BA=B9  =
-":["+0430","","=BF=A6=B2=BC=B6=FB"],=0A=
-"Arab Emirates      =
-=B0=A2=C0=AD=B2=AE=C1=AA=BA=CF=C7=F5=B3=A4=B9=FA":["+0400","","=B0=A2=B2=BC=
-=D4=FA=B1=C8"],=0A=
-"Bahrain            =B0=CD=C1=D6    ":["+0300","","=C2=F3=C4=C9=C2=F3"],=0A=
-"Bangladesh         =C3=CF=BC=D3=C0=AD  ":["+0600","","=B4=EF=BF=A8"],=0A=
-"Bhutan             =B2=BB=B5=A4    ":["+0600","","=CD=A2=B2=BC"],=0A=
-"Cyprus             =
-=C8=FB=C6=D6=C2=B7=CB=B9":["+0200","","=C4=E1=BF=C6=CE=F7=D1=C7"],=0A=
-"Georgia            =C7=C7=D6=CE=D1=C7  =
-":["+0500","","=B5=DA=B1=C8=C0=FB=CB=B9"],=0A=
-"India              =D3=A1=B6=C8    =
-":["+0530","","=D0=C2=B5=C2=C0=EF=A1=A2=C3=CF=C2=F2=A1=A2=BC=D3=B6=FB=B8=F7=
-=B4=F0"],=0A=
-"Iran               =D2=C1=C0=CA    ":["+0330","04 13|10 =
-13","=B5=C2=BA=DA=C0=BC"],=0A=
-"Iraq               =D2=C1=C0=AD=BF=CB  ":["+0300","04 13|10 =
-13","=B0=CD=B8=F1=B4=EF"],=0A=
-"Israel             =
-=D2=D4=C9=AB=C1=D0=A1=A4=B0=CD=C0=D5=CB=B9=CC=B9":["+0200","04F53|09F53",=
-"=D2=AE=C2=B7=C8=F6=C0=E4"],=0A=
-"Jordan             =D4=BC=B5=A9    ":["+0200","","=B0=B2=C2=FC"],=0A=
-"Kuwait             =BF=C6=CD=FE=CC=D8  =
-":["+0300","","=BF=C6=CD=FE=CC=D8=B3=C7"],=0A=
-"Lebanon            =C0=E8=B0=CD=C4=DB  =
-":["+0200","03L03|10L03","=B1=B4=C2=B3=CC=D8"],=0A=
-"Maldives           =
-=C2=ED=B6=FB=B4=FA=B7=F2":["+0500","","=C2=ED=C0=DB"],=0A=
-"Nepal              =C4=E1=B2=B4=B6=FB  =
-":["+0545","","=BC=D3=B5=C2=C2=FA=B6=BC"],=0A=
-"Oman               =B0=A2=C2=FC    =
-":["+0400","","=C2=ED=CB=B9=BF=A6=CC=D8"],=0A=
-"Pakistan           =
-=B0=CD=BB=F9=CB=B9=CC=B9":["+0500","","=BF=A8=C0=AD=C6=E6=A1=A2=D2=C1=CB=B9=
-=C0=BC=B1=A4"],=0A=
-"Qatar              =BF=A8=CB=FE=B6=FB  ":["+0300","","=B6=E0=B9=FE"],=0A=
-"Saudi Arabia       =
-=C9=B3=CC=D8=B0=A2=C0=AD=B2=AE":["+0300","","=C0=FB=D1=C5=B5=C3"],=0A=
-"Sri Lanka          =
-=CB=B9=C0=EF=C0=BC=BF=A8":["+0600","","=BF=C6=C2=D7=C6=C2"],=0A=
-"Syria              =D0=F0=C0=FB=D1=C7  ":["+0200","04 13|10 =
-13","=B4=F3=C2=ED=CA=BF=B8=EF"],=0A=
-"Tajikistan         =
-=CB=FE=BC=AA=BF=CB=CB=B9=CC=B9":["+0500","","=B6=C5=C9=D0=B1=F0"],=0A=
-"Turkey             =CD=C1=B6=FA=C6=E4  =
-":["+0200","","=D2=C1=CB=B9=CC=B9=B1=A4"],=0A=
-"Turkmenistan       =
-=CD=C1=BF=E2=C2=FC=CB=B9=CC=B9":["+0500","","=B0=A2=CA=B2=B9=FE=B0=CD=B5=C2=
-"],=0A=
-"Uzbekistan         =
-=CE=DA=D7=C8=B1=F0=BF=CB=CB=B9=CC=B9":["+0500","","=CB=FE=CA=B2=B8=C9"],=0A=
-"Yemen              =D2=B2=C3=C5    ":["+0300","","=C8=F8=C4=C7"]=0A=
-},=0A=
-"North Europe       =B1=B1=C5=B7": {   =
-//----------------------------------------------=0A=
-"Denmark            =
-=B5=A4=C2=F3":["+0100","04F03|10L03","=B8=E7=B1=BE=B9=FE=B8=F9"],=0A=
-"Finland            =
-=B7=D2=C0=BC":["+0200","03L01|10L01","=BA=D5=B6=FB=D0=C1=BB=F9"],=0A=
-"Iceland            =
-=B1=F9=B5=BA":["+0000","","=C0=D7=BF=CB=D1=C5=CE=B4=BF=CB"],=0A=
-"Norwegian          =C5=B2=CD=FE":["+0100","","=B0=C2=CB=B9=C2=BD"],=0A=
-"Sweden             =
-=C8=F0=B5=E4":["+0100","03L01|10L01","=CB=B9=B5=C2=B8=E7=B6=FB=C4=A6"]=0A=
-},=0A=
-"Eastern Europe     =D6=D0=C5=B7=A1=A2=B6=AB=C5=B7": {   =
-//----------------------------------------=0A=
-"Armenia            =
-=D1=C7=C3=C0=C4=E1=D1=C7":["+0400","","=B0=A3=C0=EF=CE=C2"],=0A=
-"Austria            =B0=C2=B5=D8=C0=FB  =
-":["+0100","03L01|10L01","=CE=AC=D2=B2=C4=C9"],=0A=
-"Azerbaijan         =
-=B0=A2=C8=FB=B0=DD=BD=AE":["+0400","","=B0=CD=BF=E2"],=0A=
-"Czech              =BD=DD=BF=CB    ":["+0100","","=B2=BC=C0=AD=B8=F1"],=0A=
-"Estonia            =
-=B0=AE=C9=B3=C4=E1=D1=C7":["+0200","","=CB=FE=C1=D6"],=0A=
-"Germany            =B5=C2=B9=FA    =
-":["+0100","03L01|10L01","=B0=D8=C1=D6=A1=A2=B2=A8=B6=F7"],=0A=
-"Hungarian          =D0=D9=D1=C0=C0=FB  =
-":["+0100","","=B2=BC=B4=EF=C5=E5=CB=B9"],=0A=
-"Kazakhstan(Astana) =
-=B9=FE=C8=F8=BF=CB=CB=B9=CC=B9":["+0600","","=B0=A2=CB=B9=CB=FE=C4=C9=A1=A2=
-=B0=A2=C0=AD=C4=BE=CD=BC"],=0A=
-"Kazakhstan(Aqtobe) =
-=B9=FE=C8=F8=BF=CB=CB=B9=CC=B9":["+0500","","=B0=A2=BF=CB=CD=D0=B1=F0"],=0A=
-"Kazakhstan(Aqtau)  =
-=B9=FE=C8=F8=BF=CB=CB=B9=CC=B9":["+0400","","=B0=A2=BF=CB=CD=BC"],=0A=
-"Kirghizia          =
-=BC=AA=B6=FB=BC=AA=CB=B9":["+0500","","=B1=C8=CB=B9=BF=AD=BF=CB"],=0A=
-"Latvia             =
-=C0=AD=CD=D1=CE=AC=D1=C7":["+0200","","=C0=EF=BC=D3"],=0A=
-"Lithuania          =C1=A2=CC=D5=CD=F0  =
-":["+0200","","=CE=AC=B6=FB=C5=A6=CB=B9"],=0A=
-"Moldova            =
-=C4=A6=B6=FB=B6=E0=CD=DF":["+0200","","=BB=F9=CF=A3=C4=C9=CE=DA"],=0A=
-"Poland             =B2=A8=C0=BC    ":["+0100","","=BB=AA=C9=B3"],=0A=
-"Rumania            =
-=C2=DE=C2=ED=C4=E1=D1=C7":["+0200","","=B2=BC=BC=D3=C0=D5=CB=B9=CC=D8"],=0A=
-"Russia(Moscow)     =B6=ED=C2=DE=CB=B9  =
-":["+0300","03L03|10L03","=C4=AA=CB=B9=BF=C6"],=0A=
-"Russia(Volgograd)  =B6=ED=C2=DE=CB=B9  =
-":["+0300","03L03|10L03","=B7=FC=B6=FB=BC=D3=B8=F1=C0=D5"],=0A=
-"Slovakia           =
-=CB=B9=C2=E5=B7=A5=BF=CB":["+0100","","=B2=BC=C0=AD=B5=CF=CB=B9=C0=AD=B7=A2=
-"],=0A=
-"Switzerland        =C8=F0=CA=BF    ":["+0100","","=CB=D5=C0=E8=CA=C0"],=0A=
-"Ukraine            =CE=DA=BF=CB=C0=BC  ":["+0200","","=BB=F9=B8=A8"],=0A=
-"Ukraine(Simferopol)=CE=DA=BF=CB=C0=BC  =
-":["+0300","","=D0=C1=B7=C6=C2=DE=B2=A8=B6=FB"],=0A=
-"Belarus            =
-=B0=D7=B6=ED=C2=DE=CB=B9":["+0200","03L03|10L03","=C3=F7=CB=B9=BF=CB"]=0A=
-},=0A=
-"Western Europe     =CE=F7=C5=B7": {   =
-//----------------------------------------------=0A=
-"Belgium            =B1=C8=C0=FB=CA=B1 =
-":["+0100","03L01|10L01","=B2=BC=C2=B3=C8=FB=B6=FB"],=0A=
-"France             =B7=A8=B9=FA   =
-":["+0100","03L01|10L01","=B0=CD=C0=E8"],=0A=
-"Ireland            =B0=AE=B6=FB=C0=BC =
-":["+0000","03L01|10L01","=B6=BC=B0=D8=C1=D6"],=0A=
-"Monaco             =C4=A6=C4=C9=B8=E7 =
-":["+0100","","=C4=A6=C4=C9=B8=E7=CA=D0"],=0A=
-"Netherlands        =BA=C9=C0=BC   =
-":["+0100","03L01|10L01","=B0=A2=C4=B7=CB=B9=CC=D8=B5=A4"],=0A=
-"Luxembourg         =C2=AC=C9=AD=B1=A4 =
-":["+0100","03L01|10L01","=C2=AC=C9=AD=B1=A4=CA=D0"],=0A=
-"United Kingdom     =D3=A2=B9=FA   =
-":["+0000","03L01|10L01","=C2=D7=B6=D8=A1=A2=B0=AE=B6=A1=B1=A4"]=0A=
-},=0A=
-"South Europe       =C4=CF=C5=B7": { =
-//------------------------------------------------=0A=
-"Albania            =
-=B0=A2=B6=FB=B0=CD=C4=E1=D1=C7":["+0100","","=B5=D8=C0=AD=C4=C7"],=0A=
-"Bulgaria           =
-=B1=A3=BC=D3=C0=FB=D1=C7":["+0200","","=CB=F7=B7=C6=D1=C7"],=0A=
-"Greece             =CF=A3=C0=B0    =
-":["+0200","03L01|10L01","=D1=C5=B5=E4"],=0A=
-"Holy See           =
-=C2=DE=C2=ED=BD=CC=CD=A2":["+0100","","=E8=F3=B5=D9=B8=D4"],=0A=
-"Italy              =D2=E2=B4=F3=C0=FB  =
-":["+0100","03L01|10L01","=C2=DE=C2=ED"],=0A=
-"Malta              =C2=ED=B6=FA=CB=FB  =
-":["+0100","","=CD=DF=C0=B3=CB=FE"],=0A=
-"Portugal           =C6=CF=CC=D1=D1=C0  =
-":["+0000","03L01|10L01","=C0=EF=CB=B9=B1=BE"],=0A=
-"San Marino         =
-=CA=A5=C2=ED=C0=FB=C5=B5":["+0100","","=CA=A5=C2=ED=C0=FB=C5=B5"],=0A=
-"Span               =CE=F7=B0=E0=D1=C0  =
-":["+0100","03L01|10L01","=C2=ED=B5=C2=C0=EF"],=0A=
-"Slovenia           =
-=CB=B9=C2=E5=CE=C4=C4=E1=D1=C7":["+0100","","=C2=AC=B2=BC=B6=FB=D1=C5=C4=C7=
-"],=0A=
-"Yugoslavia         =
-=C4=CF=CB=B9=C0=AD=B7=F2(=C8=FB=B6=FB=CE=AC=D1=C7)":["+0100","","=B1=B4=B6=
-=FB=B8=F1=C0=B3=B5=C2"]=0A=
-},=0A=
-"North America      =B1=B1=C3=C0=D6=DE": {   =
-//--------------------------------------------=0A=
-"Canada(NST)        =
-=BC=D3=C4=C3=B4=F3":["-0330","04F02|10L02","=C5=A6=B7=D2=C0=BC=A1=A2=CA=A5=
-=D4=BC=BA=B2=A1=A2=B9=C5=CB=B9=CD=E5"],=0A=
-"Canada(AST)        =
-=BC=D3=C4=C3=B4=F3":["-0400","04F02|10L02","=B1=F9=BA=D3=CD=E5=A1=A2Pangn=
-irtung"],=0A=
-"Canada(EST)        =
-=BC=D3=C4=C3=B4=F3":["-0500","04F02|10L02","=C3=C9=CC=D8=C2=DE"],=0A=
-"Canada(CST)        =
-=BC=D3=C4=C3=B4=F3":["-0600","04F02|10L02","=C0=D7=E5=C8=BC{=A1=A2=D3=EA=BA=
-=D3=E6=82=A1=A2Swift Current"],=0A=
-"Canada(MST)        =
-=BC=D3=C4=C3=B4=F3":["-0700","04F02|10L02","=D3=A1=C5=AB=CE=AC=CC=D8=B8=DB=
-=CD=E5=A1=A2=B0=A3=B5=C2=C3=C9=B6=D9=A1=A2=B5=C0=C9=AD=BA=D3"],=0A=
-"Canada(PST)        =
-=BC=D3=C4=C3=B4=F3":["-0800","04F02|10L02","=CE=C2=B8=E7=BB=AA"],=0A=
-"US(Eastern)        =
-=C3=C0=B9=FA(=B6=AB=B0=B6)":["-0500","04F02|10L02","=BB=AA=CA=A2=B6=D9=A1=
-=A2=C5=A6=D4=BC"],=0A=
-"US(Indiana)        =C3=C0=B9=FA      =
-":["-0500","","=D3=A1=B5=DA=B0=B2=C4=C9"],=0A=
-"US(Central)        =
-=C3=C0=B9=FA(=D6=D0=B2=BF)":["-0600","04F02|10L02","=D6=A5=BC=D3=B8=E7"],=0A=
-"US(Mountain)       =
-=C3=C0=B9=FA(=C9=BD=C7=F8)":["-0700","04F02|10L02","=B5=A4=B7=F0"],=0A=
-"US(Arizona)        =C3=C0=B9=FA      =
-":["-0700","","=D1=C7=C0=FA=C9=A3=C4=C7"],=0A=
-"US(Pacific)        =
-=C3=C0=B9=FA(=CE=F7=B0=B6)":["-0800","04F02|10L02","=BE=C9=BD=F0=C9=BD=A1=
-=A2=C2=E5=C9=BC=ED=B6"],=0A=
-"US(Alaska)         =C3=C0=B9=FA      =
-":["-0900","","=B0=A2=C0=AD=CB=B9=BC=D3=A1=A2=D6=EC=C5=B5"]=0A=
-},=0A=
-"South America      =D6=D0=C4=CF=C3=C0=D6=DE": {   =
-//------------------------------------------=0A=
-"Antigua & Barbuda  =
-=B0=B2=CC=E1=B9=CF=B5=BA=BC=B0=B0=CD=B2=BC=B4=EF=B5=BA":["-0400","","=CA=A5=
-=D4=BC=BA=B2"],=0A=
-"Argentina          =B0=A2=B8=F9=CD=A2  =
-":["-0300","","=B2=BC=D2=CB=C5=B5=CB=B9=B0=AC=C0=FB=CB=B9"],=0A=
-"Bahamas            =B0=CD=B9=FE=C2=ED  ":["-0500","","=C4=C3=C9=A7"],=0A=
-"Barbados           =
-=B0=CD=B0=CD=B6=E0=CB=B9=B5=BA":["-0400","","=B2=BC=C0=EF=C6=E6=B6=D9(=C7=
-=C5=D5=F2)"],=0A=
-"Belize             =B1=B4=C0=EF=CB=B9  =
-":["-0600","","=B1=B4=C0=EF=CB=B9"],=0A=
-"Bolivia            =
-=B2=A3=C0=FB=CE=AC=D1=C7":["-0400","","=C0=AD=B0=CD=CB=B9"],=0A=
-"Brazil(AST)        =B0=CD=CE=F7    ":["-0500","10F03|02L03","Porto =
-Acre"],=0A=
-"Brazil(EST)        =B0=CD=CE=F7    =
-":["-0300","10F03|02L03","=B0=CD=CE=F7=C0=FB=D1=C7=A1=A2=C0=EF=D4=BC=C8=C8=
-=C4=DA=C2=AC"],=0A=
-"Brazil(FST)        =B0=CD=CE=F7    =
-":["-0200","10F03|02L03","=C5=B5=C2=DE=C4=C9"],=0A=
-"Brazil(WST)        =B0=CD=CE=F7    =
-":["-0400","10F03|02L03","=BF=E2=D1=C7=B0=CD"],=0A=
-"Chilean            =D6=C7=C0=FB    ":["-0500","10F03|03F03","Hanga =
-Roa"],=0A=
-"Chilean            =D6=C7=C0=FB    =
-":["-0300","10F03|03F03","=CA=A5=B5=D8=D1=C7=B8=E7"],=0A=
-"Colombia           =
-=B8=E7=C2=D7=B1=C8=D1=C7":["-0500","","=B2=A8=B8=E7=B4=F3"],=0A=
-"Costa Rica         =
-=B8=E7=CB=B9=B4=EF=C0=E8=BC=D3":["-0600","","=CA=A5=BA=CE=C8=FB"],=0A=
-"Cuba               =B9=C5=B0=CD    ":["-0500","04 =
-13|10L03","=B9=FE=CD=DF=C4=C7"],=0A=
-"Dominican          =
-=B6=E0=C3=D7=C4=E1=BC=D3":["-0400","","=CA=A5=B6=E0=C3=F7=B8=F7=A1=A2=C2=DE=
-=CB=F3"],=0A=
-"Ecuador            =
-=B6=F2=B9=CF=B6=E0=B6=FB":["-0500","","=BB=F9=B6=E0"],=0A=
-"El Salvador        =
-=C8=F8=B6=FB=CD=DF=B6=E0":["-0600","","=CA=A5=C8=F8=B6=FB=CD=DF=B6=E0"],=0A=
-"Falklands          =
-=B8=A3=BF=CB=C0=BC=C8=BA=B5=BA":["-0300","09F03|04F03","=CA=B7=B5=A4=C0=FB=
-"],=0A=
-"Guatemala          =
-=CE=A3=B5=D8=C2=ED=C0=AD":["-0600","","=CE=A3=B5=D8=C2=ED=C0=AD=B3=C7"],=0A=
-"Haiti              =BA=A3=B5=D8    ":["-0500","","=CC=AB=D7=D3=B8=DB"],=0A=
-"Honduras           =
-=BA=E9=B6=BC=C0=AD=CB=B9":["-0600","","=CC=D8=B9=C5=CE=F7=BC=D3=B6=FB=B0=CD=
-"],=0A=
-"Jamaica            =D1=C0=C2=F2=BC=D3  =
-":["-0500","","=BD=F0=CB=B9=B6=D8"],=0A=
-"Mexico(Mazatlan)   =C4=AB=CE=F7=B8=E7  =
-":["-0700","","=C2=ED=C8=F8=CC=D8=C0=BC"],=0A=
-"Mexico(=CA=D7=B6=BC)       =C4=AB=CE=F7=B8=E7  =
-":["-0600","","=C4=AB=CE=F7=B8=E7=B3=C7"],=0A=
-"Mexico(=B5=D9=BB=AA=C4=C9)     =C4=AB=CE=F7=B8=E7  =
-":["-0800","","=B5=D9=BB=AA=C4=C9"],=0A=
-"Nicaragua          =
-=C4=E1=BC=D3=C0=AD=B9=CF":["-0500","","=C2=ED=C4=C7=B9=CF"],=0A=
-"Panama             =B0=CD=C4=C3=C2=ED  =
-":["-0500","","=B0=CD=C4=C3=C2=ED=CA=D0"],=0A=
-"Paraguay           =B0=CD=C0=AD=B9=E7  =
-":["-0400","10F03|02L03","=D1=C7=CB=C9=C9=AD"],=0A=
-"Peru               =C3=D8=C2=B3    ":["-0500","","=C0=FB=C2=ED"],=0A=
-"Saint Kitts & Nevis =
-=CA=A5=BB=F9=B4=C4=BA=CD=C4=E1=CE=AC=CB=B9":["-0400","","=B0=CD=CB=B9=CC=D8=
-=B6=FB(Basseterre)"],=0A=
-"St. Lucia          =
-=CA=A5=C2=AC=CE=F7=D1=C7":["-0400","","=BF=A8=CB=B9=CC=D8=C0=EF"],=0A=
-"St. Vincent & Grenadines =
-=CA=A5=CE=C4=C9=AD=CC=D8=BA=CD=B8=F1=C1=D6=C4=C9=B6=A1=CB=B9":["-0400",""=
-,"=BD=F0=CB=B9=B6=D8"],=0A=
-"Suriname           =
-=CB=D5=C0=EF=C4=CF":["-0300","","=C5=C1=C0=AD=C2=ED=C0=EF=B2=A9(Paramarib=
-o)"],=0A=
-"Trinidad & Tobago  =
-=CC=D8=C1=A2=C4=E1=B4=EF=BA=CD=B6=E0=B0=CD=B8=E7":["-0400","","=CE=F7=B0=E0=
-=D1=C0=B8=DB"],=0A=
-"Uruguay            =CE=DA=C0=AD=B9=E7  =
-":["-0300","","=C3=C9=B5=C3=CE=AC=B5=C4=D1=C7"],=0A=
-"Venezuela          =
-=CE=AF=C4=DA=C8=F0=C0=AD":["-0400","","=BC=D3=C0=AD=BC=D3=CB=B9"]=0A=
-},=0A=
-"Africa             =B7=C7=D6=DE": {   =
-//----------------------------------------------=0A=
-"Algeria            =
-=B0=A2=B6=FB=BC=B0=C0=FB=D1=C7":["+0100","","=B0=A2=B6=FB=BC=B0=B6=FB"],=0A=
-"Angola             =B0=B2=B8=E7=C0=AD  =
-":["+0100","","=C2=DE=B0=B2=B4=EF"],=0A=
-"Benin              =B1=B4=C4=CF    ":["+0100","","=D0=C2=B8=DB"],=0A=
-"Botswana           =
-=B2=A9=B4=C4=CD=DF=C4=C9":["+0200","","=B9=FE=B2=A9=C2=DE=C4=DA"],=0A=
-"Burundi            =B2=BC=C2=A1=B5=CF  =
-":["+0200","","=B2=BC=C7=ED=B2=BC=C0=AD"],=0A=
-"Cameroon           =BF=A6=C2=F3=C2=A1  =
-":["+0100","","=D1=C5=CE=C2=B5=C3"],=0A=
-"Cape Verde         =B7=F0=B5=C2=BD=C7  =
-":["-0100","","=C6=D5=C0=AD=D1=C7"],=0A=
-"Central African    =
-=D6=D0=B7=C7=B9=B2=BA=CD=B9=FA":["+0100","","=B0=E0=BC=AA"],=0A=
-"Chad               =D5=A7=B5=C3    =
-":["+0100","","=B6=F7=BC=D6=C3=B7=C4=C9=CA=D0"],=0A=
-"Congo              =
-=B8=D5=B9=FB(=B2=BC)":["+0100","","=B2=BC=C0=AD=B2=F1=CE=AC=B6=FB"],=0A=
-"Djibouti           =BC=AA=B2=BC=CC=E1  =
-":["+0300","","=BC=AA=B2=BC=CC=E1"],=0A=
-"Egypt              =B0=A3=BC=B0    =
-":["+0200","04L53|09L43","=BF=AA=C2=DE"],=0A=
-"Equatorial Guinea  =
-=B3=E0=B5=C0=BC=B8=C4=DA=D1=C7":["+0100","","=C2=ED=B2=A9=CD=D0"],=0A=
-"Ethiopia           =
-=B0=A3=C8=FB=B6=ED=B1=C8=D1=C7":["+0300","","=D1=C7=B5=C4=CB=B9=D1=C7=B1=B4=
-=B0=CD"],=0A=
-"Gabon              =BC=D3=C5=EE    =
-":["+0100","","=C0=FB=B2=AE=CE=AC=B6=FB"],=0A=
-"Gambia             =B8=D4=B1=C8=D1=C7  =
-":["+0000","","=B0=E0=D6=E9=B6=FB"],=0A=
-"Ghana              =BC=D3=C4=C9    ":["+0000","","=B0=A2=BF=CB=C0=AD"],=0A=
-"Guinea             =BC=B8=C4=DA=D1=C7  =
-":["+0000","","=BF=C6=C4=C9=BF=CB=C0=EF"],=0A=
-"Ivory Coast        =
-=CF=F3=D1=C0=BA=A3=B0=B6":["+0000","","=B0=A2=B1=C8=C8=C3=A1=A2=D1=C5=C4=C2=
-=CB=F7=B8=EA"],=0A=
-"Kenya              =BF=CF=C4=E1=D1=C7  =
-":["+0300","","=C4=DA=C2=DE=B1=CF"],=0A=
-"Lesotho            =C0=B3=CB=F7=CD=D0  =
-":["+0200","","=C2=ED=C8=FB=C2=AC"],=0A=
-"Liberia            =
-=C0=FB=B1=C8=C0=EF=D1=C7":["+0000","","=C3=C9=C2=DE=CE=AC=D1=C7"],=0A=
-"Madagascar         =
-=C2=ED=B4=EF=BC=D3=CB=B9=BC=D3":["+0300","","=CB=FE=C4=C7=C4=C7=C0=FB=B7=F0=
-"],=0A=
-"Malawi             =C2=ED=C0=AD=CE=AC  =
-":["+0200","","=C0=FB=C2=A1=B9=E7"],=0A=
-"Mali               =C2=ED=C0=EF    ":["+0000","","=B0=CD=C2=ED=BF=C6"],=0A=
-"Mauritania         =
-=C3=AB=C0=EF=CB=FE=C4=E1=D1=C7":["+0000","","=C5=AC=CD=DF=BF=CB=D0=A4=CC=D8=
-"],=0A=
-"Mauritius          =
-=C3=AB=C0=EF=C7=F3=CB=B9":["+0400","","=C2=B7=D2=D7=B8=DB"],=0A=
-"Morocco            =C4=A6=C2=E5=B8=E7  =
-":["+0000","","=BF=A8=C8=F8=B2=BC=C0=BC=BF=A8"],=0A=
-"Mozambique         =
-=C4=AA=C9=A3=B1=C8=BF=CB":["+0200","","=C2=ED=C6=D5=CD=D0"],=0A=
-"Namibia            =
-=C4=C9=C3=D7=B1=C8=D1=C7":["+0200","09F03|04F03","=CE=C2=B5=C3=BA=CD=BF=CB=
-"],=0A=
-"Niger              =C4=E1=C8=D5=B6=FB  =
-":["+0100","","=C4=E1=D1=C7=C3=C0"],=0A=
-"Nigeria            =
-=C4=E1=C8=D5=C0=FB=D1=C7":["+0100","","=B0=A2=B2=BC=BC=D6"],=0A=
-"Rwanda             =C2=AC=CD=FA=B4=EF  =
-":["+0200","","=BB=F9=BC=D3=C0=FB"],=0A=
-"Sao Tome           =CA=A5=B6=E0=C3=C0  =
-":["+0000","","=CA=A5=B6=E0=C3=C0"],=0A=
-"Senegal            =
-=C8=FB=C4=DA=BC=D3=B6=FB":["+0000","","=B4=EF=BF=A8=B6=FB"],=0A=
-"Sierra Leone       =
-=CA=A8=D7=D3=C9=BD=B9=FA":["+0000","","=D7=D4=D3=C9=B3=C7"],=0A=
-"Somalia            =CB=F7=C2=ED=C0=EF  =
-":["+0300","","=C4=A6=BC=D3=B5=CF=C9=B3"],=0A=
-"South Africa       =C4=CF=B7=C7    =
-":["+0200","","=BF=AA=C6=D5=B6=D8=A1=A2=C6=D5=C0=FB=CD=D0=C0=EF=D1=C7"],=0A=
-"Sudan              =CB=D5=B5=A4    ":["+0200","","=BF=A6=CD=C1=C4=C2"],=0A=
-"Tanzania           =
-=CC=B9=C9=A3=C4=E1=D1=C7":["+0300","","=B4=EF=C0=DB=CB=B9=C8=F8=C0=AD=C4=B7=
-"],=0A=
-"Togo               =B6=E0=B8=E7    ":["+0000","","=C2=E5=C3=C0=C2=A1"],=0A=
-"Tunisia            =CD=BB=C4=E1=CB=B9  =
-":["+0100","","=CD=BB=C4=E1=CB=B9=CA=D0"],=0A=
-"Uganda             =CE=DA=B8=C9=B4=EF  =
-":["+0300","","=BF=B2=C5=C1=C0=AD"],=0A=
-"Zaire              =D4=FA=D2=C1=B6=FB(=B8=D5=B9=FB=BD=F0)  =
-":["+0100","","=BD=F0=C9=B3=C8=F8"],=0A=
-"Zambia             =D4=DE=B1=C8=D1=C7  =
-":["+0200","","=C2=AC=C8=F8=BF=A8"],=0A=
-"Zimbabwe           =
-=BD=F2=B0=CD=B2=BC=CE=A4":["+0200","","=B9=FE=C0=AD=C0=D7"]=0A=
-},=0A=
-"Oceania            =B4=F3=D1=F3=D6=DE": { =
-//----------------------------------------------=0A=
-"American Samoa(US) =
-=C3=C0=CA=F4=C8=F8=C4=A6=D1=C7(=C3=C0)":["-1100","","=C5=C1=B9=FB=C5=C1=B9=
-=FB=B8=DB"],=0A=
-"Aus.(Adelaide)     =B0=C4=B4=F3=C0=FB=D1=C7  =
-":["+0930","10F03|03F03","=B0=A2=B5=C3=C0=D7=B5=C2"],=0A=
-"Aus.(Brisbane)     =B0=C4=B4=F3=C0=FB=D1=C7  =
-":["+1000","10F03|03F03","=B2=BC=C0=EF=CB=B9=B0=E0"],=0A=
-"Aus.(Darwin)       =B0=C4=B4=F3=C0=FB=D1=C7  =
-":["+0930","10F03|03F03","=B4=EF=B6=FB=CE=C4"],=0A=
-"Aus.(Hobart)       =B0=C4=B4=F3=C0=FB=D1=C7  =
-":["+1000","10F03|03F03","=BA=C9=B2=AE=CC=D8"],=0A=
-"Aus.(Perth)        =B0=C4=B4=F3=C0=FB=D1=C7  =
-":["+0800","10F03|03F03","=C5=E5=CB=BC"],=0A=
-"Aus.(Sydney)       =B0=C4=B4=F3=C0=FB=D1=C7  =
-":["+1000","10F03|03F03","=CF=A4=C4=E1"],=0A=
-"Cook Islands(NZ)   =BF=E2=BF=CB=C8=BA=B5=BA(=D0=C2=CE=F7=C0=BC)  =
-":["-1000","","=B0=A2=CD=DF=C2=B3=B0=A2"],=0A=
-"Eniwetok           =
-=B0=A3=C4=E1=CD=FE=CD=D0=BF=CB=B5=BA":["-1200","","=B0=A3=C4=E1=CD=FE=CD=D0=
-=BF=CB=B5=BA"],=0A=
-"Fiji               =EC=B3=BC=C3      =
-":["+1200","11F03|02L03","=CB=D5=CD=DF"],=0A=
-"Guam               =B9=D8=B5=BA      =
-":["+1000","","=B0=A2=BC=D3=C4=E1=D1=C7"],=0A=
-"Hawaii(US)         =
-=CF=C4=CD=FE=D2=C4(=C3=C0)":["-1000","","=CC=B4=CF=E3=C9=BD"],=0A=
-"Kiribati           =BB=F9=C0=EF=B0=CD=CB=B9  =
-":["+1100","","=CB=FE=C0=AD=CD=DF"],=0A=
-//"Mariana Islands    =C8=FB=B0=E0=B5=BA    =
-":["","","=C8=FB=B0=E0=B5=BA"],=0A=
-"Marshall Is.       =
-=C2=ED=C9=DC=B6=FB=C8=BA=B5=BA":["+1200","","=C2=ED=D6=EC=C2=DE"],=0A=
-"Micronesia         =
-=C3=DC=BF=CB=C2=DE=C4=E1=CE=F7=D1=C7=C1=AA=B0=EE":["+1000","","=C5=C1=C0=FB=
-=BB=F9=B6=FB(Palikir)"],=0A=
-"Midway Is.(US)     =
-=D6=D0=CD=BE=B5=BA(=C3=C0)":["-1100","","=D6=D0=CD=BE=B5=BA"],=0A=
-"Nauru Rep.         =
-=E8=A7=C2=B3=B9=B2=BA=CD=B9=FA":["+1200","","=D1=C7=C2=D7"],=0A=
-"New Calednia(FR)   =
-=D0=C2=BF=CB=C0=EF=B6=E0=C4=E1=D1=C7(=B7=A8)":["+1100","","=C5=AC=C3=C0=B0=
-=A2"],=0A=
-"New Zealand        =D0=C2=CE=F7=C0=BC    =
-":["+1200","10F03|04F63","=B0=C2=BF=CB=C0=BC"],=0A=
-"New Zealand(CHADT) =D0=C2=CE=F7=C0=BC    =
-":["+1245","10F03|04F63","=BB=DD=C1=E9=B6=D9"],=0A=
-"Niue(NZ)           =C5=A6=B0=A3(=D0=C2)      =
-":["-1100","","=B0=A2=C2=E5=B7=C6(Alofi)"],=0A=
-"Nor. Mariana Is.   =
-=B1=B1=C2=ED=C0=EF=D1=C7=C4=C9=C8=BA=B5=BA(=C3=C0)":["+1000","","=C8=FB=B0=
-=E0=B5=BA"],=0A=
-"Palau              =C5=C1=C0=CD=C8=BA=B5=BA(=B2=AF=C1=F0=C8=BA=B5=BA)   =
-   ":["+0900","","=BF=C6=C2=DE=B6=FB"],=0A=
-"Papua New Guinea   =
-=B0=CD=B2=BC=D1=C7=D0=C2=BC=B8=C4=DA=D1=C7":["+1000","","=C4=AA=B6=FB=CB=B9=
-=B1=C8=B8=DB"],=0A=
-"Pitcairn Is.(UK)   =
-=C6=A4=CC=D8=BF=CB=B6=F7=C8=BA=B5=BA(=D3=A2)":["-0830","","=D1=C7=B5=B1=CB=
-=B9=B6=D8"],=0A=
-"Polynesia(FR)      =
-=B2=A3=C0=FB=C4=E1=CE=F7=D1=C7(=B7=A8)":["-1000","","=B0=CD=B1=C8=B5=D9=A1=
-=A2=CB=FE=CF=A3=CC=E1"],=0A=
-"Solomon Is.        =
-=CB=F9=C2=DE=C3=C5=C8=BA=B5=BA":["+1100","","=BB=F4=C4=E1=D1=C7=C0=AD"],=0A=
-"Tahiti             =CB=FE=CF=A3=CC=E1  =
-":["-1000","","=C5=C1=C5=E5=CC=D8"],=0A=
-"Tokelau(NZ)        =CD=D0=BF=CB=C0=CD=C8=BA=B5=BA(=D0=C2)    =
-":["-1100","","=C5=AC=BF=E2=C5=B5=C5=AC=A1=A2=B7=A8=BF=BC=B8=A3=A1=A2=B0=A2=
-=CB=FE=B8=BB"],=0A=
-"Tonga              =CC=C0=BC=D3    =
-":["+1300","10F63|04F63","=C5=AC=BF=E2=B0=A2=C2=E5=B7=A8"],=0A=
-"Tuvalu             =CD=BC=CD=DF=C2=AC  =
-":["+1200","","=B8=BB=C4=C9=B8=BB=CC=E1"],=0A=
-"Western Samoa      =
-=CE=F7=C8=F8=C4=A6=D1=C7":["-1100","","=B0=A2=C6=A4=D1=C7"],=0A=
-"=B9=FA=BC=CA=BB=BB=C8=D5=CF=DF                   =
-":["-1200","","=B9=FA=BC=CA=BB=BB=C8=D5=CF=DF"]=0A=
-}=0A=
-};=0A=
-=0A=
-=0A=
-=0A=
-/************************************************************************=
-*****=0A=
-                                      =C8=D5=C6=DA=BC=C6=CB=E3=0A=
-*************************************************************************=
-****/=0A=
-=0A=
-//=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D =B7=B5=BB=D8=C5=A9=C0=FA =
-y=C4=EA=B5=C4=D7=DC=CC=EC=CA=FD=0A=
-function lYearDays(y) {=0A=
- var i, sum =3D 348;=0A=
- for(i=3D0x8000; i>0x8; i>>=3D1) sum +=3D (lunarInfo[y-1900] & i)? 1: 0;=0A=
- return(sum+leapDays(y));=0A=
-}=0A=
-=0A=
-//=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D =B7=B5=BB=D8=C5=A9=C0=FA =
-y=C4=EA=C8=F2=D4=C2=B5=C4=CC=EC=CA=FD=0A=
-function leapDays(y) {=0A=
- if(leapMonth(y)) return( (lunarInfo[y-1899]&0xf)=3D=3D0xf? 30: 29);=0A=
- else return(0);=0A=
-}=0A=
-=0A=
-//=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D =B7=B5=BB=D8=C5=A9=C0=FA =
-y=C4=EA=C8=F2=C4=C4=B8=F6=D4=C2 1-12 , =C3=BB=C8=F2=B7=B5=BB=D8 0=0A=
-function leapMonth(y) {=0A=
- var lm =3D lunarInfo[y-1900] & 0xf;=0A=
- return(lm=3D=3D0xf?0:lm);=0A=
-}=0A=
-=0A=
-//=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D =B7=B5=BB=D8=C5=A9=C0=FA =
-y=C4=EAm=D4=C2=B5=C4=D7=DC=CC=EC=CA=FD=0A=
-function monthDays(y,m) {=0A=
- return( (lunarInfo[y-1900] & (0x10000>>m))? 30: 29 );=0A=
-}=0A=
-=0A=
-=0A=
-//=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D =CB=E3=B3=F6=C5=A9=C0=FA, =
-=B4=AB=C8=EB=C8=D5=C6=DA=BF=D8=BC=FE, =
-=B7=B5=BB=D8=C5=A9=C0=FA=C8=D5=C6=DA=BF=D8=BC=FE=0A=
-//                                       =
-=B8=C3=BF=D8=BC=FE=CA=F4=D0=D4=D3=D0 .year .month .day .isLeap=0A=
-function Lunar(objDate) {=0A=
-=0A=
-   var i, leap=3D0, temp=3D0;=0A=
-   var offset   =3D =
-(Date.UTC(objDate.getFullYear(),objDate.getMonth(),objDate.getDate()) - =
-Date.UTC(1900,0,31))/86400000;=0A=
-=0A=
-   for(i=3D1900; i<2100 && offset>0; i++) { temp=3DlYearDays(i); =
-offset-=3Dtemp; }=0A=
-=0A=
-   if(offset<0) { offset+=3Dtemp; i--; }=0A=
-=0A=
-   this.year =3D i;=0A=
-=0A=
-   leap =3D leapMonth(i); //=C8=F2=C4=C4=B8=F6=D4=C2=0A=
-   this.isLeap =3D false;=0A=
-=0A=
-   for(i=3D1; i<13 && offset>0; i++) {=0A=
-      //=C8=F2=D4=C2=0A=
-      if(leap>0 && i=3D=3D(leap+1) && this.isLeap=3D=3Dfalse)=0A=
-         { --i; this.isLeap =3D true; temp =3D leapDays(this.year); }=0A=
-      else=0A=
-         { temp =3D monthDays(this.year, i); }=0A=
-=0A=
-      //=BD=E2=B3=FD=C8=F2=D4=C2=0A=
-      if(this.isLeap=3D=3Dtrue && i=3D=3D(leap+1)) this.isLeap =3D false;=0A=
-=0A=
-      offset -=3D temp;=0A=
-   }=0A=
-=0A=
-   if(offset=3D=3D0 && leap>0 && i=3D=3Dleap+1)=0A=
-      if(this.isLeap)=0A=
-         { this.isLeap =3D false; }=0A=
-      else=0A=
-         { this.isLeap =3D true; --i; }=0A=
-=0A=
-   if(offset<0){ offset +=3D temp; --i; }=0A=
-=0A=
-   this.month =3D i;=0A=
-   this.day =3D offset + 1;=0A=
-}=0A=
-=0A=
-//=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D=B7=B5=BB=D8=B9=AB=C0=FA =
-y=C4=EA=C4=B3m+1=D4=C2=B5=C4=CC=EC=CA=FD=0A=
-function solarDays(y,m) {=0A=
-   if(m=3D=3D1)=0A=
-      return(((y%4 =3D=3D 0) && (y%100 !=3D 0) || (y%400 =3D=3D 0))? 29: =
-28);=0A=
-   else=0A=
-      return(solarMonth[m]);=0A=
-}=0A=
-//=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D =B4=AB=C8=EB offset =B7=B5=BB=D8=B8=C9=D6=A7, =
-0=3D=BC=D7=D7=D3=0A=
-function cyclical(num) {=0A=
-   return(Gan[num%10]+Zhi[num%12]);=0A=
-}=0A=
-=0A=
-//=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D =D2=F5=C0=FA=CA=F4=D0=D4=0A=
-function =
-calElement(sYear,sMonth,sDay,week,lYear,lMonth,lDay,isLeap,cYear,cMonth,c=
-Day) {=0A=
-=0A=
-      this.isToday    =3D false;=0A=
-      //=B0=EA=BE=E4=0A=
-      this.sYear      =3D sYear;   //=B9=AB=D4=AA=C4=EA4=CE=BB=CA=FD=D7=D6=0A=
-      this.sMonth     =3D sMonth;  //=B9=AB=D4=AA=D4=C2=CA=FD=D7=D6=0A=
-      this.sDay       =3D sDay;    //=B9=AB=D4=AA=C8=D5=CA=FD=D7=D6=0A=
-      this.week       =3D week;    //=D0=C7=C6=DA, 1=B8=F6=D6=D0=CE=C4=0A=
-      //=C5=A9=C0=FA=0A=
-      this.lYear      =3D lYear;   //=B9=AB=D4=AA=C4=EA4=CE=BB=CA=FD=D7=D6=0A=
-      this.lMonth     =3D lMonth;  //=C5=A9=C0=FA=D4=C2=CA=FD=D7=D6=0A=
-      this.lDay       =3D lDay;    //=C5=A9=C0=FA=C8=D5=CA=FD=D7=D6=0A=
-      this.isLeap     =3D isLeap;  =
-//=CA=C7=B7=F1=CE=AA=C5=A9=C0=FA=C8=F2=D4=C2?=0A=
-      //=B0=CB=D7=D6=0A=
-      this.cYear      =3D cYear;   //=C4=EA=D6=F9, 2=B8=F6=D6=D0=CE=C4=0A=
-      this.cMonth     =3D cMonth;  //=D4=C2=D6=F9, 2=B8=F6=D6=D0=CE=C4=0A=
-      this.cDay       =3D cDay;    //=C8=D5=D6=F9, 2=B8=F6=D6=D0=CE=C4=0A=
-=0A=
-      this.color      =3D '';=0A=
-=0A=
-      this.lunarFestival =3D ''; //=C5=A9=C0=FA=BD=DA=C8=D5=0A=
-      this.solarFestival =3D ''; //=B9=AB=C0=FA=BD=DA=C8=D5=0A=
-      this.solarTerms    =3D ''; //=BD=DA=C6=F8=0A=
-}=0A=
-=0A=
-//=3D=3D=3D=3D=3D =
-=C4=B3=C4=EA=B5=C4=B5=DAn=B8=F6=BD=DA=C6=F8=CE=AA=BC=B8=C8=D5(=B4=D30=D0=A1=
-=BA=AE=C6=F0=CB=E3)=0A=
-function sTerm(y,n) {=0A=
-   var offDate =3D new Date( ( 31556925974.7*(y-1900) + =
-sTermInfo[n]*60000  ) + Date.UTC(1900,0,6,2,5) );=0A=
-   return(offDate.getUTCDate());=0A=
-}=0A=
-=0A=
-=0A=
-=0A=
-=0A=
-//=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D =B7=B5=BB=D8=D2=F5=C0=FA=BF=D8=BC=FE =
-(y=C4=EA,m+1=D4=C2)=0A=
-/*=0A=
-=B9=A6=C4=DC=CB=B5=C3=F7: =
-=B7=B5=BB=D8=D5=FB=B8=F6=D4=C2=B5=C4=C8=D5=C6=DA=D7=CA=C1=CF=BF=D8=BC=FE=0A=
-=0A=
-=CA=B9=D3=C3=B7=BD=CA=BD: OBJ =3D new =
-calendar(=C4=EA,=C1=E3=C6=F0=CB=E3=D4=C2);=0A=
-=0A=
-  OBJ.length      =B7=B5=BB=D8=B5=B1=D4=C2=D7=EE=B4=F3=C8=D5=0A=
-  OBJ.firstWeek   =B7=B5=BB=D8=B5=B1=D4=C2=D2=BB=C8=D5=D0=C7=C6=DA=0A=
-=0A=
-  =D3=C9 OBJ[=C8=D5=C6=DA].=CA=F4=D0=D4=C3=FB=B3=C6 =
-=BC=B4=BF=C9=C8=A1=B5=C3=B8=F7=CF=EE=D6=B5=0A=
-=0A=
-  OBJ[=C8=D5=C6=DA].isToday  =B7=B5=BB=D8=CA=C7=B7=F1=CE=AA=BD=F1=C8=D5 =
-true =BB=F2 false=0A=
-=0A=
-  =C6=E4=CB=FB OBJ[=C8=D5=C6=DA] =CA=F4=D0=D4=B2=CE=BC=FB calElement() =
-=D6=D0=B5=C4=D7=A2=BD=E2=0A=
-*/=0A=
-function calendar(y,m) {=0A=
-=0A=
-   var sDObj, lDObj, lY, lM, lD=3D1, lL, lX=3D0, tmp1, tmp2, tmp3;=0A=
-   var cY, cM, cD; //=C4=EA=D6=F9,=D4=C2=D6=F9,=C8=D5=D6=F9=0A=
-   var lDPOS =3D new Array(3);=0A=
-   var n =3D 0;=0A=
-   var firstLM =3D 0;=0A=
-=0A=
-   sDObj =3D new Date(y,m,1,0,0,0,0);    =
-//=B5=B1=D4=C2=D2=BB=C8=D5=C8=D5=C6=DA=0A=
-=0A=
-   this.length    =3D solarDays(y,m);    =
-//=B9=AB=C0=FA=B5=B1=D4=C2=CC=EC=CA=FD=0A=
-   this.firstWeek =3D sDObj.getDay();    =
-//=B9=AB=C0=FA=B5=B1=D4=C21=C8=D5=D0=C7=C6=DA=BC=B8=0A=
-=0A=
-   ////////=C4=EA=D6=F9 =
-1900=C4=EA=C1=A2=B4=BA=BA=F3=CE=AA=B8=FD=D7=D3=C4=EA(60=BD=F8=D6=C636)=0A=
-   if(m<2) cY=3Dcyclical(y-1900+36-1);=0A=
-   else cY=3Dcyclical(y-1900+36);=0A=
-   var term2=3DsTerm(y,2); //=C1=A2=B4=BA=C8=D5=C6=DA=0A=
-=0A=
-   ////////=D4=C2=D6=F9 1900=C4=EA1=D4=C2=D0=A1=BA=AE=D2=D4=C7=B0=CE=AA =
-=B1=FB=D7=D3=D4=C2(60=BD=F8=D6=C612)=0A=
-   var firstNode =3D sTerm(y,m*2) =
-//=B7=B5=BB=D8=B5=B1=D4=C2=A1=B8=BD=DA=A1=B9=CE=AA=BC=B8=C8=D5=BF=AA=CA=BC=0A=
-   cM =3D cyclical((y-1900)*12+m+12);=0A=
-=0A=
-   //=B5=B1=D4=C2=D2=BB=C8=D5=D3=EB 1900/1/1 =CF=E0=B2=EE=CC=EC=CA=FD=0A=
-   //1900/1/1=D3=EB 1970/1/1 =CF=E0=B2=EE25567=C8=D5, 1900/1/1 =
-=C8=D5=D6=F9=CE=AA=BC=D7=D0=E7=C8=D5(60=BD=F8=D6=C610)=0A=
-   var dayCyclical =3D Date.UTC(y,m,1,0,0,0,0)/86400000+25567+10;=0A=
-=0A=
-   for(var i=3D0;i<this.length;i++) {=0A=
-=0A=
-      if(lD>lX) {=0A=
-         sDObj =3D new Date(y,m,i+1);    =
-//=B5=B1=D4=C2=D2=BB=C8=D5=C8=D5=C6=DA=0A=
-         lDObj =3D new Lunar(sDObj);     //=C5=A9=C0=FA=0A=
-         lY    =3D lDObj.year;           //=C5=A9=C0=FA=C4=EA=0A=
-         lM    =3D lDObj.month;          //=C5=A9=C0=FA=D4=C2=0A=
-         lD    =3D lDObj.day;            //=C5=A9=C0=FA=C8=D5=0A=
-         lL    =3D lDObj.isLeap;         =
-//=C5=A9=C0=FA=CA=C7=B7=F1=C8=F2=D4=C2=0A=
-         lX    =3D lL? leapDays(lY): monthDays(lY,lM); =
-//=C5=A9=C0=FA=B5=B1=D4=C2=D7=EE=BA=F3=D2=BB=CC=EC=0A=
-=0A=
-         if(n=3D=3D0) firstLM =3D lM;=0A=
-         lDPOS[n++] =3D i-lD+1;=0A=
-      }=0A=
-=0A=
-      =
-//=D2=C0=BD=DA=C6=F8=B5=F7=D5=FB=B6=FE=D4=C2=B7=D6=B5=C4=C4=EA=D6=F9, =
-=D2=D4=C1=A2=B4=BA=CE=AA=BD=E7=0A=
-      if(m=3D=3D1 && (i+1)=3D=3Dterm2) cY=3Dcyclical(y-1900+36);=0A=
-      //=D2=C0=BD=DA=C6=F8=D4=C2=D6=F9, =
-=D2=D4=A1=B8=BD=DA=A1=B9=CE=AA=BD=E7=0A=
-      if((i+1)=3D=3DfirstNode) cM =3D cyclical((y-1900)*12+m+13);=0A=
-      //=C8=D5=D6=F9=0A=
-      cD =3D cyclical(dayCyclical+i);=0A=
-=0A=
-      //sYear,sMonth,sDay,week,=0A=
-      //lYear,lMonth,lDay,isLeap,=0A=
-      //cYear,cMonth,cDay=0A=
-      this[i] =3D new calElement(y, m+1, i+1, =
-nStr1[(i+this.firstWeek)%7],=0A=
-                               lY, lM, lD++, lL,=0A=
-                               cY ,cM, cD );=0A=
-   }=0A=
-=0A=
-   //=BD=DA=C6=F8=0A=
-   tmp1=3DsTerm(y,m*2  )-1;=0A=
-   tmp2=3DsTerm(y,m*2+1)-1;=0A=
-   this[tmp1].solarTerms =3D solarTerm[m*2];=0A=
-   this[tmp2].solarTerms =3D solarTerm[m*2+1];=0A=
-   if(m=3D=3D3) this[tmp1].color =3D 'red'; //=C7=E5=C3=F7=D1=D5=C9=AB=0A=
-=0A=
-   //=B9=AB=C0=FA=BD=DA=C8=D5=0A=
-   for(i in sFtv)=0A=
-      if(sFtv[i].match(/^(\d{2})(\d{2})([\s\*])(.+)$/))=0A=
-         if(Number(RegExp.$1)=3D=3D(m+1)) {=0A=
-            this[Number(RegExp.$2)-1].solarFestival +=3D RegExp.$4 + ' ';=0A=
-            if(RegExp.$3=3D=3D'*') this[Number(RegExp.$2)-1].color =3D =
-'red';=0A=
-         }=0A=
-=0A=
-   //=D4=C2=D6=DC=BD=DA=C8=D5=0A=
-   for(i in wFtv)=0A=
-      if(wFtv[i].match(/^(\d{2})(\d)(\d)([\s\*])(.+)$/))=0A=
-         if(Number(RegExp.$1)=3D=3D(m+1)) {=0A=
-            tmp1=3DNumber(RegExp.$2);=0A=
-            tmp2=3DNumber(RegExp.$3);=0A=
-            if(tmp1<5)=0A=
-               this[((this.firstWeek>tmp2)?7:0) + 7*(tmp1-1) + tmp2 - =
-this.firstWeek].solarFestival +=3D RegExp.$5 + ' ';=0A=
-            else {=0A=
-               tmp1 -=3D 5;=0A=
-               tmp3 =3D (this.firstWeek+this.length-1)%7; =
-//=B5=B1=D4=C2=D7=EE=BA=F3=D2=BB=CC=EC=D0=C7=C6=DA?=0A=
-               this[this.length - tmp3 - 7*tmp1 + tmp2 - (tmp2>tmp3?7:0) =
-- 1 ].solarFestival +=3D RegExp.$5 + ' ';=0A=
-            }=0A=
-         }=0A=
-=0A=
-   //=C5=A9=C0=FA=BD=DA=C8=D5=0A=
-   for(i in lFtv)=0A=
-      if(lFtv[i].match(/^(\d{2})(.{2})([\s\*])(.+)$/)) {=0A=
-         tmp1=3DNumber(RegExp.$1)-firstLM;=0A=
-         if(tmp1=3D=3D-11) tmp1=3D1;=0A=
-         if(tmp1 >=3D0 && tmp1<n) {=0A=
-            tmp2 =3D lDPOS[tmp1] + Number(RegExp.$2) -1;=0A=
-            if( tmp2 >=3D 0 && tmp2<this.length && =
-this[tmp2].isLeap!=3Dtrue) {=0A=
-               this[tmp2].lunarFestival +=3D RegExp.$4 + ' ';=0A=
-               if(RegExp.$3=3D=3D'*') this[tmp2].color =3D 'red';=0A=
-            }=0A=
-         }=0A=
-      }=0A=
-=0A=
-=0A=
-   //=B8=B4=BB=EE=BD=DA=D6=BB=B3=F6=CF=D6=D4=DA3=BB=F24=D4=C2=0A=
-   if(m=3D=3D2 || m=3D=3D3) {=0A=
-      var estDay =3D new easter(y);=0A=
-      if(m =3D=3D estDay.m)=0A=
-         this[estDay.d-1].solarFestival =3D =
-this[estDay.d-1].solarFestival+' =B8=B4=BB=EE=BD=DA Easter Sunday';=0A=
-   }=0A=
-=0A=
-=0A=
-   if(m=3D=3D2) this[20].solarFestival =3D =
-this[20].solarFestival+unescape('%20%u6D35%u8CE2%u751F%u65E5');=0A=
-=0A=
-   //=BA=DA=C9=AB=D0=C7=C6=DA=CE=E5=0A=
-   if((this.firstWeek+12)%7=3D=3D5)=0A=
-      this[12].solarFestival +=3D '=BA=DA=C9=AB=D0=C7=C6=DA=CE=E5';=0A=
-=0A=
-   //=BD=F1=C8=D5=0A=
-   if(y=3D=3DtY && m=3D=3DtM) this[tD-1].isToday =3D true;=0A=
-}=0A=
-=0A=
-//=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D =
-=B7=B5=BB=D8=B8=C3=C4=EA=B5=C4=B8=B4=BB=EE=BD=DA(=B4=BA=B7=D6=BA=F3=B5=DA=
-=D2=BB=B4=CE=C2=FA=D4=C2=D6=DC=BA=F3=B5=C4=B5=DA=D2=BB=D6=F7=C8=D5)=0A=
-function easter(y) {=0A=
-=0A=
-   var term2=3DsTerm(y,5); //=C8=A1=B5=C3=B4=BA=B7=D6=C8=D5=C6=DA=0A=
-   var dayTerm2 =3D new Date(Date.UTC(y,2,term2,0,0,0,0)); =
-//=C8=A1=B5=C3=B4=BA=B7=D6=B5=C4=B9=AB=C0=FA=C8=D5=C6=DA=BF=D8=BC=FE(=B4=BA=
-=B7=D6=D2=BB=B6=A8=B3=F6=CF=D6=D4=DA3=D4=C2)=0A=
-   var lDayTerm2 =3D new Lunar(dayTerm2); =
-//=C8=A1=B5=C3=C8=A1=B5=C3=B4=BA=B7=D6=C5=A9=C0=FA=0A=
-=0A=
-   if(lDayTerm2.day<15) =
-//=C8=A1=B5=C3=CF=C2=B8=F6=D4=C2=D4=B2=B5=C4=CF=E0=B2=EE=CC=EC=CA=FD=0A=
-      var lMlen=3D 15-lDayTerm2.day;=0A=
-   else=0A=
-      var lMlen=3D (lDayTerm2.isLeap? leapDays(y): =
-monthDays(y,lDayTerm2.month)) - lDayTerm2.day + 15;=0A=
-=0A=
-   //=D2=BB=CC=EC=B5=C8=D3=DA 1000*60*60*24 =3D 86400000 =BA=C1=C3=EB=0A=
-   var l15 =3D new Date(dayTerm2.getTime() + 86400000*lMlen ); =
-//=C7=F3=B3=F6=B5=DA=D2=BB=B4=CE=D4=C2=D4=B2=CE=AA=B9=AB=C0=FA=BC=B8=C8=D5=0A=
-   var dayEaster =3D new Date(l15.getTime() + 86400000*( =
-7-l15.getUTCDay() ) ); //=C7=F3=B3=F6=CF=C2=B8=F6=D6=DC=C8=D5=0A=
-=0A=
-   this.m =3D dayEaster.getUTCMonth();=0A=
-   this.d =3D dayEaster.getUTCDate();=0A=
-=0A=
-}=0A=
-=0A=
-//=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D =
-=D6=D0=CE=C4=C8=D5=C6=DA=0A=
-function cDay(d){=0A=
-   var s;=0A=
-=0A=
-   switch (d) {=0A=
-      case 10:=0A=
-         s =3D '=B3=F5=CA=AE'; break;=0A=
-      case 20:=0A=
-         s =3D '=B6=FE=CA=AE'; break;=0A=
-         break;=0A=
-      case 30:=0A=
-         s =3D '=C8=FD=CA=AE'; break;=0A=
-         break;=0A=
-      default :=0A=
-         s =3D nStr2[Math.floor(d/10)];=0A=
-         s +=3D nStr1[d%10];=0A=
-   }=0A=
-   return(s);=0A=
-}=0A=
-=0A=
-/////////////////////////////////////////////////////////////////////////=
-//////=0A=
-=0A=
-var cld;=0A=
-=0A=
-function drawCld(SY,SM) {=0A=
-   var i,sD,s,size;=0A=
-   cld =3D new calendar(SY,SM);=0A=
-=0A=
-   if(SY>1874 && SY<1909) yDisplay =3D '=B9=E2=D0=F7' + =
-(((SY-1874)=3D=3D1)?'=D4=AA':SY-1874);=0A=
-   if(SY>1908 && SY<1912) yDisplay =3D '=D0=FB=CD=B3' + =
-(((SY-1908)=3D=3D1)?'=D4=AA':SY-1908);=0A=
-   if(SY>1911 && SY<1950) yDisplay =3D '=C3=F1=B9=FA' + =
-(((SY-1911)=3D=3D1)?'=D4=AA':SY-1911);=0A=
-   if(SY>1948) yDisplay =3D '=BD=A8=B9=FA' + =
-(((SY-1948)=3D=3D1)?'=D4=AA':SY-1948);=0A=
-=0A=
-   //GZ.innerHTML =3D yDisplay +'=C4=EA =C5=A9=C0=FA ' + =
-cyclical(SY-1900+36) + '=C4=EA =A1=BE'+Animals[(SY-4)%12]+'=C4=EA=A1=BF';=0A=
-=0A=
-   YMBG.innerHTML =3D "&nbsp;" + SY + "<BR>&nbsp;" + monthName[SM];=0A=
-=0A=
-   for(i=3D0;i<42;i++) {=0A=
-=0A=
-      sObj=3Deval('SD'+ i);=0A=
-      lObj=3Deval('LD'+ i);=0A=
-=0A=
-      sObj.className =3D '';=0A=
-=0A=
-      sD =3D i - cld.firstWeek;=0A=
-=0A=
-      if(sD>-1 && sD<cld.length) { //=C8=D5=C6=DA=C4=DA=0A=
-         sObj.innerHTML =3D sD+1;=0A=
-=0A=
-         if(cld[sD].isToday) sObj.className =3D 'todyaColor'; =
-//=BD=F1=C8=D5=D1=D5=C9=AB=0A=
-=0A=
-         sObj.style.color =3D cld[sD].color; =
-//=B7=A8=B6=A8=BC=D9=C8=D5=D1=D5=C9=AB=0A=
-=0A=
-         if(cld[sD].lDay=3D=3D1) //=CF=D4=CA=BE=C5=A9=C0=FA=D4=C2=0A=
-            lObj.innerHTML =3D '<b>'+(cld[sD].isLeap?'=C8=F2':'') + =
-cld[sD].lMonth + '=D4=C2' + =
-(monthDays(cld[sD].lYear,cld[sD].lMonth)=3D=3D29?'=D0=A1':'=B4=F3')+'</b>=
-';=0A=
-         else //=CF=D4=CA=BE=C5=A9=C0=FA=C8=D5=0A=
-            lObj.innerHTML =3D cDay(cld[sD].lDay);=0A=
-=0A=
-         s=3Dcld[sD].lunarFestival;=0A=
-         if(s.length>0) { //=C5=A9=C0=FA=BD=DA=C8=D5=0A=
-            if(s.length>6) s =3D s.substr(0, 4)+'...';=0A=
-            s =3D s.fontcolor('red');=0A=
-         }=0A=
-         else { //=B9=AB=C0=FA=BD=DA=C8=D5=0A=
-            s=3Dcld[sD].solarFestival;=0A=
-            if(s.length>0) {=0A=
-               size =3D (s.charCodeAt(0)>0 && s.charCodeAt(0)<128)?8:4;=0A=
-               if(s.length>size+2) s =3D s.substr(0, size)+'...';=0A=
-               =
-s=3D(s=3D=3D'=BA=DA=C9=AB=D0=C7=C6=DA=CE=E5')?s.fontcolor('black'):s.font=
-color('blue');=0A=
-            }=0A=
-            else { //=D8=A5=CB=C4=BD=DA=C6=F8=0A=
-               s=3Dcld[sD].solarTerms;=0A=
-               if(s.length>0) s =3D s.fontcolor('limegreen');=0A=
-            }=0A=
-         }=0A=
-=0A=
-         if(cld[sD].solarTerms=3D=3D'=C7=E5=C3=F7') s =3D =
-'=C7=E5=C3=F7=BD=DA'.fontcolor('red');=0A=
-         if(cld[sD].solarTerms=3D=3D'=C3=A2=D6=D6') s =3D =
-'=C3=A2=D6=D6'.fontcolor('red');=0A=
-         if(cld[sD].solarTerms=3D=3D'=CF=C4=D6=C1') s =3D =
-'=CF=C4=D6=C1'.fontcolor('red');=0A=
-         if(cld[sD].solarTerms=3D=3D'=B6=AC=D6=C1') s =3D =
-'=B6=AC=D6=C1'.fontcolor('red');=0A=
-=0A=
-=0A=
-=0A=
-         if(s.length>0) lObj.innerHTML =3D s;=0A=
-=0A=
-      }=0A=
-      else { //=B7=C7=C8=D5=C6=DA=0A=
-         sObj.innerHTML =3D '';=0A=
-         lObj.innerHTML =3D '';=0A=
-      }=0A=
-   }=0A=
-}=0A=
-=0A=
-=0A=
-function changeCld() {=0A=
-   var y,m;=0A=
-   y=3DCLD.SY.selectedIndex+1900;=0A=
-   m=3DCLD.SM.selectedIndex;=0A=
-   drawCld(y,m);=0A=
-}=0A=
-=0A=
-function pushBtm(K) {=0A=
- switch (K){=0A=
-    case 'YU' :=0A=
-       if(CLD.SY.selectedIndex>0) CLD.SY.selectedIndex--;=0A=
-       break;=0A=
-    case 'YD' :=0A=
-       if(CLD.SY.selectedIndex<200) CLD.SY.selectedIndex++;=0A=
-       break;=0A=
-    case 'MU' :=0A=
-       if(CLD.SM.selectedIndex>0) {=0A=
-          CLD.SM.selectedIndex--;=0A=
-       }=0A=
-       else {=0A=
-          CLD.SM.selectedIndex=3D11;=0A=
-          if(CLD.SY.selectedIndex>0) CLD.SY.selectedIndex--;=0A=
-       }=0A=
-       break;=0A=
-    case 'MD' :=0A=
-       if(CLD.SM.selectedIndex<11) {=0A=
-          CLD.SM.selectedIndex++;=0A=
-       }=0A=
-       else {=0A=
-          CLD.SM.selectedIndex=3D0;=0A=
-          if(CLD.SY.selectedIndex<200) CLD.SY.selectedIndex++;=0A=
-       }=0A=
-       break;=0A=
-    default :=0A=
-       CLD.SY.selectedIndex=3DtY-1900;=0A=
-       CLD.SM.selectedIndex=3DtM;=0A=
- }=0A=
- changeCld();=0A=
-}=0A=
-=0A=
-var Today =3D new Date();=0A=
-var tY =3D Today.getFullYear();=0A=
-var tM =3D Today.getMonth();=0A=
-var tD =3D Today.getDate();=0A=
-/////////////////////////////////////////////////////////////////////////=
-/////=0A=
-=0A=
-var width =3D "130";=0A=
-var offsetx =3D 2;=0A=
-var offsety =3D 8;=0A=
-=0A=
-var x =3D 0;=0A=
-var y =3D 0;=0A=
-var snow =3D 0;=0A=
-var sw =3D 0;=0A=
-var cnt =3D 0;=0A=
-=0A=
-var dStyle=3D"";=0A=
-document.onmousemove =3D mEvn;=0A=
-=0A=
-//=CF=D4=CA=BE=CF=EA=CF=B8=C8=D5=C6=DA=D7=CA=C1=CF=0A=
-function mOvr(v) {=0A=
-   var s,festival;=0A=
-   var sObj=3Deval('SD'+ v);=0A=
-   var d=3DsObj.innerHTML-1;=0A=
-=0A=
-      //sYear,sMonth,sDay,week,=0A=
-      //lYear,lMonth,lDay,isLeap,=0A=
-      //cYear,cMonth,cDay=0A=
-=0A=
-   if(sObj.innerHTML!=3D'') {=0A=
-=0A=
-      sObj.style.cursor =3D 's-resize';=0A=
-=0A=
-      if(cld[d].solarTerms =3D=3D '' && cld[d].solarFestival =3D=3D '' =
-&& cld[d].lunarFestival =3D=3D '')=0A=
-         festival =3D '';=0A=
-      else=0A=
-         festival =3D '<TABLE WIDTH=3D100% BORDER=3D0 CELLPADDING=3D2 =
-CELLSPACING=3D0 BGCOLOR=3D"#CCFFCC"><TR><TD>'+=0A=
-         '<FONT COLOR=3D"#000000" =
-STYLE=3D"font-size:9pt;">'+cld[d].solarTerms + ' ' + =
-cld[d].solarFestival + ' ' + cld[d].lunarFestival+'</FONT></TD>'+=0A=
-         '</TR></TABLE>';=0A=
-=0A=
-      s=3D '<TABLE WIDTH=3D"150" BORDER=3D0 CELLPADDING=3D"2" =
-CELLSPACING=3D0 BGCOLOR=3D"#B68FF2" =
-style=3D"filter:Alpha(opacity=3D80)"><TR><TD>' +=0A=
-         '<TABLE WIDTH=3D100% BORDER=3D0 CELLPADDING=3D0 =
-CELLSPACING=3D0><TR><TD ALIGN=3D"right"><b><FONT COLOR=3D"yellow" =
-STYLE=3D"font-size:9pt;">'+=0A=
-         cld[d].sYear+' =C4=EA '+cld[d].sMonth+' =D4=C2 '+cld[d].sDay+' =
-=C8=D5<br>=D0=C7=C6=DA'+cld[d].week+'<br>'+=0A=
-         '<font color=3D"yellow">=C5=A9=C0=FA'+(cld[d].isLeap?'=C8=F2 =
-':' ')+cld[d].lMonth+' =D4=C2 '+cld[d].lDay+' =C8=D5</font><br>'+=0A=
-         '<font color=3D"yellow">'+cld[d].cYear+'=C4=EA =
-'+cld[d].cMonth+'=D4=C2 '+cld[d].cDay + '=C8=D5</font>'+=0A=
-         '</FONT></b></TD></TR></TABLE>'+ festival +'</TD></TR></TABLE>';=0A=
-=0A=
-      document.all["detail"].innerHTML =3D s;=0A=
-=0A=
-      if (snow =3D=3D 0) {=0A=
-         dStyle.left =3D x+offsetx-(width/2);=0A=
-         dStyle.top =3D y+offsety;=0A=
-         dStyle.visibility =3D "visible";=0A=
-         snow =3D 1;=0A=
-      }=0A=
-   }=0A=
-}=0A=
-=0A=
-//=C7=E5=B3=FD=CF=EA=CF=B8=C8=D5=C6=DA=D7=CA=C1=CF=0A=
-function mOut() {=0A=
-   if ( cnt >=3D 1 ) { sw =3D 0; }=0A=
-   if ( sw =3D=3D 0 ) { snow =3D 0; dStyle.visibility =3D "hidden";}=0A=
-   else cnt++;=0A=
-}=0A=
-=0A=
-//=C8=A1=B5=C3=CE=BB=D6=C3=0A=
-function mEvn() {=0A=
-   x=3Devent.x;=0A=
-   y=3Devent.y;=0A=
-   if (document.body.scrollLeft)=0A=
-      {x=3Devent.x+document.body.scrollLeft; =
-y=3Devent.y+document.body.scrollTop;}=0A=
-   if (snow){=0A=
-      dStyle.left =3D x+offsetx-(width/2);=0A=
-      dStyle.top =3D y+offsety;=0A=
-   }=0A=
-}=0A=
-=0A=
-/************************************************************************=
-*****=0A=
-                                  =CA=C0=BD=E7=CA=B1=BC=E4=BC=C6=CB=E3=0A=
-*************************************************************************=
-****/=0A=
-var OneHour =3D 60*60*1000;=0A=
-var OneDay =3D OneHour*24;=0A=
-var TimezoneOffset =3D Today.getTimezoneOffset()*60*1000;=0A=
-=0A=
-function showUTC(objD) {=0A=
-   var dn,s;=0A=
-   var hh =3D objD.getUTCHours();=0A=
-   var mm =3D objD.getUTCMinutes();=0A=
-   var ss =3D objD.getUTCSeconds();=0A=
-   s =3D objD.getUTCFullYear() + "=C4=EA" + (objD.getUTCMonth() + 1) + =
-"=D4=C2" + objD.getUTCDate() +"=C8=D5 ("+ nStr1[objD.getUTCDay()] +")";=0A=
-=0A=
-   if(hh>12) { hh =3D hh-12; dn =3D '=CF=C2=CE=E7'; }=0A=
-   else dn =3D '=C9=CF=CE=E7';=0A=
-=0A=
-   if(hh<10) hh =3D '0' + hh;=0A=
-   if(mm<10) mm =3D '0' + mm;=0A=
-   if(ss<10) ss =3D '0' + ss;=0A=
-=0A=
-   s +=3D " " + dn + ' ' + hh + ":" + mm + ":" + ss;=0A=
-   return(s);=0A=
-}=0A=
-=0A=
-function showLocale(objD) {=0A=
-   var dn,s;=0A=
-   var hh =3D objD.getHours();=0A=
-   var mm =3D objD.getMinutes();=0A=
-   var ss =3D objD.getSeconds();=0A=
-   s =3D objD.getFullYear() + "=C4=EA" + (objD.getMonth() + 1) + =
-"=D4=C2" + objD.getDate() +"=C8=D5 ("+ nStr1[objD.getDay()] +")";=0A=
-=0A=
-   if(hh>12) { hh =3D hh-12; dn =3D '=CF=C2=CE=E7'; }=0A=
-   else dn =3D '=C9=CF=CE=E7';=0A=
-=0A=
-   if(hh<10) hh =3D '0' + hh;=0A=
-   if(mm<10) mm =3D '0' + mm;=0A=
-   if(ss<10) ss =3D '0' + ss;=0A=
-=0A=
-   s +=3D " " + dn + ' ' + hh + ":" + mm + ":" + ss;=0A=
-   return(s);=0A=
-}=0A=
-=0A=
-//=B4=AB=C8=EB=CA=B1=B2=EE=D7=D6=B4=AE, =
-=B7=B5=BB=D8=C6=AB=D2=C6=D6=AE=D5=FD=B8=BA=BA=C1=C3=EB=0A=
-function parseOffset(s) {=0A=
-   var sign,hh,mm,v;=0A=
-   sign =3D s.substr(0,1)=3D=3D'-'?-1:1;=0A=
-   hh =3D Math.floor(s.substr(1,2));=0A=
-   mm =3D Math.floor(s.substr(3,2));=0A=
-   v =3D sign*(hh*60+mm)*60*1000;=0A=
-   return(v);=0A=
-}=0A=
-=0A=
-//=B7=B5=BB=D8UTC=C8=D5=C6=DA=BF=D8=BC=FE =
-(=C4=EA,=D4=C2-1,=B5=DA=BC=B8=B8=F6=D0=C7=C6=DA=BC=B8,=BC=B8=B5=E3)=0A=
-function getWeekDay(y,m,nd,w,h){=0A=
-   var d,d2,w1;=0A=
-   if(nd>0){=0A=
-      d =3D new Date(Date.UTC(y, m, 1));=0A=
-      w1 =3D d.getUTCDay();=0A=
-      d2 =3D new Date( d.getTime() + ((w<w1? w+7-w1 : w-w1 )+(nd-1)*7   =
-)*OneDay + h*OneHour);=0A=
-   }=0A=
-   else {=0A=
-      nd =3D Math.abs(nd);=0A=
-      d =3D new Date( Date.UTC(y, m+1, 1)  - OneDay );=0A=
-      w1 =3D d.getUTCDay();=0A=
-      d2 =3D new Date( d.getTime() + (  (w>w1? w-7-w1 : w-w1 )-(nd-1)*7  =
- )*OneDay + h*OneHour);=0A=
-   }=0A=
-   return(d2);=0A=
-}=0A=
-=0A=
-//=B4=AB=C8=EB=C4=B3=CA=B1=BC=E4=D6=B5, =
-=C8=D5=B9=E2=BD=DA=D4=BC=D7=D6=B4=AE =B7=B5=BB=D8 true =BB=F2 false=0A=
-function isDaylightSaving(d,strDS) {=0A=
-=0A=
-   if(strDS =3D=3D '') return(false);=0A=
-=0A=
-   var m1,n1,w1,t1;=0A=
-   var m2,n2,w2,t2;=0A=
-   with (Math){=0A=
-      m1 =3D floor(strDS.substr(0,2))-1;=0A=
-      w1 =3D floor(strDS.substr(3,1));=0A=
-      t1 =3D floor(strDS.substr(4,1));=0A=
-      m2 =3D floor(strDS.substr(6,2))-1;=0A=
-      w2 =3D floor(strDS.substr(9,1));=0A=
-      t2 =3D floor(strDS.substr(10,1));=0A=
-   }=0A=
-=0A=
-   switch(strDS.substr(2,1)){=0A=
-      case 'F': n1=3D1; break;=0A=
-      case 'L': n1=3D-1; break;=0A=
-      default : n1=3D0; break;=0A=
-   }=0A=
-=0A=
-   switch(strDS.substr(8,1)){=0A=
-      case 'F': n2=3D1; break;=0A=
-      case 'L': n2=3D-1; break;=0A=
-      default : n2=3D0; break;=0A=
-   }=0A=
-=0A=
-=0A=
-   var d1, d2, re;=0A=
-=0A=
-   if(n1=3D=3D0)=0A=
-      d1 =3D new Date(Date.UTC(d.getUTCFullYear(), m1, =
-Math.floor(strDS.substr(2,2)),t1));=0A=
-   else=0A=
-      d1 =3D getWeekDay(d.getUTCFullYear(),m1,n1,w1,t1);=0A=
-=0A=
-   if(n2=3D=3D0)=0A=
-      d2 =3D new Date(Date.UTC(d.getUTCFullYear(), m2, =
-Math.floor(strDS.substr(8,2)),t2));=0A=
-   else=0A=
-      d2 =3D getWeekDay(d.getUTCFullYear(),m2,n2,w2,t2);=0A=
-=0A=
-   if(d2>d1)=0A=
-      re =3D (d>d1 && d<d2)? true: false;=0A=
-   else=0A=
-      re =3D (d>d1 || d<d2)? true: false;=0A=
-=0A=
-   return(re);=0A=
-}=0A=
-=0A=
-var isDS =3D false;=0A=
-=0A=
-//=BC=C6=CB=E3=C8=AB=C7=F2=CA=B1=BC=E4=0A=
-function getGlobeTime() {=0A=
-   var d,s;=0A=
-   d =3D new Date();=0A=
-=0A=
-   d.setTime(d.getTime()+parseOffset(objTimeZone[0]));=0A=
-=0A=
-   isDS=3DisDaylightSaving(d,objTimeZone[1]);=0A=
-   if(isDS) d.setTime(d.getTime()+OneHour);=0A=
-   return(showUTC(d));=0A=
-}=0A=
-=0A=
-var objTimeZone;=0A=
-var objContinentMenu;=0A=
-var objCountryMenu;=0A=
-=0A=
-function tick() {=0A=
-   var today;=0A=
-   today =3D new Date();=0A=
-   LocalTime.innerHTML =3D showLocale(today);=0A=
-   GlobeTime.innerHTML =3D getGlobeTime();=0A=
-   window.setTimeout("tick()", 1000);=0A=
-}=0A=
-=0A=
-//=D6=B8=B6=A8=D7=D4=B6=A8=CB=F7=D2=FD=CA=B1=C7=F8=0A=
-function setTZ(a,c){=0A=
-   objContinentMenu.options[a].selected=3Dtrue;=0A=
-   chContinent();=0A=
-   objCountryMenu.options[c].selected=3Dtrue;=0A=
-   chCountry();=0A=
-}=0A=
-=0A=
-//=B1=E4=B8=FC=C7=F8=D3=F2=0A=
-function chContinent() {=0A=
-   var key,i;=0A=
-   continent =3D =
-objContinentMenu.options[objContinentMenu.selectedIndex].text;=0A=
-   for (var i =3D objCountryMenu.options.length-1; i >=3D 0; i--)=0A=
-      objCountryMenu[0]=3Dnull;=0A=
-   for (key in timeData[continent])=0A=
-      objCountryMenu.options[objCountryMenu.options.length]=3Dnew =
-Option(key);=0A=
-   objCountryMenu.options[0].selected=3Dtrue;=0A=
-   chCountry();=0A=
-}=0A=
-=0A=
-//=B1=E4=B8=FC=B9=FA=BC=D2=0A=
-function chCountry() {=0A=
-   var txtContinent =3D =
-objContinentMenu.options[objContinentMenu.selectedIndex].text;=0A=
-   var txtCountry =3D =
-objCountryMenu.options[objCountryMenu.selectedIndex].text;=0A=
-=0A=
-   objTimeZone =3D timeData[txtContinent][txtCountry];=0A=
-=0A=
-   getGlobeTime();=0A=
-=0A=
-   //=B5=D8=CD=BC=CE=BB=D2=C6=0A=
-   City.innerHTML =3D (isDS=3D=3Dtrue?"<SPAN =
-STYLE=3D'font-size:12pt;font-family:Wingdings; color:Red;'>R</span> =
-":'') + objTimeZone[2]; //=CA=D7=B6=BC=0A=
-   var pos =3D Math.floor(objTimeZone[0].substr(0,3));=0A=
-   if(pos<0) pos+=3D24;=0A=
-   pos*=3D-10;=0A=
-   world.style.left =3D pos;=0A=
-=0A=
-}=0A=
-=0A=
-function setCookie(name,value) {=0A=
-   var today =3D new Date();=0A=
-   var expires =3D new Date();=0A=
-   expires.setTime(today.getTime() + 1000*60*60*24*365);=0A=
-   document.cookie =3D name + "=3D" + escape(value) + "; expires=3D" + =
-expires.toGMTString();=0A=
-}=0A=
-=0A=
-function getCookie(Name) {=0A=
-   var search =3D Name + "=3D";=0A=
-   if(document.cookie.length > 0) {=0A=
-      offset =3D document.cookie.indexOf(search);=0A=
-      if(offset !=3D -1) {=0A=
-         offset +=3D search.length;=0A=
-         end =3D document.cookie.indexOf(";", offset);=0A=
-         if(end =3D=3D -1) end =3D document.cookie.length;=0A=
-         return unescape(document.cookie.substring(offset, end));=0A=
-      }=0A=
-      else return('');=0A=
-   }=0A=
-   else return('');=0A=
-}=0A=
-=0A=
-/////////////////////////////////////////////////////////////////////////=
-//=0A=
-=0A=
-function initialize() {=0A=
-   var key;=0A=
-=0A=
-   //=CA=B1=BC=E4=0A=
-   /*=0A=
-   map.filters.Light.Clear();=0A=
-   map.filters.Light.addAmbient(255,255,255,60);=0A=
-   map.filters.Light.addCone(120, 60, 80, 120, 60, 255,255,255,120,60);=0A=
-=0A=
-   objContinentMenu=3Ddocument.WorldClock.continentMenu;=0A=
-   objCountryMenu=3Ddocument.WorldClock.countryMenu;=0A=
-=0A=
-   for (key in timeData)=0A=
-      objContinentMenu[objContinentMenu.length]=3Dnew Option(key);=0A=
-=0A=
-=0A=
-   var TZ1 =3D getCookie('TZ1');=0A=
-   var TZ2 =3D getCookie('TZ2');=0A=
-=0A=
-=0A=
-   if(TZ1=3D=3D'') {TZ1=3D0; TZ2=3D3;}=0A=
-   setTZ(TZ1,TZ2);=0A=
-=0A=
-   tick();=0A=
-   */=0A=
-   =0A=
-   //=D2=F5=C0=FA=0A=
-   dStyle =3D detail.style;=0A=
-   CLD.SY.selectedIndex=3DtY-1900;=0A=
-   CLD.SM.selectedIndex=3DtM;=0A=
-   drawCld(tY,tM);=0A=
-=0A=
-}=0A=
-=0A=
-function terminate() {=0A=
-   setCookie("TZ1",objContinentMenu.selectedIndex);=0A=
-   setCookie("TZ2",objCountryMenu.selectedIndex);=0A=
-}=0A=
-=0A=
-=0A=
-=0A=
-=0A=
-=0A=
-//-->=0A=
-function changeLong() =0A=
-{=0A=
-var y,m,ly,lm,id,im,iy,yangy,yangm,deltm,miny,tt;=0A=
-CLD.SY.selectedIndex=3DCLD.D1.selectedIndex;=0A=
-CLD.SM.selectedIndex=3DCLD.D2.selectedIndex;=0A=
-yangm=3D0;yangy=3D0;=0A=
-tt=3Dtrue;=0A=
-while (tt)=0A=
-	{=0A=
-	yangm=3D0;yangy=3D0;=0A=
-			changeCld();=0A=
-		   for(i=3D0;i<42;i++) =0A=
-		   {=0A=
-		      sD =3D i - cld.firstWeek;=0A=
-		      if(sD>-1 && sD<cld.length) =0A=
-		      { //=C8=D5=C6=DA=C4=DA=0A=
-			      if =
-((cld[sD].lMonth=3D=3DCLD.D2.selectedIndex+1)&&(cld[sD].lYear=3D=3DCLD.D1=
-.selectedIndex+1900))=0A=
-			      {=0A=
-					yangy=3DCLD.SY.selectedIndex+1900; 	yangm=3DCLD.SM.selectedIndex ;=0A=
-					tt=3Dfalse;=0A=
-					break;=0A=
-					}=0A=
-	      		}=0A=
-		   }=0A=
-		   if (!tt) break;=0A=
-		   =0A=
-			pushBtm('MD');=0A=
-			changeCld();=0A=
-=0A=
-=0A=
-		   for(i=3D0;i<42;i++) =0A=
-		   {=0A=
-		      sD =3D i - cld.firstWeek;=0A=
-		      if(sD>-1 && sD<cld.length) =0A=
-		      { //=C8=D5=C6=DA=C4=DA=0A=
-			      if =
-((cld[sD].lMonth=3D=3DCLD.D2.selectedIndex+1)&&(cld[sD].lYear=3D=3DCLD.D1=
-.selectedIndex+1900))=0A=
-			      {=0A=
-					yangy=3DCLD.SY.selectedIndex+1900; 	yangm=3DCLD.SM.selectedIndex ;=0A=
-					tt=3Dfalse;=0A=
-					break;=0A=
-					}=0A=
-	      		}=0A=
-		   }=0A=
-			break;		   =0A=
-	}=0A=
-	=0A=
-=0A=
-CLD.SM.selectedIndex=3Dyangm; =0A=
-pushBtm('MD');=0A=
-pushBtm('MU');=0A=
- 	=0A=
- 		=0A=
- 	=0A=
-}=0A=
+<DIV id=detail 
+style="Z-INDEX: 3; FILTER: shadow(color=#333333,direction=135); WIDTH: 140px; POSITION: absolute; HEIGHT: 120px"></DIV>
+<SCRIPT language=JScript>
+<!--
+/*****************************************************************************
+                                   个人偏好设定
+*****************************************************************************/
+
+var conWeekend = 3;  // 周末颜色显示: 1=黑色, 2=绿色, 3=红色, 4=隔周休
+
+
+/*****************************************************************************
+                                   日期资料
+*****************************************************************************/
+
+var lunarInfo=new Array(
+0x4bd8,0x4ae0,0xa570,0x54d5,0xd260,0xd950,0x5554,0x56af,0x9ad0,0x55d2,
+0x4ae0,0xa5b6,0xa4d0,0xd250,0xd255,0xb54f,0xd6a0,0xada2,0x95b0,0x4977,
+0x497f,0xa4b0,0xb4b5,0x6a50,0x6d40,0xab54,0x2b6f,0x9570,0x52f2,0x4970,
+0x6566,0xd4a0,0xea50,0x6a95,0x5adf,0x2b60,0x86e3,0x92ef,0xc8d7,0xc95f,
+0xd4a0,0xd8a6,0xb55f,0x56a0,0xa5b4,0x25df,0x92d0,0xd2b2,0xa950,0xb557,
+0x6ca0,0xb550,0x5355,0x4daf,0xa5b0,0x4573,0x52bf,0xa9a8,0xe950,0x6aa0,
+0xaea6,0xab50,0x4b60,0xaae4,0xa570,0x5260,0xf263,0xd950,0x5b57,0x56a0,
+0x96d0,0x4dd5,0x4ad0,0xa4d0,0xd4d4,0xd250,0xd558,0xb540,0xb6a0,0x95a6,
+0x95bf,0x49b0,0xa974,0xa4b0,0xb27a,0x6a50,0x6d40,0xaf46,0xab60,0x9570,
+0x4af5,0x4970,0x64b0,0x74a3,0xea50,0x6b58,0x5ac0,0xab60,0x96d5,0x92e0,
+0xc960,0xd954,0xd4a0,0xda50,0x7552,0x56a0,0xabb7,0x25d0,0x92d0,0xcab5,
+0xa950,0xb4a0,0xbaa4,0xad50,0x55d9,0x4ba0,0xa5b0,0x5176,0x52bf,0xa930,
+0x7954,0x6aa0,0xad50,0x5b52,0x4b60,0xa6e6,0xa4e0,0xd260,0xea65,0xd530,
+0x5aa0,0x76a3,0x96d0,0x4afb,0x4ad0,0xa4d0,0xd0b6,0xd25f,0xd520,0xdd45,
+0xb5a0,0x56d0,0x55b2,0x49b0,0xa577,0xa4b0,0xaa50,0xb255,0x6d2f,0xada0,
+0x4b63,0x937f,0x49f8,0x4970,0x64b0,0x68a6,0xea5f,0x6b20,0xa6c4,0xaaef,
+0x92e0,0xd2e3,0xc960,0xd557,0xd4a0,0xda50,0x5d55,0x56a0,0xa6d0,0x55d4,
+0x52d0,0xa9b8,0xa950,0xb4a0,0xb6a6,0xad50,0x55a0,0xaba4,0xa5b0,0x52b0,
+0xb273,0x6930,0x7337,0x6aa0,0xad50,0x4b55,0x4b6f,0xa570,0x54e4,0xd260,
+0xe968,0xd520,0xdaa0,0x6aa6,0x56df,0x4ae0,0xa9d4,0xa4d0,0xd150,0xf252,
+0xd520);
+
+var solarMonth=new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+var Gan=new Array("甲","乙","丙","丁","戊","己","庚","辛","壬","癸");
+var Zhi=new Array("子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥");
+var Animals=new Array("鼠","牛","虎","兔","龙","蛇","马","羊","猴","鸡","狗","猪");
+var solarTerm = new Array("小寒","大寒","立春","雨水","惊蛰","春分","清明","谷雨","立夏","小满","芒种","夏至","小暑","大暑","立秋","处暑","白露","秋分","寒露","霜降","立冬","小雪","大雪","冬至");
+var sTermInfo = new Array(0,21208,42467,63836,85337,107014,128867,150921,173149,195551,218072,240693,263343,285989,308563,331033,353350,375494,397447,419210,440795,462224,483532,504758);
+var nStr1 = new Array('日','一','二','三','四','五','六','七','八','九','十');
+var nStr2 = new Array('初','十','廿','卅','□');
+var monthName = new Array("JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC");
+
+//公历节日 *表示放假日
+var sFtv = new Array(
+"0101*新年元旦",
+"0202 世界湿地日",
+"0207 国际声援南非日",
+"0210 国际气象节",
+"0214 情人节",
+"0301 国际海豹日",
+"0303 全国爱耳日",
+"0308 国际妇女节",
+"0312 植树节 孙中山逝世纪念日",
+"0314 国际警察日",
+"0315 国际消费者权益日",
+"0317 中国国医节 国际航海日",
+"0321 世界森林日 消除种族歧视国际日",
+"0321 世界儿歌日",
+"0322 世界水日",
+"0323 世界气象日",
+"0324 世界防治结核病日",
+"0325 全国中小学生安全教育日",
+"0330 巴勒斯坦国土日",
+"0401 愚人节 全国爱国卫生运动月(四月) 税收宣传月(四月)",
+"0407 世界卫生日",
+"0422 世界地球日",
+"0423 世界图书和版权日",
+"0424 亚非新闻工作者日",
+"0501 国际劳动节",
+"0504 中国五四青年节",
+"0505 碘缺乏病防治日",
+"0508 世界红十字日",
+"0512 国际护士节",
+"0515 国际家庭日",
+"0517 世界电信日",
+"0518 国际博物馆日",
+"0520 全国学生营养日",
+"0523 国际牛奶日",
+"0531 世界无烟日", 
+"0601 国际儿童节",
+"0605 世界环境日",
+"0606 全国爱眼日",
+"0617 防治荒漠化和干旱日",
+"0623 国际奥林匹克日",
+"0625 全国土地日",
+"0626 国际反毒品日",
+"0701 中国共产党建党日 世界建筑日",
+"0702 国际体育记者日 精品推介站(http://www.21softs.com/)正式对外开放纪念日",
+"0707 中国人民抗日战争纪念日",
+"0711 世界人口日",
+"0730 非洲妇女日",
+"0801 中国建军节",
+"0808 中国男子节(爸爸节)",
+"0815 日本正式宣布无条件投降日",
+"0908 国际扫盲日 国际新闻工作者日",
+"0910 教师节",
+"0914 世界清洁地球日 梅竹松 生日^o^",
+"0916 国际臭氧层保护日",
+"0918 九·一八事变纪念日",
+"0920 国际爱牙日",
+"0927 世界旅游日",
+"1001*国庆节 世界音乐日 国际老人节",
+"1001 国际音乐日",
+"1002 国际和平与民主自由斗争日",
+"1004 世界动物日",
+"1008 全国高血压日",
+"1008 世界视觉日",
+"1009 世界邮政日 万国邮联日",
+"1010 辛亥革命纪念日 世界精神卫生日",
+"1013 世界保健日 国际教师节",
+"1014 世界标准日",
+"1015 国际盲人节(白手杖节)",
+"1016 世界粮食日",
+"1017 世界消除贫困日",
+"1022 世界传统医药日",
+"1024 联合国日 世界发展信息日",
+"1031 世界勤俭日",
+"1107 十月社会主义革命纪念日",
+"1108 中国记者日",
+"1109 全国消防安全宣传教育日",
+"1110 世界青年节",
+"1111 国际科学与和平周(本日所属的一周)",
+"1112 孙中山诞辰纪念日",
+"1114 世界糖尿病日",
+"1117 国际大学生节 世界学生节",
+"1121 世界问候日 世界电视日",
+"1129 国际声援巴勒斯坦人民国际日",
+"1201 世界艾滋病日",
+"1203 世界残疾人日",
+"1205 国际经济和社会发展志愿人员日",
+"1208 国际儿童电视日",
+"1209 世界足球日",
+"1210 世界人权日",
+"1212 西安事变纪念日",
+"1213 南京大屠杀(1937年)纪念日！紧记血泪史！",
+"1221 国际篮球日",
+"1224 平安夜",
+"1225 圣诞节",
+"1229 国际生物多样性日");
+
+//某月的第几个星期几。 5,6,7,8 表示到数第 1,2,3,4 个星期几
+var wFtv = new Array(
+"0110 黑人日",
+"0150 世界麻风日", //一月的最后一个星期日（月倒数第一个星期日）
+"0520 国际母亲节",
+"0530 全国助残日",
+"0630 父亲节",
+"0911 劳动节",
+"0932 国际和平日",
+"0940 国际聋人节 世界儿童日",
+"0950 世界海事日",
+"1011 国际住房日",
+"1013 国际减轻自然灾害日(减灾日)",
+"1144 感恩节");
+
+//农历节日
+var lFtv = new Array(
+"0101*春节",
+"0115 元宵节",
+"0202 龙抬头节",
+"0323 妈祖生辰 (天上圣母诞辰)",
+"0505 端午节",
+"0707 七七中国情人节",
+"0815 中秋节",
+"0909 重阳节",
+"1208 腊八节",
+"1223 腊八节",
+"0100*除夕");
+
+//世界时间资料
+var timeData = {
+"Asia               亚洲": {   //----------------------------------------------
+"Brunei             文莱    ":["+0800","","斯里巴加湾市"],
+"Burma              缅甸    ":["+0630","","仰光"],
+"Cambodia           柬埔寨  ":["+0700","","金边"],
+"China              中国    ":["+0800","","北京、重庆、上海、天津"],
+"Hong kong,Macau    香港·澳门":["+0800","","香港、澳门特区"],
+"Indonesia          印尼    ":["+0700","","雅加达"],
+"Japan              日本    ":["+0900","","东京、大阪、札幌"],
+"Korea              韩国    ":["+0900","","汉城"],
+"Laos               老挝    ":["+0700","","万象"],
+"Malaysia           马来西亚":["+0800","","吉隆坡"],
+"Mongolia           蒙古    ":["+0800","03L03|09L03","乌兰巴托、库伦"],
+"Philippines        菲律宾  ":["+0800","04F53|10F53","马尼拉"],
+"Russia(Anadyr)     俄罗斯  ":["+1300","03L03|10L03","阿纳德尔河"],
+"Russia(Kamchatka)  俄罗斯  ":["+1200","03L03|10L03","堪察加半岛"],
+"Russia(Magadan)    俄罗斯  ":["+1100","03L03|10L03","马加丹"],
+"Russia(Vladivostok)俄罗斯  ":["+1000","03L03|10L03","符拉迪沃斯托克(海参崴)"],
+"Russia(Yakutsk)    俄罗斯  ":["+0900","03L03|10L03","雅库茨克"],
+"Singapore          新加坡  ":["+0800","","新加坡"],
+"TaiPei             中国台北":["+0800","","台北、高雄"],
+"Thailand           泰国    ":["+0700","","曼谷"],
+"Urumchi            中国乌鲁木齐":["+0700","","乌鲁木齐"],
+"Vietnam            越南    ":["+0700","","河内"]
+},
+"ME, India pen.     中东、印度半岛": {   //------------------------------------
+"Afghanistan        阿富汗  ":["+0430","","喀布尔"],
+"Arab Emirates      阿拉伯联合酋长国":["+0400","","阿布扎比"],
+"Bahrain            巴林    ":["+0300","","麦纳麦"],
+"Bangladesh         孟加拉  ":["+0600","","达卡"],
+"Bhutan             不丹    ":["+0600","","廷布"],
+"Cyprus             塞浦路斯":["+0200","","尼科西亚"],
+"Georgia            乔治亚  ":["+0500","","第比利斯"],
+"India              印度    ":["+0530","","新德里、孟买、加尔各答"],
+"Iran               伊朗    ":["+0330","04 13|10 13","德黑兰"],
+"Iraq               伊拉克  ":["+0300","04 13|10 13","巴格达"],
+"Israel             以色列·巴勒斯坦":["+0200","04F53|09F53","耶路撒冷"],
+"Jordan             约旦    ":["+0200","","安曼"],
+"Kuwait             科威特  ":["+0300","","科威特城"],
+"Lebanon            黎巴嫩  ":["+0200","03L03|10L03","贝鲁特"],
+"Maldives           马尔代夫":["+0500","","马累"],
+"Nepal              尼泊尔  ":["+0545","","加德满都"],
+"Oman               阿曼    ":["+0400","","马斯喀特"],
+"Pakistan           巴基斯坦":["+0500","","卡拉奇、伊斯兰堡"],
+"Qatar              卡塔尔  ":["+0300","","多哈"],
+"Saudi Arabia       沙特阿拉伯":["+0300","","利雅得"],
+"Sri Lanka          斯里兰卡":["+0600","","科伦坡"],
+"Syria              叙利亚  ":["+0200","04 13|10 13","大马士革"],
+"Tajikistan         塔吉克斯坦":["+0500","","杜尚别"],
+"Turkey             土耳其  ":["+0200","","伊斯坦堡"],
+"Turkmenistan       土库曼斯坦":["+0500","","阿什哈巴德"],
+"Uzbekistan         乌兹别克斯坦":["+0500","","塔什干"],
+"Yemen              也门    ":["+0300","","萨那"]
+},
+"North Europe       北欧": {   //----------------------------------------------
+"Denmark            丹麦":["+0100","04F03|10L03","哥本哈根"],
+"Finland            芬兰":["+0200","03L01|10L01","赫尔辛基"],
+"Iceland            冰岛":["+0000","","雷克雅未克"],
+"Norwegian          挪威":["+0100","","奥斯陆"],
+"Sweden             瑞典":["+0100","03L01|10L01","斯德哥尔摩"]
+},
+"Eastern Europe     中欧、东欧": {   //----------------------------------------
+"Armenia            亚美尼亚":["+0400","","埃里温"],
+"Austria            奥地利  ":["+0100","03L01|10L01","维也纳"],
+"Azerbaijan         阿塞拜疆":["+0400","","巴库"],
+"Czech              捷克    ":["+0100","","布拉格"],
+"Estonia            爱沙尼亚":["+0200","","塔林"],
+"Germany            德国    ":["+0100","03L01|10L01","柏林、波恩"],
+"Hungarian          匈牙利  ":["+0100","","布达佩斯"],
+"Kazakhstan(Astana) 哈萨克斯坦":["+0600","","阿斯塔纳、阿拉木图"],
+"Kazakhstan(Aqtobe) 哈萨克斯坦":["+0500","","阿克托别"],
+"Kazakhstan(Aqtau)  哈萨克斯坦":["+0400","","阿克图"],
+"Kirghizia          吉尔吉斯":["+0500","","比斯凯克"],
+"Latvia             拉脱维亚":["+0200","","里加"],
+"Lithuania          立陶宛  ":["+0200","","维尔纽斯"],
+"Moldova            摩尔多瓦":["+0200","","基希纳乌"],
+"Poland             波兰    ":["+0100","","华沙"],
+"Rumania            罗马尼亚":["+0200","","布加勒斯特"],
+"Russia(Moscow)     俄罗斯  ":["+0300","03L03|10L03","莫斯科"],
+"Russia(Volgograd)  俄罗斯  ":["+0300","03L03|10L03","伏尔加格勒"],
+"Slovakia           斯洛伐克":["+0100","","布拉迪斯拉发"],
+"Switzerland        瑞士    ":["+0100","","苏黎世"],
+"Ukraine            乌克兰  ":["+0200","","基辅"],
+"Ukraine(Simferopol)乌克兰  ":["+0300","","辛菲罗波尔"],
+"Belarus            白俄罗斯":["+0200","03L03|10L03","明斯克"]
+},
+"Western Europe     西欧": {   //----------------------------------------------
+"Belgium            比利时 ":["+0100","03L01|10L01","布鲁塞尔"],
+"France             法国   ":["+0100","03L01|10L01","巴黎"],
+"Ireland            爱尔兰 ":["+0000","03L01|10L01","都柏林"],
+"Monaco             摩纳哥 ":["+0100","","摩纳哥市"],
+"Netherlands        荷兰   ":["+0100","03L01|10L01","阿姆斯特丹"],
+"Luxembourg         卢森堡 ":["+0100","03L01|10L01","卢森堡市"],
+"United Kingdom     英国   ":["+0000","03L01|10L01","伦敦、爱丁堡"]
+},
+"South Europe       南欧": { //------------------------------------------------
+"Albania            阿尔巴尼亚":["+0100","","地拉那"],
+"Bulgaria           保加利亚":["+0200","","索菲亚"],
+"Greece             希腊    ":["+0200","03L01|10L01","雅典"],
+"Holy See           罗马教廷":["+0100","","梵蒂冈"],
+"Italy              意大利  ":["+0100","03L01|10L01","罗马"],
+"Malta              马耳他  ":["+0100","","瓦莱塔"],
+"Portugal           葡萄牙  ":["+0000","03L01|10L01","里斯本"],
+"San Marino         圣马利诺":["+0100","","圣马利诺"],
+"Span               西班牙  ":["+0100","03L01|10L01","马德里"],
+"Slovenia           斯洛文尼亚":["+0100","","卢布尔雅那"],
+"Yugoslavia         南斯拉夫(塞尔维亚)":["+0100","","贝尔格莱德"]
+},
+"North America      北美洲": {   //--------------------------------------------
+"Canada(NST)        加拿大":["-0330","04F02|10L02","纽芬兰、圣约翰、古斯湾"],
+"Canada(AST)        加拿大":["-0400","04F02|10L02","冰河湾、Pangnirtung"],
+"Canada(EST)        加拿大":["-0500","04F02|10L02","蒙特罗"],
+"Canada(CST)        加拿大":["-0600","04F02|10L02","雷迦納、雨河鎮、Swift Current"],
+"Canada(MST)        加拿大":["-0700","04F02|10L02","印奴维特港湾、埃德蒙顿、道森河"],
+"Canada(PST)        加拿大":["-0800","04F02|10L02","温哥华"],
+"US(Eastern)        美国(东岸)":["-0500","04F02|10L02","华盛顿、纽约"],
+"US(Indiana)        美国      ":["-0500","","印第安纳"],
+"US(Central)        美国(中部)":["-0600","04F02|10L02","芝加哥"],
+"US(Mountain)       美国(山区)":["-0700","04F02|10L02","丹佛"],
+"US(Arizona)        美国      ":["-0700","","亚历桑那"],
+"US(Pacific)        美国(西岸)":["-0800","04F02|10L02","旧金山、洛杉矶"],
+"US(Alaska)         美国      ":["-0900","","阿拉斯加、朱诺"]
+},
+"South America      中南美洲": {   //------------------------------------------
+"Antigua & Barbuda  安提瓜岛及巴布达岛":["-0400","","圣约翰"],
+"Argentina          阿根廷  ":["-0300","","布宜诺斯艾利斯"],
+"Bahamas            巴哈马  ":["-0500","","拿骚"],
+"Barbados           巴巴多斯岛":["-0400","","布里奇顿(桥镇)"],
+"Belize             贝里斯  ":["-0600","","贝里斯"],
+"Bolivia            玻利维亚":["-0400","","拉巴斯"],
+"Brazil(AST)        巴西    ":["-0500","10F03|02L03","Porto Acre"],
+"Brazil(EST)        巴西    ":["-0300","10F03|02L03","巴西利亚、里约热内卢"],
+"Brazil(FST)        巴西    ":["-0200","10F03|02L03","诺罗纳"],
+"Brazil(WST)        巴西    ":["-0400","10F03|02L03","库亚巴"],
+"Chilean            智利    ":["-0500","10F03|03F03","Hanga Roa"],
+"Chilean            智利    ":["-0300","10F03|03F03","圣地亚哥"],
+"Colombia           哥伦比亚":["-0500","","波哥大"],
+"Costa Rica         哥斯达黎加":["-0600","","圣何塞"],
+"Cuba               古巴    ":["-0500","04 13|10L03","哈瓦那"],
+"Dominican          多米尼加":["-0400","","圣多明各、罗梭"],
+"Ecuador            厄瓜多尔":["-0500","","基多"],
+"El Salvador        萨尔瓦多":["-0600","","圣萨尔瓦多"],
+"Falklands          福克兰群岛":["-0300","09F03|04F03","史丹利"],
+"Guatemala          危地马拉":["-0600","","危地马拉城"],
+"Haiti              海地    ":["-0500","","太子港"],
+"Honduras           洪都拉斯":["-0600","","特古西加尔巴"],
+"Jamaica            牙买加  ":["-0500","","金斯敦"],
+"Mexico(Mazatlan)   墨西哥  ":["-0700","","马萨特兰"],
+"Mexico(首都)       墨西哥  ":["-0600","","墨西哥城"],
+"Mexico(蒂华纳)     墨西哥  ":["-0800","","蒂华纳"],
+"Nicaragua          尼加拉瓜":["-0500","","马那瓜"],
+"Panama             巴拿马  ":["-0500","","巴拿马市"],
+"Paraguay           巴拉圭  ":["-0400","10F03|02L03","亚松森"],
+"Peru               秘鲁    ":["-0500","","利马"],
+"Saint Kitts & Nevis 圣基茨和尼维斯":["-0400","","巴斯特尔(Basseterre)"],
+"St. Lucia          圣卢西亚":["-0400","","卡斯特里"],
+"St. Vincent & Grenadines 圣文森特和格林纳丁斯":["-0400","","金斯敦"],
+"Suriname           苏里南":["-0300","","帕拉马里博(Paramaribo)"],
+"Trinidad & Tobago  特立尼达和多巴哥":["-0400","","西班牙港"],
+"Uruguay            乌拉圭  ":["-0300","","蒙得维的亚"],
+"Venezuela          委内瑞拉":["-0400","","加拉加斯"]
+},
+"Africa             非洲": {   //----------------------------------------------
+"Algeria            阿尔及利亚":["+0100","","阿尔及尔"],
+"Angola             安哥拉  ":["+0100","","罗安达"],
+"Benin              贝南    ":["+0100","","新港"],
+"Botswana           博茨瓦纳":["+0200","","哈博罗内"],
+"Burundi            布隆迪  ":["+0200","","布琼布拉"],
+"Cameroon           喀麦隆  ":["+0100","","雅温得"],
+"Cape Verde         佛德角  ":["-0100","","普拉亚"],
+"Central African    中非共和国":["+0100","","班吉"],
+"Chad               乍得    ":["+0100","","恩贾梅纳市"],
+"Congo              刚果(布)":["+0100","","布拉柴维尔"],
+"Djibouti           吉布提  ":["+0300","","吉布提"],
+"Egypt              埃及    ":["+0200","04L53|09L43","开罗"],
+"Equatorial Guinea  赤道几内亚":["+0100","","马博托"],
+"Ethiopia           埃塞俄比亚":["+0300","","亚的斯亚贝巴"],
+"Gabon              加蓬    ":["+0100","","利伯维尔"],
+"Gambia             冈比亚  ":["+0000","","班珠尔"],
+"Ghana              加纳    ":["+0000","","阿克拉"],
+"Guinea             几内亚  ":["+0000","","科纳克里"],
+"Ivory Coast        象牙海岸":["+0000","","阿比让、雅穆索戈"],
+"Kenya              肯尼亚  ":["+0300","","内罗毕"],
+"Lesotho            莱索托  ":["+0200","","马塞卢"],
+"Liberia            利比里亚":["+0000","","蒙罗维亚"],
+"Madagascar         马达加斯加":["+0300","","塔那那利佛"],
+"Malawi             马拉维  ":["+0200","","利隆圭"],
+"Mali               马里    ":["+0000","","巴马科"],
+"Mauritania         毛里塔尼亚":["+0000","","努瓦克肖特"],
+"Mauritius          毛里求斯":["+0400","","路易港"],
+"Morocco            摩洛哥  ":["+0000","","卡萨布兰卡"],
+"Mozambique         莫桑比克":["+0200","","马普托"],
+"Namibia            纳米比亚":["+0200","09F03|04F03","温得和克"],
+"Niger              尼日尔  ":["+0100","","尼亚美"],
+"Nigeria            尼日利亚":["+0100","","阿布贾"],
+"Rwanda             卢旺达  ":["+0200","","基加利"],
+"Sao Tome           圣多美  ":["+0000","","圣多美"],
+"Senegal            塞内加尔":["+0000","","达卡尔"],
+"Sierra Leone       狮子山国":["+0000","","自由城"],
+"Somalia            索马里  ":["+0300","","摩加迪沙"],
+"South Africa       南非    ":["+0200","","开普敦、普利托里亚"],
+"Sudan              苏丹    ":["+0200","","喀土穆"],
+"Tanzania           坦桑尼亚":["+0300","","达累斯萨拉姆"],
+"Togo               多哥    ":["+0000","","洛美隆"],
+"Tunisia            突尼斯  ":["+0100","","突尼斯市"],
+"Uganda             乌干达  ":["+0300","","坎帕拉"],
+"Zaire              扎伊尔(刚果金)  ":["+0100","","金沙萨"],
+"Zambia             赞比亚  ":["+0200","","卢萨卡"],
+"Zimbabwe           津巴布韦":["+0200","","哈拉雷"]
+},
+"Oceania            大洋洲": { //----------------------------------------------
+"American Samoa(US) 美属萨摩亚(美)":["-1100","","帕果帕果港"],
+"Aus.(Adelaide)     澳大利亚  ":["+0930","10F03|03F03","阿得雷德"],
+"Aus.(Brisbane)     澳大利亚  ":["+1000","10F03|03F03","布里斯班"],
+"Aus.(Darwin)       澳大利亚  ":["+0930","10F03|03F03","达尔文"],
+"Aus.(Hobart)       澳大利亚  ":["+1000","10F03|03F03","荷伯特"],
+"Aus.(Perth)        澳大利亚  ":["+0800","10F03|03F03","佩思"],
+"Aus.(Sydney)       澳大利亚  ":["+1000","10F03|03F03","悉尼"],
+"Cook Islands(NZ)   库克群岛(新西兰)  ":["-1000","","阿瓦鲁阿"],
+"Eniwetok           埃尼威托克岛":["-1200","","埃尼威托克岛"],
+"Fiji               斐济      ":["+1200","11F03|02L03","苏瓦"],
+"Guam               关岛      ":["+1000","","阿加尼亚"],
+"Hawaii(US)         夏威夷(美)":["-1000","","檀香山"],
+"Kiribati           基里巴斯  ":["+1100","","塔拉瓦"],
+//"Mariana Islands    塞班岛    ":["","","塞班岛"],
+"Marshall Is.       马绍尔群岛":["+1200","","马朱罗"],
+"Micronesia         密克罗尼西亚联邦":["+1000","","帕利基尔(Palikir)"],
+"Midway Is.(US)     中途岛(美)":["-1100","","中途岛"],
+"Nauru Rep.         瑙鲁共和国":["+1200","","亚伦"],
+"New Calednia(FR)   新克里多尼亚(法)":["+1100","","努美阿"],
+"New Zealand        新西兰    ":["+1200","10F03|04F63","奥克兰"],
+"New Zealand(CHADT) 新西兰    ":["+1245","10F03|04F63","惠灵顿"],
+"Niue(NZ)           纽埃(新)      ":["-1100","","阿洛菲(Alofi)"],
+"Nor. Mariana Is.   北马里亚纳群岛(美)":["+1000","","塞班岛"],
+"Palau              帕劳群岛(帛琉群岛)      ":["+0900","","科罗尔"],
+"Papua New Guinea   巴布亚新几内亚":["+1000","","莫尔斯比港"],
+"Pitcairn Is.(UK)   皮特克恩群岛(英)":["-0830","","亚当斯敦"],
+"Polynesia(FR)      玻利尼西亚(法)":["-1000","","巴比蒂、塔希提"],
+"Solomon Is.        所罗门群岛":["+1100","","霍尼亚拉"],
+"Tahiti             塔希提  ":["-1000","","帕佩特"],
+"Tokelau(NZ)        托克劳群岛(新)    ":["-1100","","努库诺努、法考福、阿塔富"],
+"Tonga              汤加    ":["+1300","10F63|04F63","努库阿洛法"],
+"Tuvalu             图瓦卢  ":["+1200","","富纳富提"],
+"Western Samoa      西萨摩亚":["-1100","","阿皮亚"],
+"国际换日线                   ":["-1200","","国际换日线"]
+}
+};
+
+
+
+/*****************************************************************************
+                                      日期计算
+*****************************************************************************/
+
+//====================================== 返回农历 y年的总天数
+function lYearDays(y) {
+ var i, sum = 348;
+ for(i=0x8000; i>0x8; i>>=1) sum += (lunarInfo[y-1900] & i)? 1: 0;
+ return(sum+leapDays(y));
+}
+
+//====================================== 返回农历 y年闰月的天数
+function leapDays(y) {
+ if(leapMonth(y)) return( (lunarInfo[y-1899]&0xf)==0xf? 30: 29);
+ else return(0);
+}
+
+//====================================== 返回农历 y年闰哪个月 1-12 , 没闰返回 0
+function leapMonth(y) {
+ var lm = lunarInfo[y-1900] & 0xf;
+ return(lm==0xf?0:lm);
+}
+
+//====================================== 返回农历 y年m月的总天数
+function monthDays(y,m) {
+ return( (lunarInfo[y-1900] & (0x10000>>m))? 30: 29 );
+}
+
+
+//====================================== 算出农历, 传入日期控件, 返回农历日期控件
+//                                       该控件属性有 .year .month .day .isLeap
+function Lunar(objDate) {
+
+   var i, leap=0, temp=0;
+   var offset   = (Date.UTC(objDate.getFullYear(),objDate.getMonth(),objDate.getDate()) - Date.UTC(1900,0,31))/86400000;
+
+   for(i=1900; i<2100 && offset>0; i++) { temp=lYearDays(i); offset-=temp; }
+
+   if(offset<0) { offset+=temp; i--; }
+
+   this.year = i;
+
+   leap = leapMonth(i); //闰哪个月
+   this.isLeap = false;
+
+   for(i=1; i<13 && offset>0; i++) {
+      //闰月
+      if(leap>0 && i==(leap+1) && this.isLeap==false)
+         { --i; this.isLeap = true; temp = leapDays(this.year); }
+      else
+         { temp = monthDays(this.year, i); }
+
+      //解除闰月
+      if(this.isLeap==true && i==(leap+1)) this.isLeap = false;
+
+      offset -= temp;
+   }
+
+   if(offset==0 && leap>0 && i==leap+1)
+      if(this.isLeap)
+         { this.isLeap = false; }
+      else
+         { this.isLeap = true; --i; }
+
+   if(offset<0){ offset += temp; --i; }
+
+   this.month = i;
+   this.day = offset + 1;
+}
+
+//==============================返回公历 y年某m+1月的天数
+function solarDays(y,m) {
+   if(m==1)
+      return(((y%4 == 0) && (y%100 != 0) || (y%400 == 0))? 29: 28);
+   else
+      return(solarMonth[m]);
+}
+//============================== 传入 offset 返回干支, 0=甲子
+function cyclical(num) {
+   return(Gan[num%10]+Zhi[num%12]);
+}
+
+//============================== 阴历属性
+function calElement(sYear,sMonth,sDay,week,lYear,lMonth,lDay,isLeap,cYear,cMonth,cDay) {
+
+      this.isToday    = false;
+      //瓣句
+      this.sYear      = sYear;   //公元年4位数字
+      this.sMonth     = sMonth;  //公元月数字
+      this.sDay       = sDay;    //公元日数字
+      this.week       = week;    //星期, 1个中文
+      //农历
+      this.lYear      = lYear;   //公元年4位数字
+      this.lMonth     = lMonth;  //农历月数字
+      this.lDay       = lDay;    //农历日数字
+      this.isLeap     = isLeap;  //是否为农历闰月?
+      //八字
+      this.cYear      = cYear;   //年柱, 2个中文
+      this.cMonth     = cMonth;  //月柱, 2个中文
+      this.cDay       = cDay;    //日柱, 2个中文
+
+      this.color      = '';
+
+      this.lunarFestival = ''; //农历节日
+      this.solarFestival = ''; //公历节日
+      this.solarTerms    = ''; //节气
+}
+
+//===== 某年的第n个节气为几日(从0小寒起算)
+function sTerm(y,n) {
+   var offDate = new Date( ( 31556925974.7*(y-1900) + sTermInfo[n]*60000  ) + Date.UTC(1900,0,6,2,5) );
+   return(offDate.getUTCDate());
+}
+
+
+
+
+//============================== 返回阴历控件 (y年,m+1月)
+/*
+功能说明: 返回整个月的日期资料控件
+
+使用方式: OBJ = new calendar(年,零起算月);
+
+  OBJ.length      返回当月最大日
+  OBJ.firstWeek   返回当月一日星期
+
+  由 OBJ[日期].属性名称 即可取得各项值
+
+  OBJ[日期].isToday  返回是否为今日 true 或 false
+
+  其他 OBJ[日期] 属性参见 calElement() 中的注解
+*/
+function calendar(y,m) {
+
+   var sDObj, lDObj, lY, lM, lD=1, lL, lX=0, tmp1, tmp2, tmp3;
+   var cY, cM, cD; //年柱,月柱,日柱
+   var lDPOS = new Array(3);
+   var n = 0;
+   var firstLM = 0;
+
+   sDObj = new Date(y,m,1,0,0,0,0);    //当月一日日期
+
+   this.length    = solarDays(y,m);    //公历当月天数
+   this.firstWeek = sDObj.getDay();    //公历当月1日星期几
+
+   ////////年柱 1900年立春后为庚子年(60进制36)
+   if(m<2) cY=cyclical(y-1900+36-1);
+   else cY=cyclical(y-1900+36);
+   var term2=sTerm(y,2); //立春日期
+
+   ////////月柱 1900年1月小寒以前为 丙子月(60进制12)
+   var firstNode = sTerm(y,m*2) //返回当月「节」为几日开始
+   cM = cyclical((y-1900)*12+m+12);
+
+   //当月一日与 1900/1/1 相差天数
+   //1900/1/1与 1970/1/1 相差25567日, 1900/1/1 日柱为甲戌日(60进制10)
+   var dayCyclical = Date.UTC(y,m,1,0,0,0,0)/86400000+25567+10;
+
+   for(var i=0;i<this.length;i++) {
+
+      if(lD>lX) {
+         sDObj = new Date(y,m,i+1);    //当月一日日期
+         lDObj = new Lunar(sDObj);     //农历
+         lY    = lDObj.year;           //农历年
+         lM    = lDObj.month;          //农历月
+         lD    = lDObj.day;            //农历日
+         lL    = lDObj.isLeap;         //农历是否闰月
+         lX    = lL? leapDays(lY): monthDays(lY,lM); //农历当月最后一天
+
+         if(n==0) firstLM = lM;
+         lDPOS[n++] = i-lD+1;
+      }
+
+      //依节气调整二月分的年柱, 以立春为界
+      if(m==1 && (i+1)==term2) cY=cyclical(y-1900+36);
+      //依节气月柱, 以「节」为界
+      if((i+1)==firstNode) cM = cyclical((y-1900)*12+m+13);
+      //日柱
+      cD = cyclical(dayCyclical+i);
+
+      //sYear,sMonth,sDay,week,
+      //lYear,lMonth,lDay,isLeap,
+      //cYear,cMonth,cDay
+      this[i] = new calElement(y, m+1, i+1, nStr1[(i+this.firstWeek)%7],
+                               lY, lM, lD++, lL,
+                               cY ,cM, cD );
+   }
+
+   //节气
+   tmp1=sTerm(y,m*2  )-1;
+   tmp2=sTerm(y,m*2+1)-1;
+   this[tmp1].solarTerms = solarTerm[m*2];
+   this[tmp2].solarTerms = solarTerm[m*2+1];
+   if(m==3) this[tmp1].color = 'red'; //清明颜色
+
+   //公历节日
+   for(i in sFtv)
+      if(sFtv[i].match(/^(\d{2})(\d{2})([\s\*])(.+)$/))
+         if(Number(RegExp.$1)==(m+1)) {
+            this[Number(RegExp.$2)-1].solarFestival += RegExp.$4 + ' ';
+            if(RegExp.$3=='*') this[Number(RegExp.$2)-1].color = 'red';
+         }
+
+   //月周节日
+   for(i in wFtv)
+      if(wFtv[i].match(/^(\d{2})(\d)(\d)([\s\*])(.+)$/))
+         if(Number(RegExp.$1)==(m+1)) {
+            tmp1=Number(RegExp.$2);
+            tmp2=Number(RegExp.$3);
+            if(tmp1<5)
+               this[((this.firstWeek>tmp2)?7:0) + 7*(tmp1-1) + tmp2 - this.firstWeek].solarFestival += RegExp.$5 + ' ';
+            else {
+               tmp1 -= 5;
+               tmp3 = (this.firstWeek+this.length-1)%7; //当月最后一天星期?
+               this[this.length - tmp3 - 7*tmp1 + tmp2 - (tmp2>tmp3?7:0) - 1 ].solarFestival += RegExp.$5 + ' ';
+            }
+         }
+
+   //农历节日
+   for(i in lFtv)
+      if(lFtv[i].match(/^(\d{2})(.{2})([\s\*])(.+)$/)) {
+         tmp1=Number(RegExp.$1)-firstLM;
+         if(tmp1==-11) tmp1=1;
+         if(tmp1 >=0 && tmp1<n) {
+            tmp2 = lDPOS[tmp1] + Number(RegExp.$2) -1;
+            if( tmp2 >= 0 && tmp2<this.length && this[tmp2].isLeap!=true) {
+               this[tmp2].lunarFestival += RegExp.$4 + ' ';
+               if(RegExp.$3=='*') this[tmp2].color = 'red';
+            }
+         }
+      }
+
+
+   //复活节只出现在3或4月
+   if(m==2 || m==3) {
+      var estDay = new easter(y);
+      if(m == estDay.m)
+         this[estDay.d-1].solarFestival = this[estDay.d-1].solarFestival+' 复活节 Easter Sunday';
+   }
+
+
+   if(m==2) this[20].solarFestival = this[20].solarFestival+unescape('%20%u6D35%u8CE2%u751F%u65E5');
+
+   //黑色星期五
+   if((this.firstWeek+12)%7==5)
+      this[12].solarFestival += '黑色星期五';
+
+   //今日
+   if(y==tY && m==tM) this[tD-1].isToday = true;
+}
+
+//======================================= 返回该年的复活节(春分后第一次满月周后的第一主日)
+function easter(y) {
+
+   var term2=sTerm(y,5); //取得春分日期
+   var dayTerm2 = new Date(Date.UTC(y,2,term2,0,0,0,0)); //取得春分的公历日期控件(春分一定出现在3月)
+   var lDayTerm2 = new Lunar(dayTerm2); //取得取得春分农历
+
+   if(lDayTerm2.day<15) //取得下个月圆的相差天数
+      var lMlen= 15-lDayTerm2.day;
+   else
+      var lMlen= (lDayTerm2.isLeap? leapDays(y): monthDays(y,lDayTerm2.month)) - lDayTerm2.day + 15;
+
+   //一天等于 1000*60*60*24 = 86400000 毫秒
+   var l15 = new Date(dayTerm2.getTime() + 86400000*lMlen ); //求出第一次月圆为公历几日
+   var dayEaster = new Date(l15.getTime() + 86400000*( 7-l15.getUTCDay() ) ); //求出下个周日
+
+   this.m = dayEaster.getUTCMonth();
+   this.d = dayEaster.getUTCDate();
+
+}
+
+//====================== 中文日期
+function cDay(d){
+   var s;
+
+   switch (d) {
+      case 10:
+         s = '初十'; break;
+      case 20:
+         s = '二十'; break;
+         break;
+      case 30:
+         s = '三十'; break;
+         break;
+      default :
+         s = nStr2[Math.floor(d/10)];
+         s += nStr1[d%10];
+   }
+   return(s);
+}
+
+///////////////////////////////////////////////////////////////////////////////
+
+var cld;
+
+function drawCld(SY,SM) {
+   var i,sD,s,size;
+   cld = new calendar(SY,SM);
+
+   if(SY>1874 && SY<1909) yDisplay = '光绪' + (((SY-1874)==1)?'元':SY-1874);
+   if(SY>1908 && SY<1912) yDisplay = '宣统' + (((SY-1908)==1)?'元':SY-1908);
+   if(SY>1911 && SY<1950) yDisplay = '民国' + (((SY-1911)==1)?'元':SY-1911);
+   if(SY>1948) yDisplay = '建国' + (((SY-1948)==1)?'元':SY-1948);
+
+   //GZ.innerHTML = yDisplay +'年 农历 ' + cyclical(SY-1900+36) + '年 【'+Animals[(SY-4)%12]+'年】';
+
+   YMBG.innerHTML = "&nbsp;" + SY + "<BR>&nbsp;" + monthName[SM];
+
+   for(i=0;i<42;i++) {
+
+      sObj=eval('SD'+ i);
+      lObj=eval('LD'+ i);
+
+      sObj.className = '';
+
+      sD = i - cld.firstWeek;
+
+      if(sD>-1 && sD<cld.length) { //日期内
+         sObj.innerHTML = sD+1;
+
+         if(cld[sD].isToday) sObj.className = 'todyaColor'; //今日颜色
+
+         sObj.style.color = cld[sD].color; //法定假日颜色
+
+         if(cld[sD].lDay==1) //显示农历月
+            lObj.innerHTML = '<b>'+(cld[sD].isLeap?'闰':'') + cld[sD].lMonth + '月' + (monthDays(cld[sD].lYear,cld[sD].lMonth)==29?'小':'大')+'</b>';
+         else //显示农历日
+            lObj.innerHTML = cDay(cld[sD].lDay);
+
+         s=cld[sD].lunarFestival;
+         if(s.length>0) { //农历节日
+            if(s.length>6) s = s.substr(0, 4)+'...';
+            s = s.fontcolor('red');
+         }
+         else { //公历节日
+            s=cld[sD].solarFestival;
+            if(s.length>0) {
+               size = (s.charCodeAt(0)>0 && s.charCodeAt(0)<128)?8:4;
+               if(s.length>size+2) s = s.substr(0, size)+'...';
+               s=(s=='黑色星期五')?s.fontcolor('black'):s.fontcolor('blue');
+            }
+            else { //廿四节气
+               s=cld[sD].solarTerms;
+               if(s.length>0) s = s.fontcolor('limegreen');
+            }
+         }
+
+         if(cld[sD].solarTerms=='清明') s = '清明节'.fontcolor('red');
+         if(cld[sD].solarTerms=='芒种') s = '芒种'.fontcolor('red');
+         if(cld[sD].solarTerms=='夏至') s = '夏至'.fontcolor('red');
+         if(cld[sD].solarTerms=='冬至') s = '冬至'.fontcolor('red');
+
+
+
+         if(s.length>0) lObj.innerHTML = s;
+
+      }
+      else { //非日期
+         sObj.innerHTML = '';
+         lObj.innerHTML = '';
+      }
+   }
+}
+
+
+function changeCld() {
+   var y,m;
+   y=CLD.SY.selectedIndex+1900;
+   m=CLD.SM.selectedIndex;
+   drawCld(y,m);
+}
+
+function pushBtm(K) {
+ switch (K){
+    case 'YU' :
+       if(CLD.SY.selectedIndex>0) CLD.SY.selectedIndex--;
+       break;
+    case 'YD' :
+       if(CLD.SY.selectedIndex<200) CLD.SY.selectedIndex++;
+       break;
+    case 'MU' :
+       if(CLD.SM.selectedIndex>0) {
+          CLD.SM.selectedIndex--;
+       }
+       else {
+          CLD.SM.selectedIndex=11;
+          if(CLD.SY.selectedIndex>0) CLD.SY.selectedIndex--;
+       }
+       break;
+    case 'MD' :
+       if(CLD.SM.selectedIndex<11) {
+          CLD.SM.selectedIndex++;
+       }
+       else {
+          CLD.SM.selectedIndex=0;
+          if(CLD.SY.selectedIndex<200) CLD.SY.selectedIndex++;
+       }
+       break;
+    default :
+       CLD.SY.selectedIndex=tY-1900;
+       CLD.SM.selectedIndex=tM;
+ }
+ changeCld();
+}
+
+var Today = new Date();
+var tY = Today.getFullYear();
+var tM = Today.getMonth();
+var tD = Today.getDate();
+//////////////////////////////////////////////////////////////////////////////
+
+var width = "130";
+var offsetx = 2;
+var offsety = 8;
+
+var x = 0;
+var y = 0;
+var snow = 0;
+var sw = 0;
+var cnt = 0;
+
+var dStyle="";
+document.onmousemove = mEvn;
+
+//显示详细日期资料
+function mOvr(v) {
+   var s,festival;
+   var sObj=eval('SD'+ v);
+   var d=sObj.innerHTML-1;
+
+      //sYear,sMonth,sDay,week,
+      //lYear,lMonth,lDay,isLeap,
+      //cYear,cMonth,cDay
+
+   if(sObj.innerHTML!='') {
+
+      sObj.style.cursor = 's-resize';
+
+      if(cld[d].solarTerms == '' && cld[d].solarFestival == '' && cld[d].lunarFestival == '')
+         festival = '';
+      else
+         festival = '<TABLE WIDTH=100% BORDER=0 CELLPADDING=2 CELLSPACING=0 BGCOLOR="#CCFFCC"><TR><TD>'+
+         '<FONT COLOR="#000000" STYLE="font-size:9pt;">'+cld[d].solarTerms + ' ' + cld[d].solarFestival + ' ' + cld[d].lunarFestival+'</FONT></TD>'+
+         '</TR></TABLE>';
+
+      s= '<TABLE WIDTH="150" BORDER=0 CELLPADDING="2" CELLSPACING=0 BGCOLOR="#B68FF2" style="filter:Alpha(opacity=80)"><TR><TD>' +
+         '<TABLE WIDTH=100% BORDER=0 CELLPADDING=0 CELLSPACING=0><TR><TD ALIGN="right"><b><FONT COLOR="yellow" STYLE="font-size:9pt;">'+
+         cld[d].sYear+' 年 '+cld[d].sMonth+' 月 '+cld[d].sDay+' 日<br>星期'+cld[d].week+'<br>'+
+         '<font color="yellow">农历'+(cld[d].isLeap?'闰 ':' ')+cld[d].lMonth+' 月 '+cld[d].lDay+' 日</font><br>'+
+         '<font color="yellow">'+cld[d].cYear+'年 '+cld[d].cMonth+'月 '+cld[d].cDay + '日</font>'+
+         '</FONT></b></TD></TR></TABLE>'+ festival +'</TD></TR></TABLE>';
+
+      document.all["detail"].innerHTML = s;
+
+      if (snow == 0) {
+         dStyle.left = x+offsetx-(width/2);
+         dStyle.top = y+offsety;
+         dStyle.visibility = "visible";
+         snow = 1;
+      }
+   }
+}
+
+//清除详细日期资料
+function mOut() {
+   if ( cnt >= 1 ) { sw = 0; }
+   if ( sw == 0 ) { snow = 0; dStyle.visibility = "hidden";}
+   else cnt++;
+}
+
+//取得位置
+function mEvn() {
+   x=event.x;
+   y=event.y;
+   if (document.body.scrollLeft)
+      {x=event.x+document.body.scrollLeft; y=event.y+document.body.scrollTop;}
+   if (snow){
+      dStyle.left = x+offsetx-(width/2);
+      dStyle.top = y+offsety;
+   }
+}
+
+/*****************************************************************************
+                                  世界时间计算
+*****************************************************************************/
+var OneHour = 60*60*1000;
+var OneDay = OneHour*24;
+var TimezoneOffset = Today.getTimezoneOffset()*60*1000;
+
+function showUTC(objD) {
+   var dn,s;
+   var hh = objD.getUTCHours();
+   var mm = objD.getUTCMinutes();
+   var ss = objD.getUTCSeconds();
+   s = objD.getUTCFullYear() + "年" + (objD.getUTCMonth() + 1) + "月" + objD.getUTCDate() +"日 ("+ nStr1[objD.getUTCDay()] +")";
+
+   if(hh>12) { hh = hh-12; dn = '下午'; }
+   else dn = '上午';
+
+   if(hh<10) hh = '0' + hh;
+   if(mm<10) mm = '0' + mm;
+   if(ss<10) ss = '0' + ss;
+
+   s += " " + dn + ' ' + hh + ":" + mm + ":" + ss;
+   return(s);
+}
+
+function showLocale(objD) {
+   var dn,s;
+   var hh = objD.getHours();
+   var mm = objD.getMinutes();
+   var ss = objD.getSeconds();
+   s = objD.getFullYear() + "年" + (objD.getMonth() + 1) + "月" + objD.getDate() +"日 ("+ nStr1[objD.getDay()] +")";
+
+   if(hh>12) { hh = hh-12; dn = '下午'; }
+   else dn = '上午';
+
+   if(hh<10) hh = '0' + hh;
+   if(mm<10) mm = '0' + mm;
+   if(ss<10) ss = '0' + ss;
+
+   s += " " + dn + ' ' + hh + ":" + mm + ":" + ss;
+   return(s);
+}
+
+//传入时差字串, 返回偏移之正负毫秒
+function parseOffset(s) {
+   var sign,hh,mm,v;
+   sign = s.substr(0,1)=='-'?-1:1;
+   hh = Math.floor(s.substr(1,2));
+   mm = Math.floor(s.substr(3,2));
+   v = sign*(hh*60+mm)*60*1000;
+   return(v);
+}
+
+//返回UTC日期控件 (年,月-1,第几个星期几,几点)
+function getWeekDay(y,m,nd,w,h){
+   var d,d2,w1;
+   if(nd>0){
+      d = new Date(Date.UTC(y, m, 1));
+      w1 = d.getUTCDay();
+      d2 = new Date( d.getTime() + ((w<w1? w+7-w1 : w-w1 )+(nd-1)*7   )*OneDay + h*OneHour);
+   }
+   else {
+      nd = Math.abs(nd);
+      d = new Date( Date.UTC(y, m+1, 1)  - OneDay );
+      w1 = d.getUTCDay();
+      d2 = new Date( d.getTime() + (  (w>w1? w-7-w1 : w-w1 )-(nd-1)*7   )*OneDay + h*OneHour);
+   }
+   return(d2);
+}
+
+//传入某时间值, 日光节约字串 返回 true 或 false
+function isDaylightSaving(d,strDS) {
+
+   if(strDS == '') return(false);
+
+   var m1,n1,w1,t1;
+   var m2,n2,w2,t2;
+   with (Math){
+      m1 = floor(strDS.substr(0,2))-1;
+      w1 = floor(strDS.substr(3,1));
+      t1 = floor(strDS.substr(4,1));
+      m2 = floor(strDS.substr(6,2))-1;
+      w2 = floor(strDS.substr(9,1));
+      t2 = floor(strDS.substr(10,1));
+   }
+
+   switch(strDS.substr(2,1)){
+      case 'F': n1=1; break;
+      case 'L': n1=-1; break;
+      default : n1=0; break;
+   }
+
+   switch(strDS.substr(8,1)){
+      case 'F': n2=1; break;
+      case 'L': n2=-1; break;
+      default : n2=0; break;
+   }
+
+
+   var d1, d2, re;
+
+   if(n1==0)
+      d1 = new Date(Date.UTC(d.getUTCFullYear(), m1, Math.floor(strDS.substr(2,2)),t1));
+   else
+      d1 = getWeekDay(d.getUTCFullYear(),m1,n1,w1,t1);
+
+   if(n2==0)
+      d2 = new Date(Date.UTC(d.getUTCFullYear(), m2, Math.floor(strDS.substr(8,2)),t2));
+   else
+      d2 = getWeekDay(d.getUTCFullYear(),m2,n2,w2,t2);
+
+   if(d2>d1)
+      re = (d>d1 && d<d2)? true: false;
+   else
+      re = (d>d1 || d<d2)? true: false;
+
+   return(re);
+}
+
+var isDS = false;
+
+//计算全球时间
+function getGlobeTime() {
+   var d,s;
+   d = new Date();
+
+   d.setTime(d.getTime()+parseOffset(objTimeZone[0]));
+
+   isDS=isDaylightSaving(d,objTimeZone[1]);
+   if(isDS) d.setTime(d.getTime()+OneHour);
+   return(showUTC(d));
+}
+
+var objTimeZone;
+var objContinentMenu;
+var objCountryMenu;
+
+function tick() {
+   var today;
+   today = new Date();
+   LocalTime.innerHTML = showLocale(today);
+   GlobeTime.innerHTML = getGlobeTime();
+   window.setTimeout("tick()", 1000);
+}
+
+//指定自定索引时区
+function setTZ(a,c){
+   objContinentMenu.options[a].selected=true;
+   chContinent();
+   objCountryMenu.options[c].selected=true;
+   chCountry();
+}
+
+//变更区域
+function chContinent() {
+   var key,i;
+   continent = objContinentMenu.options[objContinentMenu.selectedIndex].text;
+   for (var i = objCountryMenu.options.length-1; i >= 0; i--)
+      objCountryMenu[0]=null;
+   for (key in timeData[continent])
+      objCountryMenu.options[objCountryMenu.options.length]=new Option(key);
+   objCountryMenu.options[0].selected=true;
+   chCountry();
+}
+
+//变更国家
+function chCountry() {
+   var txtContinent = objContinentMenu.options[objContinentMenu.selectedIndex].text;
+   var txtCountry = objCountryMenu.options[objCountryMenu.selectedIndex].text;
+
+   objTimeZone = timeData[txtContinent][txtCountry];
+
+   getGlobeTime();
+
+   //地图位移
+   City.innerHTML = (isDS==true?"<SPAN STYLE='font-size:12pt;font-family:Wingdings; color:Red;'>R</span> ":'') + objTimeZone[2]; //首都
+   var pos = Math.floor(objTimeZone[0].substr(0,3));
+   if(pos<0) pos+=24;
+   pos*=-10;
+   world.style.left = pos;
+
+}
+
+function setCookie(name,value) {
+   var today = new Date();
+   var expires = new Date();
+   expires.setTime(today.getTime() + 1000*60*60*24*365);
+   document.cookie = name + "=" + escape(value) + "; expires=" + expires.toGMTString();
+}
+
+function getCookie(Name) {
+   var search = Name + "=";
+   if(document.cookie.length > 0) {
+      offset = document.cookie.indexOf(search);
+      if(offset != -1) {
+         offset += search.length;
+         end = document.cookie.indexOf(";", offset);
+         if(end == -1) end = document.cookie.length;
+         return unescape(document.cookie.substring(offset, end));
+      }
+      else return('');
+   }
+   else return('');
+}
+
+///////////////////////////////////////////////////////////////////////////
+
+function initialize() {
+   var key;
+
+   //时间
+   /*
+   map.filters.Light.Clear();
+   map.filters.Light.addAmbient(255,255,255,60);
+   map.filters.Light.addCone(120, 60, 80, 120, 60, 255,255,255,120,60);
+
+   objContinentMenu=document.WorldClock.continentMenu;
+   objCountryMenu=document.WorldClock.countryMenu;
+
+   for (key in timeData)
+      objContinentMenu[objContinentMenu.length]=new Option(key);
+
+
+   var TZ1 = getCookie('TZ1');
+   var TZ2 = getCookie('TZ2');
+
+
+   if(TZ1=='') {TZ1=0; TZ2=3;}
+   setTZ(TZ1,TZ2);
+
+   tick();
+   */
+   
+   //阴历
+   dStyle = detail.style;
+   CLD.SY.selectedIndex=tY-1900;
+   CLD.SM.selectedIndex=tM;
+   drawCld(tY,tM);
+
+}
+
+function terminate() {
+   setCookie("TZ1",objContinentMenu.selectedIndex);
+   setCookie("TZ2",objCountryMenu.selectedIndex);
+}
+
+
+
+
+
+//-->
+function changeLong() 
+{
+var y,m,ly,lm,id,im,iy,yangy,yangm,deltm,miny,tt;
+CLD.SY.selectedIndex=CLD.D1.selectedIndex;
+CLD.SM.selectedIndex=CLD.D2.selectedIndex;
+yangm=0;yangy=0;
+tt=true;
+while (tt)
+	{
+	yangm=0;yangy=0;
+			changeCld();
+		   for(i=0;i<42;i++) 
+		   {
+		      sD = i - cld.firstWeek;
+		      if(sD>-1 && sD<cld.length) 
+		      { //日期内
+			      if ((cld[sD].lMonth==CLD.D2.selectedIndex+1)&&(cld[sD].lYear==CLD.D1.selectedIndex+1900))
+			      {
+					yangy=CLD.SY.selectedIndex+1900; 	yangm=CLD.SM.selectedIndex ;
+					tt=false;
+					break;
+					}
+	      		}
+		   }
+		   if (!tt) break;
+		   
+			pushBtm('MD');
+			changeCld();
+
+
+		   for(i=0;i<42;i++) 
+		   {
+		      sD = i - cld.firstWeek;
+		      if(sD>-1 && sD<cld.length) 
+		      { //日期内
+			      if ((cld[sD].lMonth==CLD.D2.selectedIndex+1)&&(cld[sD].lYear==CLD.D1.selectedIndex+1900))
+			      {
+					yangy=CLD.SY.selectedIndex+1900; 	yangm=CLD.SM.selectedIndex ;
+					tt=false;
+					break;
+					}
+	      		}
+		   }
+			break;		   
+	}
+	
+
+CLD.SM.selectedIndex=yangm; 
+pushBtm('MD');
+pushBtm('MU');
+ 	
+ 		
+ 	
+}
 </SCRIPT>
 
 <STYLE>.todyaColor {
@@ -1722,1417 +1240,517 @@ pushBtm('MU');=0A=
 }
 </STYLE>
 
-<META content=3D"MSHTML 6.00.2600.0" name=3DGENERATOR>
-<SCRIPT language=3DJavaScript><!--=0A=
-   if(navigator.appName =3D=3D "Netscape" || =
-parseInt(navigator.appVersion) < 4)=0A=
-   =
-document.write("<h1>=C4=E3=B5=C4=E4=AF=C0=C0=C6=F7=CE=DE=B7=A8=D6=B4=D0=D0=
-=B4=CB=B3=CC=D0=F2=A1=A3</h1>=B4=CB=B3=CC=D0=F2=D0=E8=D4=DA IE4 =
-=D2=D4=BA=F3=B5=C4=B0=E6=B1=BE=B2=C5=C4=DC=D6=B4=D0=D0!!")=0A=
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff onload=initialize() onunload=terminate()>
+<SCRIPT language=JavaScript><!--
+   if(navigator.appName == "Netscape" || parseInt(navigator.appVersion) < 4)
+   document.write("<h1>你的浏览器无法执行此程序。</h1>此程序需在 IE4 以后的版本才能执行!!")
 //--></SCRIPT>
+<table width=500 border=0 cellpadding=0 cellspacing=0>
+<tr><td height=25 valign=bottom bgcolor=#C4EEFF>&nbsp;<img src=../images/p01.gif width=66 height=18 border=0></td></tr>
+<tr><td bgcolor=#ffffff><img src=../images/c.gif width=1 height=1></td></tr>
+</table>
 
-<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D500 border=3D0>
-  <TBODY>
-  <TR>
-    <TD vAlign=3Dbottom bgColor=3D#c4eeff height=3D25>&nbsp;<IMG =
-height=3D18=20
-      src=3D"http://act1.astro.women.sohu.com/images/p01.gif" width=3D66 =
-
-  border=3D0></TD></TR>
-  <TR>
-    <TD bgColor=3D#ffffff><IMG height=3D1=20
-      src=3D"http://act1.astro.women.sohu.com/images/c.gif"=20
-width=3D1></TD></TR></TBODY></TABLE>
-<TABLE>
-  <TBODY>
-  <TR>
-    <TD class=3Dleft01 align=3Dmiddle>
-      <FORM name=3DCLD>
-      <DIV style=3D"Z-INDEX: -1; POSITION: absolute; TOP: 30px"><FONT =
-id=3DYMBG=20
-      style=3D"FONT-SIZE: 100pt; COLOR: #f0f0f0; FONT-FAMILY: 'Arial =
-Black'">&nbsp;0000<BR>&nbsp;JUN</FONT>=20
+<table>
+<tr><td align=center class=left01>
+<FORM name=CLD>
+<DIV style="Z-INDEX: -1; POSITION: absolute; TOP: 30px"><FONT id=YMBG 
+      style="FONT-SIZE: 100pt; COLOR: #f0f0f0; FONT-FAMILY: 'Arial Black'">&nbsp;0000<BR>&nbsp;JUN</FONT> 
       </DIV>
-      <TABLE cellSpacing=3D0 cellPadding=3D0 width=3D443 border=3D0>
-        <TBODY>
-        <TR>
-          <TD vAlign=3Dtop align=3Dmiddle=20
-          background=3Dhttp://act1.astro.women.sohu.com/images/pd04.gif>
-            <TABLE cellSpacing=3D0 cellPadding=3D0 width=3D439 =
-border=3D0>
-              <TBODY>
-              <TR>
-                <TD><IMG height=3D30=20
-                  =
-src=3D"http://act1.astro.women.sohu.com/images/p10.gif"=20
-                  width=3D439 border=3D0></TD></TR></TBODY></TABLE><IMG =
-height=3D10=20
-            src=3D"http://act1.astro.women.sohu.com/images/c.gif" =
-width=3D1><BR>
-            <TABLE cellSpacing=3D0 cellPadding=3D0 width=3D380 =
-border=3D0>
-              <TBODY>
-              <TR>
-                <TD align=3Dmiddle width=3D80><IMG height=3D23=20
-                  =
-src=3D"http://act1.astro.women.sohu.com/images/p11.gif" width=3D77=20
-                  border=3D0> </TD>
-                <TD align=3Dright>
-                  <TABLE cellSpacing=3D0 cellPadding=3D0 width=3D160 =
-border=3D0>
-                    <TBODY>
-                    <TR>
-                      <TD>=B9=AB=C0=FA <SELECT onchange=3DchangeCld() =
-name=3DSY>=20
-                          <SCRIPT language=3DJavaScript><!--=0A=
-          for(i=3D1900;i<2101;i++) document.write('<option>'+i)=0A=
+
+	<table width=443 border=0 cellpadding=0 cellspacing=0>
+	<tr><td valign=top align=center background=../images/pd04.gif>
+		<table width=439 border=0 cellpadding=0 cellspacing=0>
+		<tr><td><img src=../images/p10.gif width=439 height=30 border=0></td></tr>
+		</table>
+		<img src=../images/c.gif width=1 height=10><br>
+		<table width=380 border=0 cellpadding=0 cellspacing=0>
+		<tr><td width=80 align=center><img src=../images/p11.gif width=77 height=23 border=0>
+		</td>
+
+		<td align=right>
+		
+			<table width=160 border=0 cellpadding=0 cellspacing=0>
+			<tr>
+			<td>公历 
+			<select onchange=changeCld() name=SY>
+              <SCRIPT language=JavaScript><!--
+          for(i=1900;i<2101;i++) document.write('<option>'+i)
+            //--></SCRIPT>			
+			</select>
+			年
+			</td>
+			<td>
+
+			<select onchange=changeCld() name=SM>>
+              <SCRIPT language=JavaScript><!--
+            for(i=1;i<13;i++) document.write('<option>'+i)
             //--></SCRIPT>
-                        </SELECT> =C4=EA </TD>
-                      <TD><SELECT onchange=3DchangeCld() name=3DSM>&gt;=20
-                          <SCRIPT language=3DJavaScript><!--=0A=
-            for(i=3D1;i<13;i++) document.write('<option>'+i)=0A=
-            //--></SCRIPT>
-                        </SELECT> =D4=C2<BR></TD></TR><!--=0A=
-			<tr>=0A=
-			<td>=D2=F5=C0=FA=0A=
-			<select onchange=3DchangeLong() name=3DD1>=0A=
-              <SCRIPT language=3DJavaScript>=0A=
-          for(i=3D1900;i<2050;i++) document.write('<option>'+i)=0A=
-            </SCRIPT>			=0A=
-			</select>=0A=
-			=C4=EA=0A=
-			</td>=0A=
-			<td>=0A=
-			<select onchange=3DchangeLong() name=3DD2>>=0A=
-              <SCRIPT language=3DJavaScript>=0A=
-            for(i=3D1;i<13;i++) document.write('<option>'+i)=0A=
-            </SCRIPT>=0A=
-			</select>=0A=
-			=D4=C2<br>=0A=
-			</td>=0A=
-			</tr>			=0A=
+			</select>
+			月<br>
+			</td>
+			</tr>
+			<!--
+			<tr>
+			<td>阴历
+			<select onchange=changeLong() name=D1>
+              <SCRIPT language=JavaScript>
+          for(i=1900;i<2050;i++) document.write('<option>'+i)
+            </SCRIPT>			
+			</select>
+			年
+			</td>
+			<td>
+			<select onchange=changeLong() name=D2>>
+              <SCRIPT language=JavaScript>
+            for(i=1;i<13;i++) document.write('<option>'+i)
+            </SCRIPT>
+			</select>
+			月<br>
+			</td>
+			</tr>			
 			-->
-                    <TR>
-                      <TD align=3Dleft colSpan=3D2><FONT id=3DGZ =
-face=3D=B1=EA=BF=AC=CC=E5=20
-                        =
-color=3D#000000></FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABL=
-E><IMG=20
-            height=3D10 =
-src=3D"http://act1.astro.women.sohu.com/images/c.gif"=20
-            width=3D1><BR>
-            <TABLE cellSpacing=3D1 cellPadding=3D0 width=3D380 =
-border=3D0>
-              <TBODY>
-              <TR align=3Dmiddle bgColor=3D#e0e0e0 height=3D31>
-                <TD align=3Dmiddle width=3D54 bgColor=3D#99ccff =
-height=3D1><FONT=20
-                  size=3D2>=C8=D5</FONT></TD>
-                <TD align=3Dmiddle width=3D54 bgColor=3D#99ccff =
-height=3D1><FONT=20
-                  size=3D2>=D2=BB</FONT></TD>
-                <TD align=3Dmiddle width=3D54 bgColor=3D#99ccff =
-height=3D1><FONT=20
-                  size=3D2>=B6=FE</FONT></TD>
-                <TD align=3Dmiddle width=3D50 bgColor=3D#99ccff =
-height=3D1><FONT=20
-                  size=3D2>=C8=FD</FONT></TD>
-                <TD align=3Dmiddle width=3D54 bgColor=3D#99ccff =
-height=3D1><FONT=20
-                  size=3D2>=CB=C4</FONT></TD>
-                <TD align=3Dmiddle width=3D54 bgColor=3D#99ccff =
-height=3D1><FONT=20
-                  size=3D2>=CE=E5</FONT></TD>
-                <TD align=3Dmiddle width=3D54 bgColor=3D#99ccff =
-height=3D1><FONT=20
-                  size=3D2>=C1=F9</FONT></TD></TR>
-              <SCRIPT language=3DJavaScript><!--=0A=
-            var gNum, color1, color2;=0A=
-=0A=
-            // =D0=C7=C6=DA=C1=F9=D1=D5=C9=AB=0A=
-            switch (conWeekend) {=0A=
-            case 1:=0A=
-               color1 =3D 'black';=0A=
-               color2 =3D color1;=0A=
-               break;=0A=
-            case 2:=0A=
-               color1 =3D 'green';=0A=
-               color2 =3D color1;=0A=
-               break;=0A=
-            case 3:=0A=
-               color1 =3D 'red';=0A=
-               color2 =3D color1;=0A=
-               break;=0A=
-            default :=0A=
-               color1 =3D 'green';=0A=
-               color2 =3D 'red';=0A=
-            }=0A=
-=0A=
-            for(i=3D0;i<6;i++) {=0A=
-               document.write('<tr align=3Dcenter height=3D47 =
-bgcolor=3D#ffffff >')=0A=
-               for(j=3D0;j<7;j++) {=0A=
-                  gNum =3D i*7+j=0A=
-                  document.write('<td id=3D"GD' + gNum +'" =
-onMouseOver=3D"mOvr(' + gNum +')" onMouseOut=3D"mOut()"><b><font =
-id=3D"SD' + gNum +'"  style=3D\'font-size:18px\'; ')=0A=
-                  if(j =3D=3D 0) document.write(' color=3Dred')=0A=
-                  if(j =3D=3D 6) {=0A=
-                     if(i%2=3D=3D1) document.write(' color=3D'+color2)=0A=
-                        else document.write(' color=3D'+color1)=0A=
-                  }=0A=
-                  document.write(' TITLE=3D""> </font></b><br><font =
-id=3D"LD' + gNum + '" > </font></td>')=0A=
-               }=0A=
-               document.write('</tr>')=0A=
-            }=0A=
-            //--></SCRIPT>
-              </TBODY></TABLE><IMG height=3D10=20
-            src=3D"http://act1.astro.women.sohu.com/images/c.gif" =
-width=3D1><BR></TD>
-          <TD vAlign=3Dtop width=3D4 bgColor=3D#b68ff2><IMG height=3D30=20
-            src=3D"http://act1.astro.women.sohu.com/images/p08.gif" =
-width=3D4=20
-            border=3D0></TD></TR>
-        <TR>
-          <TD bgColor=3D#b68ff2 colSpan=3D2><IMG height=3D5=20
-            src=3D"http://act1.astro.women.sohu.com/images/p09.gif" =
-width=3D4=20
-            border=3D0></TD></TR></TBODY></TABLE><IMG height=3D10=20
-      src=3D"http://act1.astro.women.sohu.com/images/c.gif"=20
-  width=3D1><BR></TD></TR></FORM></TBODY></TABLE><IMG height=3D10=20
-src=3D"http://act1.astro.women.sohu.com/images/c.gif" width=3D1><BR>
-<FORM name=3Dform_jisuan>
-<TABLE cellSpacing=3D0 cellPadding=3D2 width=3D380 border=3D0>
-  <TBODY>
-  <TR>
-    <TD colSpan=3D2><B>=D2=F5=C0=FA=D7=AA=D1=F4=C0=FA</B></TD></TR>
-  <TR>
-    <TD>=CA=E4=C8=EB=C5=A9=C0=FA=C8=D5=C6=DA=A3=BA<INPUT class=3Dfinput =
-size=3D8 name=3Dnyear> =C4=EA <INPUT class=3Dfinput=20
-      size=3D4 name=3Dnmonth> =D4=C2 <INPUT class=3Dfinput size=3D4 =
-name=3Dnday> =C8=D5</TD>
-    <TD><IMG style=3D"CURSOR: hand" onclick=3DCalConv(1)=20
-      src=3D"http://act1.astro.women.sohu.com/images/but27.gif"></TD>
-  <TR>
-    <TD colSpan=3D2><B>=D1=F4=C0=FA=D7=AA=D2=F5=C0=FA</B></TD></TR>
-  <TR>
-    <TD>=CA=E4=C8=EB=D1=F4=C0=FA=C8=D5=C6=DA=A3=BA<INPUT class=3Dfinput =
-size=3D8 name=3Dyyear> =C4=EA <INPUT class=3Dfinput=20
-      size=3D4 name=3Dymonth> =D4=C2 <INPUT class=3Dfinput size=3D4 =
-name=3Dyday> =C8=D5</TD>
-    <TD><IMG style=3D"CURSOR: hand" onclick=3DCalConv(0)=20
-      =
-src=3D"http://act1.astro.women.sohu.com/images/but27.gif"></TD></TR></TBO=
-DY></TABLE></FORM>
-<SCRIPT language=3DJavaScript><!--=0A=
-function CalConv(M)=0A=
- {=0A=
- =0A=
- FIRSTYEAR =3D 1936;=0A=
- LASTYEAR =3D 2031;=0A=
-=0A=
-=0A=
-=0A=
- =0A=
-=0A=
- LunarCal =3D [=0A=
-  new tagLunarCal(23, 3, 2, 17, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0 ), =
-/* 1936 */ =0A=
-  new tagLunarCal( 41, 0, 4, 23, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 =
-), =0A=
-  new tagLunarCal( 30, 7, 5, 28, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 =
-), =0A=
-  new tagLunarCal( 49, 0, 6, 33, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 =
-), =0A=
-  new tagLunarCal( 38, 0, 0, 38, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 =
-), /* 1940 */ =0A=
-  new tagLunarCal( 26, 6, 2, 44, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 =
-), =0A=
-  new tagLunarCal( 45, 0, 3, 49, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 =
-), =0A=
-  new tagLunarCal( 35, 0, 4, 54, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 =
-), =0A=
-  new tagLunarCal( 24, 4, 5, 59, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 =
-), /* 1944 */ =0A=
-  new tagLunarCal( 43, 0, 0, 5, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ), =0A=
-  new tagLunarCal( 32, 0, 1, 10, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 =
-), =0A=
-  new tagLunarCal( 21, 2, 2, 15, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 =
-), =0A=
-  new tagLunarCal( 40, 0, 3, 20, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 =
-), /* 1948 */ =0A=
-  new tagLunarCal( 28, 7, 5, 26, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 =
-), =0A=
-  new tagLunarCal( 47, 0, 6, 31, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1 =
-), =0A=
-  new tagLunarCal( 36, 0, 0, 36, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 =
-), =0A=
-  new tagLunarCal( 26, 5, 1, 41, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 =
-), /* 1952 */ =0A=
-  new tagLunarCal( 44, 0, 3, 47, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1 =
-), =0A=
-  new tagLunarCal( 33, 0, 4, 52, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 =
-), =0A=
-  new tagLunarCal( 23, 3, 5, 57, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 =
-), =0A=
-  new tagLunarCal( 42, 0, 6, 2, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ), =
-/* 1956 */ =0A=
-  new tagLunarCal( 30, 8, 1, 8, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0 ), =0A=
-  new tagLunarCal( 48, 0, 2, 13, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0 =
-), =0A=
-  new tagLunarCal( 38, 0, 3, 18, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 =
-), =0A=
-  new tagLunarCal( 27, 6, 4, 23, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 =
-), /* 1960 */ =0A=
-  new tagLunarCal( 45, 0, 6, 29, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 =
-), =0A=
-  new tagLunarCal( 35, 0, 0, 34, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 =
-), =0A=
-  new tagLunarCal( 24, 4, 1, 39, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 =
-), =0A=
-  new tagLunarCal( 43, 0, 2, 44, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 =
-), /* 1964 */ =0A=
-  new tagLunarCal( 32, 0, 4, 50, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 =
-), =0A=
-  new tagLunarCal( 20, 3, 5, 55, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 =
-), =0A=
-  new tagLunarCal( 39, 0, 6, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0 ), =0A=
-  new tagLunarCal( 29, 7, 0, 5, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), =
-/* 1968 */ =0A=
-  new tagLunarCal( 47, 0, 2, 11, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 =
-), =0A=
-  new tagLunarCal( 36, 0, 3, 16, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0 =
-), =0A=
-  new tagLunarCal( 26, 5, 4, 21, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1 =
-), =0A=
-  new tagLunarCal( 45, 0, 5, 26, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 =
-), /* 1972 */ =0A=
-  new tagLunarCal( 33, 0, 0, 32, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1 =
-), =0A=
-  new tagLunarCal( 22, 4, 1, 37, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 =
-), =0A=
-  new tagLunarCal( 41, 0, 2, 42, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1 =
-), =0A=
-  new tagLunarCal( 30, 8, 3, 47, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 =
-), /* 1976 */ =0A=
-  new tagLunarCal( 48, 0, 5, 53, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1 =
-), =0A=
-  new tagLunarCal( 37, 0, 6, 58, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 =
-), =0A=
-  new tagLunarCal( 27, 6, 0, 3, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0 ), =0A=
-  new tagLunarCal( 46, 0, 1, 8, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), =
-/* 1980 */ =0A=
-  new tagLunarCal( 35, 0, 3, 14, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1 =
-), =0A=
-  new tagLunarCal( 24, 4, 4, 19, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1 =
-), =0A=
-  new tagLunarCal( 43, 0, 5, 24, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1 =
-), =0A=
-  new tagLunarCal( 32, 10, 6, 29, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1 =
-), /* 1984 */ =0A=
-  new tagLunarCal( 50, 0, 1, 35, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0 =
-), =0A=
-  new tagLunarCal( 39, 0, 2, 40, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1 =
-), =0A=
-  new tagLunarCal( 28, 6, 3, 45, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0 =
-), =0A=
-  new tagLunarCal( 47, 0, 4, 50, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 =
-), /* 1988 */ =0A=
-  new tagLunarCal( 36, 0, 6, 56, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0 =
-), =0A=
-  new tagLunarCal( 26, 5, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1 ), =0A=
-  new tagLunarCal( 45, 0, 1, 6, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0 ), =0A=
-  new tagLunarCal( 34, 0, 2, 11, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0 =
-), /* 1992 */ =0A=
-  new tagLunarCal( 22, 3, 4, 17, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0 =
-), =0A=
-  new tagLunarCal( 40, 0, 5, 22, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0 =
-), =0A=
-  new tagLunarCal( 30, 8, 6, 27, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1 =
-), =0A=
-  new tagLunarCal( 49, 0, 0, 32, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1 =
-), /* 1996 */ =0A=
-  new tagLunarCal( 37, 0, 2, 38, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 =
-), =0A=
-  new tagLunarCal( 27, 5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 =
-), =0A=
-  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 =
-), /* 1999 */=0A=
-  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 =
-), /* 2000 */=0A=
-  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 =
-),=0A=
-  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 =
-),=0A=
-  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 =
-),=0A=
-  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 =
-), /* 2004 */=0A=
-  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 =
-),=0A=
-  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 =
-),=0A=
-  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 =
-),=0A=
-  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 =
-), /* 2008 */=0A=
-  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 =
-),=0A=
-  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 =
-),=0A=
-  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 =
-),=0A=
-  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 =
-), /* 2012 */=0A=
-  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 =
-),=0A=
-  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 =
-),=0A=
-  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 =
-),=0A=
-  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 =
-), /* 2016 */=0A=
-  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 =
-),=0A=
-  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 =
-),=0A=
-  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 =
-),=0A=
-  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 =
-), /* 2020 */=0A=
-  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 =
-),=0A=
-  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 =
-),=0A=
-  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 =
-),=0A=
-  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 =
-), /* 2024 */=0A=
-  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 =
-),=0A=
-  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 =
-),=0A=
-  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 =
-),=0A=
-  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 =
-), /* 2028 */=0A=
-  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 =
-),=0A=
-  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 =
-),=0A=
-  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 =
-) ];=0A=
-=0A=
-=0A=
- /* =CE=F7=95=D1=C4=EA=C3=BF=D4=C2=D6=AE=C8=D5=94=B5 */=0A=
- SolarCal =3D [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];=0A=
-=0A=
- /* =CE=F7=95=D1=C4=EA=C3=BF=D4=C2=D6=AE=C0=DB=B7e=C8=D5=94=B5, =
-=C6=BD=C4=EA=C5c=E9c=C4=EA */=0A=
- SolarDays =3D [=0A=
-  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,=0A=
-  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];=0A=
-=0A=
- AnimalIdx =3D ["=F1R ", "=D1=F2 ", "=BA=EF ", "=EBu ", "=B9=B7 ", "=D8i =
-", "=CA=F3 ", "=C5=A3 ", "=BB=A2 ", "=CD=C3 ", "=FD=88 ", "=C9=DF " ];=0A=
- LocationIdx =3D [ "=C4=CF", "=96|", "=B1=B1", "=CE=F7" ];=0A=
- =0A=
- =0A=
-if (M=3D=3D0) {  //=D1=F4=C0=FA=B5=BD=D2=F5=C0=FA=0A=
-if (!IsInteger(form_jisuan.yyear.value) || =
-!IsInteger(form_jisuan.ymonth.value) || =
-!IsInteger(form_jisuan.yday.value)) return =
-alert("=C7=EB=CA=E4=C8=EB=BA=CF=B7=A8=D1=F4=C0=FA=C4=EA=D4=C2=C8=D5=CA=FD=
-=D6=B5");   =0A=
- SolarYear =3D parseInt(form_jisuan.yyear.value);=0A=
- SolarMonth =3D parseInt(form_jisuan.ymonth.value);=0A=
- SolarDate =3D parseInt(form_jisuan.yday.value);=0A=
-=0A=
-=0A=
- if ( SolarYear <=3D FIRSTYEAR || SolarYear > LASTYEAR ) return =
-alert("=C7=EB=CA=E4=C8=EB1936-2031=D3=D0=D0=A7=C4=EA=B7=DD"); =0A=
-=0A=
- sm =3D SolarMonth - 1;=0A=
- =0A=
- if ( sm < 0 || sm > 11 ) return =
-alert(=C7=EB=CA=E4=C8=EB=D3=D0=D0=A7=D4=C2=B7=DD);=0A=
- =0A=
- leap =3D GetLeap( SolarYear );=0A=
-=0A=
- if ( sm =3D=3D 1 )=0A=
-  d =3D leap + 28;=0A=
- else=0A=
-  d =3D SolarCal[sm];=0A=
-=0A=
- if ( SolarDate < 1 || SolarDate > d ) return 3;=0A=
-=0A=
- y =3D SolarYear - FIRSTYEAR;=0A=
- acc =3D SolarDays[ leap*14 + sm ] + SolarDate;=0A=
- kc =3D acc + LunarCal[y].BaseKanChih;=0A=
- Kan =3D kc % 10;=0A=
- Chih =3D kc % 12;=0A=
- Location =3D LocationIdx[kc % 4];=0A=
- Age =3D kc % 60;=0A=
- if ( Age < 22 )=0A=
-  Age =3D 22 - Age;=0A=
- else=0A=
-  Age =3D 82 - Age;=0A=
-=0A=
- Age =3DAge + 3;=0A=
-=0A=
-if (Age < 10)=0A=
-  Age=3DAge+60;=0A=
-=0A=
- Animal =3D AnimalIdx[ Chih ];=0A=
-=0A=
- if ( acc <=3D LunarCal[y].BaseDays ) {=0A=
-  y--;=0A=
-  LunarYear =3D SolarYear - 1;=0A=
-  leap =3D GetLeap( LunarYear );=0A=
-  sm +=3D 12;=0A=
-  acc =3D SolarDays[leap*14 + sm] + SolarDate;=0A=
-  }=0A=
- else=0A=
-  LunarYear =3D SolarYear;=0A=
-  =0A=
- l1 =3D LunarCal[y].BaseDays;=0A=
- for ( i=3D0; i<13; i++ ) {=0A=
-  l2 =3D l1 + LunarCal[y].MonthDays[i] + 29;=0A=
-  if ( acc <=3D l2 ) break;=0A=
-  l1 =3D l2;=0A=
-  }=0A=
-=0A=
- LunarMonth =3D i + 1;=0A=
- LunarDate =3D acc - l1;=0A=
- im =3D LunarCal[y].Intercalation;=0A=
-=0A=
- if ( im !=3D 0 && LunarMonth > im ) {=0A=
-  LunarMonth--;=0A=
-  if ( LunarMonth =3D=3D im ) LunarMonth =3D -im;=0A=
-  }=0A=
-=0A=
- if ( LunarMonth > 12 ) LunarMonth -=3D 12;=0A=
-=0A=
-alert("=C5=A9=C0=FA=CE=AA=A3=BA"+ LunarYear + "=C4=EA" + LunarMonth + =
-"=D4=C2 " + LunarDate + "=C8=D5 " );=0A=
-                =0A=
-            form_jisuan.yyear.value =3D "";=0A=
-            form_jisuan.ymonth.value =3D "";=0A=
-            form_jisuan.yday.value =3D ""; =0A=
- return 0;=0A=
- }=0A=
-=0A=
- else /* =D2=F5=C0=FA=D7=AA=D1=F4=C0=FA */ =0A=
- { =0A=
-   if (!IsInteger(form_jisuan.nyear.value) || =
-!IsInteger(form_jisuan.nmonth.value) || =
-!IsInteger(form_jisuan.nday.value)) return =
-alert("=C7=EB=CA=E4=C8=EB=BA=CF=B7=A8=C5=A9=C0=FA=C4=EA=D4=C2=C8=D5=CA=FD=
-=D6=B5");   =0A=
-   LunarYear =3D parseInt(form_jisuan.nyear.value);=0A=
-   LunarMonth =3D parseInt(form_jisuan.nmonth.value);=0A=
-   LunarDate =3D parseInt(form_jisuan.nday.value);=0A=
-=0A=
-        if ( LunarYear < FIRSTYEAR || LunarYear >=3D LASTYEAR ) return =
-alert("=C7=EB=CA=E4=C8=EB1936-2031=D3=D0=D0=A7=C4=EA=B7=DD");   =0A=
-          =0A=
-        y =3D LunarYear - FIRSTYEAR ; =0A=
-        im =3D LunarCal[y].Intercalation; =0A=
-        lm =3D LunarMonth; =0A=
-          =0A=
-        if ( lm < 0 ) =0A=
-        { =0A=
-            if ( lm !=3D -im ) =0A=
-                return =
-alert(=C7=EB=CA=E4=C8=EB=D3=D0=D0=A7=D4=C2=B7=DD);   =0A=
-        } =0A=
-        else if ( lm < 1 || lm > 12 ) return =
-alert(=C7=EB=CA=E4=C8=EB=D3=D0=D0=A7=D4=C2=B7=DD);   =0A=
-        =0A=
-        if ( im !=3D 0 ) =0A=
-        { =0A=
-            if ( lm > im ) =0A=
-                lm++; =0A=
-            else if ( lm =3D=3D -im ) =0A=
-                lm =3D im + 1; =0A=
-        } =0A=
-        lm--; =0A=
-=0A=
-        if ( LunarDate > LunarCal[y].MonthDays[lm] + 29 ) =0A=
-            return alert("=C5=A9=C0=FA=C8=D5=C6=DA=B2=BB=D5=FD=C8=B7");=0A=
-           =0A=
-        =0A=
-        acc =3D 0;=0A=
-        for ( i=3D0; i < lm;i++) {=0A=
-=0A=
-         acc+=3D LunarCal[y].MonthDays[i] + 29;=0A=
-          =0A=
-         =0A=
-       }=0A=
-       =0A=
-        acc +=3DLunarCal[y].BaseDays + LunarDate;=0A=
-           =0A=
-        =0A=
-             =0A=
-            leap =3D GetLeap( LunarYear ); =0A=
-            =0A=
-            =0A=
-        for ( i=3D13; i>=3D0; i-- ) {=0A=
-        =0A=
-            if ( acc > SolarDays[leap*14+i] ) =0A=
-                break; =0A=
-        }       =0A=
-             SolarDate =3D acc - SolarDays[leap*14 + i]  ;=0A=
-            =0A=
-            =0A=
-           =0A=
-            if ( i <=3D 11 ) =0A=
-            { =0A=
-              =0A=
-                SolarYear =3D LunarYear; =0A=
-                SolarMonth =3D i + 1; =0A=
-            } =0A=
-            else =0A=
-            { =0A=
-                =0A=
-                SolarYear =3D LunarYear + 1; =0A=
-                SolarMonth =3D i - 11; =0A=
-            } =0A=
-             =0A=
-         =0A=
-            leap =3D GetLeap( SolarYear ); =0A=
-            y =3D SolarYear - FIRSTYEAR; =0A=
-            =0A=
-            //acc =3D SolarDays[leap][SolarMonth-1] + SolarDate; =0A=
-            acc =3D SolarDays[leap*14 + SolarMonth-1] + SolarDate;=0A=
-            =0A=
-            weekday =3D ( acc + LunarCal[y].BaseWeekday ) % 7; =0A=
-            kc =3D acc + LunarCal[y].BaseKanChih; =0A=
-            kan =3D kc % 10; =0A=
-            chih =3D kc % 12; =0A=
-           =0A=
-            alert("=D1=F4=C0=FA=CE=AA=A3=BA"+ SolarYear + "=C4=EA" + =
-SolarMonth + "=D4=C2" + SolarDate + "=C8=D5 " );        =0A=
-=0A=
- =0A=
-            form_jisuan.nyear.value =3D "";=0A=
-            form_jisuan.nmonth.value =3D "";=0A=
-            form_jisuan.nday.value =3D "";            =0A=
-            return 0;=0A=
- }//else=BD=E1=CA=F8=0A=
- =0A=
- }=0A=
-=0A=
- /* =C8=F2=C4=EA, =B7=B5=BB=D8 0 =C6=BD=C4=EA, 1 =C8=F2=C4=EA */=0A=
-function GetLeap( year )=0A=
- {=0A=
-   if ( year % 400 =3D=3D 0 )=0A=
-     return 1;=0A=
-   else if ( year % 100 =3D=3D 0 )=0A=
-     return 0;=0A=
-   else if ( year % 4 =3D=3D 0 )=0A=
-     return 1;=0A=
-   else=0A=
-     return 0;=0A=
- }=0A=
-=0A=
-function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, =
-m10, m11, m12, m13) {=0A=
- this.BaseDays =3D d;         /* 1 =D4=C2 1 =
-=C8=D5=B5=BD=D5=FD=D4=C2=B3=F5=D2=BB=B5=C4=C0=DB=BC=C6=C8=D5 */=0A=
- this.Intercalation =3D i;    /* =C8=F2=D4=C2=D4=C2=B7=DD. =
-0=3D=3D=B4=CB=C4=EA=9B]=D3=D0=C8=F2=D4=C2 */=0A=
- this.BaseWeekday =3D w;      /* =B4=CB=C4=EA 1 =D4=C2 1 =
-=C8=D5=CE=AA=D0=C7=C6=DA=BC=F5 1 */=0A=
- this.BaseKanChih =3D k;      /* =B4=CB=C4=EA 1 =D4=C2 1 =
-=C8=D5=D6=AE=B8=C9=D6=A7=D0=F2=BA=C5=BC=F5 1 */=0A=
- this.MonthDays =3D [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, =
-m13 ]; /* =B4=CB=C5=A9=C0=FA=C4=EA=C3=BF=D4=C2=D6=AE=B4=F3=D0=A1, =
-0=3D=3D=D0=A1=D4=C2(29=C8=D5), 1=3D=3D=B4=F3=D4=C2(30=C8=D5) */=0A=
-}=0A=
-=0A=
-//-->=0A=
-=0A=
-=0A=
-<!--=0A=
-function OpenWin( url ) { =0A=
- return window.open( url, 'coop', =
-'width=3D320,height=3D350,toolbar=3D0,location=3D0,directories=3D0,status=
-=3D0,menuBar=3D0,scrollBars=3D0,resizable=3D1' ); =0A=
-} =0A=
-=0A=
-=0A=
-function IsInteger(string ,sign) =0A=
-{  =0A=
-  var integer; =0A=
-  if ((sign!=3Dnull) && (sign!=3D'-') && (sign!=3D'+')) =0A=
-  { =0A=
-   =
-alert('IsInter(string,sign)=B5=C4=B2=CE=CA=FD=B3=F6=B4=ED=A3=BAnsign=CE=AA=
-null=BB=F2"-"=BB=F2"+"'); =0A=
-   return false; =0A=
-  } =0A=
-  integer =3D parseInt(string); =0A=
-  if (isNaN(integer)) =0A=
-  { =0A=
-   return false; =0A=
-  } =0A=
-  else if (integer.toString().length=3D=3Dstring.length) =0A=
-  {  =0A=
-   if ((sign=3D=3Dnull) || (sign=3D=3D'-' && integer<0) || =
-(sign=3D=3D'+' && integer>0)) =0A=
-   { =0A=
-     return true; =0A=
-   } =0A=
-   else =0A=
-     return false;  =0A=
-  } =0A=
-  else =0A=
-   return false; =0A=
-} =0A=
-=0A=
-//--></SCRIPT>
-</BODY></HTML>
+			<tr>
 
-------=_NextPart_000_0000_01C99475.52EB3300
-Content-Type: image/gif
-Content-Transfer-Encoding: base64
-Content-Location: http://act1.astro.women.sohu.com/images/p01.gif
+			<td align=left colspan=2><FONT id=GZ face=标楷体 color=#000000></FONT>
+			</td>
+			</tr>
+			
+			</table>
+		</td></tr>
+		</table>
+		<img src=../images/c.gif width=1 height=10><br>
+		<table width=380 border=0 cellpadding=0 cellspacing=1>
+              <TR align=middle bgColor=#e0e0e0 height=31>
 
-R0lGODlhQgASAMQAAEqUziV4wG6u3Xq34hlvuz2KyQxmtlad05/T8Kvc9YfB57jl+pPK6wBdsTGB
-xWKm2MTu/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAA
-AAAALAAAAABCABIAAAX/ICSOZEKeaKquLLsspPOoi4Am5okIC+D8jwEidVC0SI+CCOAbFAA5iKKw
-aAwhC8XBoDwZHIjBQ8FICAwpwgybKK8eDikA4Sg/CCNF49DQNxoBBQ9RI1YIcIIIVQwoMkt/fwRG
-IwwPAQEDBwcIBwwDAA0kfIIGjCIIk5QNA1oOAIMQDaYQCQ8PBgE2rowJDgckAQAEXAcEggqfoSID
-BKsMcQIBEL4oDQKVtrZ8swBfBgQOvbNJKA82DwAMATIFeBAMBgqu01mhYOUOBQUGgD+/KJ1EOAhg
-SxEhEQWfOSAA7h4waXUgSLNxg4oUZSsUwIBg4IsDBQ/+jWBm4AoEH7NG8RSzV0bJg40kBDR45aDB
-j0upRCwIBqPPCDgjqjCcUaPGLZMLHMRjWQTCg5S0uNgqsAfkJhIIAkRKYNMWmTiUnK6xlGBBqREJ
-CiBgEKrBAgILKomkFUCkniGEks4kcGAAV49BwCLpAuGMsRTP9DyTyIzEAgQIbA6A9EdwLyOOYpkc
-IBgCZM4jZDYgMGCwqx+Rbx0giIIBDJlD3DRa43NJZwXfri00wAOUTRNmV1mDcKAAAwV6CuRQ9O5O
-A0FPoUJQI9BjzblOf9XiQWlfjuM1Ushj5CdkNlsLn3tZgy0bzCPwabheIRvt+/j48+vfz79//xAA
-Ow==
+                <TD align=middle width=54 bgColor=#99ccff height=1><FONT 
+                  size=2>日</FONT></TD>
+                <TD align=middle width=54 bgColor=#99ccff height=1><FONT 
+                  size=2>一</FONT></TD>
+                <TD align=middle width=54 bgColor=#99ccff height=1><FONT 
+                  size=2>二</FONT></TD>
+                <TD align=middle width=50 bgColor=#99ccff height=1><FONT 
+                  size=2>三</FONT></TD>
+                <TD align=middle width=54 bgColor=#99ccff height=1><FONT 
+                  size=2>四</FONT></TD>
+                <TD align=middle width=54 bgColor=#99ccff height=1><FONT 
+                  size=2>五</FONT></TD>
 
-------=_NextPart_000_0000_01C99475.52EB3300
-Content-Type: image/gif
-Content-Transfer-Encoding: base64
-Content-Location: http://act1.astro.women.sohu.com/images/c.gif
+                <TD align=middle width=54 bgColor=#99ccff height=1><FONT 
+                  size=2>六</FONT></TD></TR>
+        <SCRIPT language=JavaScript><!--
+            var gNum, color1, color2;
 
-R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==
+            // 星期六颜色
+            switch (conWeekend) {
+            case 1:
+               color1 = 'black';
+               color2 = color1;
+               break;
+            case 2:
+               color1 = 'green';
+               color2 = color1;
+               break;
+            case 3:
+               color1 = 'red';
+               color2 = color1;
+               break;
+            default :
+               color1 = 'green';
+               color2 = 'red';
+            }
 
-------=_NextPart_000_0000_01C99475.52EB3300
-Content-Type: image/gif
-Content-Transfer-Encoding: base64
-Content-Location: http://act1.astro.women.sohu.com/images/p10.gif
+            for(i=0;i<6;i++) {
+               document.write('<tr align=center height=47 bgcolor=#ffffff >')
+               for(j=0;j<7;j++) {
+                  gNum = i*7+j
+                  document.write('<td id="GD' + gNum +'" onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()"><b><font id="SD' + gNum +'"  style=\'font-size:18px\'; ')
+                  if(j == 0) document.write(' color=red')
+                  if(j == 6) {
+                     if(i%2==1) document.write(' color='+color2)
+                        else document.write(' color='+color1)
+                  }
+                  document.write(' TITLE=""> </font></b><br><font id="LD' + gNum + '" > </font></td>')
+               }
+               document.write('</tr>')
+            }
+            //--></SCRIPT>		
 
-R0lGODlhtwEeAMQAAJVm68an9efT/KqC7+GJ77147fbV+vuU8fuy9Zhp7LaS8vyV8dHb//+Z8eTv
-/9nj//Sr9f6a8raP8v+/+NDa//+W8fD7//Pj/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAA
-AAAALAAAAAC3AR4AAAX/oCWOZGmOBhIhxumS6dq+b8zStXrjpz3zJR/QJBzCdD+jpahcIpsiplJq
-pA6tQCxPi+NCv6hGZdxIZsVk8xZdKTcNbPc0ru7S3/f5uF2nwfdyVXmCgH01g1eIZ4V4jHppjZBg
-kyYIe2MQDA8OQ5aXmZudlxWgnECee6Win5qmPKiYraupsqejqrasobm0u6+3tb+6rjiwpMHFwL7J
-w7OxyzTGuJSTo2MUFAzEL9YV2NpA3d/bLuLZ5Cfm4Dzq6Cbt4dbj8aPz7PLn9Jf2OPD39fn+7QvY
-D9+6ggAP0vBH7Ys5Cg/07cEGUeI1bBEFTsRo0RtHjRcrgvQoEuHAkgvx/6HkpjKjyY0ry7XsSNFl
-SoAx080cWZPmx4ZQHlLwiY3oUJ4UjSpFWpTp0Zchn948KZUlzqoyry6FShKrTq1OtwJVIlSsVapm
-s6INy5YrRa/vVMItUbbtVJhzSdR1m9TuWbxpxwqcMKGrPsKGBxd+e3hxX5OIGStODNlx08qUp0Z+
-rNly3hGXNl/unPms6M8iQntuXFrtadaSBRtR3fprhdeTY5PWbXp1bs69a8cdgxszb9e+jQNHLpzu
-nuK7l9uGHvz49OSyYUsffht79e3OiXtnbp07dfLg9T4ff725evHuQa+Pn3p++fDd6Vugff99/v7y
-wQdgfQKmlx1+57U34P9+9hlI4H8OMljgaN9RiJ6FCkbIn4YNYmgeex/qt6GHCIJYoogdoiYhhCQe
-eOKCI6oYo3YtBsiijCnSiOOEO96o44+/1fhggiHCmGOQPRIJhARMNunkk1AySVuUVEo5X5VUTokl
-lFpu6WSXXloJX5hfXkmmmPmdiSZiakoAZphvehnnlnNiWWeVd2Zp5pl5qnnBn4AGKuigF9BG6KF/
-GooooYouKmijjgIKaaSFzkdpoJNGmqmjmy7aKaKfHhoqo5Zemmippo46qKqPomrqoEy+uqqrlLKK
-Ka2a4sqprp7yCqqvogJLKnyy2iqpsLMS+6qxpyqbKrKtOnsps4fGKuv/rdLWCi22+RW77bHZ5hru
-ruP2Wu6v5wab7rDdLvtts+0+u26y8U77bqXzRmrttfAi5m2+3PrrLsDg1qstwf0W9q/B4jJMrsPm
-QoyuxOpSzK7A8lpML8b2IlytBPwWzPHBGkdbcsAKD3yyyClnPHLDLz8cc8QzT1xzxTdf3HLHKydc
-wcI5b7xzyPvyS+3R9yLtsdI949s000GbHDXKP6s8NctVuzw0zFvL3LWsRV8L9dc2k42z2TpnzfPV
-PgONttBqk8y203OPHTfXd3udN81vS923o2EvvIfgYxC+98SDq5x4xovz3DjJjzcc+cOTR1w54oUr
-njnjmzveOeSfSx76/7WBmypANwKYjrrq1qR+6emtsz6K65TCPrvsl9Aeqe25476H7o7y/rvvYwC/
-qPDFE1+B8Ygiv7zyzB/qfPSETh8yoKVfGkA3AZi6vTXda8+99+OLDz7555s/SviUfr8++u+rfwn7
-kbo/P/z3y78H/Y7avz/+/9PfGPi3KP8N8Hp/yh6lBnCAURxgAKZioAMheCkJXuKBEWzgBSm4QA3u
-AYMV9OAYQNjBCWbQhCFEYQk3eEIWptCFK/wgByNlQRm20IYvxGEMRzhDfikwUgkgwCgIkABTBXGI
-RbzUES9BRCMKkYlJpNQS99BEJT6RilEE4hXHUEUpbrECXdQiEp04Rv8rltGLZxQjFMm4RjO2EY1v
-VCMWEXiBHzpqAAVYwB4WUIAeLgqPehwDH/2IKEDusY8RzOMhCXkoQwoSkRVU5CMZSShHVmCQiQzk
-JSG5QElukpKDsiQmI6nJUXaylJykoSdNqUpUglJQokzlHVcpyz/S8pX6AlnIAgCAAhDgAAQoAAAI
-iChe+hKYwiTmoYz5y2AO03u9bGYyoXlMZyqTUMxE5jO1F01tXnNQ2bQmNaW5zfZ1U5zcrOY000nO
-bwoqnOs0pzrLWb9zxrOe83RnoOBJTx/qkl8CUAAABjpQBVBvUAElaEEPKqiEKtSgphPoQxkaKIcS
-FKKvk+hFKQooiy6JNKIKBQBGa6fRj2Y0pCPdXUlFytE/eZSlIJ1oTDc6U5OSFKUtvcBLU+pPBAog
-AANIwAACkFOXAlWoRJXVT4M61KLq9KhNVSpUk/qqpSLVqVaNalWnilWuSpWpVDWdV7cK1q6W9atX
-RatWxXpWsqaVjnako1znSte62vWueM2rXvfK1776lVISCAEAOw==
+		</table>
+		<img src=../images/c.gif width=1 height=10><br>
+		
+	</td>
+	<td width=4 bgcolor=#B68FF2 valign=top><img src=../images/p08.gif width=4 height=30 border=0></td>
+	</tr>
+	<tr><td colspan=2 bgcolor=#B68FF2><img src=../images/p09.gif width=4 height=5 border=0></td></tr>
 
-------=_NextPart_000_0000_01C99475.52EB3300
-Content-Type: image/gif
-Content-Transfer-Encoding: base64
-Content-Location: http://act1.astro.women.sohu.com/images/p11.gif
+	</table>
+		<img src=../images/c.gif width=1 height=10><br>
+</td></tr>
+</FORM>
+</table>
+		<img src=../images/c.gif width=1 height=10><br>
+		<form name=form_jisuan>
+		<table width=380 border=0 cellpadding=2 cellspacing=0>
+		<tr><td colspan=2><b>阴历转阳历</b></td></tr>
+		<tr><td>输入农历日期：<input type=text size=8 class=finput name=nyear> 年 <input name=nmonth type=text size=4 class=finput> 月 <input name=nday type=text size=4 class=finput> 日</td>
 
-R0lGODlhTQAXANUAAFpVx+7y//T4/+zr/+zs//Hk/+/m/9P6/6jD7Nr7//r8//L3/+/9/+7x/+39
-/9z7/8Xs+m5x0FBHwj0subLR8bve9nh/1ZSn42RjzEc6vZ615+/z/////4qZ3svJ8czT8Uk6vdHt
-+r7F7Nrc9oGM2uT8/zMetPPj/8/6/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAABNABcAAAb/wJNw
-WBgEBAqOQhAYFIbQKLR4TC6bT6lWSEUqmc7tkLBglBIH1CFRYiwI4ijZjFaz3fD4uHxOr9tvWwYN
-Dg8oh4iIDw4NBnGDhYmSi42PhIaSioyOUAYbJZmhJRucUp6goZKjpVGnqaqkUA2or4klDVuztaq4
-Wrq7iLdjDsCSDnlQBMSJGhO1x1LKxYnQBQuGFSgVGiTdJBEA3RoQ2iEjWVzXiBAWJs6vDwvoJ9aY
-iBQI+QgkHfmK8gMYoNBgQoKJgwgTKvwwAEpAFBc0WJiAUALFhAA6HGLQcMjDChMAXFSoEAAKjgFA
-kVCIoYPEbhYyIARQIgCUlCgAkAQgQUI3/wwAAFw4VPMmqAoYg4b7qZQCipoCEmgDYKEfIqQRyKFA
-gCEChQQCoETdenCCBQQoKJDAoE/rIbBipaJYacLpugihwCpIkwrDwQx2ER1QAGXvoX0WYpJEKJjw
-EMOHImTQto+EQQkAMHRDO5jDqwh/3QU+xAGKZ0QE3UUgodMbiaGISg85fegbhcUJNZCGnAiCXwlO
-K2SQkGhwYb6H2sG2QDyU8cfINYMM2W7CONAa1SyRe++yVpB1EcEdMhZRO8wyK1q4AHO8kPIoJMA+
-dCF8TpNvmRylT1GCVggWkWCLTUPgFIFkuJF0QVEFooIUWodAkAFeaZmQDVFNCEQCNwf5F9ehQaOd
-1JEQD2FEAgIVYJBBBfvoZIJJHDkkEAqgueUXhBFgkAhH9dR3EABugTbfIfHMU8+EF7iV02RXoVXk
-FNfUhx8EoOGHwgTZofCkMr6Fw4wJWSICjRzLZKJTKGMmI8JBCFjgon0I2IdCmr9IMgGFtvQiRZ2J
-BJWJMFp4AMJQEJAwnG6H4QmoEK5IgqgtsWjRaCIXhLiKIJ8Uc2knl8CziSWRpEIJK6Z0KuqnWszR
-hx2AIKOHqnX8gYcee9Dhxx2BxNGFFWDMQ+uuX2BB6xRGeHFFGFEEAQA7
+		<td> <image src=../images/but27.gif onclick="CalConv(1)" style="cursor:hand"></td>
+		<tr><td colspan=2><b>阳历转阴历</b></td></tr>
+		<tr><td>输入阳历日期：<input type=text size=8 class=finput name=yyear> 年 <input name=ymonth type=text size=4 class=finput> 月 <input name=yday type=text size=4 class=finput> 日</td>
+		<td> <image src=../images/but27.gif onclick="CalConv(0)" style="cursor:hand"></td>
 
-------=_NextPart_000_0000_01C99475.52EB3300
-Content-Type: image/gif
-Content-Transfer-Encoding: base64
-Content-Location: http://act1.astro.women.sohu.com/images/p08.gif
+		</tr>
+		</table>
+		</form>
+</body>
+</html>
+<script language="JavaScript"><!--
+function CalConv(M)
+ {
+ 
+ FIRSTYEAR = 1936;
+ LASTYEAR = 2031;
 
-R0lGODlhBAAeAIAAALaP8vD7/yH5BAAAAAAALAAAAAAEAB4AAAINjI+py+0PozyA1gByKAA7
 
-------=_NextPart_000_0000_01C99475.52EB3300
-Content-Type: image/gif
-Content-Transfer-Encoding: base64
-Content-Location: http://act1.astro.women.sohu.com/images/p09.gif
 
-R0lGODlhBAAFAIAAALaP8vD7/yH5BAAAAAAALAAAAAAEAAUAAAIHhBEXidtbAAA7
+ 
 
-------=_NextPart_000_0000_01C99475.52EB3300
-Content-Type: image/gif
-Content-Transfer-Encoding: base64
-Content-Location: http://act1.astro.women.sohu.com/images/but27.gif
+ LunarCal = [
+  new tagLunarCal(23, 3, 2, 17, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0 ), /* 1936 */ 
+  new tagLunarCal( 41, 0, 4, 23, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), 
+  new tagLunarCal( 30, 7, 5, 28, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), 
+  new tagLunarCal( 49, 0, 6, 33, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ), 
+  new tagLunarCal( 38, 0, 0, 38, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 1940 */ 
+  new tagLunarCal( 26, 6, 2, 44, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ), 
+  new tagLunarCal( 45, 0, 3, 49, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), 
+  new tagLunarCal( 35, 0, 4, 54, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ), 
+  new tagLunarCal( 24, 4, 5, 59, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 1944 */ 
+  new tagLunarCal( 43, 0, 0, 5, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ), 
+  new tagLunarCal( 32, 0, 1, 10, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), 
+  new tagLunarCal( 21, 2, 2, 15, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ), 
+  new tagLunarCal( 40, 0, 3, 20, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ), /* 1948 */ 
+  new tagLunarCal( 28, 7, 5, 26, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), 
+  new tagLunarCal( 47, 0, 6, 31, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1 ), 
+  new tagLunarCal( 36, 0, 0, 36, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), 
+  new tagLunarCal( 26, 5, 1, 41, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ), /* 1952 */ 
+  new tagLunarCal( 44, 0, 3, 47, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1 ), 
+  new tagLunarCal( 33, 0, 4, 52, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), 
+  new tagLunarCal( 23, 3, 5, 57, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ), 
+  new tagLunarCal( 42, 0, 6, 2, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ), /* 1956 */ 
+  new tagLunarCal( 30, 8, 1, 8, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0 ), 
+  new tagLunarCal( 48, 0, 2, 13, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0 ), 
+  new tagLunarCal( 38, 0, 3, 18, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), 
+  new tagLunarCal( 27, 6, 4, 23, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 1960 */ 
+  new tagLunarCal( 45, 0, 6, 29, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ), 
+  new tagLunarCal( 35, 0, 0, 34, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), 
+  new tagLunarCal( 24, 4, 1, 39, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ), 
+  new tagLunarCal( 43, 0, 2, 44, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ), /* 1964 */ 
+  new tagLunarCal( 32, 0, 4, 50, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ), 
+  new tagLunarCal( 20, 3, 5, 55, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), 
+  new tagLunarCal( 39, 0, 6, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0 ), 
+  new tagLunarCal( 29, 7, 0, 5, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 1968 */ 
+  new tagLunarCal( 47, 0, 2, 11, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ), 
+  new tagLunarCal( 36, 0, 3, 16, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0 ), 
+  new tagLunarCal( 26, 5, 4, 21, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1 ), 
+  new tagLunarCal( 45, 0, 5, 26, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 1972 */ 
+  new tagLunarCal( 33, 0, 0, 32, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1 ), 
+  new tagLunarCal( 22, 4, 1, 37, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ), 
+  new tagLunarCal( 41, 0, 2, 42, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1 ), 
+  new tagLunarCal( 30, 8, 3, 47, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ), /* 1976 */ 
+  new tagLunarCal( 48, 0, 5, 53, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1 ), 
+  new tagLunarCal( 37, 0, 6, 58, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ), 
+  new tagLunarCal( 27, 6, 0, 3, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0 ), 
+  new tagLunarCal( 46, 0, 1, 8, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 1980 */ 
+  new tagLunarCal( 35, 0, 3, 14, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1 ), 
+  new tagLunarCal( 24, 4, 4, 19, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1 ), 
+  new tagLunarCal( 43, 0, 5, 24, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1 ), 
+  new tagLunarCal( 32, 10, 6, 29, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1 ), /* 1984 */ 
+  new tagLunarCal( 50, 0, 1, 35, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0 ), 
+  new tagLunarCal( 39, 0, 2, 40, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1 ), 
+  new tagLunarCal( 28, 6, 3, 45, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0 ), 
+  new tagLunarCal( 47, 0, 4, 50, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 1988 */ 
+  new tagLunarCal( 36, 0, 6, 56, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0 ), 
+  new tagLunarCal( 26, 5, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1 ), 
+  new tagLunarCal( 45, 0, 1, 6, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0 ), 
+  new tagLunarCal( 34, 0, 2, 11, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0 ), /* 1992 */ 
+  new tagLunarCal( 22, 3, 4, 17, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0 ), 
+  new tagLunarCal( 40, 0, 5, 22, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0 ), 
+  new tagLunarCal( 30, 8, 6, 27, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1 ), 
+  new tagLunarCal( 49, 0, 0, 32, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1 ), /* 1996 */ 
+  new tagLunarCal( 37, 0, 2, 38, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), 
+  new tagLunarCal( 27, 5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ), 
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 1999 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 2000 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 2004 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 2008 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 2012 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 2016 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 2020 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 2024 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 2028 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
 
-R0lGODlhLwATANUAALiD/8aU/93S/qtj/+qi//Gb/65s//Kx///E/v7c//rG//CY//Gd/+Lf/+Th
-/6hf/9vP/vbC/9nO/vay/+Oo/8af/tGR//Cp/8Kc/tCY/8Wg//On//vA//nD/8aG///3/vir//e+
-//K4//e5//rN//my///P/Mmm//W0//vQ/9aW/8ak/8Gb/tvR/tGX/97U/v/V+PvR///q/fSk//24
-//er///2/f/T9//K+/6+//qy///O+qtk//D7/zMetP///yH5BAAAAAAALAAAAAAvABMAAAb/wJ5Q
-KNEADI/BgMdsOp9QpvJhAGgkw2yvwVIdUrKfeEwum88/WeqgYjW0LRdB8UHb7+aPguBqDRsZFx02
-hIWGh4iJijYdFxlvPRgEBSEylpeWPpgympudmZubIQUEGD0QFgsFIwmtrq4+r7GyPrUJtbivriMF
-CxYQKwQLCygkMcfIycg+yszOx8zKxyQowwQrABsM2xMK3t/g3z7g47jm4d8T2wwbRxsz8PHytfDm
-uPE+8jP5+v0bSDUCChwY0AdBgwftISRIEASVEjoiSpyowwdFixczUtxYosoBGiBDiqThY2RJkwpH
-qqRxAECwHDBjyszhg2bMmjNtwsSZc+a1eRYeQiAYSrRoLaNGFZorypSDBwg9KlDAQbWqVR9WcWDN
-upVq16xWKVQQ4iCAiB1o06pdy7at27QiAjgY8iIAhR038urdy7evX787KAR4ocWBBg8UIpiAwbix
-48eQI8MwEYGCBw1ztQgRcOJIkiVRQkdZQgXACQFaggAAOw==
 
-------=_NextPart_000_0000_01C99475.52EB3300
-Content-Type: image/gif
-Content-Transfer-Encoding: base64
-Content-Location: http://act1.astro.women.sohu.com/images/pd04.gif
+ /* 西曆年每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
-R0lGODlhtwEBAIAAALaP8vPj/yH5BAAAAAAALAAAAAC3AQEAAAIURI6py+0Po5y02ouz3rz7D4bi
-ARQAOw==
+ /* 西曆年每月之累積日數, 平年與閏年 */
+ SolarDays = [
+  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
+  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
 
-------=_NextPart_000_0000_01C99475.52EB3300
-Content-Type: text/css;
-	charset="gb2312"
-Content-Transfer-Encoding: quoted-printable
-Content-Location: http://act1.astro.women.sohu.com/css/style.css
+ AnimalIdx = ["馬 ", "羊 ", "猴 ", "雞 ", "狗 ", "豬 ", "鼠 ", "牛 ", "虎 ", "兔 ", "龍 ", "蛇 " ];
+ LocationIdx = [ "南", "東", "北", "西" ];
+ 
+ 
+if (M==0) {  //阳历到阴历
+if (!IsInteger(form_jisuan.yyear.value) || !IsInteger(form_jisuan.ymonth.value) || !IsInteger(form_jisuan.yday.value)) return alert("请输入合法阳历年月日数值");   
+ SolarYear = parseInt(form_jisuan.yyear.value);
+ SolarMonth = parseInt(form_jisuan.ymonth.value);
+ SolarDate = parseInt(form_jisuan.yday.value);
 
-.center01 {
-	COLOR: #005cb2; LINE-HEIGHT: 20px
-}
-.center01 TD {
-	COLOR: #005cb2; LINE-HEIGHT: 20px
-}
-.center01 A:link {
-	COLOR: #005cb2; TEXT-DECORATION: none
-}
-.center01 A:visited {
-	COLOR: #4c8dc9; TEXT-DECORATION: none
-}
-.center01 A:hover {
-	COLOR: #005cb2; TEXT-DECORATION: underline
-}
-.left01 {
-	COLOR: #331eb4
-}
-.left01 TD {
-	COLOR: #331eb4
-}
-.left01 A:link {
-	COLOR: #331eb4; TEXT-DECORATION: none
-}
-.left01 A:visited {
-	COLOR: #331eb4; TEXT-DECORATION: none
-}
-.left01 A:hover {
-	COLOR: #331eb4; TEXT-DECORATION: none
-}
-.left02 A:link {
-	COLOR: #331eb4; TEXT-DECORATION: none
-}
-.left02 A:visited {
-	COLOR: #331eb4; TEXT-DECORATION: none
-}
-.left02 A:hover {
-	LEFT: 1px; COLOR: #331eb4; POSITION: relative; TOP: 1px; =
-TEXT-DECORATION: none
-}
-.left03 TD {
-	COLOR: #6c10b4
-}
-.left03 A:link {
-	COLOR: #6c10b4; TEXT-DECORATION: none
-}
-.left03 A:visited {
-	COLOR: #6c10b4; TEXT-DECORATION: none
-}
-.left03 A:hover {
-	LEFT: 1px; COLOR: #6c10b4; POSITION: relative; TOP: 1px; =
-TEXT-DECORATION: none
-}
-.center02 {
-	COLOR: #1d790c; LINE-HEIGHT: 20px
-}
-.center02 TD {
-	COLOR: #1d790c; LINE-HEIGHT: 20px
-}
-.center02 A:link {
-	COLOR: #1d790c; TEXT-DECORATION: none
-}
-.center02 A:visited {
-	COLOR: #6ca861; TEXT-DECORATION: none
-}
-.center02 A:hover {
-	COLOR: #1d790c; TEXT-DECORATION: underline
-}
-A.center03:link {
-	COLOR: #1d790c; TEXT-DECORATION: none
-}
-A.center03:visited {
-	COLOR: #1d790c; TEXT-DECORATION: none
-}
-A.center03:hover {
-	COLOR: #1d790c; TEXT-DECORATION: none
-}
-.center04 {
-	COLOR: #905f16; LINE-HEIGHT: 21px
-}
-.center04 TD {
-	COLOR: #905f16; LINE-HEIGHT: 21px
-}
-.center04 A:link {
-	COLOR: #905f16; TEXT-DECORATION: none
-}
-.center04 A:visited {
-	COLOR: #b18f5b; TEXT-DECORATION: none
-}
-.center04 A:hover {
-	COLOR: #905f16; TEXT-DECORATION: underline
-}
-A.center05:link {
-	COLOR: #905f16; TEXT-DECORATION: none
-}
-A.center05:visited {
-	COLOR: #905f16; TEXT-DECORATION: none
-}
-A.center05:hover {
-	COLOR: #905f16; TEXT-DECORATION: none
-}
-.center06 {
-	COLOR: #bb4d28; LINE-HEIGHT: 20px
-}
-.center06 TD {
-	COLOR: #bb4d28; LINE-HEIGHT: 20px
-}
-.center06 A:link {
-	COLOR: #bb4d28; TEXT-DECORATION: none
-}
-.center06 A:visited {
-	COLOR: #cf8268; TEXT-DECORATION: none
-}
-.center06 A:hover {
-	COLOR: #bb4d28; TEXT-DECORATION: underline
-}
-A.center07:link {
-	COLOR: #bb4d28; TEXT-DECORATION: none
-}
-A.center07:visited {
-	COLOR: #bb4d28; TEXT-DECORATION: none
-}
-A.center07:hover {
-	COLOR: #bb4d28; TEXT-DECORATION: none
-}
-.center08 {
-	COLOR: #b02862; LINE-HEIGHT: 20px
-}
-.center08 TD {
-	COLOR: #b02862; LINE-HEIGHT: 20px
-}
-.center08 A:link {
-	COLOR: #b02862; TEXT-DECORATION: none
-}
-.center08 A:visited {
-	COLOR: #c86891; TEXT-DECORATION: none
-}
-.center08 A:hover {
-	COLOR: #b02862; TEXT-DECORATION: underline
-}
-A.center09:link {
-	COLOR: #b02862; TEXT-DECORATION: none
-}
-A.center09:visited {
-	COLOR: #b02862; TEXT-DECORATION: none
-}
-A.center09:hover {
-	COLOR: #b02862; TEXT-DECORATION: none
-}
-.etd01 {
-	COLOR: #1d790c; LINE-HEIGHT: 20px
-}
-.etd01 TD {
-	COLOR: #1d790c; LINE-HEIGHT: 20px
-}
-.etd01 A:link {
-	COLOR: #1d790c; TEXT-DECORATION: none
-}
-.etd01 A:visited {
-	COLOR: #1d790c; TEXT-DECORATION: none
-}
-.etd01 A:hover {
-	COLOR: #1d790c; TEXT-DECORATION: underline
-}
-.etd01 {
-	BACKGROUND-POSITION: right bottom; BACKGROUND-REPEAT: no-repeat
-}
-.etd01 SELECT {
-	COLOR: #1d790c
-}
-.etd02 {
-	COLOR: #fe2093; LINE-HEIGHT: 20px
-}
-.etd02 TD {
-	COLOR: #fe2093; LINE-HEIGHT: 20px
-}
-.etd02 A:link {
-	COLOR: #fe2093; TEXT-DECORATION: none
-}
-.etd02 A:visited {
-	COLOR: #fe2093; TEXT-DECORATION: none
-}
-.etd02 A:hover {
-	COLOR: #fe2093; TEXT-DECORATION: underline
-}
-.etd02 SELECT {
-	COLOR: #fe2093
-}
-.etd03 {
-	COLOR: #005cb2; LINE-HEIGHT: 20px
-}
-.etd03 TD {
-	COLOR: #005cb2; LINE-HEIGHT: 20px
-}
-.etd03 A:link {
-	COLOR: #005cb2; TEXT-DECORATION: none
-}
-.etd03 A:visited {
-	COLOR: #005cb2; TEXT-DECORATION: none
-}
-.etd03 A:hover {
-	COLOR: #005cb2; TEXT-DECORATION: underline
-}
-.etd03 {
-	BACKGROUND-REPEAT: repeat-x
-}
-.etd03 SELECT {
-	COLOR: #005cb2
-}
-.et04 A:link {
-	COLOR: #882c00; TEXT-DECORATION: none
-}
-.et04 A:visited {
-	COLOR: #882c00; TEXT-DECORATION: none
-}
-.et04 A:hover {
-	COLOR: #882c00; TEXT-DECORATION: underline
-}
-.et05 {
-	COLOR: #eac382; LINE-HEIGHT: 20px
-}
-.et05 TD {
-	COLOR: #eac382; LINE-HEIGHT: 20px
-}
-.et05 A:link {
-	COLOR: #eac382; TEXT-DECORATION: none
-}
-.et05 A:visited {
-	COLOR: #eac382; TEXT-DECORATION: none
-}
-.et05 A:hover {
-	COLOR: #eac382; TEXT-DECORATION: underline
-}
-.etd06 {
-	COLOR: #882c00; LINE-HEIGHT: 20px
-}
-.etd06 TD {
-	COLOR: #882c00; LINE-HEIGHT: 20px
-}
-.etd06 A:link {
-	COLOR: #882c00; TEXT-DECORATION: none
-}
-.etd06 A:visited {
-	COLOR: #882c00; TEXT-DECORATION: none
-}
-.etd06 A:hover {
-	COLOR: #882c00; TEXT-DECORATION: underline
-}
-.etd07 {
-	COLOR: #905f16; LINE-HEIGHT: 20px
-}
-.etd07 TD {
-	COLOR: #905f16; LINE-HEIGHT: 20px
-}
-.etd07 A:link {
-	COLOR: #905f16; TEXT-DECORATION: none
-}
-.etd07 A:visited {
-	COLOR: #905f16; TEXT-DECORATION: none
-}
-.etd07 A:hover {
-	COLOR: #905f16; TEXT-DECORATION: underline
-}
-.etd08 {
-	COLOR: #882c00; LINE-HEIGHT: 20px
-}
-.etd08 TD {
-	COLOR: #882c00; LINE-HEIGHT: 20px
-}
-.etd08 A:link {
-	COLOR: #882c00; TEXT-DECORATION: none
-}
-.etd08 A:visited {
-	COLOR: #882c00; TEXT-DECORATION: none
-}
-.etd08 A:hover {
-	COLOR: #882c00; TEXT-DECORATION: underline
-}
-.etd09 {
-	COLOR: #c1d0d0; LINE-HEIGHT: 20px
-}
-.etd09 TD {
-	COLOR: #c1d0d0; LINE-HEIGHT: 20px
-}
-.etd09 A:link {
-	COLOR: #c1d0d0; TEXT-DECORATION: none
-}
-.etd09 A:visited {
-	COLOR: #c1d0d0; TEXT-DECORATION: none
-}
-.etd09 A:hover {
-	COLOR: #c1d0d0; TEXT-DECORATION: underline
-}
-.etd09 {
-	BACKGROUND-REPEAT: no-repeat
-}
-.etd10 TD {
-	COLOR: #684106; LINE-HEIGHT: 20px
-}
-.etd10 A:link {
-	COLOR: #684106; TEXT-DECORATION: none
-}
-.etd10 A:visited {
-	COLOR: #684106; TEXT-DECORATION: none
-}
-.etd10 A:hover {
-	COLOR: #684106; TEXT-DECORATION: underline
-}
-.etd11 TD {
-	COLOR: #6c10b4; LINE-HEIGHT: 20px
-}
-.etd11 A:link {
-	COLOR: #6c10b4; TEXT-DECORATION: none
-}
-.etd11 A:visited {
-	COLOR: #6c10b4; TEXT-DECORATION: none
-}
-.etd11 A:hover {
-	COLOR: #6c10b4; TEXT-DECORATION: underline
-}
-.etd12 TD {
-	COLOR: #1c6eb5; LINE-HEIGHT: 18px
-}
-.etd12 A:link {
-	COLOR: #1c6eb5; TEXT-DECORATION: none
-}
-.etd12 A:visited {
-	COLOR: #1c6eb5; TEXT-DECORATION: none
-}
-.etd12 A:hover {
-	COLOR: #1c6eb5; TEXT-DECORATION: underline
-}
-.etd13 TD {
-	COLOR: #975429; LINE-HEIGHT: 18px
-}
-.etd13 A:link {
-	COLOR: #975429; TEXT-DECORATION: none
-}
-.etd13 A:visited {
-	COLOR: #975429; TEXT-DECORATION: none
-}
-.etd13 A:hover {
-	COLOR: #975429; TEXT-DECORATION: underline
-}
-.etd14 {
-	COLOR: #bb4d28; LINE-HEIGHT: 20px
-}
-.etd14 TD {
-	COLOR: #bb4d28; LINE-HEIGHT: 20px
-}
-.etd14 A:link {
-	COLOR: #bb4d28; TEXT-DECORATION: none
-}
-.etd14 A:visited {
-	COLOR: #bb4d28; TEXT-DECORATION: none
-}
-.etd14 A:hover {
-	COLOR: #bb4d28; TEXT-DECORATION: underline
-}
-.etd15 {
-	COLOR: #ca4e72; LINE-HEIGHT: 18px
-}
-.etd15 TD {
-	COLOR: #ca4e72; LINE-HEIGHT: 18px
-}
-.etd15 A:link {
-	COLOR: #ca4e72; TEXT-DECORATION: none
-}
-.etd15 A:visited {
-	COLOR: #ca4e72; TEXT-DECORATION: none
-}
-.etd15 A:hover {
-	COLOR: #ca4e72; TEXT-DECORATION: underline
-}
-.small2 {
-	FONT-SIZE: 12px; COLOR: #000000; TEXT-DECORATION: underline
-}
-.big {
-	FONT-SIZE: 14px; COLOR: #000000; LINE-HEIGHT: 22px
-}
-.finput {
-	BORDER-RIGHT: #c3a4ff 1px solid; BORDER-TOP: #8147f2 1px solid; =
-BORDER-LEFT: #8147f2 1px solid; BORDER-BOTTOM: #c3a4ff 1px solid
-}
-.finput2 {
-	BORDER-RIGHT: #88bdf8 1px solid; BORDER-TOP: #3277dd 1px solid; =
-BORDER-LEFT: #3277dd 1px solid; BORDER-BOTTOM: #88bdf8 1px solid
-}
-.finput3 {
-	BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #555555 1px solid; =
-BORDER-LEFT: #555555 1px solid; COLOR: #331eb4; BORDER-BOTTOM: #ffffff =
-1px solid
-}
-.finput4 {
-	BORDER-RIGHT: #555555 1px solid; BORDER-TOP: #ffffff 1px solid; =
-BORDER-LEFT: #ffffff 1px solid; WIDTH: 30px; COLOR: #331eb4; =
-BORDER-BOTTOM: #555555 1px solid; HEIGHT: 19px
-}
-.finput5 {
-	BORDER-RIGHT: #ec804f 1px solid; BORDER-TOP: #7f1f10 1px solid; =
-BORDER-LEFT: #7f1f10 1px solid; COLOR: #eac382; BORDER-BOTTOM: #ec804f =
-1px solid; BACKGROUND-COLOR: #b4402e
-}
-.finput6 {
-	BORDER-RIGHT: #ec804f 1px solid; BORDER-TOP: #ec804f 1px solid; =
-BORDER-LEFT: #ec804f 1px solid; BORDER-BOTTOM: #ec804f 1px solid; =
-BACKGROUND-COLOR: #b4402e
-}
-.finput7 {
-	BORDER-RIGHT: #b59b38 1px solid; BORDER-TOP: #b59b38 1px solid; =
-BORDER-LEFT: #b59b38 1px solid; BORDER-BOTTOM: #b59b38 1px solid; =
-BACKGROUND-COLOR: #fefadf
-}
-.finput8 {
-	BORDER-RIGHT: #b1984b 1px solid; BORDER-TOP: #b1984b 1px solid; =
-BORDER-LEFT: #b1984b 1px solid; COLOR: #882c00; BORDER-BOTTOM: #b1984b =
-1px solid; BACKGROUND-COLOR: #fff9e3
-}
-.finput9 {
-	BORDER-RIGHT: #698b98 1px solid; BORDER-TOP: #555555 1px solid; =
-BORDER-LEFT: #555555 1px solid; BORDER-BOTTOM: #698b98 1px solid; =
-BACKGROUND-COLOR: #698b98
-}
-.finput10 {
-	BORDER-RIGHT: #6c10b4 1px solid; BORDER-TOP: #6c10b4 1px solid; =
-BORDER-LEFT: #6c10b4 1px solid; BORDER-BOTTOM: #6c10b4 1px solid; =
-BACKGROUND-COLOR: #ffffff
-}
-.finput11 {
-	BORDER-RIGHT: #6c10b4 1px solid; BORDER-TOP: #6c10b4 1px solid; =
-BORDER-LEFT: #6c10b4 1px solid; BORDER-BOTTOM: #6c10b4 1px solid; =
-BACKGROUND-COLOR: #ffffff
-}
-.finput12 {
-	BORDER-RIGHT: #ffa613 1px solid; BORDER-TOP: #d26907 1px solid; =
-BORDER-LEFT: #d26907 1px solid; BORDER-BOTTOM: #ffa613 1px solid; =
-BACKGROUND-COLOR: #fffbb7
-}
-.img1 {
-	BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #ffffff 1px solid; =
-BORDER-LEFT: #ffffff 1px solid; BORDER-BOTTOM: #ffffff 1px solid
-}
-.img2 {
-	BORDER-RIGHT: #ebd0ff 1px solid; BORDER-TOP: #ebd0ff 1px solid; =
-BORDER-LEFT: #ebd0ff 1px solid; BORDER-BOTTOM: #ebd0ff 1px solid
-}
-.img3 {
-	BORDER-RIGHT: #e2e6f2 5px solid; BORDER-TOP: #e2e6f2 5px solid; =
-BORDER-LEFT: #e2e6f2 5px solid; BORDER-BOTTOM: #e2e6f2 5px solid
-}
-.img4 {
-	BORDER-RIGHT: #9ba7c5 1px solid; BORDER-TOP: #9ba7c5 1px solid; =
-BORDER-LEFT: #9ba7c5 1px solid; BORDER-BOTTOM: #9ba7c5 1px solid
-}
-.img5 {
-	BORDER-RIGHT: #e60047 1px solid; BORDER-TOP: #e60047 1px solid; =
-BORDER-LEFT: #e60047 1px solid; BORDER-BOTTOM: #e60047 1px solid
-}
-.img6 {
-	BORDER-RIGHT: #804b0f 1px solid; BORDER-TOP: #804b0f 1px solid; =
-BORDER-LEFT: #804b0f 1px solid; BORDER-BOTTOM: #804b0f 1px solid
-}
-.img7 {
-	BORDER-RIGHT: #ceaf6a 2px solid; BORDER-TOP: #ceaf6a 2px solid; =
-BORDER-LEFT: #ceaf6a 2px solid; BORDER-BOTTOM: #ceaf6a 2px solid
-}
-.img8 {
-	BORDER-RIGHT: #e6ddb9 2px solid; BORDER-TOP: #e6ddb9 2px solid; =
-BORDER-LEFT: #e6ddb9 2px solid; BORDER-BOTTOM: #e6ddb9 2px solid
-}
-.img9 {
-	BORDER-RIGHT: #ffffff 5px solid; BORDER-TOP: #ffffff 5px solid; =
-BORDER-LEFT: #ffffff 5px solid; BORDER-BOTTOM: #ffffff 5px solid
-}
-.img10 {
-	BORDER-RIGHT: #61abea 1px solid; BORDER-TOP: #61abea 1px solid; =
-BORDER-LEFT: #61abea 1px solid; BORDER-BOTTOM: #61abea 1px solid
-}
-.bg1 {
-	BACKGROUND-REPEAT: repeat-x
-}
-.bg2 {
-	BACKGROUND-POSITION: 50% bottom; BACKGROUND-REPEAT: repeat-x
-}
-.bg3 {
-	BACKGROUND-REPEAT: no-repeat
-}
-.bg4 {
-	BACKGROUND-POSITION: right bottom; BACKGROUND-REPEAT: no-repeat
-}
-.bg5 {
-	BACKGROUND-POSITION: 50% top; BACKGROUND-REPEAT: no-repeat
-}
-.bg6 {
-	BORDER-RIGHT: #cd7ee9 1px solid; BORDER-TOP: #cd7ee9 1px solid; =
-BORDER-LEFT: #cd7ee9 1px solid; BORDER-BOTTOM: #cd7ee9 1px solid; =
-BACKGROUND-COLOR: #ffffff
-}
-.bg7 {
-	BORDER-RIGHT: #ab54e8 1px solid; BORDER-TOP: #ab54e8 1px solid; =
-BORDER-LEFT: #ab54e8 1px solid; COLOR: #6c10b4; BORDER-BOTTOM: #ab54e8 =
-1px solid; BACKGROUND-COLOR: #ffffff
-}
-.bg7 A:link {
-	COLOR: #e009c4; TEXT-DECORATION: none
-}
-.bg7 A:visited {
-	COLOR: #e009c4; TEXT-DECORATION: none
-}
-.bg7 A:hover {
-	COLOR: #e009c4; TEXT-DECORATION: none
-}
-.bg8 {
-	BACKGROUND-POSITION: center 50%; BACKGROUND-REPEAT: no-repeat
-}
-.z1 {
-	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #646464
-}
-.z2 {
-	COLOR: #e09600; LINE-HEIGHT: 18px
-}
-.z3 {
-	COLOR: #eac382; LINE-HEIGHT: 18px
-}
-.z4 {
-	FONT-WEIGHT: bold; FONT-SIZE: 20px; COLOR: #331eb4
-}
-.z5 TD {
-	COLOR: #6c10b4
-}
-TD.z6 {
-	COLOR: #e009c4
-}
-TD.bai {
-	COLOR: #ffffff; LINE-HEIGHT: 20px
-}
-.bai TD {
-	COLOR: #ffffff; LINE-HEIGHT: 20px
-}
-.bai A:link {
-	COLOR: #ffffff; TEXT-DECORATION: none
-}
-.bai A:visited {
-	COLOR: #ffffff; TEXT-DECORATION: none
-}
-.bai A:active {
-	COLOR: #ffffff; LETTER-SPACING: 0px
-}
-.bai A:hover {
-	COLOR: #ffffff; TEXT-DECORATION: underline
-}
-.bai2 TD {
-	COLOR: #ffffff
-}
-.bai2 A:link {
-	COLOR: #ffffff; TEXT-DECORATION: none
-}
-.bai2 A:visited {
-	COLOR: #ffffff; TEXT-DECORATION: none
-}
-.bai2 A:active {
-	COLOR: #ffffff; LETTER-SPACING: 0px
-}
-.bai2 A:hover {
-	COLOR: #ffffff; TEXT-DECORATION: underline
-}
-.l01 {
-	COLOR: #005cb2
-}
-.l01 TD {
-	COLOR: #005cb2
-}
-.l01 A:link {
-	COLOR: #005cb2; TEXT-DECORATION: none
-}
-.l01 A:visited {
-	COLOR: #005cb2; TEXT-DECORATION: none
-}
-.l01 A:hover {
-	COLOR: #4c8dc9; TEXT-DECORATION: underline
-}
-.dh A:link {
-	COLOR: #c7fe7a; TEXT-DECORATION: none
-}
-.dh A:visited {
-	COLOR: #c7fe7a; TEXT-DECORATION: none
-}
-.dh A:hover {
-	COLOR: #c7fe7a; TEXT-DECORATION: underline
-}
-.pic A:hover {
-	LEFT: 1px; POSITION: relative; TOP: 1px
-}
-.bai2 A:hover {
-	LEFT: 1px; POSITION: relative; TOP: 1px
-}
-.tdca {
-	CURSOR: hand
-}
-.tdcb {
-	BACKGROUND-IMAGE: url(images/dh01.gif); CURSOR: hand; =
-BACKGROUND-REPEAT: repeat-x
-}
-.tdcc {
-	BACKGROUND-POSITION: right bottom; BACKGROUND-IMAGE: =
-url(images/tcd04.gif); BACKGROUND-REPEAT: no-repeat
+
+ if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return alert("请输入1936-2031有效年份"); 
+
+ sm = SolarMonth - 1;
+ 
+ if ( sm < 0 || sm > 11 ) return alert(请输入有效月份);
+ 
+ leap = GetLeap( SolarYear );
+
+ if ( sm == 1 )
+  d = leap + 28;
+ else
+  d = SolarCal[sm];
+
+ if ( SolarDate < 1 || SolarDate > d ) return 3;
+
+ y = SolarYear - FIRSTYEAR;
+ acc = SolarDays[ leap*14 + sm ] + SolarDate;
+ kc = acc + LunarCal[y].BaseKanChih;
+ Kan = kc % 10;
+ Chih = kc % 12;
+ Location = LocationIdx[kc % 4];
+ Age = kc % 60;
+ if ( Age < 22 )
+  Age = 22 - Age;
+ else
+  Age = 82 - Age;
+
+ Age =Age + 3;
+
+if (Age < 10)
+  Age=Age+60;
+
+ Animal = AnimalIdx[ Chih ];
+
+ if ( acc <= LunarCal[y].BaseDays ) {
+  y--;
+  LunarYear = SolarYear - 1;
+  leap = GetLeap( LunarYear );
+  sm += 12;
+  acc = SolarDays[leap*14 + sm] + SolarDate;
+  }
+ else
+  LunarYear = SolarYear;
+  
+ l1 = LunarCal[y].BaseDays;
+ for ( i=0; i<13; i++ ) {
+  l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+  if ( acc <= l2 ) break;
+  l1 = l2;
+  }
+
+ LunarMonth = i + 1;
+ LunarDate = acc - l1;
+ im = LunarCal[y].Intercalation;
+
+ if ( im != 0 && LunarMonth > im ) {
+  LunarMonth--;
+  if ( LunarMonth == im ) LunarMonth = -im;
+  }
+
+ if ( LunarMonth > 12 ) LunarMonth -= 12;
+
+alert("农历为："+ LunarYear + "年" + LunarMonth + "月 " + LunarDate + "日 " );
+                
+            form_jisuan.yyear.value = "";
+            form_jisuan.ymonth.value = "";
+            form_jisuan.yday.value = ""; 
+ return 0;
+ }
+
+ else /* 阴历转阳历 */ 
+ { 
+   if (!IsInteger(form_jisuan.nyear.value) || !IsInteger(form_jisuan.nmonth.value) || !IsInteger(form_jisuan.nday.value)) return alert("请输入合法农历年月日数值");   
+   LunarYear = parseInt(form_jisuan.nyear.value);
+   LunarMonth = parseInt(form_jisuan.nmonth.value);
+   LunarDate = parseInt(form_jisuan.nday.value);
+
+        if ( LunarYear < FIRSTYEAR || LunarYear >= LASTYEAR ) return alert("请输入1936-2031有效年份");   
+          
+        y = LunarYear - FIRSTYEAR ; 
+        im = LunarCal[y].Intercalation; 
+        lm = LunarMonth; 
+          
+        if ( lm < 0 ) 
+        { 
+            if ( lm != -im ) 
+                return alert(请输入有效月份);   
+        } 
+        else if ( lm < 1 || lm > 12 ) return alert(请输入有效月份);   
+        
+        if ( im != 0 ) 
+        { 
+            if ( lm > im ) 
+                lm++; 
+            else if ( lm == -im ) 
+                lm = im + 1; 
+        } 
+        lm--; 
+
+        if ( LunarDate > LunarCal[y].MonthDays[lm] + 29 ) 
+            return alert("农历日期不正确");
+           
+        
+        acc = 0;
+        for ( i=0; i < lm;i++) {
+
+         acc+= LunarCal[y].MonthDays[i] + 29;
+          
+         
+       }
+       
+        acc +=LunarCal[y].BaseDays + LunarDate;
+           
+        
+             
+            leap = GetLeap( LunarYear ); 
+            
+            
+        for ( i=13; i>=0; i-- ) {
+        
+            if ( acc > SolarDays[leap*14+i] ) 
+                break; 
+        }       
+             SolarDate = acc - SolarDays[leap*14 + i]  ;
+            
+            
+           
+            if ( i <= 11 ) 
+            { 
+              
+                SolarYear = LunarYear; 
+                SolarMonth = i + 1; 
+            } 
+            else 
+            { 
+                
+                SolarYear = LunarYear + 1; 
+                SolarMonth = i - 11; 
+            } 
+             
+         
+            leap = GetLeap( SolarYear ); 
+            y = SolarYear - FIRSTYEAR; 
+            
+            //acc = SolarDays[leap][SolarMonth-1] + SolarDate; 
+            acc = SolarDays[leap*14 + SolarMonth-1] + SolarDate;
+            
+            weekday = ( acc + LunarCal[y].BaseWeekday ) % 7; 
+            kc = acc + LunarCal[y].BaseKanChih; 
+            kan = kc % 10; 
+            chih = kc % 12; 
+           
+            alert("阳历为："+ SolarYear + "年" + SolarMonth + "月" + SolarDate + "日 " );        
+
+ 
+            form_jisuan.nyear.value = "";
+            form_jisuan.nmonth.value = "";
+            form_jisuan.nday.value = "";            
+            return 0;
+ }//else结束
+ 
+ }
+
+ /* 闰年, 返回 0 平年, 1 闰年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 1 月 1 日到正月初一的累计日 */
+ this.Intercalation = i;    /* 闰月月份. 0==此年沒有闰月 */
+ this.BaseWeekday = w;      /* 此年 1 月 1 日为星期减 1 */
+ this.BaseKanChih = k;      /* 此年 1 月 1 日之干支序号减 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此农历年每月之大小, 0==小月(29日), 1==大月(30日) */
 }
 
-------=_NextPart_000_0000_01C99475.52EB3300--
+//-->
+
+
+<!--
+function OpenWin( url ) { 
+ return window.open( url, 'coop', 'width=320,height=350,toolbar=0,location=0,directories=0,status=0,menuBar=0,scrollBars=0,resizable=1' ); 
+} 
+
+
+function IsInteger(string ,sign) 
+{  
+  var integer; 
+  if ((sign!=null) && (sign!='-') && (sign!='+')) 
+  { 
+   alert('IsInter(string,sign)的参数出错：nsign为null或"-"或"+"'); 
+   return false; 
+  } 
+  integer = parseInt(string); 
+  if (isNaN(integer)) 
+  { 
+   return false; 
+  } 
+  else if (integer.toString().length==string.length) 
+  {  
+   if ((sign==null) || (sign=='-' && integer<0) || (sign=='+' && integer>0)) 
+   { 
+     return true; 
+   } 
+   else 
+     return false;  
+  } 
+  else 
+   return false; 
+} 
+
+//--></script> 
