@@ -1,26 +1,24 @@
 package hoi.addrbook.ui;
 
-import hoi.addrbook.icons.ImageHelper;
-
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Frame;
 import java.awt.GridLayout;
+import java.awt.Insets;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.border.EmptyBorder;
 
 public class AddrBookSettingDialog extends JDialog {
 
-	private static final Color BORDER_COLOR = new JLabel().getBackground();
+	private static final long serialVersionUID = 7423268241876733586L;
+
+	private static final int BLANK_SIZE = 20;
+	private static final int GAP_SIZE = 5;
 
 	private JButton addPasswordButton = new JButton("设置密码");
 	private JButton changePasswordButton = new JButton("更改密码");
@@ -34,48 +32,47 @@ public class AddrBookSettingDialog extends JDialog {
 	private JRadioButton lemmonColorButton = new JRadioButton("柠檬");
 	private JRadioButton redColorButton = new JRadioButton("红色");
 
-	public AddrBookSettingDialog() {
-		JPanel aPanel = new JPanel(new GridLayout(1, 4));
+	public AddrBookSettingDialog(Frame owner) {
+		super(owner);
+
+		JPanel aPanel = new JPanel(new GridLayout(1, 4, GAP_SIZE, GAP_SIZE));
 		aPanel.add(defaultColorButton);
 		aPanel.add(greenColorButton);
 		aPanel.add(lemmonColorButton);
 		aPanel.add(redColorButton);
-		aPanel.setBorder(BorderFactory.createTitledBorder("配色方案"));
+		aPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder("外观配色"), //
+				new EmptyBorder(new Insets(BLANK_SIZE / 2, BLANK_SIZE * 2, BLANK_SIZE / 2, BLANK_SIZE * 2))));
 
-		JPanel bPanel = new JPanel(new GridLayout(3, 1));
+		JPanel bPanel = new JPanel(new GridLayout(3, 1, GAP_SIZE * 2, GAP_SIZE));
 		bPanel.add(addPasswordButton);
 		bPanel.add(changePasswordButton);
 		bPanel.add(deletePasswordButton);
-		bPanel.setBorder(BorderFactory.createTitledBorder("密码保护"));
+		bPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder("密码保护"), //
+				new EmptyBorder(new Insets(BLANK_SIZE / 2, BLANK_SIZE * 2, BLANK_SIZE / 2, BLANK_SIZE * 2))));
 
-		JPanel cPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+		JPanel cPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, GAP_SIZE * 2, GAP_SIZE));
 		cPanel.add(donateButton);
 		cPanel.add(closeButton);
+		// cPanel.setBorder(BorderFactory.createEtchedBorder());
 
-		JPanel mPanel = new JPanel(new BorderLayout());
+		JPanel mPanel = new JPanel(new BorderLayout(BLANK_SIZE, BLANK_SIZE / 2));
 		mPanel.add(aPanel, BorderLayout.NORTH);
 		mPanel.add(bPanel, BorderLayout.CENTER);
 		mPanel.add(cPanel, BorderLayout.SOUTH);
-		mPanel.setBorder(BorderFactory.createLineBorder(BORDER_COLOR, 5));
-		this.setContentPane(mPanel);
-	}
+		mPanel.setBorder(new EmptyBorder(new Insets(BLANK_SIZE, BLANK_SIZE, BLANK_SIZE, BLANK_SIZE)));
 
-	private static void setLookAndFeel() {
-		try { // Default, Green, Lemmon, Red
-			com.jtattoo.plaf.acryl.AcrylLookAndFeel.setTheme("Default", "??", "Addrbooker");
-			UIManager.setLookAndFeel(new com.jtattoo.plaf.acryl.AcrylLookAndFeel());
-		} catch (UnsupportedLookAndFeelException e) {
-			e.printStackTrace();
-		}
+		setLayout(new BorderLayout(0, 0));
+		add(mPanel, BorderLayout.CENTER);
+
+		if (owner != null)
+			setIconImage(owner.getIconImage());
+		setTitle("选项 设置");
+		pack();
+		setResizable(false);
+		setLocationRelativeTo(owner);
 	}
 
 	public static void main(String[] args) {
-		setLookAndFeel();
-		AddrBookSettingDialog d = new AddrBookSettingDialog();
-		d.pack();
-		d.setIconImage(ImageHelper.ICON_LOGO.getImage());
-		d.setLocationRelativeTo(null);
-		d.setVisible(true);
+		new AddrBookSettingDialog(null).setVisible(true);
 	}
-
 }
