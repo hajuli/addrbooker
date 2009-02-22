@@ -1,4 +1,4 @@
-﻿package hoi.addrbook.calendar;
+package hoi.addrbook.calendar;
 
 /**
  * http://act1.astro.women.sohu.com/search/calendar.htm <br>
@@ -47,8 +47,8 @@ public class LunisolarCalendar { //
 	private static final int FIRSTYEAR = 1936;
 	private static final int LASTYEAR = 2031;
 	private static final TagLunarCal LunarCal[] = new TagLunarCal[] { //
-	new TagLunarCal(23, 3, 2, 17, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0), /* 1936 */
-	new TagLunarCal(41, 0, 4, 23, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1), //
+			new TagLunarCal(23, 3, 2, 17, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0), /* 1936 */
+			new TagLunarCal(41, 0, 4, 23, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1), //
 			new TagLunarCal(30, 7, 5, 28, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1), //
 			new TagLunarCal(49, 0, 6, 33, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1), //
 			new TagLunarCal(38, 0, 0, 38, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1), /* 1940 */
@@ -143,12 +143,11 @@ public class LunisolarCalendar { //
 			new TagLunarCal(43, 0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1), //
 			new TagLunarCal(32, 0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0), //
 			new TagLunarCal(22, 3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0) };
-	private static final int SolarCal[] = new int[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 }; /* 西曆年每月之日數 */
+	private static final int SolarCal[] = new int[] {
+			31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 }; /* 西曆年每月之日數 */
 	private static final int SolarDays[] = new int[] { /* 西曆年每月之累積日數，平年與閏年 */
-	0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396, //
+			0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396, //
 			0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 };
-	private static final String AnimalIdx[] = new String[] { "馬", "羊", "猴", "雞", "狗", "豬", "鼠", "牛", "虎", "兔", "龍", "蛇" };
-	private static final String LocationIdx[] = new String[] { "南", "東", "北", "西" };
 
 	/**
 	 * 阳历转阴历
@@ -180,14 +179,11 @@ public class LunisolarCalendar { //
 			d = SolarCal[sm];
 
 		if (SolarDate < 1 || SolarDate > d)
-			throw new Exception("请输入有效日");
+			throw new Exception("请输入有效日期");
 
 		int y = SolarYear - FIRSTYEAR;
 		int acc = SolarDays[leap * 14 + sm] + SolarDate;
 		int kc = acc + LunarCal[y].BaseKanChih;
-		int Kan = kc % 10;
-		int Chih = kc % 12;
-		String Location = LocationIdx[kc % 4];
 		int Age = kc % 60;
 		if (Age < 22)
 			Age = 22 - Age;
@@ -198,8 +194,6 @@ public class LunisolarCalendar { //
 
 		if (Age < 10)
 			Age = Age + 60;
-
-		String Animal = AnimalIdx[Chih];
 
 		if (acc <= LunarCal[y].BaseDays) {
 			y--;
@@ -244,9 +238,10 @@ public class LunisolarCalendar { //
 		int LunarYear = date.year;
 		int LunarMonth = date.month;
 		int LunarDate = date.day;
+		int SolarYear, SolarMonth, SolarDate;
 
 		if (LunarYear < FIRSTYEAR || LunarYear >= LASTYEAR)
-			throw new Exception("请输入1936-2031有效年份");
+			throw new Exception(String.format("请输入%d-%d有效年份", FIRSTYEAR, LASTYEAR));
 
 		int y = LunarYear - FIRSTYEAR;
 		int im = LunarCal[y].Intercalation;
@@ -270,44 +265,28 @@ public class LunisolarCalendar { //
 			throw new Exception("农历日期不正确");
 
 		int acc = 0, i;
-		for (i = 0; i < lm; i++) {
-
+		for (i = 0; i < lm; i++)
 			acc += LunarCal[y].MonthDays[i] + 29;
-
-		}
-
 		acc += LunarCal[y].BaseDays + LunarDate;
 
 		int leap = GetLeap(LunarYear);
 
-		for (i = 13; i >= 0; i--) {
-
+		for (i = 13; i >= 0; i--)
 			if (acc > SolarDays[leap * 14 + i])
 				break;
-		}
-		int SolarDate = acc - SolarDays[leap * 14 + i];
-		int SolarYear, SolarMonth;
+		SolarDate = acc - SolarDays[leap * 14 + i];
 
 		if (i <= 11) {
-
 			SolarYear = LunarYear;
 			SolarMonth = i + 1;
 		} else {
-
 			SolarYear = LunarYear + 1;
 			SolarMonth = i - 11;
 		}
 
 		leap = GetLeap(SolarYear);
 		y = SolarYear - FIRSTYEAR;
-
-		//acc = SolarDays[leap][SolarMonth-1] + SolarDate; 
 		acc = SolarDays[leap * 14 + SolarMonth - 1] + SolarDate;
-
-		int weekday = (acc + LunarCal[y].BaseWeekday) % 7;
-		int kc = acc + LunarCal[y].BaseKanChih;
-		int kan = kc % 10;
-		int chih = kc % 12;
 
 		return new LunisolarCalendar(SolarYear, SolarMonth, SolarDate);
 	}
@@ -325,23 +304,23 @@ public class LunisolarCalendar { //
 	}
 
 	public static void main(String[] args) throws Exception {
-		System.out.println(LunisolarCalendar.lunar2solar(new LunisolarCalendar(1986, 10, 25)));
+		System.out.println(LunisolarCalendar.lunar2solar(new LunisolarCalendar(1936, 10, 25)));
 		System.out.println(LunisolarCalendar.solar2lunar(new LunisolarCalendar(1986, 11, 26)));
 		System.out.println(LunisolarCalendar.lunar2solar(new LunisolarCalendar(1986, 3, 0)));
 		System.out.println(LunisolarCalendar.solar2lunar(new LunisolarCalendar(1986, 3, 2)));
 	}
 
 	public String toString() {
-		return String.format("%d-%02d-%02d", year, month, day);
+		return String.format("%d-%02d-%02d", this.year, this.month, this.day);
 	}
 }
 
 class TagLunarCal {
-	public int BaseDays; /* 1月1日到正月初一的累计日 */
-	public int Intercalation; /* 闰月月份 0==此年沒有闰月 */
-	public int BaseWeekday; /* 此年1月1日为星期减1 */
-	public int BaseKanChih; /* 此年1月1日之干支序号减1 */
-	public int MonthDays[]; /* 此农历年每月之大小 0==小月(29日) 1==大月(30日) */
+	public int BaseDays; /* 1 月 1 日到正月初一的累计日 */
+	public int Intercalation; /* 闰月月份. 0==此年沒有闰月 */
+	public int BaseWeekday; /* 此年 1 月 1 日为星期减 1 */
+	public int BaseKanChih; /* 此年 1 月 1 日之干支序号减 1 */
+	public int MonthDays[]; /* 此农历年每月之大小, 0==小月(29日), 1==大月(30日) */
 
 	public TagLunarCal(int d, int i, int w, int k, //
 			int m1, int m2, int m3, int m4, int m5, int m6, int m7, //
@@ -350,6 +329,7 @@ class TagLunarCal {
 		this.Intercalation = i;
 		this.BaseWeekday = w;
 		this.BaseKanChih = k;
-		this.MonthDays = new int[] { m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 };
+		this.MonthDays = new int[] {
+				m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 };
 	}
 }
