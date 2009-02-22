@@ -1,4 +1,4 @@
-package hoi.addrbook.calendar;
+﻿package hoi.addrbook.calendar;
 
 /**
  * http://act1.astro.women.sohu.com/search/calendar.htm <br>
@@ -151,85 +151,6 @@ public class LunisolarCalendar { //
 	private static final String LocationIdx[] = new String[] { "南", "東", "北", "西" };
 
 	/**
-	 * 阴历转阳历
-	 * 
-	 * @param date
-	 * @return
-	 * @throws Exception
-	 */
-	public static LunisolarCalendar lunar2solar(LunisolarCalendar date) throws Exception { // 
-		int LunarYear = date.year;
-		int LunarMonth = date.month;
-		int LunarDate = date.day;
-
-		if (LunarYear < FIRSTYEAR || LunarYear >= LASTYEAR)
-			throw new Exception("请输入1936-2031有效年份");
-
-		int y = LunarYear - FIRSTYEAR;
-		int im = LunarCal[y].Intercalation;
-		int lm = LunarMonth;
-
-		if (lm < 0) {
-			if (lm != -im)
-				throw new Exception("请输入有效月份");
-		} else if (lm < 1 || lm > 12)
-			throw new Exception("请输入有效月份");
-
-		if (im != 0) {
-			if (lm > im)
-				lm++;
-			else if (lm == -im)
-				lm = im + 1;
-		}
-		lm--;
-
-		if (LunarDate > LunarCal[y].MonthDays[lm] + 29)
-			throw new Exception("农历日期不正确");
-
-		int acc = 0, i;
-		for (i = 0; i < lm; i++) {
-
-			acc += LunarCal[y].MonthDays[i] + 29;
-
-		}
-
-		acc += LunarCal[y].BaseDays + LunarDate;
-
-		int leap = GetLeap(LunarYear);
-
-		for (i = 13; i >= 0; i--) {
-
-			if (acc > SolarDays[leap * 14 + i])
-				break;
-		}
-		int SolarDate = acc - SolarDays[leap * 14 + i];
-		int SolarYear, SolarMonth;
-
-		if (i <= 11) {
-
-			SolarYear = LunarYear;
-			SolarMonth = i + 1;
-		} else {
-
-			SolarYear = LunarYear + 1;
-			SolarMonth = i - 11;
-		}
-
-		leap = GetLeap(SolarYear);
-		y = SolarYear - FIRSTYEAR;
-
-		//acc = SolarDays[leap][SolarMonth-1] + SolarDate; 
-		acc = SolarDays[leap * 14 + SolarMonth - 1] + SolarDate;
-
-		int weekday = (acc + LunarCal[y].BaseWeekday) % 7;
-		int kc = acc + LunarCal[y].BaseKanChih;
-		int kan = kc % 10;
-		int chih = kc % 12;
-
-		return new LunisolarCalendar(SolarYear, SolarMonth, SolarDate);
-	}
-
-	/**
 	 * 阳历转阴历
 	 * 
 	 * @param date
@@ -310,6 +231,85 @@ public class LunisolarCalendar { //
 		if (LunarMonth > 12)
 			LunarMonth -= 12;
 		return new LunisolarCalendar(LunarYear, LunarMonth, LunarDate);
+	}
+
+	/**
+	 * 阴历转阳历
+	 * 
+	 * @param date
+	 * @return
+	 * @throws Exception
+	 */
+	public static LunisolarCalendar lunar2solar(LunisolarCalendar date) throws Exception { // 
+		int LunarYear = date.year;
+		int LunarMonth = date.month;
+		int LunarDate = date.day;
+
+		if (LunarYear < FIRSTYEAR || LunarYear >= LASTYEAR)
+			throw new Exception("请输入1936-2031有效年份");
+
+		int y = LunarYear - FIRSTYEAR;
+		int im = LunarCal[y].Intercalation;
+		int lm = LunarMonth;
+
+		if (lm < 0) {
+			if (lm != -im)
+				throw new Exception("请输入有效月份");
+		} else if (lm < 1 || lm > 12)
+			throw new Exception("请输入有效月份");
+
+		if (im != 0) {
+			if (lm > im)
+				lm++;
+			else if (lm == -im)
+				lm = im + 1;
+		}
+		lm--;
+
+		if (LunarDate > LunarCal[y].MonthDays[lm] + 29)
+			throw new Exception("农历日期不正确");
+
+		int acc = 0, i;
+		for (i = 0; i < lm; i++) {
+
+			acc += LunarCal[y].MonthDays[i] + 29;
+
+		}
+
+		acc += LunarCal[y].BaseDays + LunarDate;
+
+		int leap = GetLeap(LunarYear);
+
+		for (i = 13; i >= 0; i--) {
+
+			if (acc > SolarDays[leap * 14 + i])
+				break;
+		}
+		int SolarDate = acc - SolarDays[leap * 14 + i];
+		int SolarYear, SolarMonth;
+
+		if (i <= 11) {
+
+			SolarYear = LunarYear;
+			SolarMonth = i + 1;
+		} else {
+
+			SolarYear = LunarYear + 1;
+			SolarMonth = i - 11;
+		}
+
+		leap = GetLeap(SolarYear);
+		y = SolarYear - FIRSTYEAR;
+
+		//acc = SolarDays[leap][SolarMonth-1] + SolarDate; 
+		acc = SolarDays[leap * 14 + SolarMonth - 1] + SolarDate;
+
+		int weekday = (acc + LunarCal[y].BaseWeekday) % 7;
+		int kc = acc + LunarCal[y].BaseKanChih;
+		int kan = kc % 10;
+		int chih = kc % 12;
+
+		return new LunisolarCalendar(SolarYear, SolarMonth, SolarDate);
 	}
 
 	/* 闰年, 返回 0 平年, 1 闰年 */
