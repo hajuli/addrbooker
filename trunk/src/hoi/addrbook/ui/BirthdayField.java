@@ -13,21 +13,22 @@ import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
 public class BirthdayField extends JPanel {
-	
+
 	private static final long serialVersionUID = -2283281574591552446L;
-	private static final Border COMMON_BORDER = BorderFactory.createCompoundBorder( //
+	public static final Border COMMON_BORDER = BorderFactory.createCompoundBorder( //
 			BorderFactory.createEtchedBorder(), //
 			new EmptyBorder(new Insets(1, 1, 1, 1)));
-	
-	private JTextField solarField = new JTextField();
-	private JTextField lunarField = new JTextField();
+
+	private JTextField solarField = new JTextField("1986-11-26");
+	private JTextField lunarField = new JTextField("1986-10-25");
 
 	public BirthdayField() {
 		solarField.setBorder(COMMON_BORDER);
 		lunarField.setBorder(COMMON_BORDER);
 
-		setLayout(new GridLayout(1, 2, -1, -1));
+		setLayout(new GridLayout(1, 2, 0, 0));
 		add(solarField);
 		add(lunarField);
+		//setBorder(BorderFactory.createEtchedBorder());
 	}
 }
