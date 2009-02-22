@@ -26,7 +26,7 @@ public class BirthdayField extends JPanel {
 		solarField.setBorder(COMMON_BORDER);
 		lunarField.setBorder(COMMON_BORDER);
 
-		setLayout(new GridLayout(1, 2, 0, 0));
+		setLayout(new GridLayout(1, 2, 1, 1));
 		add(solarField);
 		add(lunarField);
 		//setBorder(BorderFactory.createEtchedBorder());
