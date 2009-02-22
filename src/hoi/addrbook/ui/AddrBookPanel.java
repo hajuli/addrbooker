@@ -89,8 +89,8 @@ public class AddrBookPanel extends JPanel {
 		}
 	};
 	private JList contactList = new JList(new String[] {
-			"杨全海", "杨全海", "姐姐", "妈妈", "姐姐", "妈妈", "姐姐", "妈妈", "姐姐", "妈妈", "姐姐", "妈妈", "姐姐", "妈妈", "姐姐", "叔叔#妈妈", "喷粪", "杨东，哥哥", "姐姐", "妈妈", "姐姐", "妈妈", "姐姐",
-			"妈妈", "姐姐", "妈妈", "姐姐", "妈妈", "姐姐", "妈妈", "姐姐", "妈妈", "姐姐", "妈妈" });
+			"姐姐", "妈妈", "姐姐", "叔叔#妈妈", "喷粪", "杨东，哥哥", "姐姐", "妈妈", "姐姐", "妈妈", "姐姐",
+			"妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈", });
 
 	private JTextField infoNameField = new JTextField("杨全海");
 	private ContactField infoContactField = new ContactField();
@@ -169,7 +169,7 @@ public class AddrBookPanel extends JPanel {
 		JPanel wPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		wPanel.add(filterField, BorderLayout.NORTH);
 		wPanel.add(scroll, BorderLayout.CENTER);
-		wPanel.setMinimumSize(new Dimension(125, -1));
+		wPanel.setMinimumSize(new Dimension(130, -1));
 		wPanel.setBorder(BorderFactory.createEtchedBorder());
 
 		JToolBar toolbar = new JToolBar("工具条");
