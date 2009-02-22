@@ -2,18 +2,13 @@ package hoi.addrbook.ui;
 
 import hoi.addrbook.icons.ImageHelper;
 
-import java.awt.BasicStroke;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.GridLayout;
 import java.awt.Insets;
-import java.awt.Polygon;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -28,7 +23,6 @@ import javax.swing.JTextField;
 import javax.swing.JToolBar;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 
 public class AddrBookPanel extends JPanel {
 
@@ -64,11 +58,12 @@ public class AddrBookPanel extends JPanel {
 			}
 		}
 	};
-	private JList contactList = new JList();
+	private JList contactList = new JList(new String[] {"杨全海",
+			"杨全海","姐姐","妈妈"});
 
 	private JTextField infoNameField = new JTextField();
-	private JTextField infoContactField = new JTextField();
-	private JTextField infoBirthdayField = new JTextField();
+	private ContactField infoContactField = new ContactField();
+	private BirthdayField infoBirthdayField = new BirthdayField();
 	private JTextField infoAgeField = new JTextField();
 	private JTextField infoQQField = new JTextField();
 	private JTextField infoMSNField = new JTextField();
@@ -90,7 +85,8 @@ public class AddrBookPanel extends JPanel {
 		}
 		JPanel bPanel = new JPanel(new GridLayout(comps.length, 1, GAP_SIZE, GAP_SIZE));
 		for (JComponent comp : comps) {
-			comp.setBorder(COMMON_BORDER);
+			if (comp != infoBirthdayField && comp != infoContactField)
+				comp.setBorder(COMMON_BORDER);
 			//Dimension size = comp.getPreferredSize();
 			//size.height = size.height * 6 / 7;
 			//comp.setPreferredSize(size);
@@ -104,15 +100,21 @@ public class AddrBookPanel extends JPanel {
 
 	private JPanel createInfoPanel() {
 		JPanel aPanel = new JPanel(new GridLayout(1, 2, GAP_SIZE, GAP_SIZE));
-		aPanel.add(createInfoPanel(new String[] { "姓名", "生日", "QQ", "手机" }, //
-				new JComponent[] { infoNameField, infoBirthdayField, infoQQField, infoMobileField }));
-		aPanel.add(createInfoPanel(new String[] { "联系", "年龄", "MSN", "飞信" }, //
-				new JComponent[] { infoContactField, infoAgeField, infoMSNField, infoFetionField }));
+		aPanel.add(createInfoPanel(new String[] {
+				"姓名", "生日", "QQ", "手机" }, //
+				new JComponent[] {
+						infoNameField, infoBirthdayField, infoQQField, infoMobileField }));
+		aPanel.add(createInfoPanel(new String[] {
+				"联系", "年龄", "MSN", "飞信" }, //
+				new JComponent[] {
+						infoContactField, infoAgeField, infoMSNField, infoFetionField }));
 
 		JPanel bPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		bPanel.add(aPanel, BorderLayout.NORTH);
-		bPanel.add(createInfoPanel(new String[] { "电子邮箱", "个人主页", "家庭住址", "公司名称", "公司地址" }, //
-				new JComponent[] { infoEMailField, infoWebsiteField, infoHomeAddrField, infoCompanyNameField, infoCompanyAddrField }), //
+		bPanel.add(createInfoPanel(new String[] {
+				"电子邮箱", "个人主页", "家庭住址", "公司名称", "公司地址" }, //
+				new JComponent[] {
+						infoEMailField, infoWebsiteField, infoHomeAddrField, infoCompanyNameField, infoCompanyAddrField }), //
 				BorderLayout.CENTER);
 
 		JPanel cPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
@@ -120,7 +122,7 @@ public class AddrBookPanel extends JPanel {
 		infoNoteArea.setBorder(COMMON_BORDER);
 		cPanel.add(infoNoteArea, BorderLayout.CENTER);
 		cPanel.setBorder(BorderFactory.createEtchedBorder());
-		cPanel.setMinimumSize(new Dimension(340, -1));
+		cPanel.setMinimumSize(new Dimension(365, -1));
 		return cPanel;
 	}
 
@@ -133,7 +135,7 @@ public class AddrBookPanel extends JPanel {
 		JPanel wPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		wPanel.add(filterField, BorderLayout.NORTH);
 		wPanel.add(scroll, BorderLayout.CENTER);
-		//	wPanel.setMinimumSize(new Dimension(150, -1));
+		wPanel.setMinimumSize(new Dimension(120, -1));
 		wPanel.setBorder(BorderFactory.createEtchedBorder());
 
 		JToolBar toolbar = new JToolBar("工具条");
