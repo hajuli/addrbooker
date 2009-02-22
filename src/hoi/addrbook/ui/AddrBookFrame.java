@@ -17,7 +17,7 @@ public class AddrBookFrame extends JFrame {
 	public static final String TITLE = "草根通讯录";
 
 	public AddrBookFrame() {
-		Dimension size = new Dimension(540, 520 / 5 * 4);
+		Dimension size = new Dimension(540, 400);
 		setSize(size);
 		setMinimumSize(size);
 		setLocationRelativeTo(null);
@@ -28,7 +28,7 @@ public class AddrBookFrame extends JFrame {
 			SwingUtilities.invokeAndWait(new Runnable() {
 				public void run() {
 					setLayout(new BorderLayout(0, 0));
-					add(new AddrBookPanel(), BorderLayout.CENTER);
+					add(new AddrBookPanel(AddrBookFrame.this), BorderLayout.CENTER);
 				}
 			});
 		} catch (Exception exc) {
