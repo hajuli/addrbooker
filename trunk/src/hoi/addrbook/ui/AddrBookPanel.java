@@ -89,8 +89,8 @@ public class AddrBookPanel extends JPanel {
 		}
 	};
 	private JList contactList = new JList(new String[] {
-			"姐姐", "妈妈", "姐姐", "叔叔#妈妈", "喷粪", "杨东，哥哥", "姐姐", "妈妈", "姐姐", "妈妈", "姐姐",
-			"妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈","妈妈妈妈妈", });
+			"姐姐", "妈妈", "姐姐", "叔叔#妈妈", "喷粪", "杨东，哥哥", "姐姐", "妈妈", "姐姐", "妈妈", "姐姐", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈",
+			"妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", });
 
 	private JTextField infoNameField = new JTextField("杨全海");
 	private ContactField infoContactField = new ContactField();
