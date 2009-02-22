@@ -26,6 +26,12 @@ import javax.swing.JToolBar;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
+/**
+ * 帮助里面写 网址，还有如何使用
+ * 
+ * @author Administrator
+ * 
+ */
 public class AddrBookPanel extends JPanel {
 
 	private static final long serialVersionUID = -4479991916447167635L;
