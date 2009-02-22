@@ -44,6 +44,10 @@ public class LunisolarCalendar { //
 		this.day = day;
 	}
 
+	public String toString() {
+		return String.format("%d-%02d-%02d", this.year, this.month, this.day);
+	}
+
 	private static final int FIRSTYEAR = 1936;
 	private static final int LASTYEAR = 2031;
 	private static final TagLunarCal LunarCal[] = new TagLunarCal[] { //
@@ -166,18 +170,14 @@ public class LunisolarCalendar { //
 			throw new Exception(String.format("请输入%d-%d有效年份", FIRSTYEAR, LASTYEAR));
 
 		int sm = SolarMonth - 1;
-
 		if (sm < 0 || sm > 11)
 			throw new Exception("请输入有效月份");
 
-		int leap = GetLeap(SolarYear);
-		int d = 0;
-
+		int leap = GetLeap(SolarYear), d = 0;
 		if (sm == 1)
 			d = leap + 28;
 		else
 			d = SolarCal[sm];
-
 		if (SolarDate < 1 || SolarDate > d)
 			throw new Exception("请输入有效日期");
 
@@ -189,9 +189,7 @@ public class LunisolarCalendar { //
 			Age = 22 - Age;
 		else
 			Age = 82 - Age;
-
 		Age = Age + 3;
-
 		if (Age < 10)
 			Age = Age + 60;
 
@@ -215,15 +213,14 @@ public class LunisolarCalendar { //
 		LunarMonth = i + 1;
 		LunarDate = acc - l1;
 		int im = LunarCal[y].Intercalation;
-
 		if (im != 0 && LunarMonth > im) {
 			LunarMonth--;
 			if (LunarMonth == im)
 				LunarMonth = -im;
 		}
-
 		if (LunarMonth > 12)
 			LunarMonth -= 12;
+
 		return new LunisolarCalendar(LunarYear, LunarMonth, LunarDate);
 	}
 
@@ -246,7 +243,6 @@ public class LunisolarCalendar { //
 		int y = LunarYear - FIRSTYEAR;
 		int im = LunarCal[y].Intercalation;
 		int lm = LunarMonth;
-
 		if (lm < 0) {
 			if (lm != -im)
 				throw new Exception("请输入有效月份");
@@ -260,7 +256,6 @@ public class LunisolarCalendar { //
 				lm = im + 1;
 		}
 		lm--;
-
 		if (LunarDate > LunarCal[y].MonthDays[lm] + 29)
 			throw new Exception("农历日期不正确");
 
@@ -268,9 +263,7 @@ public class LunisolarCalendar { //
 		for (i = 0; i < lm; i++)
 			acc += LunarCal[y].MonthDays[i] + 29;
 		acc += LunarCal[y].BaseDays + LunarDate;
-
 		int leap = GetLeap(LunarYear);
-
 		for (i = 13; i >= 0; i--)
 			if (acc > SolarDays[leap * 14 + i])
 				break;
@@ -308,10 +301,6 @@ public class LunisolarCalendar { //
 		System.out.println(LunisolarCalendar.solar2lunar(new LunisolarCalendar(1986, 11, 26)));
 		System.out.println(LunisolarCalendar.lunar2solar(new LunisolarCalendar(1986, 3, 0)));
 		System.out.println(LunisolarCalendar.solar2lunar(new LunisolarCalendar(1986, 3, 2)));
-	}
-
-	public String toString() {
-		return String.format("%d-%02d-%02d", this.year, this.month, this.day);
 	}
 }
 
