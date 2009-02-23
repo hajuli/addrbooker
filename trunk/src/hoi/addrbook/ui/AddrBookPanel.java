@@ -75,17 +75,22 @@ public class AddrBookPanel extends JPanel {
 		public void paint(Graphics g) {
 			super.paint(g);
 			if (getText().equals("")) {
-				g.setColor(Color.GRAY);
-				System.out.println(getSize());
-
 				String Info = "键入内容 搜索";
 				FontMetrics metrics = getFontMetrics(g.getFont());
 				int height = metrics.getHeight();
-				int width = metrics.stringWidth(Info);
 
-				//	g.drawRect(0, 0, getWidth() - 2, getHeight() - 2);
+				//g.drawRect(0, 0, getWidth() - 2, getHeight() - 2);
+				System.out.println(this.isFocusOwner());
+				if (this.isFocusOwner())
+					g.setColor(Color.GRAY);
+				else
+					g.setColor(this.getBackground());
 				g.drawString(Info, 5, (getHeight() - 10 - height) / 2 + height);
 			}
+		}
+
+		public void repaint(Graphics g) {
+			paint(g);
 		}
 	};
 	private JList contactList = new JList(new String[] {
