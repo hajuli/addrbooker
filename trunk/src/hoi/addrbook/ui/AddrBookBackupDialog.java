@@ -32,7 +32,7 @@ public class AddrBookBackupDialog extends JDialog {
 		aPanel.add(backupButton);
 		aPanel.add(restoreButton);
 		aPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEtchedBorder(), //
-				new EmptyBorder(new Insets(BLANK_SIZE, BLANK_SIZE * 2, BLANK_SIZE, BLANK_SIZE * 2))));
+				new EmptyBorder(new Insets(BLANK_SIZE, BLANK_SIZE, BLANK_SIZE, BLANK_SIZE))));
 
 		JPanel bPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, GAP_SIZE * 2, GAP_SIZE));
 		bPanel.add(helpButton);
