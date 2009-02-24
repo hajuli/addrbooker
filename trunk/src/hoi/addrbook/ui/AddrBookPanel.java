@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -108,7 +109,7 @@ public class AddrBookPanel extends JPanel {
 	private JPanel createInfoPanel(String[] names, JComponent[] comps) {
 		JPanel aPanel = new JPanel(new GridLayout(names.length, 1, GAP_SIZE, GAP_SIZE));
 		for (String name : names) {
-			JLabel label = new JLabel(" " + name + ":", JLabel.RIGHT);
+			JLabel label = new JLabel(name + ":", JLabel.RIGHT);
 			label.setBorder(BorderFactory.createEtchedBorder());
 			aPanel.add(label); // 两端对齐??
 		}
@@ -131,24 +132,28 @@ public class AddrBookPanel extends JPanel {
 	private JPanel createInfoPanel() {
 		JPanel aPanel = new JPanel(new GridLayout(1, 2, GAP_SIZE, GAP_SIZE));
 		aPanel.add(createInfoPanel(new String[] {
-				"姓名", "生日", "QQ", "手机" }, //
+				"<html><strong> 姓名", " 计时", " 纪念", " QQ", " 手机" }, //
 				new JComponent[] {
-						infoNameField, infoBirthdayField, infoQQField, infoMobileField }));
+						new JTextField(), infoNameField, infoBirthdayField, infoQQField, infoMobileField }));
 		aPanel.add(createInfoPanel(new String[] {
-				"计时", "年龄", "MSN", "飞信" }, //
+				" 分组", " 生日", " 年龄", " MSN", " 飞信" }, //
 				new JComponent[] {
-						infoContactField, infoAgeField, infoMSNField, infoFetionField }));
+						new JTextField(), infoContactField, infoAgeField, infoMSNField, infoFetionField }));
 
 		JPanel bPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		bPanel.add(aPanel, BorderLayout.NORTH);
 		bPanel.add(createInfoPanel(new String[] {
-				"电子邮箱", "个人主页", "家庭住址", "公司信息" }, //
+				" 电子邮箱", " 个人主页", " 家庭住址", " 公司信息" }, //
 				new JComponent[] {
 						infoEMailField, infoWebsiteField, infoHomeAddrField, infoCompany }), //
 				BorderLayout.CENTER);
 
+		JPanel xPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
+		//xPanel.add(new JLabel("一共 200 个联系人", JLabel.RIGHT), BorderLayout.NORTH);
+		xPanel.add(bPanel, BorderLayout.CENTER);
+
 		JPanel cPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
-		cPanel.add(bPanel, BorderLayout.NORTH);
+		cPanel.add(xPanel, BorderLayout.NORTH);
 		//	infoNoteArea.setBorder(COMMON_BORDER);
 		cPanel.add(new JScrollPane(infoNoteArea, //
 				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED), BorderLayout.CENTER);
@@ -188,5 +193,6 @@ public class AddrBookPanel extends JPanel {
 		JSplitPane wtPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, wPanel, createInfoPanel());
 		wtPane.setBorder(BorderFactory.createLineBorder(BORDER_COLOR, 5));
 		add(wtPane, BorderLayout.CENTER);
+		add(new JTextField("一共 200 个联系人"), BorderLayout.SOUTH);
 	}
 }
