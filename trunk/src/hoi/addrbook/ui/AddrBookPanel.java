@@ -26,12 +26,6 @@ import javax.swing.JToolBar;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
-/**
- * 帮助里面写 网址，还有如何使用
- * 
- * @author Administrator
- * 
- */
 public class AddrBookPanel extends JPanel {
 
 	private static final long serialVersionUID = -4479991916447167635L;
@@ -94,22 +88,21 @@ public class AddrBookPanel extends JPanel {
 		}
 	};
 	private JList contactList = new JList(new String[] {
-			"姐姐", "妈妈", "姐姐", "叔叔#妈妈", "喷粪", "杨东，哥哥", "姐姐", "妈妈", "姐姐", "妈妈", "姐姐", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈",
-			"妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", });
+			"姐姐", "妈妈", "姐姐", "叔叔#妈妈", "妈妈妈妈妈妈妈妈妈", "妈妈妈妈妈妈妈妈妈妈妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", });
 
-	private JTextField infoNameField = new JTextField("杨全海");
+	private StringField infoNameField = new StringField("杨全海");
 	private ContactField infoContactField = new ContactField();
 	private BirthdayField infoBirthdayField = new BirthdayField();
-	private JTextField infoAgeField = new JTextField("23");
-	private JTextField infoQQField = new JTextField("332910789");
-	private JTextField infoMSNField = new JTextField("haihoing@live.cn");
-	private JTextField infoMobileField = new JTextField("13825622953");
-	private JTextField infoFetionField = new JTextField("293401164");
-	private JTextField infoEMailField = new JTextField("haihoing@gmail.com");
-	private JTextField infoWebsiteField = new JTextField("http://332910789.qzone.qq.com");
-	private JTextField infoHomeAddrField = new JTextField("珠海吉大海湾10栋8A");
-	private JTextField infoCompanyNameField = new JTextField("珠海金山软件; 珠海吉大石花西路601号");
-	private JTextField infoCompanyAddrField = new JTextField("珠海吉大石花西路601号");
+	private StringField infoAgeField = new StringField("23");
+	private StringField infoQQField = new StringField("332910789");
+	private StringField infoMSNField = new StringField("haihoing@live.cn");
+	private StringField infoMobileField = new StringField("13825622953");
+	private StringField infoFetionField = new StringField("293401164");
+	private StringField infoEMailField = new StringField("haihoing@gmail.com");
+	private StringField infoWebsiteField = new StringField("http://332910789.qzone.qq.com");
+	private AddressField infoHomeAddrField = new AddressField("珠海吉大海湾10栋8A");
+	private StringField infoCompany = new StringField("http://332910789.qzone.qq.com");
+	private AddressField infoCompanyNameField = new AddressField("珠海金山软件; 珠海吉大石花西路601号");
 	private JTextArea infoNoteArea = new JTextArea("MSG");
 
 	private JPanel createInfoPanel(String[] names, JComponent[] comps) {
@@ -121,7 +114,8 @@ public class AddrBookPanel extends JPanel {
 		}
 		JPanel bPanel = new JPanel(new GridLayout(comps.length, 1, GAP_SIZE, GAP_SIZE));
 		for (JComponent comp : comps) {
-			if (comp != infoBirthdayField && comp != infoContactField)
+			if (comp != infoBirthdayField && comp != infoContactField && //
+					comp != infoHomeAddrField && comp != infoCompanyNameField && comp != infoCompany)
 				comp.setBorder(COMMON_BORDER);
 			//Dimension size = comp.getPreferredSize();
 			//size.height = size.height * 6 / 7;
@@ -150,13 +144,14 @@ public class AddrBookPanel extends JPanel {
 		bPanel.add(createInfoPanel(new String[] {
 				"电子邮箱", "个人主页", "家庭住址", "公司信息" }, //
 				new JComponent[] {
-						infoEMailField, infoWebsiteField, infoHomeAddrField, infoCompanyNameField }), //
+						infoEMailField, infoWebsiteField, infoHomeAddrField, infoCompany }), //
 				BorderLayout.CENTER);
 
 		JPanel cPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		cPanel.add(bPanel, BorderLayout.NORTH);
-		infoNoteArea.setBorder(COMMON_BORDER);
-		cPanel.add(infoNoteArea, BorderLayout.CENTER);
+		//	infoNoteArea.setBorder(COMMON_BORDER);
+		cPanel.add(new JScrollPane(infoNoteArea, //
+				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED), BorderLayout.CENTER);
 		cPanel.setBorder(BorderFactory.createEtchedBorder());
 		cPanel.setMinimumSize(new Dimension(370, -1));
 		return cPanel;
@@ -169,7 +164,8 @@ public class AddrBookPanel extends JPanel {
 		filterField.setBorder(COMMON_BORDER);
 		filterField.getInsets();
 		contactList.setBorder(BorderFactory.createEmptyBorder());
-		JScrollPane scroll = new JScrollPane(contactList);
+		JScrollPane scroll = new JScrollPane(contactList, //
+				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		scroll.setBorder(BorderFactory.createEtchedBorder());
 		JPanel wPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		wPanel.add(filterField, BorderLayout.NORTH);
