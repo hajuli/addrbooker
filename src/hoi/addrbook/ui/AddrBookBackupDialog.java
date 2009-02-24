@@ -19,8 +19,8 @@ public class AddrBookBackupDialog extends JDialog {
 	private static final int BLANK_SIZE = 20;
 	private static final int GAP_SIZE = 5;
 
-	private JButton backupButton = new JButton("备份数据");
-	private JButton restoreButton = new JButton("恢复数据");
+	private JButton backupButton = new JButton("数据备份");
+	private JButton restoreButton = new JButton("数据恢复");
 
 	private JButton helpButton = new JButton("帮助");
 	private JButton closeButton = new JButton("关闭");
