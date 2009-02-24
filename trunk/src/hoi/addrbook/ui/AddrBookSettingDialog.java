@@ -41,14 +41,14 @@ public class AddrBookSettingDialog extends JDialog {
 		aPanel.add(lemmonColorButton);
 		aPanel.add(redColorButton);
 		aPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder("外观配色"), //
-				new EmptyBorder(new Insets(BLANK_SIZE / 2, BLANK_SIZE * 2, BLANK_SIZE / 2, BLANK_SIZE * 2))));
+				new EmptyBorder(new Insets(BLANK_SIZE / 2, BLANK_SIZE, BLANK_SIZE / 2, BLANK_SIZE))));
 
 		JPanel bPanel = new JPanel(new GridLayout(3, 1, GAP_SIZE * 2, GAP_SIZE));
 		bPanel.add(addPasswordButton);
 		bPanel.add(changePasswordButton);
 		bPanel.add(deletePasswordButton);
 		bPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder("密码保护"), //
-				new EmptyBorder(new Insets(BLANK_SIZE / 2, BLANK_SIZE * 2, BLANK_SIZE / 2, BLANK_SIZE * 2))));
+				new EmptyBorder(new Insets(BLANK_SIZE / 2, BLANK_SIZE, BLANK_SIZE / 2, BLANK_SIZE))));
 
 		JPanel cPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, GAP_SIZE * 2, GAP_SIZE));
 		cPanel.add(donateButton);
