@@ -92,8 +92,10 @@ public class AddrBookPanel extends JPanel {
 			"姐姐", "妈妈", "姐姐", "叔叔#妈妈", "妈妈妈妈妈妈妈妈妈", "妈妈妈妈妈妈妈妈妈妈妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", });
 
 	private StringField infoNameField = new StringField("杨全海");
+	private StringField fzField = new StringField("家人");
 	private ContactField infoContactField = new ContactField();
 	private BirthdayField infoBirthdayField = new BirthdayField();
+	private BirthdayField jlField = new BirthdayField();
 	private StringField infoAgeField = new StringField("23");
 	private StringField infoQQField = new StringField("332910789");
 	private StringField infoMSNField = new StringField("haihoing@live.cn");
@@ -116,7 +118,8 @@ public class AddrBookPanel extends JPanel {
 		JPanel bPanel = new JPanel(new GridLayout(comps.length, 1, GAP_SIZE, GAP_SIZE));
 		for (JComponent comp : comps) {
 			if (comp != infoBirthdayField && comp != infoContactField && //
-					comp != infoHomeAddrField && comp != infoCompanyNameField && comp != infoCompany)
+					comp != infoHomeAddrField && comp != infoCompanyNameField && //
+					comp != infoCompany && comp != jlField)
 				comp.setBorder(COMMON_BORDER);
 			//Dimension size = comp.getPreferredSize();
 			//size.height = size.height * 6 / 7;
@@ -132,13 +135,13 @@ public class AddrBookPanel extends JPanel {
 	private JPanel createInfoPanel() {
 		JPanel aPanel = new JPanel(new GridLayout(1, 2, GAP_SIZE, GAP_SIZE));
 		aPanel.add(createInfoPanel(new String[] {
-				"<html><strong> 姓名", " 计时", " 纪念", " QQ", " 手机" }, //
+				"<html><strong> 姓名"," 生日", " 纪念", " QQ", " 手机" }, //
 				new JComponent[] {
-						new JTextField(), infoNameField, infoBirthdayField, infoQQField, infoMobileField }));
+				infoNameField,  	infoBirthdayField,	jlField, infoQQField, infoMobileField }));
 		aPanel.add(createInfoPanel(new String[] {
-				" 分组", " 生日", " 年龄", " MSN", " 飞信" }, //
+				" 分组", " 计时",  " 年龄", " MSN", " 飞信" }, //
 				new JComponent[] {
-						new JTextField(), infoContactField, infoAgeField, infoMSNField, infoFetionField }));
+						fzField, infoContactField, infoAgeField, infoMSNField, infoFetionField }));
 
 		JPanel bPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		bPanel.add(aPanel, BorderLayout.NORTH);
