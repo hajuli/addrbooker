@@ -9,8 +9,6 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -34,62 +32,20 @@ public class AddrBookPanel extends JPanel {
 	private static final Color BORDER_COLOR = new JLabel().getBackground();
 	private static final int GAP_SIZE = 2;
 	private static final Border COMMON_BORDER = BorderFactory.createCompoundBorder( //
-			BorderFactory.createEtchedBorder(), //
-			new EmptyBorder(new Insets(1, 1, 1, 1)));
+			BorderFactory.createEtchedBorder(), new EmptyBorder(new Insets(1, 1, 1, 1)));
 
 	private JButton tbarAddButton = new JButton("添加", ImageHelper.ICON_ADD);
 	private JButton tbarSaveButton = new JButton("保存", ImageHelper.ICON_SAVE);
 	private JButton tbarEditButton = new JButton("编辑", ImageHelper.ICON_EDIT);
 	private JButton tbarDeleteButton = new JButton("删除", ImageHelper.ICON_DELETE);
-	private JButton tbarSettingButton = new JButton("设置", ImageHelper.ICON_SETTING) {
-		{
-			this.addActionListener(new ActionListener() {
+	private JButton tbarSettingButton = new JButton("设置", ImageHelper.ICON_SETTING);
+	private JButton tbarBackupButton = new JButton("备份", ImageHelper.ICON_BACKUP);
 
-				public void actionPerformed(ActionEvent e) {
-					new AddrBookSettingDialog(frame).setVisible(true);
-				}
-
-			});
-		}
-	};
-	private JButton tbarBackupButton = new JButton("备份", ImageHelper.ICON_BACKUP) {
-		{
-			this.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent e) {
-					new AddrBookBackupDialog(frame).setVisible(true);
-				}
-
-			});
-		}
-	};
-
-	private JTextField filterField = new JTextField() {
-		public void paint(Graphics g) {
-			super.paint(g);
-			if (getText().equals("")) {
-				String Info = "键入内容 搜索";
-				FontMetrics metrics = getFontMetrics(g.getFont());
-				int height = metrics.getHeight();
-
-				//g.drawRect(0, 0, getWidth() - 2, getHeight() - 2);
-				System.out.println(this.isFocusOwner());
-				if (this.isFocusOwner())
-					g.setColor(Color.GRAY);
-				else
-					g.setColor(this.getBackground());
-				g.drawString(Info, 5, (getHeight() - 10 - height) / 2 + height);
-			}
-		}
-
-		public void repaint(Graphics g) {
-			paint(g);
-		}
-	};
-	private JList contactList = new JList(new String[] { "姐姐", "妈妈", "姐姐", "叔叔#妈妈", "妈妈妈妈", "妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", });
+	private StringField filterField = new StringField("");
+	private JList contactList = new JList(new String[] {
+			"姐姐", "妈妈", "姐姐", "叔叔#妈妈", "妈妈妈妈", "妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", });
 
 	private StringField infoNameField = new StringField("杨全海");
-	private StringField fzField = new StringField("家人");
 	private ContactField infoContactField = new ContactField();
 	private StringField infoBirthdayField = new StringField("农历");
 	private StringField jlField = new StringField("阳历");
@@ -131,17 +87,23 @@ public class AddrBookPanel extends JPanel {
 
 	private JPanel createInfoPanel() {
 		JPanel aPanel = new JPanel(new GridLayout(1, 2, GAP_SIZE, GAP_SIZE));
-		aPanel.add(createInfoPanel(new String[] { "<html><strong> 姓名:", " 生日:", " ", " QQ:", " 手机:" }, //
-				new JComponent[] { infoNameField, infoBirthdayField, jlField, infoQQField, infoMobileField }));
+		aPanel.add(createInfoPanel(new String[] {
+				"<html><strong> 姓名:", " 生日:", " ", " QQ:", " 手机:" }, //
+				new JComponent[] {
+						infoNameField, infoBirthdayField, jlField, infoQQField, infoMobileField }));
 		JComboBox cho = new JComboBox();
 		cho.setPreferredSize(infoAgeField.getPreferredSize());
-		aPanel.add(createInfoPanel(new String[] { " 分组:", " 计时:", " 年龄:", " MSN:", " 飞信:" }, //
-				new JComponent[] { cho, infoContactField, infoAgeField, infoMSNField, infoFetionField }));
+		aPanel.add(createInfoPanel(new String[] {
+				" 分组:", " 计时:", " 年龄:", " MSN:", " 飞信:" }, //
+				new JComponent[] {
+						cho, infoContactField, infoAgeField, infoMSNField, infoFetionField }));
 
 		JPanel bPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		bPanel.add(aPanel, BorderLayout.NORTH);
-		bPanel.add(createInfoPanel(new String[] { " 电子邮箱:", " 个人主页:", " 家庭住址:", " 公司信息:" }, //
-				new JComponent[] { infoEMailField, infoWebsiteField, infoHomeAddrField, infoCompany }), //
+		bPanel.add(createInfoPanel(new String[] {
+				" 电子邮箱:", " 个人主页:", " 家庭住址:", " 公司信息:" }, //
+				new JComponent[] {
+						infoEMailField, infoWebsiteField, infoHomeAddrField, infoCompany }), //
 				BorderLayout.CENTER);
 
 		JPanel xPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
