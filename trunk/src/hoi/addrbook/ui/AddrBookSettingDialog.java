@@ -9,6 +9,7 @@ import java.awt.Insets;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.EmptyBorder;
@@ -27,21 +28,8 @@ public class AddrBookSettingDialog extends JDialog {
 	private JButton donateButton = new JButton("捐赠");
 	private JButton closeButton = new JButton("关闭");
 
-	private JRadioButton defaultColorButton = new JRadioButton("默认");
-	private JRadioButton greenColorButton = new JRadioButton("绿色");
-	private JRadioButton lemmonColorButton = new JRadioButton("柠檬");
-	private JRadioButton redColorButton = new JRadioButton("红色");
-
 	public AddrBookSettingDialog(Frame owner) {
 		super(owner);
-
-		JPanel aPanel = new JPanel(new GridLayout(1, 4, GAP_SIZE, GAP_SIZE));
-		aPanel.add(defaultColorButton);
-		aPanel.add(greenColorButton);
-		aPanel.add(lemmonColorButton);
-		aPanel.add(redColorButton);
-		aPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder("外观配色"), //
-				new EmptyBorder(new Insets(BLANK_SIZE / 2, BLANK_SIZE, BLANK_SIZE / 2, BLANK_SIZE))));
 
 		JPanel bPanel = new JPanel(new GridLayout(3, 1, GAP_SIZE * 2, GAP_SIZE));
 		bPanel.add(addPasswordButton);
@@ -51,12 +39,12 @@ public class AddrBookSettingDialog extends JDialog {
 				new EmptyBorder(new Insets(BLANK_SIZE / 2, BLANK_SIZE, BLANK_SIZE / 2, BLANK_SIZE))));
 
 		JPanel cPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, GAP_SIZE * 2, GAP_SIZE));
+		cPanel.add(new JLabel("            "));
 		cPanel.add(donateButton);
 		cPanel.add(closeButton);
 		// cPanel.setBorder(BorderFactory.createEtchedBorder());
 
 		JPanel mPanel = new JPanel(new BorderLayout(BLANK_SIZE, BLANK_SIZE / 2));
-		mPanel.add(aPanel, BorderLayout.NORTH);
 		mPanel.add(bPanel, BorderLayout.CENTER);
 		mPanel.add(cPanel, BorderLayout.SOUTH);
 		mPanel.setBorder(new EmptyBorder(new Insets(BLANK_SIZE, BLANK_SIZE, BLANK_SIZE, BLANK_SIZE)));

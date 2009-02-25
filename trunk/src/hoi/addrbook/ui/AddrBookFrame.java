@@ -7,8 +7,6 @@ import hoi.addrbook.icons.ImageHelper;
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 
 public class AddrBookFrame extends JFrame {
 
@@ -36,17 +34,7 @@ public class AddrBookFrame extends JFrame {
 		}
 	}
 
-	private static void setLookAndFeel() {
-		try { // Default, Green, Lemmon, Red
-			com.jtattoo.plaf.acryl.AcrylLookAndFeel.setTheme("Default", "??", "AddrBooker");
-			UIManager.setLookAndFeel(new com.jtattoo.plaf.acryl.AcrylLookAndFeel());
-		} catch (UnsupportedLookAndFeelException e) {
-			e.printStackTrace();
-		}
-	}
-
 	public static void main(String[] args) {
-		setLookAndFeel();
 		new AddrBookFrame().setVisible(true);
 	}
 }
