@@ -45,7 +45,6 @@ public class AddrBookPanel extends JPanel {
 		{
 			this.addActionListener(new ActionListener() {
 
-				@Override
 				public void actionPerformed(ActionEvent e) {
 					new AddrBookSettingDialog(frame).setVisible(true);
 				}
@@ -57,7 +56,6 @@ public class AddrBookPanel extends JPanel {
 		{
 			this.addActionListener(new ActionListener() {
 
-				@Override
 				public void actionPerformed(ActionEvent e) {
 					new AddrBookBackupDialog(frame).setVisible(true);
 				}
