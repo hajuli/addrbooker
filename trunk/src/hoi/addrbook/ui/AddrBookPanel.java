@@ -93,8 +93,8 @@ public class AddrBookPanel extends JPanel {
 	private StringField infoNameField = new StringField("杨全海");
 	private StringField fzField = new StringField("家人");
 	private ContactField infoContactField = new ContactField();
-	private StringField infoBirthdayField = new StringField("");
-	private StringField jlField = new StringField("");
+	private StringField infoBirthdayField = new StringField("农历");
+	private StringField jlField = new StringField("阳历");
 	private StringField infoAgeField = new StringField("23");
 	private StringField infoQQField = new StringField("332910789");
 	private StringField infoMSNField = new StringField("haihoing@live.cn");
@@ -135,8 +135,10 @@ public class AddrBookPanel extends JPanel {
 		JPanel aPanel = new JPanel(new GridLayout(1, 2, GAP_SIZE, GAP_SIZE));
 		aPanel.add(createInfoPanel(new String[] { "<html><strong> 姓名:", " 生日:", " ", " QQ:", " 手机:" }, //
 				new JComponent[] { infoNameField, infoBirthdayField, jlField, infoQQField, infoMobileField }));
+		JComboBox cho = new JComboBox();
+		cho.setPreferredSize(infoAgeField.getPreferredSize());
 		aPanel.add(createInfoPanel(new String[] { " 分组:", " 计时:", " 年龄:", " MSN:", " 飞信:" }, //
-				new JComponent[] { fzField, infoContactField, infoAgeField, infoMSNField, infoFetionField }));
+				new JComponent[] { cho, infoContactField, infoAgeField, infoMSNField, infoFetionField }));
 
 		JPanel bPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		bPanel.add(aPanel, BorderLayout.NORTH);

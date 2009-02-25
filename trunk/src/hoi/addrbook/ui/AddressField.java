@@ -20,7 +20,7 @@ public class AddressField extends JPanel {
 			new EmptyBorder(new Insets(1, 1, 1, 1)));
 
 	private JTextField solarField = new JTextField("1986-11-26");
-	private JTextField lunarField = new JTextField("");
+	private JTextField lunarField = new JTextField("邮编");
 
 	public AddressField(String info) {
 		solarField.setBorder(COMMON_BORDER);
