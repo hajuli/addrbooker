@@ -52,8 +52,8 @@ public class LunisolarCalendar { //
 	private static final int FIRSTYEAR = 1936;
 	private static final int LASTYEAR = 2031;
 	private static final TagLunarCal LunarCal[] = new TagLunarCal[] { //
-	new TagLunarCal(23, 3, 2, 17, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0), /* 1936 */
-	new TagLunarCal(41, 0, 4, 23, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1), //
+			new TagLunarCal(23, 3, 2, 17, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0), /* 1936 */
+			new TagLunarCal(41, 0, 4, 23, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1), //
 			new TagLunarCal(30, 7, 5, 28, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1), //
 			new TagLunarCal(49, 0, 6, 33, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1), //
 			new TagLunarCal(38, 0, 0, 38, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1), /* 1940 */
@@ -147,10 +147,11 @@ public class LunisolarCalendar { //
 			new TagLunarCal(25, 5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0), /* 2028 */
 			new TagLunarCal(43, 0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1), //
 			new TagLunarCal(32, 0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0), //
-			new TagLunarCal(22, 3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0) };
-	private static final int SolarCal[] = new int[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 }; /* 西曆年每月之日數 */
+			new TagLunarCal(22, 3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0), };
+	private static final int SolarCal[] = new int[] {
+			31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 }; /* 西曆年每月之日數 */
 	private static final int SolarDays[] = new int[] { /* 西曆年每月之累積日數，平年與閏年 */
-	0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396, //
+			0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396, //
 			0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 };
 
 	/**
@@ -318,6 +319,7 @@ class TagLunarCal {
 		this.Intercalation = i;
 		this.BaseWeekday = w;
 		this.BaseKanChih = k;
-		this.MonthDays = new int[] { m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 };
+		this.MonthDays = new int[] {
+				m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 };
 	}
 }
