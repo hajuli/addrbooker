@@ -17,7 +17,7 @@ public class ContactField extends JPanel {
 
 	private static final Border COMMON_BORDER = BorderFactory.createCompoundBorder( //
 			BorderFactory.createEtchedBorder(), //
-			new EmptyBorder(new Insets(1, 5, 1, 5)));
+			new EmptyBorder(new Insets(1, 7, 1, 7)));
 
 	private JTextField dateField = new JTextField("2009-02-10");
 	private JButton now = new JButton("清零");
