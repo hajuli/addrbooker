@@ -88,14 +88,13 @@ public class AddrBookPanel extends JPanel {
 			paint(g);
 		}
 	};
-	private JList contactList = new JList(new String[] {
-			"姐姐", "妈妈", "姐姐", "叔叔#妈妈", "妈妈妈妈妈妈妈妈妈", "妈妈妈妈妈妈妈妈妈妈妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", });
+	private JList contactList = new JList(new String[] { "姐姐", "妈妈", "姐姐", "叔叔#妈妈", "妈妈妈妈", "妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", });
 
 	private StringField infoNameField = new StringField("杨全海");
 	private StringField fzField = new StringField("家人");
 	private ContactField infoContactField = new ContactField();
-	private BirthdayField infoBirthdayField = new BirthdayField();
-	private BirthdayField jlField = new BirthdayField();
+	private StringField infoBirthdayField = new StringField("");
+	private StringField jlField = new StringField("");
 	private StringField infoAgeField = new StringField("23");
 	private StringField infoQQField = new StringField("332910789");
 	private StringField infoMSNField = new StringField("haihoing@live.cn");
@@ -111,7 +110,7 @@ public class AddrBookPanel extends JPanel {
 	private JPanel createInfoPanel(String[] names, JComponent[] comps) {
 		JPanel aPanel = new JPanel(new GridLayout(names.length, 1, GAP_SIZE, GAP_SIZE));
 		for (String name : names) {
-			JLabel label = new JLabel(name + ":", JLabel.RIGHT);
+			JLabel label = new JLabel(name + " ", JLabel.RIGHT);
 			label.setBorder(BorderFactory.createEtchedBorder());
 			aPanel.add(label); // 两端对齐??
 		}
@@ -134,21 +133,15 @@ public class AddrBookPanel extends JPanel {
 
 	private JPanel createInfoPanel() {
 		JPanel aPanel = new JPanel(new GridLayout(1, 2, GAP_SIZE, GAP_SIZE));
-		aPanel.add(createInfoPanel(new String[] {
-				"<html><strong> 姓名"," 生日", " 纪念", " QQ", " 手机" }, //
-				new JComponent[] {
-				infoNameField,  	infoBirthdayField,	jlField, infoQQField, infoMobileField }));
-		aPanel.add(createInfoPanel(new String[] {
-				" 分组", " 计时",  " 年龄", " MSN", " 飞信" }, //
-				new JComponent[] {
-						fzField, infoContactField, infoAgeField, infoMSNField, infoFetionField }));
+		aPanel.add(createInfoPanel(new String[] { "<html><strong> 姓名:", " 生日:", " ", " QQ:", " 手机:" }, //
+				new JComponent[] { infoNameField, infoBirthdayField, jlField, infoQQField, infoMobileField }));
+		aPanel.add(createInfoPanel(new String[] { " 分组:", " 计时:", " 年龄:", " MSN:", " 飞信:" }, //
+				new JComponent[] { fzField, infoContactField, infoAgeField, infoMSNField, infoFetionField }));
 
 		JPanel bPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		bPanel.add(aPanel, BorderLayout.NORTH);
-		bPanel.add(createInfoPanel(new String[] {
-				" 电子邮箱", " 个人主页", " 家庭住址", " 公司信息" }, //
-				new JComponent[] {
-						infoEMailField, infoWebsiteField, infoHomeAddrField, infoCompany }), //
+		bPanel.add(createInfoPanel(new String[] { " 电子邮箱:", " 个人主页:", " 家庭住址:", " 公司信息:" }, //
+				new JComponent[] { infoEMailField, infoWebsiteField, infoHomeAddrField, infoCompany }), //
 				BorderLayout.CENTER);
 
 		JPanel xPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
