@@ -15,17 +15,12 @@ import javax.swing.border.EmptyBorder;
 public class AddressField extends JPanel {
 
 	private static final long serialVersionUID = -2283281574591552446L;
-	public static final Border COMMON_BORDER = BorderFactory.createCompoundBorder( //
-			BorderFactory.createEtchedBorder(), //
-			new EmptyBorder(new Insets(1, 1, 1, 1)));
 
-	private JTextField solarField = new JTextField("1986-11-26");
-	private JTextField lunarField = new JTextField("邮编");
+	private StringField solarField = new StringField();
+	private StringField lunarField = new StringField("邮政编码");
 
-	public AddressField(String info) {
-		solarField.setBorder(COMMON_BORDER);
-		lunarField.setBorder(COMMON_BORDER);
-		lunarField.setPreferredSize(new Dimension(80, 1));
+	public AddressField() {
+		lunarField.setPreferredSize(new Dimension(85, 1));
 
 		setLayout(new BorderLayout(1, 1));
 		add(solarField, BorderLayout.CENTER);

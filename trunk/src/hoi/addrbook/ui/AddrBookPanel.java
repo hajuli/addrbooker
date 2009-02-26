@@ -5,10 +5,7 @@ import hoi.addrbook.icons.ImageHelper;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
 import java.awt.GridLayout;
-import java.awt.Insets;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -22,8 +19,6 @@ import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JToolBar;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
 
 public class AddrBookPanel extends JPanel {
 
@@ -31,8 +26,6 @@ public class AddrBookPanel extends JPanel {
 
 	private static final Color BORDER_COLOR = new JLabel().getBackground();
 	private static final int GAP_SIZE = 2;
-	private static final Border COMMON_BORDER = BorderFactory.createCompoundBorder( //
-			BorderFactory.createEtchedBorder(), new EmptyBorder(new Insets(1, 1, 1, 1)));
 
 	private JButton tbarAddButton = new JButton("添加", ImageHelper.ICON_ADD);
 	private JButton tbarSaveButton = new JButton("保存", ImageHelper.ICON_SAVE);
@@ -41,25 +34,24 @@ public class AddrBookPanel extends JPanel {
 	private JButton tbarSettingButton = new JButton("设置", ImageHelper.ICON_SETTING);
 	private JButton tbarBackupButton = new JButton("备份", ImageHelper.ICON_BACKUP);
 
-	private StringField filterField = new StringField("");
-	private JList contactList = new JList(new String[] {
-			"姐姐", "妈妈", "姐姐", "叔叔#妈妈", "妈妈妈妈", "妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", "妈妈妈妈妈", });
+	private StringField filterField = new StringField("键入内容 搜索");
+	private JList contactList = new JList();
 
-	private StringField infoNameField = new StringField("杨全海");
+	private StringField infoNameField = new StringField();
+	private ClassField infoClassField = new ClassField();
+	private StringField infoBirthdaySolarField = new StringField("阳历 1900-01-01");
+	private StringField infoBirthdayLunarField = new StringField("农历 1900-01-01");
 	private ContactField infoContactField = new ContactField();
-	private StringField infoBirthdayField = new StringField("农历");
-	private StringField jlField = new StringField("阳历");
-	private StringField infoAgeField = new StringField("23");
-	private StringField infoQQField = new StringField("332910789");
-	private StringField infoMSNField = new StringField("haihoing@live.cn");
-	private StringField infoMobileField = new StringField("13825622953");
-	private StringField infoFetionField = new StringField("293401164");
-	private StringField infoEMailField = new StringField("haihoing@gmail.com");
-	private StringField infoWebsiteField = new StringField("http://332910789.qzone.qq.com");
-	private AddressField infoHomeAddrField = new AddressField("珠海吉大海湾10栋8A");
-	private StringField infoCompany = new StringField("http://332910789.qzone.qq.com");
-	private AddressField infoCompanyNameField = new AddressField("珠海金山软件; 珠海吉大石花西路601号");
-	private JTextArea infoNoteArea = new JTextArea("MSG");
+	private StringField infoAgeField = new StringField();
+	private StringField infoQQField = new StringField();
+	private StringField infoMSNField = new StringField();
+	private StringField infoMobileField = new StringField();
+	private StringField infoFetionField = new StringField();
+	private StringField infoEMailField = new StringField();
+	private StringField infoWebsiteField = new StringField();
+	private AddressField infoHomeAddrField = new AddressField();
+	private StringField infoCompany = new StringField();
+	private NoteField infoNoteArea = new NoteField();
 
 	private JPanel createInfoPanel(String[] names, JComponent[] comps) {
 		JPanel aPanel = new JPanel(new GridLayout(names.length, 1, GAP_SIZE, GAP_SIZE));
@@ -70,10 +62,6 @@ public class AddrBookPanel extends JPanel {
 		}
 		JPanel bPanel = new JPanel(new GridLayout(comps.length, 1, GAP_SIZE, GAP_SIZE));
 		for (JComponent comp : comps) {
-			if (comp != infoBirthdayField && comp != infoContactField && //
-					comp != infoHomeAddrField && comp != infoCompanyNameField && //
-					comp != infoCompany && comp != jlField)
-				comp.setBorder(COMMON_BORDER);
 			//Dimension size = comp.getPreferredSize();
 			//size.height = size.height * 6 / 7;
 			//comp.setPreferredSize(size);
@@ -90,13 +78,13 @@ public class AddrBookPanel extends JPanel {
 		aPanel.add(createInfoPanel(new String[] {
 				"<html><strong> 姓名:", " 生日:", " ", " QQ:", " 手机:" }, //
 				new JComponent[] {
-						infoNameField, infoBirthdayField, jlField, infoQQField, infoMobileField }));
-		JComboBox cho = new JComboBox();
-		cho.setPreferredSize(infoAgeField.getPreferredSize());
+						infoNameField, infoBirthdayLunarField, infoBirthdaySolarField, infoQQField, infoMobileField }));
+
+		infoClassField.setPreferredSize(infoAgeField.getPreferredSize());
 		aPanel.add(createInfoPanel(new String[] {
 				" 分组:", " 计时:", " 年龄:", " MSN:", " 飞信:" }, //
 				new JComponent[] {
-						cho, infoContactField, infoAgeField, infoMSNField, infoFetionField }));
+						infoClassField, infoContactField, infoAgeField, infoMSNField, infoFetionField }));
 
 		JPanel bPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		bPanel.add(aPanel, BorderLayout.NORTH);
@@ -113,8 +101,7 @@ public class AddrBookPanel extends JPanel {
 		JPanel cPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		cPanel.add(xPanel, BorderLayout.NORTH);
 		//	infoNoteArea.setBorder(COMMON_BORDER);
-		cPanel.add(new JScrollPane(infoNoteArea, //
-				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED), BorderLayout.CENTER);
+		cPanel.add(infoNoteArea, BorderLayout.CENTER);
 		cPanel.setBorder(BorderFactory.createEtchedBorder());
 		cPanel.setMinimumSize(new Dimension(370, -1));
 		return cPanel;
@@ -124,7 +111,6 @@ public class AddrBookPanel extends JPanel {
 
 	public AddrBookPanel(AddrBookFrame frame) {
 		this.frame = frame;
-		filterField.setBorder(COMMON_BORDER);
 		filterField.getInsets();
 		contactList.setBorder(BorderFactory.createEmptyBorder());
 		JScrollPane scroll = new JScrollPane(contactList, //
@@ -149,6 +135,7 @@ public class AddrBookPanel extends JPanel {
 		setLayout(new BorderLayout());
 		add(toolbar, BorderLayout.NORTH);
 		JSplitPane wtPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, wPanel, createInfoPanel());
+		//wtPane.setUI(new com.jgoodies.looks.plastic.PlasticSplitPaneUI());
 		wtPane.setBorder(BorderFactory.createLineBorder(BORDER_COLOR, 5));
 		add(wtPane, BorderLayout.CENTER);
 		add(new JTextField("一共 200 个联系人"), BorderLayout.SOUTH);

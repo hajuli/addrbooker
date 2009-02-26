@@ -19,12 +19,10 @@ public class ContactField extends JPanel {
 			BorderFactory.createEtchedBorder(), //
 			new EmptyBorder(new Insets(1, 7, 1, 7)));
 
-	private JTextField dateField = new JTextField("2009-02-10");
+	private StringField dateField = new StringField();
 	private JButton now = new JButton("清零");
 
 	public ContactField() {
-		dateField.setBorder(COMMON_BORDER);
-		//lunarField.setBorder(COMMON_BORDER);
 		now.setBorder(COMMON_BORDER);
 
 		setLayout(new BorderLayout(1, 1));
