@@ -135,7 +135,7 @@ public class AddrBookPanel extends JPanel {
 		setLayout(new BorderLayout());
 		add(toolbar, BorderLayout.NORTH);
 		JSplitPane wtPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, wPanel, createInfoPanel());
-		//wtPane.setUI(new com.jgoodies.looks.plastic.PlasticSplitPaneUI());
+		wtPane.setUI(new com.jgoodies.looks.plastic.PlasticSplitPaneUI());
 		wtPane.setBorder(BorderFactory.createLineBorder(BORDER_COLOR, 5));
 		add(wtPane, BorderLayout.CENTER);
 		add(new JTextField("一共 200 个联系人"), BorderLayout.SOUTH);
