@@ -3,8 +3,11 @@ package hoi.addrbook.ui;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Insets;
 
+import javax.swing.BorderFactory;
 import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 public class StringField extends JTextField {
 
@@ -14,6 +17,12 @@ public class StringField extends JTextField {
 	public StringField(String backtip) {
 		super();
 		this.backtip = backtip;
+		setBorder(BorderFactory.createCompoundBorder( //
+				BorderFactory.createEtchedBorder(), new EmptyBorder(new Insets(1, 0, 1, 1))));
+	}
+
+	public StringField() {
+		this(null);
 	}
 
 	public void paint(Graphics g) {
@@ -24,7 +33,7 @@ public class StringField extends JTextField {
 
 			g.setFont(new Font("Dialog", Font.PLAIN, 12));
 			g.setColor(Color.GRAY);
-			g.drawString(backtip, 5, (getHeight() - 12) / 2 + 10);
+			g.drawString(backtip, 4, (getHeight() - 12) / 2 + 10);
 
 			g.setColor(color);
 			g.setFont(font);
