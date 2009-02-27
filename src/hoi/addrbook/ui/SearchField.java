@@ -30,8 +30,6 @@ public class SearchField extends StringField {
 			Border border = UIManager.getBorder("TextField.border");
 			JTextField defaultField = new JTextField();
 			final int x = getWidth() - border.getBorderInsets(defaultField).right - image.getWidth();
-			setMargin(new Insets(1, 1, 1, getWidth() - x - 2));
-			//setMargin(new Insets(2, 2, 2, 50));
 			int y = (getHeight() - image.getHeight()) / 2;
 			g.drawImage(image, x, y, this);
 		} catch (Exception ignore) {
