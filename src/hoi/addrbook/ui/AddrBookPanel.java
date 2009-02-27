@@ -19,6 +19,10 @@ import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JToolBar;
+import javax.swing.plaf.ComponentUI;
+import javax.swing.plaf.basic.BasicSplitPaneDivider;
+import javax.swing.plaf.basic.BasicSplitPaneUI;
+import javax.swing.plaf.metal.MetalSplitPaneUI;
 
 public class AddrBookPanel extends JPanel {
 
@@ -35,7 +39,7 @@ public class AddrBookPanel extends JPanel {
 	private JButton tbarBackupButton = new JButton("备份", ImageHelper.ICON_BACKUP);
 
 	private StringField filterField = new StringField("键入内容 搜索");
-	private JList contactList = new JList();
+	private ListField contactList = new ListField();
 
 	private StringField infoNameField = new StringField();
 	private ClassField infoClassField = new ClassField();
@@ -102,7 +106,7 @@ public class AddrBookPanel extends JPanel {
 		cPanel.add(xPanel, BorderLayout.NORTH);
 		//	infoNoteArea.setBorder(COMMON_BORDER);
 		cPanel.add(infoNoteArea, BorderLayout.CENTER);
-		cPanel.setBorder(BorderFactory.createEtchedBorder());
+		//cPanel.setBorder(BorderFactory.createLineBorder(new JLabel().getBackground(), 2));
 		cPanel.setMinimumSize(new Dimension(370, -1));
 		return cPanel;
 	}
@@ -113,14 +117,14 @@ public class AddrBookPanel extends JPanel {
 		this.frame = frame;
 		filterField.getInsets();
 		contactList.setBorder(BorderFactory.createEmptyBorder());
-		JScrollPane scroll = new JScrollPane(contactList, //
-				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		scroll.setBorder(BorderFactory.createEtchedBorder());
+//		JScrollPane scroll = new JScrollPane(contactList, //
+//				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+//		scroll.setBorder(BorderFactory.createEtchedBorder());
 		JPanel wPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		wPanel.add(filterField, BorderLayout.NORTH);
-		wPanel.add(scroll, BorderLayout.CENTER);
-		wPanel.setMinimumSize(new Dimension(130, -1));
-		wPanel.setBorder(BorderFactory.createEtchedBorder());
+		wPanel.add(contactList, BorderLayout.CENTER);
+		wPanel.setPreferredSize(new Dimension(135, -1));
+		//wPanel.setBorder(BorderFactory.createLineBorder(new JLabel().getBackground(), 2));
 
 		JToolBar toolbar = new JToolBar("工具条");
 		toolbar.setFloatable(false);
@@ -134,10 +138,16 @@ public class AddrBookPanel extends JPanel {
 
 		setLayout(new BorderLayout());
 		add(toolbar, BorderLayout.NORTH);
-		JSplitPane wtPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, wPanel, createInfoPanel());
-		wtPane.setUI(new com.jgoodies.looks.plastic.PlasticSplitPaneUI());
-		wtPane.setBorder(BorderFactory.createLineBorder(BORDER_COLOR, 5));
-		add(wtPane, BorderLayout.CENTER);
+		
+//		JSplitPane wtPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, wPanel, createInfoPanel());
+//		wtPane.setUI(new BasicSplitPaneUI());
+//		wtPane.setBorder(BorderFactory.createLineBorder(BORDER_COLOR, 5));
+		JPanel wtPanel = new JPanel(new BorderLayout(5, 5));
+		wtPanel.add(wPanel, BorderLayout.WEST);
+		wtPanel.add(createInfoPanel(), BorderLayout.CENTER);
+		wtPanel.setBorder(BorderFactory.createLineBorder(BORDER_COLOR, 5));
+		
+		add(wtPanel, BorderLayout.CENTER);
 		add(new JTextField("一共 200 个联系人"), BorderLayout.SOUTH);
 	}
 }
