@@ -14,8 +14,7 @@ import javax.swing.border.EmptyBorder;
 
 public class AddrBookSettingDialog extends JDialog {
 
-	private static final long serialVersionUID = 7423268241876733586L;
-
+	private static final long serialVersionUID = -819820995840993632L;
 	private static final int BLANK_SIZE = 20;
 	private static final int GAP_SIZE = 5;
 

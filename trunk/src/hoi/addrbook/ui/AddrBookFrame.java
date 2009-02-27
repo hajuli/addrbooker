@@ -11,7 +11,6 @@ import javax.swing.SwingUtilities;
 public class AddrBookFrame extends JFrame {
 
 	private static final long serialVersionUID = -3116155141455555134L;
-
 	public static final String TITLE = "草根通讯录";
 
 	public AddrBookFrame() {
