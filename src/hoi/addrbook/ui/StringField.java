@@ -13,12 +13,16 @@ public class StringField extends JTextField {
 
 	private static final long serialVersionUID = 1215758246370170020L;
 	private String backtip = null;
-
-	public StringField(String backtip) {
+	
+	public StringField(String backtip, int right) {
 		super();
 		this.backtip = backtip;
 		setBorder(BorderFactory.createCompoundBorder( //
-				BorderFactory.createEtchedBorder(), new EmptyBorder(new Insets(1, 0, 1, 1))));
+				BorderFactory.createEtchedBorder(), new EmptyBorder(new Insets(1, 0, 1, right))));
+	}
+
+	public StringField(String backtip) {
+		this(backtip, 1);
 	}
 
 	public StringField() {
