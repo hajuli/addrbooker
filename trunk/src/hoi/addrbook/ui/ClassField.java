@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 
 public class ClassField extends JPanel {
 
-	private static final long serialVersionUID = -9018451259268831946L;
+	private static final long serialVersionUID = 7531465834540410473L;
 	private JComboBox note = new JComboBox(new String[] {
 			"", "a", "b" }) {
 		public void paintComponent(Graphics g) {

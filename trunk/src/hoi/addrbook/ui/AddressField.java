@@ -14,8 +14,7 @@ import javax.swing.border.EmptyBorder;
 
 public class AddressField extends JPanel {
 
-	private static final long serialVersionUID = -2283281574591552446L;
-
+	private static final long serialVersionUID = 9087341622805152794L;
 	private StringField solarField = new StringField();
 	private StringField lunarField = new StringField("邮政编码");
 
