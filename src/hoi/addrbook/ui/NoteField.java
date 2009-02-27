@@ -15,7 +15,7 @@ import javax.swing.border.EmptyBorder;
 
 public class NoteField extends JPanel {
 
-	private static final long serialVersionUID = -9018451259268831946L;
+	private static final long serialVersionUID = 3732388659066090439L;
 	private JTextArea note = new JTextArea();
 
 	public NoteField() {

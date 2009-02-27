@@ -12,8 +12,7 @@ import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
 public class ContactField extends JPanel {
-
-	private static final long serialVersionUID = -5178510604500684743L;
+	private static final long serialVersionUID = 3640198100387397959L;
 
 	private static final Border COMMON_BORDER = BorderFactory.createCompoundBorder( //
 			BorderFactory.createEtchedBorder(), //

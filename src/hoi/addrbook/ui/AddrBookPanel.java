@@ -26,8 +26,7 @@ import javax.swing.plaf.metal.MetalSplitPaneUI;
 
 public class AddrBookPanel extends JPanel {
 
-	private static final long serialVersionUID = -4479991916447167635L;
-
+	private static final long serialVersionUID = -1863142517865697366L;
 	private static final Color BORDER_COLOR = new JLabel().getBackground();
 	private static final int GAP_SIZE = 2;
 
@@ -38,7 +37,7 @@ public class AddrBookPanel extends JPanel {
 	private JButton tbarSettingButton = new JButton("设置", ImageHelper.ICON_SETTING);
 	private JButton tbarBackupButton = new JButton("备份", ImageHelper.ICON_BACKUP);
 
-	private StringField filterField = new StringField("键入内容 搜索");
+	private SearchField searchField = new SearchField("键入内容 搜索");
 	private ListField contactList = new ListField();
 
 	private StringField infoNameField = new StringField();
@@ -115,13 +114,13 @@ public class AddrBookPanel extends JPanel {
 
 	public AddrBookPanel(AddrBookFrame frame) {
 		this.frame = frame;
-		filterField.getInsets();
+		searchField.getInsets();
 		contactList.setBorder(BorderFactory.createEmptyBorder());
-//		JScrollPane scroll = new JScrollPane(contactList, //
-//				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-//		scroll.setBorder(BorderFactory.createEtchedBorder());
+		//		JScrollPane scroll = new JScrollPane(contactList, //
+		//				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		//		scroll.setBorder(BorderFactory.createEtchedBorder());
 		JPanel wPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
-		wPanel.add(filterField, BorderLayout.NORTH);
+		wPanel.add(searchField, BorderLayout.NORTH);
 		wPanel.add(contactList, BorderLayout.CENTER);
 		wPanel.setPreferredSize(new Dimension(135, -1));
 		//wPanel.setBorder(BorderFactory.createLineBorder(new JLabel().getBackground(), 2));
@@ -138,15 +137,15 @@ public class AddrBookPanel extends JPanel {
 
 		setLayout(new BorderLayout());
 		add(toolbar, BorderLayout.NORTH);
-		
-//		JSplitPane wtPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, wPanel, createInfoPanel());
-//		wtPane.setUI(new BasicSplitPaneUI());
-//		wtPane.setBorder(BorderFactory.createLineBorder(BORDER_COLOR, 5));
+
+		//		JSplitPane wtPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, wPanel, createInfoPanel());
+		//		wtPane.setUI(new BasicSplitPaneUI());
+		//		wtPane.setBorder(BorderFactory.createLineBorder(BORDER_COLOR, 5));
 		JPanel wtPanel = new JPanel(new BorderLayout(5, 5));
 		wtPanel.add(wPanel, BorderLayout.WEST);
 		wtPanel.add(createInfoPanel(), BorderLayout.CENTER);
 		wtPanel.setBorder(BorderFactory.createLineBorder(BORDER_COLOR, 5));
-		
+
 		add(wtPanel, BorderLayout.CENTER);
 		add(new JTextField("一共 200 个联系人"), BorderLayout.SOUTH);
 	}

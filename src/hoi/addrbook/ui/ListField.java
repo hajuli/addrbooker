@@ -16,7 +16,7 @@ import javax.swing.border.EmptyBorder;
 
 public class ListField extends JPanel {
 
-	private static final long serialVersionUID = -9018451259268831946L;
+	private static final long serialVersionUID = 6354225953429243350L;
 	private JList note = new JList();
 
 	public ListField() {

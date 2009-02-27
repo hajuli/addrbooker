@@ -1,1 +1,3 @@
 帮助里面写 网址，还有如何使用
+Thanks for using AddrBooker. You can show your appreciation and support future development by donating!
+搜索框 美化（右边加 放大镜）
