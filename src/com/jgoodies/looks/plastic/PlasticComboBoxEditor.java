@@ -30,8 +30,11 @@
 
 package com.jgoodies.looks.plastic;
 
+import java.awt.Insets;
+
 import javax.swing.JTextField;
 import javax.swing.UIManager;
+import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.basic.BasicComboBoxEditor;
 
 /**
@@ -50,6 +53,7 @@ class PlasticComboBoxEditor extends BasicComboBoxEditor {
     PlasticComboBoxEditor() {
         editor = new JTextField("", UIManager.getInt("ComboBox.editorColumns"));
         editor.setBorder(UIManager.getBorder("ComboBox.editorBorder"));
+        editor.setBorder(new EmptyBorder(new Insets(1, 0, 1, 1)));
     }
 
     /**
