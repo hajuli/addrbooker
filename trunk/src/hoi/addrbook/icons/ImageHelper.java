@@ -25,4 +25,6 @@ public class ImageHelper {
 	public static final ImageIcon ICON_DELETE = createImageIcon("32/delete.png");
 	public static final ImageIcon ICON_SETTING = createImageIcon("32/setting.png");
 	public static final ImageIcon ICON_BACKUP = createImageIcon("32/backup.png");
+
+	public static final ImageIcon ICON_SEARCH = createImageIcon("tiny/search.png");
 }
