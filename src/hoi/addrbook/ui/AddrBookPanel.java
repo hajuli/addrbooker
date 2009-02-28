@@ -38,7 +38,8 @@ public class AddrBookPanel extends JPanel {
 	private JButton tbarBackupButton = new JButton("备份", ImageHelper.ICON_BACKUP);
 
 	private SearchField searchField = new SearchField("键入内容 搜索");
-	private ListField contactList = new ListField();
+	private ListField contactList = new ListField(new String[] {
+			"abbabsd", "a", "abc" });
 
 	private StringField infoNameField = new StringField();
 	private ClassField infoClassField = new ClassField();

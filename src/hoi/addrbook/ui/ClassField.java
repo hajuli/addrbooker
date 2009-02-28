@@ -20,7 +20,8 @@ public class ClassField extends JPanel {
 
 	private static final long serialVersionUID = 7531465834540410473L;
 	private JComboBox note = new JComboBox(new String[] {
-			"", "a", "b", "a", "b", "a", "b", "a", "ba", "b", "a", "b", "a", "b", "a", "b", "a", "b", "a", "b", "a", "b" }) {
+			"", "a", "b", "a", "bsadfasdfadfasdfdddddddddddddddddddddddddddddd", "a", "b", "a", "ba", "b", "a", "b", "a", "b", "a", "b", "a", "b", "a", "b",
+			"a", "b" }) {
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
 		}
@@ -45,9 +46,7 @@ class ComplexCellRenderer implements ListCellRenderer {
 	public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
 		JLabel renderer = (JLabel) defaultRenderer.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 		renderer.setText(" " + (String) value);
-		if (((String) value).equals("")) {
-			renderer.setText("<html> [EMPTY]" + (String) value);
-		}
+		//		renderer.setBorder(BorderFactory.createEmptyBorder(1,1,1,1));
 		return renderer;
 	}
 }
