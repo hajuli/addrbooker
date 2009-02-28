@@ -60,7 +60,7 @@ public final class PlasticComboBoxUI extends MetalComboBoxUI {
 	 * method only gets called if a custom editor has not already been installed
 	 * in the JComboBox.
 	 */
-	protected PlasticComboBoxEditor createEditor() {
+	protected ComboBoxEditor createEditor() {
 		return new PlasticComboBoxEditor.UIResource();
 	}
 
