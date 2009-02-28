@@ -13,7 +13,7 @@ public class StringField extends JTextField {
 
 	private static final long serialVersionUID = 1215758246370170020L;
 	private String backtip = null;
-	
+
 	public StringField(String backtip, int right) {
 		super();
 		this.backtip = backtip;
