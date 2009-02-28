@@ -28,7 +28,7 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
  */
 
-package com.jgoodies.looks.plastic;
+package hoi.addrbook.looks;
 
 import java.awt.*;
 import java.beans.PropertyChangeEvent;
@@ -50,10 +50,10 @@ import javax.swing.plaf.metal.MetalScrollBarUI;
 * @version $Revision: 1.5 $
  */
 
-public final class PlasticComboBoxUI extends MetalComboBoxUI {
+public final class ComboBoxUI extends MetalComboBoxUI {
 
     public static ComponentUI createUI(JComponent b) {
-        return new PlasticComboBoxUI();
+        return new ComboBoxUI();
     }
 
     /**
@@ -62,7 +62,7 @@ public final class PlasticComboBoxUI extends MetalComboBoxUI {
      * been installed in the JComboBox.
      */
     protected ComboBoxEditor createEditor() {
-        return new PlasticComboBoxEditor.UIResource();
+        return new ComboBoxEditor.UIResource();
     }
     
 
@@ -105,10 +105,10 @@ public final class PlasticComboBoxUI extends MetalComboBoxUI {
         
         if (!comboBox.isEditable()
             && arrowButton != null
-            && arrowButton instanceof PlasticComboBoxButton) {
+            && arrowButton instanceof ComboBoxButton) {
 
-            PlasticComboBoxButton button =
-                (PlasticComboBoxButton) arrowButton;
+            ComboBoxButton button =
+                (ComboBoxButton) arrowButton;
             Insets buttonInsets = button.getInsets();
             Insets buttonMargin = button.getMargin();
             Insets insets = comboBox.getInsets();
@@ -158,9 +158,9 @@ public final class PlasticComboBoxUI extends MetalComboBoxUI {
      * Overridden to use a button that can have a pseudo 3D effect.
      */
     protected JButton createArrowButton() {
-    	PlasticComboBoxButton temp = new PlasticComboBoxButton(
+    	ComboBoxButton temp = new ComboBoxButton(
             comboBox,
-            PlasticIconFactory.getComboBoxButtonIcon(),
+            IconFactory.getComboBoxButtonIcon(),
             comboBox.isEditable(),
             currentValuePane,
             listBox);
@@ -271,8 +271,8 @@ public final class PlasticComboBoxUI extends MetalComboBoxUI {
             String propertyName = e.getPropertyName();
 
             if (propertyName.equals("editable")) {
-                PlasticComboBoxButton button =
-                    (PlasticComboBoxButton) arrowButton;
+                ComboBoxButton button =
+                    (ComboBoxButton) arrowButton;
                 button.setIconOnly(comboBox.isEditable());
                 comboBox.repaint();
             } else if (propertyName.equals("background")) {

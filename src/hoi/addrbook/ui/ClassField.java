@@ -32,7 +32,7 @@ public class ClassField extends JPanel {
 		setLayout(new BorderLayout());
 		note.setBorder(BorderFactory.createEtchedBorder());
 		//	note.setUI(new com.jgoodies.looks.windows.WindowsComboBoxUI());
-		note.setUI(new com.jgoodies.looks.plastic.PlasticComboBoxUI());
+		note.setUI(new hoi.addrbook.looks.ComboBoxUI());
 		note.setRenderer(new ComplexCellRenderer());
 		//	note.setUI(new MyComboBoxUI());
 		note.setEditable(true);

@@ -28,7 +28,7 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
  */
 
-package com.jgoodies.looks.plastic;
+package hoi.addrbook.looks;
 
 import java.awt.Component;
 import java.awt.Graphics;
@@ -50,7 +50,7 @@ import javax.swing.*;
  * @author  Karsten Lentzsch
  * @version $Revision: 1.3 $
  */
-final class PlasticComboBoxButton extends JButton {
+final class ComboBoxButton extends JButton {
 
     private static final int LEFT_INSET  = 2;
     private static final int RIGHT_INSET = 3;
@@ -66,7 +66,7 @@ final class PlasticComboBoxButton extends JButton {
     /**
      * Constructs a <code>PlasticComboBoxButton</code>.
      */
-    PlasticComboBoxButton(
+    ComboBoxButton(
         JComboBox comboBox,
         Icon comboIcon,
         boolean iconOnly,
@@ -131,11 +131,11 @@ final class PlasticComboBoxButton extends JButton {
      * Checks and answers if we should paint a pseudo 3D effect.
      */
     private boolean is3D() {
-        if (PlasticUtils.force3D(comboBox))
+        if (Utils.force3D(comboBox))
             return true;
-        if (PlasticUtils.forceFlat(comboBox))
+        if (Utils.forceFlat(comboBox))
             return false;
-        return PlasticUtils.is3D("ComboBox.");
+        return Utils.is3D("ComboBox.");
     }
 
     /**
@@ -144,7 +144,7 @@ final class PlasticComboBoxButton extends JButton {
      */
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        boolean leftToRight = PlasticUtils.isLeftToRight(comboBox);
+        boolean leftToRight = Utils.isLeftToRight(comboBox);
 
         Insets insets = getInsets();
 
@@ -277,7 +277,7 @@ final class PlasticComboBoxButton extends JButton {
             // Paint the focus
             boolean hasFocus = comboBox.hasFocus();
             if (!borderPaintsFocus && hasFocus) {
-                g.setColor(PlasticLookAndFeel.getFocusColor());
+                g.setColor(LookAndFeel.getFocusColor());
                 int x = LEFT_INSET;
                 int y = LEFT_INSET;
                 int w = getWidth()  - LEFT_INSET - RIGHT_INSET;
