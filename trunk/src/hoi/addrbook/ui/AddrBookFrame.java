@@ -25,7 +25,7 @@ public class AddrBookFrame extends JFrame {
 			SwingUtilities.invokeAndWait(new Runnable() {
 				public void run() {
 					setLayout(new BorderLayout(0, 0));
-					add(new AddrBookPanel(AddrBookFrame.this), BorderLayout.CENTER);
+					add(new AddrBookPanel(), BorderLayout.CENTER);
 				}
 			});
 		} catch (Exception exc) {
