@@ -16,7 +16,7 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.ListCellRenderer;
 
-public class ClassField extends JPanel {
+public class InfoClassifyField extends JPanel {
 
 	private static final long serialVersionUID = 7531465834540410473L;
 	private JComboBox note = new JComboBox(new String[] {
@@ -27,12 +27,12 @@ public class ClassField extends JPanel {
 		}
 	};
 
-	public ClassField() { // http://www.wangchao.net.cn/bbsdetail_1756152.html
+	public InfoClassifyField() { // http://www.wangchao.net.cn/bbsdetail_1756152.html
 		super();
 		setLayout(new BorderLayout());
 		note.setBorder(BorderFactory.createEtchedBorder());
 		//	note.setUI(new com.jgoodies.looks.windows.WindowsComboBoxUI());
-		note.setUI(new hoi.addrbook.looks.ComboBoxUI());
+		note.setUI(new hoi.addrbook.looks.PlasticComboBoxUI());
 		note.setRenderer(new ComplexCellRenderer());
 		//	note.setUI(new MyComboBoxUI());
 		note.setEditable(true);
