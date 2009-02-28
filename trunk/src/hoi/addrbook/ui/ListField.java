@@ -20,8 +20,14 @@ public class ListField extends JPanel {
 	private JList note = new JList();
 
 	public ListField() {
+
+	}
+
+	public ListField(String[] strings) {
 		super();
-		note.setBorder(new EmptyBorder(new Insets(1, 1, 1, 1)));
+		note = new JList(strings);
+		note.setCellRenderer(new ComplexCellRenderer());
+		//	note.setBorder(new EmptyBorder(new Insets(1, 1, 1, 1)));
 		setLayout(new BorderLayout());
 		add(new JScrollPane(note, //
 				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED));
