@@ -9,23 +9,23 @@ import javax.swing.BorderFactory;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class StringField extends JTextField {
+public class InfoTextField extends JTextField {
 
 	private static final long serialVersionUID = 1215758246370170020L;
 	private String backtip = null;
 
-	public StringField(String backtip, int right) {
+	public InfoTextField(String backtip, int right) {
 		super();
 		this.backtip = backtip;
 		setBorder(BorderFactory.createCompoundBorder( //
 				BorderFactory.createEtchedBorder(), new EmptyBorder(new Insets(1, 0, 1, right))));
 	}
 
-	public StringField(String backtip) {
+	public InfoTextField(String backtip) {
 		this(backtip, 1);
 	}
 
-	public StringField() {
+	public InfoTextField() {
 		this(null);
 	}
 

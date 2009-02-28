@@ -7,20 +7,27 @@ import java.awt.Graphics;
 import java.awt.Insets;
 
 import javax.swing.BorderFactory;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class NoteField extends JPanel {
+public class ContactList extends JPanel {
 
-	private static final long serialVersionUID = 3732388659066090439L;
-	private JTextArea note = new JTextArea();
+	private static final long serialVersionUID = 6354225953429243350L;
+	private JList note = new JList();
 
-	public NoteField() {
+	public ContactList() {
+
+	}
+
+	public ContactList(String[] strings) {
 		super();
-		note.setBorder(new EmptyBorder(new Insets(1, 1, 1, 1)));
+		note = new JList(strings);
+		note.setCellRenderer(new ComplexCellRenderer());
+		//	note.setBorder(new EmptyBorder(new Insets(1, 1, 1, 1)));
 		setLayout(new BorderLayout());
 		add(new JScrollPane(note, //
 				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED));

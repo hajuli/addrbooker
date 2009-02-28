@@ -12,12 +12,12 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
-public class SearchField extends StringField {
+public class SreachBox extends InfoTextField {
 
 	private static final long serialVersionUID = -5022351203995487292L;
 	private static Image image = ImageHelper.ICON_SEARCH.getImage();
 
-	public SearchField(String backtip) {
+	public SreachBox(String backtip) {
 		super(backtip, image.getWidth(null));
 	}
 

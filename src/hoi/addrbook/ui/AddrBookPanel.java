@@ -37,25 +37,26 @@ public class AddrBookPanel extends JPanel {
 	private JButton tbarSettingButton = new JButton("设置", ImageHelper.ICON_SETTING);
 	private JButton tbarBackupButton = new JButton("备份", ImageHelper.ICON_BACKUP);
 
-	private SearchField searchField = new SearchField("键入内容 搜索");
-	private ListField contactList = new ListField(new String[] {
+	private SreachBox searchField = new SreachBox("键入内容 搜索");
+	private ContactList contactList = new ContactList(new String[] {
 			"abbabsd", "a", "abc" });
 
-	private StringField infoNameField = new StringField();
-	private ClassField infoClassField = new ClassField();
-	private StringField infoBirthdaySolarField = new StringField("阳历 1900-01-01");
-	private StringField infoBirthdayLunarField = new StringField("农历 1900-01-01");
-	private ContactField infoContactField = new ContactField();
-	private StringField infoAgeField = new StringField();
-	private StringField infoQQField = new StringField();
-	private StringField infoMSNField = new StringField();
-	private StringField infoMobileField = new StringField();
-	private StringField infoFetionField = new StringField();
-	private StringField infoEMailField = new StringField();
-	private StringField infoWebsiteField = new StringField();
-	private AddressField infoHomeAddrField = new AddressField();
-	private StringField infoCompany = new StringField();
-	private NoteField infoNoteArea = new NoteField();
+	private InfoTextField infoNameField = new InfoTextField();
+	private InfoClassifyField infoClassField = new InfoClassifyField();
+	private InfoTextField infoBirthdaySolarField = new InfoTextField("阳历 1900-01-01");
+	private InfoTextField infoBirthdayLunarField = new InfoTextField("农历 1900-01-01");
+	private InfoTimerField infoContactField = new InfoTimerField();
+	private InfoTextField infoAgeField = new InfoTextField();
+	private InfoTextField infoQQField = new InfoTextField();
+	private InfoTextField infoMSNField = new InfoTextField();
+	private InfoTextField infoMobileField = new InfoTextField();
+	private InfoTextField infoFetionField = new InfoTextField();
+	private InfoTextField infoEMailField = new InfoTextField();
+	private InfoTextField infoWebsiteField = new InfoTextField();
+	private InfoAddrField infoHomeAddrField = new InfoAddrField();
+	private InfoTextField infoCompany = new InfoTextField();
+	private InfoNotesArea infoNoteArea = new InfoNotesArea();
+	private StatusPanel statusPanel = new StatusPanel();
 
 	private JPanel createInfoPanel(String[] names, JComponent[] comps) {
 		JPanel aPanel = new JPanel(new GridLayout(names.length, 1, GAP_SIZE, GAP_SIZE));
@@ -148,6 +149,7 @@ public class AddrBookPanel extends JPanel {
 		wtPanel.setBorder(BorderFactory.createLineBorder(BORDER_COLOR, 5));
 
 		add(wtPanel, BorderLayout.CENTER);
-		add(new JTextField("一共 200 个联系人"), BorderLayout.SOUTH);
+		//statusPanel.setBorder(BorderFactory.createEtchedBorder());
+		add(statusPanel, BorderLayout.SOUTH);
 	}
 }

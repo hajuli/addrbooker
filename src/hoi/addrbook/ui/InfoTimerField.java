@@ -11,17 +11,17 @@ import javax.swing.JTextField;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
-public class ContactField extends JPanel {
+public class InfoTimerField extends JPanel {
 	private static final long serialVersionUID = 3640198100387397959L;
 
 	private static final Border COMMON_BORDER = BorderFactory.createCompoundBorder( //
 			BorderFactory.createEtchedBorder(), //
 			new EmptyBorder(new Insets(1, 7, 1, 7)));
 
-	private StringField dateField = new StringField();
+	private InfoTextField dateField = new InfoTextField();
 	private JButton now = new JButton("清零");
 
-	public ContactField() {
+	public InfoTimerField() {
 		now.setBorder(COMMON_BORDER);
 
 		setLayout(new BorderLayout(1, 1));
