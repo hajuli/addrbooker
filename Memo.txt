@@ -1,2 +1,5 @@
 帮助里面写 网址，还有如何使用
 Thanks for using AddrBooker. You can show your appreciation and support future development by donating!
+(BorderLayout\(\))|(BorderLayout\(.*-1.*\))|(GridLayout\(\))|(GridLayout\(.*-1.*\))|(FlowLayout\(\))|(FlowLayout\(.*-1.*\))
+(BorderLayout\(.*?\))|(GridLayout\(.*?\))|(FlowLayout\(.*?\))
+IllegalArgumentException
