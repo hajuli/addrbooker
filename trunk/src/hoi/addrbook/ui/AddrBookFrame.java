@@ -30,6 +30,7 @@ public class AddrBookFrame extends JFrame {
 			});
 		} catch (Exception exc) {
 			System.err.println("Can't create because of " + exc);
+			exc.printStackTrace();
 		}
 		setResizable(false);
 	}
