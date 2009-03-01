@@ -5,7 +5,10 @@ import hoi.addrbook.icons.ImageHelper;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Frame;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -14,12 +17,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JToolBar;
 
-public class AddrBookPanel extends JPanel {
+public class AddrBookPanel extends JPanel implements ActionListener {
 
 	private static final long serialVersionUID = -1863142517865697366L;
 	private static final Color BORDER_COLOR = new JLabel().getBackground();
 	private static final int GAP_SIZE = 2;
 	private static final int BLANK_SIZE = 5;
+
+	private AddrBookBackupDialog backupDialog = null;
+	private AddrBookSettingDialog settingDialog = null;
 
 	private JButton tbarAddButton = new JButton("添加", ImageHelper.ICON_ADD);
 	private JButton tbarSaveButton = new JButton("保存", ImageHelper.ICON_SAVE);
@@ -73,6 +79,30 @@ public class AddrBookPanel extends JPanel {
 		add(toolbar, BorderLayout.NORTH);
 		add(cPanel, BorderLayout.CENTER);
 		add(statusPanel, BorderLayout.SOUTH);
+
+		setActionListener();
+	}
+
+	private void setActionListener() {
+		tbarAddButton.addActionListener(this);
+		tbarSaveButton.addActionListener(this);
+		tbarEditButton.addActionListener(this);
+		tbarDeleteButton.addActionListener(this);
+		tbarSettingButton.addActionListener(this);
+		tbarBackupButton.addActionListener(this);
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		Object object = e.getSource();
+		if (object == tbarSettingButton) {
+			if (settingDialog == null)
+				settingDialog = new AddrBookSettingDialog((Frame) getTopLevelAncestor());
+			settingDialog.setVisible(true);
+		} else if (object == tbarBackupButton) {
+			if (backupDialog == null)
+				backupDialog = new AddrBookBackupDialog((Frame) getTopLevelAncestor());
+			backupDialog.setVisible(true);
+		}
 	}
 
 	private JPanel createTempPanel(JComponent... comps) {
