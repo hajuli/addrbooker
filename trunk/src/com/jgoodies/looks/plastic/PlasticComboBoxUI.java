@@ -272,7 +272,6 @@ public final class PlasticComboBoxUI extends MetalComboBoxUI {
 
 		private static final long serialVersionUID = -7654624163275114451L;
 
-		@SuppressWarnings("deprecation")
 		private PlasticComboPopup(JComboBox combo) {
 			super(combo);
 		}
