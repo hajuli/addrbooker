@@ -14,7 +14,7 @@ public class InfoClassifyField extends JPanel {
 		super(new BorderLayout(0, 0));
 		setName(name);
 		classify.setBorder(BorderFactory.createEtchedBorder());
-		classify.setUI(new hoi.addrbook.looks.PlasticComboBoxUI());
+		classify.setUI(new com.jgoodies.looks.plastic.PlasticComboBoxUI());
 		classify.setRenderer(new ComplexCellRenderer());
 		classify.setEditable(true);
 		add(classify, BorderLayout.CENTER);

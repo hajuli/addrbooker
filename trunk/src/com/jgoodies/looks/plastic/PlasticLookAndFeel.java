@@ -28,7 +28,7 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
  */
 
-package hoi.addrbook.looks;
+package com.jgoodies.looks.plastic;
 
 import javax.swing.UIDefaults;
 import javax.swing.plaf.metal.MetalLookAndFeel;
