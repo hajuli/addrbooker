@@ -14,7 +14,7 @@ public class AddrBookFrame extends JFrame {
 	public static final String TITLE = "草根通讯录";
 
 	public AddrBookFrame() {
-		Dimension size = new Dimension(540 - 2, 540 / 4 * 3);
+		Dimension size = new Dimension(540, 540 / 4 * 3);
 		setPreferredSize(size);
 		setMinimumSize(size);
 		setLocationRelativeTo(null);
