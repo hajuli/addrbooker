@@ -7,10 +7,11 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 
 public class StatusPanel extends JPanel {
-	public StatusPanel() {
-		this.setLayout(new BorderLayout());
-		this.add(new JSeparator(JSeparator.HORIZONTAL), BorderLayout.NORTH);
-		this.add(new JLabel(" "), BorderLayout.CENTER);
-	}
+	private static final long serialVersionUID = -8423064815808187356L;
 
+	public StatusPanel() {
+		super(new BorderLayout(0, 0));
+		add(new JSeparator(JSeparator.HORIZONTAL), BorderLayout.NORTH);
+		add(new JLabel(" "), BorderLayout.CENTER);
+	}
 }

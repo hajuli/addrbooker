@@ -14,19 +14,24 @@ public class InfoTextField extends JTextField {
 	private static final long serialVersionUID = 1215758246370170020L;
 	private String backtip = null;
 
-	public InfoTextField(String backtip, int right) {
+	public InfoTextField(String name, String backtip, int right) {
 		super();
+		setName(name);
 		this.backtip = backtip;
 		setBorder(BorderFactory.createCompoundBorder( //
 				BorderFactory.createEtchedBorder(), new EmptyBorder(new Insets(1, 0, 1, right))));
 	}
 
-	public InfoTextField(String backtip) {
-		this(backtip, 1);
+	public InfoTextField(String name, String backtip) {
+		this(name, backtip, 1);
+	}
+
+	public InfoTextField(String name) {
+		this(name, null);
 	}
 
 	public InfoTextField() {
-		this(null);
+		this(null, null);
 	}
 
 	public void paint(Graphics g) {
