@@ -1,35 +1,33 @@
 package hoi.addrbook.ui;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Insets;
+import java.awt.Component;
 
-import javax.swing.BorderFactory;
+import javax.swing.DefaultListCellRenderer;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.border.EmptyBorder;
+import javax.swing.ListCellRenderer;
 
 public class ContactList extends JPanel {
 
 	private static final long serialVersionUID = 6354225953429243350L;
-	private JList note = new JList();
+	private JList contacts = new JList();
 
 	public ContactList() {
-
+		super(new BorderLayout(0, 0));
+		contacts.setCellRenderer(new ComplexCellRenderer());
+		add(new JScrollPane(contacts, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED));
 	}
+}
 
-	public ContactList(String[] strings) {
-		super();
-		note = new JList(strings);
-		note.setCellRenderer(new ComplexCellRenderer());
-		//	note.setBorder(new EmptyBorder(new Insets(1, 1, 1, 1)));
-		setLayout(new BorderLayout());
-		add(new JScrollPane(note, //
-				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED));
+class ComplexCellRenderer implements ListCellRenderer {
+	protected DefaultListCellRenderer defaultRenderer = new DefaultListCellRenderer();
+
+	public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+		JLabel renderer = (JLabel) defaultRenderer.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+		renderer.setText(String.format(" %s", value));
+		return renderer;
 	}
 }
