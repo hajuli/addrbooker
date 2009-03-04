@@ -152,8 +152,7 @@ public final class PlasticComboBoxUI extends MetalComboBoxUI {
 	 * Overridden to use a button that can have a pseudo 3D effect.
 	 */
 	protected JButton createArrowButton() {
-		PlasticComboBoxButton temp = new PlasticComboBoxButton(comboBox, PlasticIconFactory.getComboBoxButtonIcon(), comboBox.isEditable(), currentValuePane,
-				listBox);
+		PlasticComboBoxButton temp = new PlasticComboBoxButton(comboBox, PlasticIconFactory.getComboBoxButtonIcon(), comboBox.isEditable(), currentValuePane, listBox);
 		temp.setBorder(BorderFactory.createEtchedBorder());
 		return temp;
 	}
