@@ -15,12 +15,30 @@ public class AddrBookProps extends Properties {
 	private static final long serialVersionUID = 2738957830618139780L;
 	private static final String USER_HOME_DIR = System.getProperty("user.home");
 	private static final String ADDRBOOKER_DIR_NAME = USER_HOME_DIR + File.separator + "AddrBooker";
+	private static final String ADDRBOOKER_FILE_PATH = ADDRBOOKER_DIR_NAME + File.separator + "AddrBooker.yml";
 	static {
 		new File(ADDRBOOKER_DIR_NAME).mkdirs();
+		File file = new File(ADDRBOOKER_FILE_PATH);
+		if (file.exists()) {
+			if (file.isDirectory()) {
+				file.delete();
+			} else {
+				try { // 备份
+					FileUtils.copyFile(file, new File(ADDRBOOKER_FILE_PATH + getDateString()));
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		} else {
+			try {
+				Yaml.dump(new AddrBookProps(), new File(ADDRBOOKER_FILE_PATH));
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+		}
 	}
-	private static final String ADDRBOOKER_FILE_PATH = ADDRBOOKER_DIR_NAME + File.separator + "AddrBooker.yml";
 
-	private static String today() {
+	private static String getDateString() {
 		return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 	}
 
@@ -32,24 +50,12 @@ public class AddrBookProps extends Properties {
 		return load(ADDRBOOKER_FILE_PATH);
 	}
 
-	public static void save(String path, AddrBookProps props) throws FileNotFoundException {
-		File file = new File(path);
-		if (file.exists()) {
-			if (file.isDirectory()) { // 如果有同名的文件夹
-				file.delete(); // 不管三七二十一，删除它
-			} else {
-				try { // 重命名备份
-					FileUtils.copyFile(file, new File(ADDRBOOKER_FILE_PATH + today()));
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-		}
+	public static void save(AddrBookProps props, String path) throws FileNotFoundException {
 		Yaml.dump(props, new File(path));
 	}
 
 	public static void save(AddrBookProps props) throws FileNotFoundException {
-		save(ADDRBOOKER_FILE_PATH, props);
+		save(props, ADDRBOOKER_FILE_PATH);
 	}
 
 	public static void main(String[] args) throws FileNotFoundException {
