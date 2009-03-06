@@ -9,7 +9,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class InfoTextField extends JTextField {
+public class InfoTextField extends JTextField implements AccessInterface {
 
 	private static final long serialVersionUID = 1215758246370170020L;
 	private String backtip = null;
@@ -47,5 +47,12 @@ public class InfoTextField extends JTextField {
 			g.setColor(color);
 			g.setFont(font);
 		}
+	}
+
+	public String getInfo() {
+		return null;
+	}
+
+	public void setInfo(String info) {
 	}
 }

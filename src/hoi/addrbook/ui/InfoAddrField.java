@@ -5,7 +5,7 @@ import java.awt.Dimension;
 
 import javax.swing.JPanel;
 
-public class InfoAddrField extends JPanel {
+public class InfoAddrField extends JPanel implements AccessInterface {
 
 	private static final long serialVersionUID = 9087341622805152794L;
 	private InfoTextField address = new InfoTextField();
@@ -18,5 +18,13 @@ public class InfoAddrField extends JPanel {
 
 		add(address, BorderLayout.CENTER);
 		add(postcode, BorderLayout.EAST);
+	}
+
+	public String getInfo() {
+		return null;
+	}
+
+	public void setInfo(String info) {
+
 	}
 }
