@@ -1,5 +1,7 @@
 package hoi.addrbook.ui;
 
+import hoi.addrbook.data.AddrBookProps;
+import hoi.addrbook.data.ContactProps;
 import hoi.addrbook.icons.ImageHelper;
 
 import java.awt.BorderLayout;
@@ -54,6 +56,13 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 	private InfoTextField infoCompanyField = new InfoTextField("公司信息");
 	private InfoNotesArea infoNotesArea = new InfoNotesArea();
 
+	private AccessInterface[] infoFields = new AccessInterface[] {
+			infoNameField, infoClassifyField, infoBirthdayLunarField, infoBirthdaySolarField, infoTimerField, //
+			infoAgeField, infoQQField, infoMSNField, infoMobileField, infoFetionField, infoEMailField, //
+			infoWebsiteField, infoHomeAddrField, infoCompanyField, infoNotesArea };
+
+	private AddrBookProps addrbook = AddrBookProps.load();
+
 	public AddrBookPanel() {
 		JPanel wPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		wPanel.add(searchBox, BorderLayout.NORTH);
@@ -81,6 +90,7 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 		add(statusPanel, BorderLayout.SOUTH);
 
 		setActionListener();
+		loadAddrBookProps();
 	}
 
 	private void setActionListener() {
@@ -90,6 +100,9 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 		tbarDeleteButton.addActionListener(this);
 		tbarSettingButton.addActionListener(this);
 		tbarBackupButton.addActionListener(this);
+	}
+
+	private void loadAddrBookProps() {
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -102,6 +115,8 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 			if (backupDialog == null)
 				backupDialog = new AddrBookBackupDialog((Frame) getTopLevelAncestor());
 			backupDialog.setVisible(true);
+		} else if (object == tbarSaveButton) {
+			ContactProps contact = new ContactProps();
 		}
 	}
 

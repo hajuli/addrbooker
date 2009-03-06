@@ -42,23 +42,32 @@ public class AddrBookProps extends Properties {
 		return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 	}
 
-	public static AddrBookProps load(String path) throws FileNotFoundException {
-		return (AddrBookProps) Yaml.load(new File(path));
+	public static AddrBookProps load(String path) {
+		try {
+			return (AddrBookProps) Yaml.load(new File(path));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			return new AddrBookProps();
+		}
 	}
 
-	public static AddrBookProps load() throws FileNotFoundException {
+	public static AddrBookProps load() {
 		return load(ADDRBOOKER_FILE_PATH);
 	}
 
-	public static void save(AddrBookProps props, String path) throws FileNotFoundException {
-		Yaml.dump(props, new File(path));
+	public static void save(AddrBookProps props, String path) {
+		try {
+			Yaml.dump(props, new File(path));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 
-	public static void save(AddrBookProps props) throws FileNotFoundException {
+	public static void save(AddrBookProps props) {
 		save(props, ADDRBOOKER_FILE_PATH);
 	}
 
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) {
 		AddrBookProps.save(new AddrBookProps());
 		AddrBookProps.save(new AddrBookProps());
 	}

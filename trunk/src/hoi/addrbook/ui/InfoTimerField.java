@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class InfoTimerField extends JPanel {
+public class InfoTimerField extends JPanel implements AccessInterface {
 	private static final long serialVersionUID = 3640198100387397959L;
 
 	private InfoTextField delta = new InfoTextField();
@@ -22,5 +22,12 @@ public class InfoTimerField extends JPanel {
 
 		add(delta, BorderLayout.CENTER);
 		add(clear, BorderLayout.EAST);
+	}
+
+	public String getInfo() {
+		return null;
+	}
+
+	public void setInfo(String info) {
 	}
 }
