@@ -62,6 +62,7 @@ public class Utilities {
         text = text.replace("\0", "\\0");
         text = text.replace("\t", "\\t");
         text = text.replace("\"", "\\\"");
+        text = text.replace("\n", "\\n");
         return text;
     }
     
@@ -105,7 +106,7 @@ public class Utilities {
         String text = value.toString();
         
         // special handling for multiple lines
-        if (text.indexOf('\n') != -1){
+        if (text.indexOf('\n') != -1 && false){
             if (text.length() == 1)
                 return quote("\\n");
             StringBuffer sb = new StringBuffer();
@@ -122,7 +123,7 @@ public class Utilities {
             return quote(text);
         }else{
             String indicators = ":[]{},\"'|*&";
-            boolean quoteIt = false;
+            boolean quoteIt = true;
             for (char c: indicators.toCharArray())
                 if (text.indexOf(c) != -1){
                     quoteIt = true;
