@@ -5,12 +5,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.ho.yaml.Yaml;
 
-public class AddrBookProps extends Properties {
+public class AddrBookProps extends java.util.LinkedHashMap<String, ContactProps> {
 
 	private static final long serialVersionUID = 2738957830618139780L;
 	private static final String USER_HOME_DIR = System.getProperty("user.home");

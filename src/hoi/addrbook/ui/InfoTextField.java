@@ -1,5 +1,7 @@
 package hoi.addrbook.ui;
 
+import hoi.addrbook.data.ContactPropsEnum;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -12,47 +14,62 @@ import javax.swing.border.EmptyBorder;
 public class InfoTextField extends JTextField implements AccessInterface {
 
 	private static final long serialVersionUID = 1215758246370170020L;
-	private String backtip = null;
+	private ContactPropsEnum contactKey = null;
+	private String backTip = null;
 
-	public InfoTextField(String name, String backtip, int right) {
+	public InfoTextField(ContactPropsEnum contactKey, String compName, String backTip, int rightInset) {
 		super();
-		setName(name);
-		this.backtip = backtip;
+		this.contactKey = contactKey;
+		setName(compName);
+		this.backTip = backTip;
 		setBorder(BorderFactory.createCompoundBorder( //
-				BorderFactory.createEtchedBorder(), new EmptyBorder(new Insets(1, 0, 1, right))));
+				BorderFactory.createEtchedBorder(), new EmptyBorder(new Insets(1, 0, 1, rightInset))));
 	}
 
-	public InfoTextField(String name, String backtip) {
-		this(name, backtip, 1);
+	public InfoTextField(ContactPropsEnum contactKey, String compName, String backTip) {
+		this(contactKey, compName, backTip, 1);
 	}
 
-	public InfoTextField(String name) {
-		this(name, null);
+	public InfoTextField(ContactPropsEnum contactKey, String compName) {
+		this(contactKey, compName, null, 1);
+	}
+
+	public InfoTextField(String backTip) {
+		this(null, null, backTip, 1);
 	}
 
 	public InfoTextField() {
-		this(null, null);
+		this(null, null, null, 1);
 	}
 
 	public void paint(Graphics g) {
 		super.paint(g);
-		if (getText().equals("") && backtip != null) {
+		if (getText().equals("") && backTip != null && !backTip.equals("")) {
 			Font font = g.getFont();
 			Color color = g.getColor();
 
 			g.setFont(new Font("Dialog", Font.PLAIN, 12));
 			g.setColor(Color.GRAY);
-			g.drawString(backtip, 4, (getHeight() - 12) / 2 + 10);
+			g.drawString(backTip, 4, (getHeight() - 12) / 2 + 10);
 
 			g.setColor(color);
 			g.setFont(font);
 		}
 	}
 
-	public String getInfo() {
-		return null;
+	public ContactPropsEnum getContactKey() {
+		return contactKey;
 	}
 
-	public void setInfo(String info) {
+	public String getContent() {
+		return getText();
+	}
+
+	public void setContactKey(ContactPropsEnum contactKey) {
+		this.contactKey = contactKey;
+	}
+
+	public void setContent(String content) {
+		setText(content);
 	}
 }

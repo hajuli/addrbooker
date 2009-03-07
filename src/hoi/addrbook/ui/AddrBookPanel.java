@@ -2,6 +2,7 @@ package hoi.addrbook.ui;
 
 import hoi.addrbook.data.AddrBookProps;
 import hoi.addrbook.data.ContactProps;
+import hoi.addrbook.data.ContactPropsEnum;
 import hoi.addrbook.icons.ImageHelper;
 
 import java.awt.BorderLayout;
@@ -13,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -36,29 +38,31 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 	private JButton tbarSettingButton = new JButton("设置", ImageHelper.ICON_SETTING);
 	private JButton tbarBackupButton = new JButton("备份", ImageHelper.ICON_BACKUP);
 
+	private DefaultListModel contactListModel = new DefaultListModel();
+
 	private SreachBox searchBox = new SreachBox();
-	private ContactList contactList = new ContactList();
+	private ContactList contactList = new ContactList(contactListModel);
 	private StatusPanel statusPanel = new StatusPanel();
 
-	private InfoTextField infoNameField = new InfoTextField("姓名");
-	private InfoClassifyField infoClassifyField = new InfoClassifyField("分组");
-	private InfoTextField infoBirthdayLunarField = new InfoTextField("生日", "农历 1900-01-01");
-	private InfoTextField infoBirthdaySolarField = new InfoTextField(null, "阳历 1900-01-01");
-	private InfoTimerField infoTimerField = new InfoTimerField("计时");
-	private InfoTextField infoAgeField = new InfoTextField("年龄");
-	private InfoTextField infoQQField = new InfoTextField("QQ");
-	private InfoTextField infoMSNField = new InfoTextField("MSN");
-	private InfoTextField infoMobileField = new InfoTextField("手机");
-	private InfoTextField infoFetionField = new InfoTextField("飞信");
-	private InfoTextField infoEMailField = new InfoTextField("电子邮箱");
-	private InfoTextField infoWebsiteField = new InfoTextField("个人主页");
-	private InfoAddrField infoHomeAddrField = new InfoAddrField("家庭住址");
-	private InfoTextField infoCompanyField = new InfoTextField("公司信息");
-	private InfoNotesArea infoNotesArea = new InfoNotesArea();
+	private InfoTextField infoNameField = new InfoTextField(ContactPropsEnum.NAME, "姓名");
+	private InfoClassifyField infoClassifyField = new InfoClassifyField(ContactPropsEnum.CLASSIFY, "分组");
+	private InfoTextField infoBirthdayLunarField = new InfoTextField(ContactPropsEnum.BIRTHDAY_LUNAR, "生日", "农历 1900-01-01");
+	private InfoTextField infoBirthdaySolarField = new InfoTextField(ContactPropsEnum.BIRTHDAY_SOLAR, null, "阳历 1900-01-01");
+	private InfoTimerField infoTimerField = new InfoTimerField(ContactPropsEnum.TIMER, "计时");
+	private InfoTextField infoAgeField = new InfoTextField(ContactPropsEnum.AGE, "年龄");
+	private InfoTextField infoQQField = new InfoTextField(ContactPropsEnum.QQ, "QQ");
+	private InfoTextField infoMSNField = new InfoTextField(ContactPropsEnum.MSN, "MSN");
+	private InfoTextField infoMobileField = new InfoTextField(ContactPropsEnum.MOBILE, "手机");
+	private InfoTextField infoFetionField = new InfoTextField(ContactPropsEnum.FETION, "飞信");
+	private InfoTextField infoEMailField = new InfoTextField(ContactPropsEnum.EMAIL, "电子邮箱");
+	private InfoTextField infoWebsiteField = new InfoTextField(ContactPropsEnum.WEBSITE, "个人主页");
+	private InfoAddrField infoHomeAddrField = new InfoAddrField(ContactPropsEnum.HOMEADDR, "家庭住址");
+	private InfoTextField infoCompanyField = new InfoTextField(ContactPropsEnum.COMPANY, "公司信息");
+	private InfoNotesArea infoNotesArea = new InfoNotesArea(ContactPropsEnum.NOTES);
 
 	private AccessInterface[] infoFields = new AccessInterface[] {
 			infoNameField, infoClassifyField, infoBirthdayLunarField, infoBirthdaySolarField, infoTimerField, //
-			infoAgeField, infoQQField, infoMSNField, infoMobileField, infoFetionField, infoEMailField, //
+			infoQQField, infoMSNField, infoMobileField, infoFetionField, infoEMailField, //
 			infoWebsiteField, infoHomeAddrField, infoCompanyField, infoNotesArea };
 
 	private AddrBookProps addrbook = AddrBookProps.load();
@@ -90,7 +94,7 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 		add(statusPanel, BorderLayout.SOUTH);
 
 		setActionListener();
-		loadAddrBookProps();
+		refreshContactList();
 	}
 
 	private void setActionListener() {
@@ -102,7 +106,10 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 		tbarBackupButton.addActionListener(this);
 	}
 
-	private void loadAddrBookProps() {
+	private void refreshContactList() {
+		for (String key : addrbook.keySet())
+			contactListModel.addElement(key);
+		AddrBookProps.save(addrbook);
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -117,6 +124,10 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 			backupDialog.setVisible(true);
 		} else if (object == tbarSaveButton) {
 			ContactProps contact = new ContactProps();
+			for (AccessInterface infoField : infoFields)
+				contact.setProperty(infoField.getContactKey(), infoField.getContent());
+			addrbook.put(contact.getProperty(ContactPropsEnum.NAME), contact);
+			refreshContactList();
 		}
 	}
 
