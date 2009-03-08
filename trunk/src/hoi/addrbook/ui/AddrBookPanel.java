@@ -12,14 +12,20 @@ import java.awt.Frame;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JToolBar;
+import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 public class AddrBookPanel extends JPanel implements ActionListener {
 
@@ -31,17 +37,18 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 	private AddrBookBackupDialog backupDialog = null;
 	private AddrBookSettingDialog settingDialog = null;
 
-	private JButton tbarAddButton = new JButton("添加", ImageHelper.ICON_ADD);
+	private JButton tbarAddButton = new JButton("新增", ImageHelper.ICON_ADD);
 	private JButton tbarSaveButton = new JButton("保存", ImageHelper.ICON_SAVE);
-	private JButton tbarEditButton = new JButton("编辑", ImageHelper.ICON_EDIT);
 	private JButton tbarDeleteButton = new JButton("删除", ImageHelper.ICON_DELETE);
 	private JButton tbarSettingButton = new JButton("设置", ImageHelper.ICON_SETTING);
 	private JButton tbarBackupButton = new JButton("备份", ImageHelper.ICON_BACKUP);
+	private JButton tbarExitButton = new JButton("退出", ImageHelper.ICON_EXIT);
 
 	private DefaultListModel contactListModel = new DefaultListModel();
+	private JList contactList = new JList(contactListModel);
 
 	private SreachBox searchBox = new SreachBox();
-	private ContactList contactList = new ContactList(contactListModel);
+	private ContactListPanel contactListPanel = new ContactListPanel(contactList);
 	private StatusPanel statusPanel = new StatusPanel();
 
 	private InfoTextField infoNameField = new InfoTextField(ContactPropsEnum.NAME, "姓名");
@@ -68,9 +75,11 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 	private AddrBookProps addrbook = AddrBookProps.load();
 
 	public AddrBookPanel() {
+		contactList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
 		JPanel wPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
 		wPanel.add(searchBox, BorderLayout.NORTH);
-		wPanel.add(contactList, BorderLayout.CENTER);
+		wPanel.add(contactListPanel, BorderLayout.CENTER);
 		wPanel.setPreferredSize(new Dimension(135, 1));
 
 		JToolBar toolbar = new JToolBar("工具条");
@@ -78,10 +87,10 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 		toolbar.setLayout(new GridLayout(1, 6));
 		toolbar.add(tbarAddButton);
 		toolbar.add(tbarSaveButton);
-		toolbar.add(tbarEditButton);
 		toolbar.add(tbarDeleteButton);
 		toolbar.add(tbarSettingButton);
 		toolbar.add(tbarBackupButton);
+		toolbar.add(tbarExitButton);
 
 		JPanel cPanel = new JPanel(new BorderLayout(BLANK_SIZE, BLANK_SIZE));
 		cPanel.add(wPanel, BorderLayout.WEST);
@@ -95,15 +104,65 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 
 		setActionListener();
 		refreshContactList();
+		add();
+		updateToolBar();
+		searchBox.addFocusListener(new FocusListener() {
+
+			public void focusGained(FocusEvent e) {
+				System.out.println(contactList.getSelectedValue());
+				//contactList.setSelectedIndex(-1);
+				//contactListModel.fireSelected(contactList.getSelectedIndex());
+			}
+
+			public void focusLost(FocusEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+		});
+	}
+
+	private void clearAllInfo() {
+		infoNameField.setText(null);
+		infoAgeField.setText(null);
+	}
+
+	private void add() {
+		searchBox.setText(null);
+		contactList.clearSelection();
+		clearAllInfo();
+	}
+
+	private void save() {
+
+	}
+
+	private void edit() {
+
+	}
+
+	private void delete() {
+		contactListModel.removeElementAt(contactList.getSelectedIndex());
+	}
+
+	private void updateToolBar() {
+		boolean k = contactList.getSelectedIndex() != -1;
+		//tbarEditButton.setEnabled(k);
+		//tbarDeleteButton.setEnabled(k);
 	}
 
 	private void setActionListener() {
 		tbarAddButton.addActionListener(this);
 		tbarSaveButton.addActionListener(this);
-		tbarEditButton.addActionListener(this);
+		tbarExitButton.addActionListener(this);
 		tbarDeleteButton.addActionListener(this);
 		tbarSettingButton.addActionListener(this);
 		tbarBackupButton.addActionListener(this);
+		contactList.addListSelectionListener(new ListSelectionListener() {
+			public void valueChanged(ListSelectionEvent e) {
+				updateToolBar();
+			}
+		});
 	}
 
 	private void refreshContactList() {
@@ -128,6 +187,12 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 				contact.setProperty(infoField.getContactKey(), infoField.getContent());
 			addrbook.put(contact.getProperty(ContactPropsEnum.NAME), contact);
 			refreshContactList();
+		} else if (object == tbarAddButton) {
+			add();
+		} else if (object == tbarExitButton) {
+			edit();
+		} else if (object == tbarDeleteButton) {
+			delete();
 		}
 	}
 
