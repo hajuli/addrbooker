@@ -22,8 +22,6 @@
  */
 package org.ho.yaml;
 
-import java.util.StringTokenizer;
-
 import org.ho.yaml.exception.YamlException;
 
 public class Utilities {
@@ -32,6 +30,7 @@ public class Utilities {
         if ("~".equals(content)){
             return null;
         }else{
+        	if (true) return content;
             try {
                 return new Integer(content); // return integer
             } catch (NumberFormatException e) {}
@@ -145,11 +144,11 @@ public class Utilities {
     static boolean isNumeric(String str){
         try {
             Long.parseLong(str);
-            return false;
+            return true;
         }catch (Exception e){}
         try{
             Double.parseDouble(str);
-            return false;
+            return true;
         }catch (Exception e){}
         return false;
     }
