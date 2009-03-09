@@ -14,6 +14,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
@@ -105,7 +112,6 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 		setActionListener();
 		refreshContactList();
 		add();
-		updateToolBar();
 		searchBox.addFocusListener(new FocusListener() {
 
 			public void focusGained(FocusEvent e) {
@@ -142,13 +148,16 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 	}
 
 	private void delete() {
-		contactListModel.removeElementAt(contactList.getSelectedIndex());
-	}
-
-	private void updateToolBar() {
-		boolean k = contactList.getSelectedIndex() != -1;
-		//tbarEditButton.setEnabled(k);
-		//tbarDeleteButton.setEnabled(k);
+		int k = contactList.getSelectedIndex();
+		if (k != -1) {
+			String oldname = (String) contactList.getSelectedValue();
+			addrbook.remove(oldname);
+			contactListModel.removeElementAt(k);
+			if (contactListModel.getSize() > k)
+				contactList.setSelectedIndex(k);
+			else if (k - 1 >= 0)
+				contactList.setSelectedIndex(k - 1);
+		}
 	}
 
 	private void setActionListener() {
@@ -160,14 +169,30 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 		tbarBackupButton.addActionListener(this);
 		contactList.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent e) {
-				updateToolBar();
+				int k = contactList.getSelectedIndex();
+				if (k != -1) {
+					String newname = (String) contactList.getSelectedValue();
+					ContactProps contact = addrbook.get(newname);
+					Object[] s = addrbook.keySet().toArray();
+					infoNotesArea.setContent((String) contact.getProperty(ContactPropsEnum.NOTES));
+				}
 			}
 		});
 	}
 
-	private void refreshContactList() {
-		for (String key : addrbook.keySet())
-			contactListModel.addElement(key);
+	private synchronized void refreshContactList() {
+		Object[] os = addrbook.keySet().toArray();
+
+		String l[] = new String[os.length];
+		for (int i = 0; i < os.length; i++)
+			l[i] = os[i].toString();
+
+		List<String> list = Arrays.asList(l);
+		Collections.sort(list);
+
+		contactListModel.removeAllElements();
+		for (Object key : list)
+			contactListModel.addElement(key.toString());
 		AddrBookProps.save(addrbook);
 	}
 
@@ -185,8 +210,30 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 			ContactProps contact = new ContactProps();
 			for (AccessInterface infoField : infoFields)
 				contact.setProperty(infoField.getContactKey(), infoField.getContent());
-			addrbook.put(contact.getProperty(ContactPropsEnum.NAME), contact);
+			String newname = contact.getProperty(ContactPropsEnum.NAME);
+			if (newname == null || newname.trim().equals("")) {
+				return;
+			}
+			if (contactList.getSelectedIndex() != -1) {
+				String oldname = (String) contactList.getSelectedValue();
+				if (oldname.equals(newname)) { // 同名
+					addrbook.put(contact.getProperty(ContactPropsEnum.NAME), contact);
+				} else { // 改变名字
+					if (addrbook.containsKey(newname)) { // 名字冲突
+					} else { // 名字不冲突
+						addrbook.remove(oldname);
+						addrbook.put(newname, contact);
+					}
+				}
+			} else {
+
+				if (addrbook.containsKey(newname)) { // 名字冲突
+				} else { // 名字不冲突
+					addrbook.put(newname, contact);
+				}
+			}
 			refreshContactList();
+			contactList.setSelectedValue(newname, true);
 		} else if (object == tbarAddButton) {
 			add();
 		} else if (object == tbarExitButton) {

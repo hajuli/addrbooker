@@ -37,7 +37,6 @@ public class InfoNotesArea extends JPanel implements AccessInterface {
 	}
 
 	public void setContent(String content) {
-		// TODO Auto-generated method stub
-
+		this.notes.setText(content);
 	}
 }
