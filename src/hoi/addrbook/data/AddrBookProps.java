@@ -1,6 +1,7 @@
 package hoi.addrbook.data;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -8,8 +9,6 @@ import java.io.PrintStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
-
-import org.apache.commons.io.FileUtils;
 
 public class AddrBookProps extends java.util.LinkedHashMap<String, ContactProps> {
 
@@ -23,12 +22,8 @@ public class AddrBookProps extends java.util.LinkedHashMap<String, ContactProps>
 		if (file.exists()) {
 			if (file.isDirectory()) {
 				file.delete();
-			} else {
-				try { // 备份
-					FileUtils.copyFile(file, new File(ADDRBOOKER_FILE_PATH + getDateString()));
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+			} else { // 备份
+				copyFile(file, new File(ADDRBOOKER_FILE_PATH + getDateString()));
 			}
 		} else {
 			save(new AddrBookProps(), ADDRBOOKER_FILE_PATH);
@@ -38,6 +33,17 @@ public class AddrBookProps extends java.util.LinkedHashMap<String, ContactProps>
 
 	private static String getDateString() {
 		return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+	}
+
+	private static void copyFile(File src, File dest) {
+		FileInputStream fis = new FileInputStream(src);
+		FileOutputStream fos = new FileOutputStream(dest);
+
+		for (int c = fis.read(); c != -1; c = fis.read())
+			fos.write(c);
+
+		fis.close();
+		fos.close();
 	}
 
 	private static String quote(String str) {
