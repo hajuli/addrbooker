@@ -3,7 +3,7 @@ package hoi.addrbook.ui;
 import hoi.addrbook.data.AddrBookProps;
 import hoi.addrbook.data.ContactProps;
 import hoi.addrbook.data.ContactPropsEnum;
-import hoi.addrbook.icons.ImageHelper;
+import hoi.addrbook.icon.ImageHelper;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
