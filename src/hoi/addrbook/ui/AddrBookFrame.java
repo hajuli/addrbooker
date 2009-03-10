@@ -3,7 +3,7 @@ package hoi.addrbook.ui;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
-import hoi.addrbook.icons.ImageHelper;
+import hoi.addrbook.icon.ImageHelper;
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;

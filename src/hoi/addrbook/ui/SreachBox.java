@@ -1,6 +1,6 @@
 package hoi.addrbook.ui;
 
-import hoi.addrbook.icons.ImageHelper;
+import hoi.addrbook.icon.ImageHelper;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;

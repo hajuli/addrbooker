@@ -1,4 +1,4 @@
-package hoi.addrbook.icons;
+package hoi.addrbook.icon;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
