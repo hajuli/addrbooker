@@ -1,12 +1,10 @@
 package hoi.addrbook.ui;
 
-import hoi.addrbook.data.ContactPropsEnum;
-
 public interface AccessInterface {
 
-	public ContactPropsEnum getContactKey();
+	public String getContactKey();
 
-	public void setContactKey(ContactPropsEnum contactKey);
+	public void setContactKey(String contactKey);
 
 	public String getContent();
 

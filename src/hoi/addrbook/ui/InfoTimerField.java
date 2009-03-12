@@ -1,7 +1,5 @@
 package hoi.addrbook.ui;
 
-import hoi.addrbook.data.ContactPropsEnum;
-
 import java.awt.BorderLayout;
 import java.awt.Insets;
 
@@ -15,9 +13,9 @@ public class InfoTimerField extends JPanel implements AccessInterface {
 
 	private InfoTextField delta = new InfoTextField();
 	private JButton clear = new JButton("清零");
-	private ContactPropsEnum contactKey = null;
+	private String contactKey = null;
 
-	public InfoTimerField(ContactPropsEnum contactKey, String compName) {
+	public InfoTimerField(String contactKey, String compName) {
 		super(new BorderLayout(1, 1));
 		this.contactKey = contactKey;
 		setName(compName);
@@ -28,7 +26,7 @@ public class InfoTimerField extends JPanel implements AccessInterface {
 		add(clear, BorderLayout.EAST);
 	}
 
-	public ContactPropsEnum getContactKey() {
+	public String getContactKey() {
 		return contactKey;
 	}
 
@@ -36,7 +34,7 @@ public class InfoTimerField extends JPanel implements AccessInterface {
 		return "";
 	}
 
-	public void setContactKey(ContactPropsEnum contactKey) {
+	public void setContactKey(String contactKey) {
 		// TODO Auto-generated method stub
 
 	}

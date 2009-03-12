@@ -1,7 +1,5 @@
 package hoi.addrbook.ui;
 
-import hoi.addrbook.data.ContactPropsEnum;
-
 import java.awt.BorderLayout;
 import java.awt.Insets;
 
@@ -14,16 +12,16 @@ public class InfoNotesArea extends JPanel implements AccessInterface {
 
 	private static final long serialVersionUID = 3732388659066090439L;
 	private JTextArea notes = new JTextArea();
-	private ContactPropsEnum contactKey = null;
+	private String contactKey = null;
 
-	public InfoNotesArea(ContactPropsEnum contactKey) {
+	public InfoNotesArea(String contactKey) {
 		super(new BorderLayout(0, 0));
 		this.contactKey = contactKey;
 		notes.setBorder(new EmptyBorder(new Insets(1, 1, 1, 1)));
 		add(new JScrollPane(notes, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED));
 	}
 
-	public ContactPropsEnum getContactKey() {
+	public String getContactKey() {
 		return contactKey;
 	}
 
@@ -31,7 +29,7 @@ public class InfoNotesArea extends JPanel implements AccessInterface {
 		return notes.getText();
 	}
 
-	public void setContactKey(ContactPropsEnum contactKey) {
+	public void setContactKey(String contactKey) {
 		// TODO Auto-generated method stub
 
 	}

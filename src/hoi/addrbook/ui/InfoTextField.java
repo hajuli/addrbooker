@@ -1,7 +1,5 @@
 package hoi.addrbook.ui;
 
-import hoi.addrbook.data.ContactPropsEnum;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -14,10 +12,10 @@ import javax.swing.border.EmptyBorder;
 public class InfoTextField extends JTextField implements AccessInterface {
 
 	private static final long serialVersionUID = 1215758246370170020L;
-	private ContactPropsEnum contactKey = null;
+	private String contactKey = null;
 	private String backTip = null;
 
-	public InfoTextField(ContactPropsEnum contactKey, String compName, String backTip, int rightInset) {
+	public InfoTextField(String contactKey, String compName, String backTip, int rightInset) {
 		super();
 		this.contactKey = contactKey;
 		setName(compName);
@@ -26,11 +24,11 @@ public class InfoTextField extends JTextField implements AccessInterface {
 				BorderFactory.createEtchedBorder(), new EmptyBorder(new Insets(1, 0, 1, rightInset))));
 	}
 
-	public InfoTextField(ContactPropsEnum contactKey, String compName, String backTip) {
+	public InfoTextField(String contactKey, String compName, String backTip) {
 		this(contactKey, compName, backTip, 1);
 	}
 
-	public InfoTextField(ContactPropsEnum contactKey, String compName) {
+	public InfoTextField(String contactKey, String compName) {
 		this(contactKey, compName, null, 1);
 	}
 
@@ -57,7 +55,7 @@ public class InfoTextField extends JTextField implements AccessInterface {
 		}
 	}
 
-	public ContactPropsEnum getContactKey() {
+	public String getContactKey() {
 		return contactKey;
 	}
 
@@ -65,7 +63,7 @@ public class InfoTextField extends JTextField implements AccessInterface {
 		return getText();
 	}
 
-	public void setContactKey(ContactPropsEnum contactKey) {
+	public void setContactKey(String contactKey) {
 		this.contactKey = contactKey;
 	}
 
