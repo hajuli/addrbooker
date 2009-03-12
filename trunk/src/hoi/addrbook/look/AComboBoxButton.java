@@ -28,7 +28,7 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
  */
 
-package com.jgoodies.looks.plastic;
+package hoi.addrbook.look;
 
 import java.awt.Component;
 import java.awt.Graphics;
@@ -50,7 +50,7 @@ import javax.swing.*;
  * @author Karsten Lentzsch
  * @version $Revision: 1.3 $
  */
-final class PlasticComboBoxButton extends JButton {
+final class AComboBoxButton extends JButton {
 
 	private static final long serialVersionUID = 928949291029852725L;
 	private static final int LEFT_INSET = 2;
@@ -67,7 +67,7 @@ final class PlasticComboBoxButton extends JButton {
 	/**
 	 * Constructs a <code>PlasticComboBoxButton</code>.
 	 */
-	PlasticComboBoxButton(JComboBox comboBox, Icon comboIcon, boolean iconOnly, CellRendererPane rendererPane, JList listBox) {
+	AComboBoxButton(JComboBox comboBox, Icon comboIcon, boolean iconOnly, CellRendererPane rendererPane, JList listBox) {
 		super("");
 		setModel(new DefaultButtonModel() {
 			private static final long serialVersionUID = 4386787486386372842L;
@@ -129,11 +129,11 @@ final class PlasticComboBoxButton extends JButton {
 	 * Checks and answers if we should paint a pseudo 3D effect.
 	 */
 	private boolean is3D() {
-		if (PlasticUtils.force3D(comboBox))
+		if (AUtils.force3D(comboBox))
 			return true;
-		if (PlasticUtils.forceFlat(comboBox))
+		if (AUtils.forceFlat(comboBox))
 			return false;
-		return PlasticUtils.is3D("ComboBox.");
+		return AUtils.is3D("ComboBox.");
 	}
 
 	/**
@@ -142,7 +142,7 @@ final class PlasticComboBoxButton extends JButton {
 	 */
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		boolean leftToRight = PlasticUtils.isLeftToRight(comboBox);
+		boolean leftToRight = AUtils.isLeftToRight(comboBox);
 
 		Insets insets = getInsets();
 
@@ -235,7 +235,7 @@ final class PlasticComboBoxButton extends JButton {
 			// Paint the focus
 			boolean hasFocus = comboBox.hasFocus();
 			if (!borderPaintsFocus && hasFocus) {
-				g.setColor(PlasticLookAndFeel.getFocusColor());
+				g.setColor(ALookAndFeel.getFocusColor());
 				int x = LEFT_INSET;
 				int y = LEFT_INSET;
 				int w = getWidth() - LEFT_INSET - RIGHT_INSET;

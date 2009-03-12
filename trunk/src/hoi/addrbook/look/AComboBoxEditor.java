@@ -28,7 +28,7 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
  */
 
-package com.jgoodies.looks.plastic;
+package hoi.addrbook.look;
 
 import java.awt.Insets;
 
@@ -49,9 +49,9 @@ import javax.swing.plaf.basic.BasicComboBoxEditor;
  * @author Karsten Lentzsch
  * @version $Revision: 1.2 $
  */
-class PlasticComboBoxEditor extends BasicComboBoxEditor {
+class AComboBoxEditor extends BasicComboBoxEditor {
 
-	PlasticComboBoxEditor() {
+	AComboBoxEditor() {
 		editor = new JTextField("", UIManager.getInt("ComboBox.editorColumns"));
 		editor.setBorder(UIManager.getBorder("ComboBox.editorBorder"));
 		editor.setBorder(new EmptyBorder(new Insets(1, 0, 1, 1)));
@@ -63,7 +63,7 @@ class PlasticComboBoxEditor extends BasicComboBoxEditor {
 	 * directly so that applications can safely override the cellRenderer
 	 * property with BasicListCellRenderer subclasses.
 	 */
-	static final class UIResource extends PlasticComboBoxEditor implements javax.swing.plaf.UIResource {
+	static final class UIResource extends AComboBoxEditor implements javax.swing.plaf.UIResource {
 		// Just an implementation of UIResource
 	}
 }

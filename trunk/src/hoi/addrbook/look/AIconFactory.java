@@ -28,7 +28,7 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
  */
 
-package com.jgoodies.looks.plastic;
+package hoi.addrbook.look;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -57,7 +57,7 @@ import javax.swing.plaf.metal.MetalLookAndFeel;
  * @version $Revision: 1.2 $
  */
 
-final class PlasticIconFactory {
+final class AIconFactory {
 
 	// Helper method utilized by the CheckBoxIcon and the CheckBoxMenuItemIcon.
 	private static void drawCheck(Graphics g, int x, int y) {
@@ -89,17 +89,17 @@ final class PlasticIconFactory {
 
 			if (model.isEnabled()) {
 				if (cb.isBorderPaintedFlat()) {
-					g.setColor(PlasticLookAndFeel.getControlDarkShadow());
+					g.setColor(ALookAndFeel.getControlDarkShadow());
 					g.drawRect(x, y, SIZE - 2, SIZE - 2);
 					// inside box 
-					g.setColor(PlasticLookAndFeel.getControlHighlight());
+					g.setColor(ALookAndFeel.getControlHighlight());
 					g.fillRect(x + 1, y + 1, SIZE - 3, SIZE - 3);
 				} else if (model.isPressed() && model.isArmed()) {
 					g.setColor(MetalLookAndFeel.getControlShadow());
 					g.fillRect(x, y, SIZE - 1, SIZE - 1);
-					PlasticUtils.drawPressed3DBorder(g, x, y, SIZE, SIZE);
+					AUtils.drawPressed3DBorder(g, x, y, SIZE, SIZE);
 				} else {
-					PlasticUtils.drawFlush3DBorder(g, x, y, SIZE, SIZE);
+					AUtils.drawFlush3DBorder(g, x, y, SIZE, SIZE);
 				}
 				g.setColor(MetalLookAndFeel.getControlInfo());
 			} else {
@@ -174,7 +174,7 @@ final class PlasticIconFactory {
 			JMenuItem b = (JMenuItem) c;
 
 			g.translate(x, y);
-			if (PlasticUtils.isLeftToRight(b)) {
+			if (AUtils.isLeftToRight(b)) {
 				g.drawLine(0, 0, 0, 7);
 				g.drawLine(1, 1, 1, 6);
 				g.drawLine(2, 2, 2, 5);

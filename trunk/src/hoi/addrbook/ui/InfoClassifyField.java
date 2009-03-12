@@ -18,7 +18,7 @@ public class InfoClassifyField extends JPanel implements AccessInterface {
 		this.contactKey = contactKey;
 		setName(compName);
 		classify.setBorder(BorderFactory.createEtchedBorder());
-		classify.setUI(new com.jgoodies.looks.plastic.PlasticComboBoxUI());
+		classify.setUI(new hoi.addrbook.look.AComboBoxUI());
 		classify.setRenderer(new ComplexCellRenderer());
 		classify.setEditable(true);
 		add(classify, BorderLayout.CENTER);
