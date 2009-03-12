@@ -5,12 +5,12 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.Scanner;
 
-public class AddrBookProps extends java.util.LinkedHashMap<String, ContactProps> {
+public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
 
 	private static final long serialVersionUID = 2738957830618139780L;
 	private static final String USER_HOME_DIR = System.getProperty("user.home");
@@ -35,15 +35,22 @@ public class AddrBookProps extends java.util.LinkedHashMap<String, ContactProps>
 		return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 	}
 
-	private static void copyFile(File src, File dest) {
-		FileInputStream fis = new FileInputStream(src);
-		FileOutputStream fos = new FileOutputStream(dest);
-
-		for (int c = fis.read(); c != -1; c = fis.read())
-			fos.write(c);
-
-		fis.close();
-		fos.close();
+	private static boolean copyFile(File src, File dest) {
+		try {
+			FileInputStream fis = new FileInputStream(src);
+			FileOutputStream fos = new FileOutputStream(dest);
+			for (int c = fis.read(); c != -1; c = fis.read())
+				fos.write(c);
+			fis.close();
+			fos.close();
+			return true;
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			return false;
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	private static String quote(String str) {
@@ -54,13 +61,12 @@ public class AddrBookProps extends java.util.LinkedHashMap<String, ContactProps>
 
 	private static String unquote(String str) {
 		if (str == null)
-			return str;
+			return "";
 		return str.replace("\\n", "\n").replace("\\t", "\t");
 	}
 
 	public static AddrBookProps load(String path) {
 		try {
-			String version = null;
 			AddrBookProps addrbook = new AddrBookProps();
 			ContactProps contact = new ContactProps();
 
@@ -68,10 +74,10 @@ public class AddrBookProps extends java.util.LinkedHashMap<String, ContactProps>
 			while (cin.hasNextLine()) {
 				String line = cin.nextLine();
 				if (line.startsWith("#")) {
-					version = line;
+
 				} else if (line.startsWith("+")) {
-					if (contact.containsKey(ContactPropsEnum.NAME.getKeyName())) {
-						String name = contact.getProperty(ContactPropsEnum.NAME);
+					if (contact.containsKey(ContactProps.NAME)) {
+						String name = contact.getProperty(ContactProps.NAME);
 						addrbook.put(name, contact);
 						contact = new ContactProps();
 					} else {

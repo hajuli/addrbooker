@@ -2,7 +2,6 @@ package hoi.addrbook.ui;
 
 import hoi.addrbook.data.AddrBookProps;
 import hoi.addrbook.data.ContactProps;
-import hoi.addrbook.data.ContactPropsEnum;
 import hoi.addrbook.icon.ImageHelper;
 
 import java.awt.BorderLayout;
@@ -16,11 +15,7 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
@@ -58,21 +53,21 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 	private ContactListPanel contactListPanel = new ContactListPanel(contactList);
 	private StatusPanel statusPanel = new StatusPanel();
 
-	private InfoTextField infoNameField = new InfoTextField(ContactPropsEnum.NAME, "姓名");
-	private InfoClassifyField infoClassifyField = new InfoClassifyField(ContactPropsEnum.CLASSIFY, "分组");
-	private InfoTextField infoBirthdayLunarField = new InfoTextField(ContactPropsEnum.BIRTHDAY_LUNAR, "生日", "农历 1900-01-01");
-	private InfoTextField infoBirthdaySolarField = new InfoTextField(ContactPropsEnum.BIRTHDAY_SOLAR, null, "阳历 1900-01-01");
-	private InfoTimerField infoTimerField = new InfoTimerField(ContactPropsEnum.TIMER, "计时");
-	private InfoTextField infoAgeField = new InfoTextField(ContactPropsEnum.AGE, "年龄");
-	private InfoTextField infoQQField = new InfoTextField(ContactPropsEnum.QQ, "QQ");
-	private InfoTextField infoMSNField = new InfoTextField(ContactPropsEnum.MSN, "MSN");
-	private InfoTextField infoMobileField = new InfoTextField(ContactPropsEnum.MOBILE, "手机");
-	private InfoTextField infoFetionField = new InfoTextField(ContactPropsEnum.FETION, "飞信");
-	private InfoTextField infoEMailField = new InfoTextField(ContactPropsEnum.EMAIL, "电子邮箱");
-	private InfoTextField infoWebsiteField = new InfoTextField(ContactPropsEnum.WEBSITE, "个人主页");
-	private InfoAddrField infoHomeAddrField = new InfoAddrField(ContactPropsEnum.HOMEADDR, "家庭住址");
-	private InfoTextField infoCompanyField = new InfoTextField(ContactPropsEnum.COMPANY, "公司信息");
-	private InfoNotesArea infoNotesArea = new InfoNotesArea(ContactPropsEnum.NOTES);
+	private InfoTextField infoNameField = new InfoTextField(ContactProps.NAME, "姓名");
+	private InfoClassifyField infoClassifyField = new InfoClassifyField(ContactProps.CLASSIFY, "分组");
+	private InfoTextField infoBirthdayLunarField = new InfoTextField(ContactProps.BIRTHDAY_LUNAR, "生日", "农历 1900-01-01");
+	private InfoTextField infoBirthdaySolarField = new InfoTextField(ContactProps.BIRTHDAY_SOLAR, null, "阳历 1900-01-01");
+	private InfoTimerField infoTimerField = new InfoTimerField(ContactProps.TIMER, "计时");
+	private InfoTextField infoAgeField = new InfoTextField(ContactProps.AGE, "年龄");
+	private InfoTextField infoQQField = new InfoTextField(ContactProps.QQ, "QQ");
+	private InfoTextField infoMSNField = new InfoTextField(ContactProps.MSN, "MSN");
+	private InfoTextField infoMobileField = new InfoTextField(ContactProps.MOBILE, "手机");
+	private InfoTextField infoFetionField = new InfoTextField(ContactProps.FETION, "飞信");
+	private InfoTextField infoEMailField = new InfoTextField(ContactProps.EMAIL, "电子邮箱");
+	private InfoTextField infoWebsiteField = new InfoTextField(ContactProps.WEBSITE, "个人主页");
+	private InfoAddrField infoHomeAddrField = new InfoAddrField(ContactProps.HOMEADDR, "家庭住址");
+	private InfoTextField infoCompanyField = new InfoTextField(ContactProps.COMPANY, "公司信息");
+	private InfoNotesArea infoNotesArea = new InfoNotesArea(ContactProps.NOTES);
 
 	private AccessInterface[] infoFields = new AccessInterface[] {
 			infoNameField, infoClassifyField, infoBirthdayLunarField, infoBirthdaySolarField, infoTimerField, //
@@ -174,7 +169,8 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 					String newname = (String) contactList.getSelectedValue();
 					ContactProps contact = addrbook.get(newname);
 					Object[] s = addrbook.keySet().toArray();
-					infoNotesArea.setContent((String) contact.getProperty(ContactPropsEnum.NOTES));
+					infoNameField.setText(newname);
+					infoNotesArea.setContent((String) contact.getProperty(ContactProps.NOTES));
 				}
 			}
 		});
@@ -210,14 +206,14 @@ public class AddrBookPanel extends JPanel implements ActionListener {
 			ContactProps contact = new ContactProps();
 			for (AccessInterface infoField : infoFields)
 				contact.setProperty(infoField.getContactKey(), infoField.getContent());
-			String newname = contact.getProperty(ContactPropsEnum.NAME);
+			String newname = contact.getProperty(ContactProps.NAME);
 			if (newname == null || newname.trim().equals("")) {
 				return;
 			}
 			if (contactList.getSelectedIndex() != -1) {
 				String oldname = (String) contactList.getSelectedValue();
 				if (oldname.equals(newname)) { // 同名
-					addrbook.put(contact.getProperty(ContactPropsEnum.NAME), contact);
+					addrbook.put(contact.getProperty(ContactProps.NAME), contact);
 				} else { // 改变名字
 					if (addrbook.containsKey(newname)) { // 名字冲突
 					} else { // 名字不冲突

@@ -1,7 +1,5 @@
 package hoi.addrbook.ui;
 
-import hoi.addrbook.data.ContactPropsEnum;
-
 import java.awt.BorderLayout;
 import javax.swing.BorderFactory;
 import javax.swing.JComboBox;
@@ -11,9 +9,9 @@ public class InfoClassifyField extends JPanel implements AccessInterface {
 
 	private static final long serialVersionUID = 7531465834540410473L;
 	private JComboBox classify = new JComboBox();
-	private ContactPropsEnum contactKey = null;
+	private String contactKey = null;
 
-	public InfoClassifyField(ContactPropsEnum contactKey, String compName) {
+	public InfoClassifyField(String contactKey, String compName) {
 		super(new BorderLayout(0, 0));
 		this.contactKey = contactKey;
 		setName(compName);
@@ -24,7 +22,7 @@ public class InfoClassifyField extends JPanel implements AccessInterface {
 		add(classify, BorderLayout.CENTER);
 	}
 
-	public ContactPropsEnum getContactKey() {
+	public String getContactKey() {
 		return contactKey;
 	}
 
@@ -32,7 +30,7 @@ public class InfoClassifyField extends JPanel implements AccessInterface {
 		return "";
 	}
 
-	public void setContactKey(ContactPropsEnum contactKey) {
+	public void setContactKey(String contactKey) {
 		// TODO Auto-generated method stub
 
 	}

@@ -1,7 +1,5 @@
 package hoi.addrbook.ui;
 
-import hoi.addrbook.data.ContactPropsEnum;
-
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
@@ -12,9 +10,9 @@ public class InfoAddrField extends JPanel implements AccessInterface {
 	private static final long serialVersionUID = 9087341622805152794L;
 	private InfoTextField address = new InfoTextField();
 	private InfoTextField postcode = new InfoTextField(null, "邮政编码");
-	private ContactPropsEnum contactKey = null;
+	private String contactKey = null;
 
-	public InfoAddrField(ContactPropsEnum contactKey, String compName) {
+	public InfoAddrField(String contactKey, String compName) {
 		super(new BorderLayout(1, 1));
 		this.contactKey = contactKey;
 		setName(compName);
@@ -24,7 +22,7 @@ public class InfoAddrField extends JPanel implements AccessInterface {
 		add(postcode, BorderLayout.EAST);
 	}
 
-	public ContactPropsEnum getContactKey() {
+	public String getContactKey() {
 		return contactKey;
 	}
 
@@ -32,7 +30,7 @@ public class InfoAddrField extends JPanel implements AccessInterface {
 		return "";
 	}
 
-	public void setContactKey(ContactPropsEnum contactKey) {
+	public void setContactKey(String contactKey) {
 		// TODO Auto-generated method stub
 
 	}
