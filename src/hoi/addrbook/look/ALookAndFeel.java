@@ -28,7 +28,7 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
  */
 
-package com.jgoodies.looks.plastic;
+package hoi.addrbook.look;
 
 import javax.swing.UIDefaults;
 import javax.swing.plaf.metal.MetalLookAndFeel;
@@ -40,7 +40,7 @@ import javax.swing.plaf.metal.MetalLookAndFeel;
  * @author Karsten Lentzsch
  * @version $Revision: 1.7 $
  */
-public class PlasticLookAndFeel extends MetalLookAndFeel {
+public class ALookAndFeel extends MetalLookAndFeel {
 
 	// System and Client Property Keys ****************************************
 

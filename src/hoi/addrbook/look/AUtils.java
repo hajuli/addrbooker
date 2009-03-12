@@ -28,7 +28,7 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
  */
 
-package com.jgoodies.looks.plastic;
+package hoi.addrbook.look;
 
 import java.awt.*;
 
@@ -42,17 +42,17 @@ import javax.swing.UIManager;
  * @version $Revision: 1.3 $
  */
 
-public final class PlasticUtils {
+public final class AUtils {
 
 	static void drawDark3DBorder(Graphics g, int x, int y, int w, int h) {
 		drawFlush3DBorder(g, x, y, w, h);
-		g.setColor(PlasticLookAndFeel.getControl());
+		g.setColor(ALookAndFeel.getControl());
 		g.drawLine(x + 1, y + 1, 1, h - 3);
 		g.drawLine(y + 1, y + 1, w - 3, 1);
 	}
 
 	static void drawDisabledBorder(Graphics g, int x, int y, int w, int h) {
-		g.setColor(PlasticLookAndFeel.getControlShadow());
+		g.setColor(ALookAndFeel.getControlShadow());
 		drawRect(g, x, y, w - 1, h - 1);
 	}
 
@@ -62,11 +62,11 @@ public final class PlasticUtils {
 	 */
 	static void drawFlush3DBorder(Graphics g, int x, int y, int w, int h) {
 		g.translate(x, y);
-		g.setColor(PlasticLookAndFeel.getControlHighlight());
+		g.setColor(ALookAndFeel.getControlHighlight());
 		drawRect(g, 1, 1, w - 2, h - 2);
 		g.drawLine(0, h - 1, 0, h - 1);
 		g.drawLine(w - 1, 0, w - 1, 0);
-		g.setColor(PlasticLookAndFeel.getControlDarkShadow());
+		g.setColor(ALookAndFeel.getControlDarkShadow());
 		drawRect(g, 0, 0, w - 2, h - 2);
 		g.translate(-x, -y);
 	}
@@ -77,7 +77,7 @@ public final class PlasticUtils {
 	static void drawPressed3DBorder(Graphics g, int x, int y, int w, int h) {
 		g.translate(x, y);
 		drawFlush3DBorder(g, 0, 0, w, h);
-		g.setColor(PlasticLookAndFeel.getControlShadow());
+		g.setColor(ALookAndFeel.getControlShadow());
 		g.drawLine(1, 1, 1, h - 3);
 		g.drawLine(1, 1, w - 3, 1);
 		g.translate(-x, -y);
@@ -99,10 +99,10 @@ public final class PlasticUtils {
 	 */
 	static void drawActiveButtonBorder(Graphics g, int x, int y, int w, int h) {
 		drawFlush3DBorder(g, x, y, w, h);
-		g.setColor(PlasticLookAndFeel.getPrimaryControl());
+		g.setColor(ALookAndFeel.getPrimaryControl());
 		g.drawLine(x + 1, y + 1, x + 1, h - 3);
 		g.drawLine(x + 1, y + 1, w - 3, x + 1);
-		g.setColor(PlasticLookAndFeel.getPrimaryControlDarkShadow());
+		g.setColor(ALookAndFeel.getPrimaryControlDarkShadow());
 		g.drawLine(x + 2, h - 2, w - 2, h - 2);
 		g.drawLine(w - 2, y + 2, w - 2, h - 2);
 	}
@@ -113,11 +113,11 @@ public final class PlasticUtils {
 	static void drawDefaultButtonBorder(Graphics g, int x, int y, int w, int h, boolean active) {
 		drawButtonBorder(g, x + 1, y + 1, w - 1, h - 1, active);
 		g.translate(x, y);
-		g.setColor(PlasticLookAndFeel.getControlDarkShadow());
+		g.setColor(ALookAndFeel.getControlDarkShadow());
 		drawRect(g, 0, 0, w - 3, h - 3);
 		g.drawLine(w - 2, 0, w - 2, 0);
 		g.drawLine(0, h - 2, 0, h - 2);
-		g.setColor(PlasticLookAndFeel.getControl());
+		g.setColor(ALookAndFeel.getControl());
 		g.drawLine(w - 1, 0, w - 1, 0);
 		g.drawLine(0, h - 1, 0, h - 1);
 		g.translate(-x, -y);
@@ -126,11 +126,11 @@ public final class PlasticUtils {
 	static void drawDefaultButtonPressedBorder(Graphics g, int x, int y, int w, int h) {
 		drawPressed3DBorder(g, x + 1, y + 1, w - 1, h - 1);
 		g.translate(x, y);
-		g.setColor(PlasticLookAndFeel.getControlDarkShadow());
+		g.setColor(ALookAndFeel.getControlDarkShadow());
 		drawRect(g, 0, 0, w - 3, h - 3);
 		g.drawLine(w - 2, 0, w - 2, 0);
 		g.drawLine(0, h - 2, 0, h - 2);
-		g.setColor(PlasticLookAndFeel.getControl());
+		g.setColor(ALookAndFeel.getControl());
 		g.drawLine(w - 1, 0, w - 1, 0);
 		g.drawLine(0, h - 1, 0, h - 1);
 		g.translate(-x, -y);
@@ -138,10 +138,10 @@ public final class PlasticUtils {
 
 	static void drawThinFlush3DBorder(Graphics g, int x, int y, int w, int h) {
 		g.translate(x, y);
-		g.setColor(PlasticLookAndFeel.getControlHighlight());
+		g.setColor(ALookAndFeel.getControlHighlight());
 		g.drawLine(0, 0, w - 2, 0);
 		g.drawLine(0, 0, 0, h - 2);
-		g.setColor(PlasticLookAndFeel.getControlDarkShadow());
+		g.setColor(ALookAndFeel.getControlDarkShadow());
 		g.drawLine(w - 1, 0, w - 1, h - 1);
 		g.drawLine(0, h - 1, w - 1, h - 1);
 		g.translate(-x, -y);
@@ -149,10 +149,10 @@ public final class PlasticUtils {
 
 	static void drawThinPressed3DBorder(Graphics g, int x, int y, int w, int h) {
 		g.translate(x, y);
-		g.setColor(PlasticLookAndFeel.getControlDarkShadow());
+		g.setColor(ALookAndFeel.getControlDarkShadow());
 		g.drawLine(0, 0, w - 2, 0);
 		g.drawLine(0, 0, 0, h - 2);
-		g.setColor(PlasticLookAndFeel.getControlHighlight());
+		g.setColor(ALookAndFeel.getControlHighlight());
 		g.drawLine(w - 1, 0, w - 1, h - 1);
 		g.drawLine(0, h - 1, w - 1, h - 1);
 		g.translate(-x, -y);
@@ -191,7 +191,7 @@ public final class PlasticUtils {
 	 * @see #forceFlat(JComponent)
 	 */
 	static boolean force3D(JComponent c) {
-		Object value = c.getClientProperty(PlasticLookAndFeel.IS_3D_KEY);
+		Object value = c.getClientProperty(ALookAndFeel.IS_3D_KEY);
 		return Boolean.TRUE.equals(value);
 	}
 
@@ -205,7 +205,7 @@ public final class PlasticUtils {
 	 * @see #force3D(JComponent)
 	 */
 	static boolean forceFlat(JComponent c) {
-		Object value = c.getClientProperty(PlasticLookAndFeel.IS_3D_KEY);
+		Object value = c.getClientProperty(ALookAndFeel.IS_3D_KEY);
 		return Boolean.FALSE.equals(value);
 	}
 
