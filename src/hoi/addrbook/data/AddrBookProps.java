@@ -1,5 +1,7 @@
 package hoi.addrbook.data;
 
+import hoi.addrbook.Version;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -56,13 +58,13 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
 	private static String quote(String str) {
 		if (str == null)
 			return "";
-		return str.replace("\n", "\\n").replace("\t", "\\t");
+		return str.replace("\n", "\\n");
 	}
 
 	private static String unquote(String str) {
 		if (str == null)
 			return "";
-		return str.replace("\\n", "\n").replace("\\t", "\t");
+		return str.replace("\\n", "\n");
 	}
 
 	public static AddrBookProps load(String path) {
@@ -109,7 +111,9 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
 	public static void save(AddrBookProps props, String path) {
 		try {
 			FileOutputStream fos = new FileOutputStream(path);
-			fos.write("#0.1\r\n".getBytes());
+			String k = String.format("#Version=%s\r\n", Version.FULL_VERSION);
+			fos.write(k.getBytes());
+			fos.write(("#" + new Date().toString() + "\r\n").getBytes());
 			for (String s : props.keySet()) {
 				ContactProps contact = props.get(s);
 				for (Object ss : contact.keySet().toArray())
