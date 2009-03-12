@@ -31,7 +31,7 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
 			save(new AddrBookProps(), ADDRBOOKER_FILE_PATH);
 		}
 	}
-	private static final String MARK = ": ";
+	private static final String MARK = ":";
 
 	private static String getDateString() {
 		return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
@@ -114,12 +114,15 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
 			String k = String.format("#Version=%s\r\n", Version.FULL_VERSION);
 			fos.write(k.getBytes());
 			fos.write(("#" + new Date().toString() + "\r\n").getBytes());
+			int cnt = 0;
 			for (String s : props.keySet()) {
 				ContactProps contact = props.get(s);
+				fos.write(String.format("\r\n#%s\r\n", contact.getProperty(ContactProps.NAME)).getBytes());
 				for (Object ss : contact.keySet().toArray())
 					fos.write(String.format("%s%s%s\r\n", ss.toString(), MARK, quote(contact.getProperty( //
 							ss.toString()))).getBytes());
-				fos.write("+\r\n".getBytes());
+				cnt += 1;
+				fos.write(String.format("+%d/%d\r\n", cnt, props.keySet().size()).getBytes());
 			}
 			fos.close();
 		} catch (FileNotFoundException e) {
