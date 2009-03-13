@@ -16,7 +16,7 @@ public class Version {
 	 */
 	private static final int MINOR_VERSION_NUMBER = 0;
 	/**
-	 * 第三位为发行版本号，每发行一次增加1，标志软件发行次数。当主版本和次版本增长后，发行版本会归零；
+	 * 第三位为发行版本号，每发行一次增加1，标志软件发行次数，当主版本和次版本增长后，发行版本会归零；
 	 */
 	private static final int REVISION_NUMBER = 1;
 	/**
@@ -24,12 +24,12 @@ public class Version {
 	 */
 	private static final int BUILD_NUMBER = -1; // SVN VERSION
 
-	//	private static final String STAGE = new String[] {
+	//	private static final String SOFT_PHASE = new String[] {
 	//			"Base", "Alpha", "Beta", "RC", "Release" }[2];
 	private static final String LANGUAGE = new String[] {
 			"CN", "EN" }[0];
 
-	public static String FULL_VERSION = String.format("%d.%d.%d.%d_%s", //
+	public static String FULL_VERSION = String.format("%d.%d.%d.%d_Java_%s", //
 			MAJOR_VERSION_NUMBER, MINOR_VERSION_NUMBER, REVISION_NUMBER, BUILD_NUMBER, LANGUAGE);
 	public static String SHORT_VERSION = String.format("%d.%d.%d", //
 			MAJOR_VERSION_NUMBER, MINOR_VERSION_NUMBER, REVISION_NUMBER);
