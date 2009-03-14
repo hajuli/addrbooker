@@ -172,8 +172,8 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
         try {
             bWriter = new BufferedWriter(new FileWriter(path)) {
                 public void write(String str) throws IOException {
+                    str += System.getProperty("line.separator");
                     write(str, 0, str.length());
-                    newLine();
                 }
             };
             bWriter.write(LINE_HUGE);
