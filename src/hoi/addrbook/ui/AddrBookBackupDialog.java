@@ -14,47 +14,47 @@ import javax.swing.border.EmptyBorder;
 
 public class AddrBookBackupDialog extends JDialog {
 
-	private static final long serialVersionUID = 200329021186474015L;
-	private static final int BLANK_SIZE = 20;
-	private static final int GAP_SIZE = 5;
+    private static final long serialVersionUID = 200329021186474015L;
+    private static final int BLANK_SIZE = 20;
+    private static final int GAP_SIZE = 5;
 
-	private JButton backupButton = new JButton("数据备份");
-	private JButton restoreButton = new JButton("数据恢复");
+    private JButton backupButton = new JButton(UINamesCtrl.getLocalName("Backup data"));
+    private JButton restoreButton = new JButton(UINamesCtrl.getLocalName("Restore data"));
 
-	private JButton helpButton = new JButton("帮助");
-	private JButton closeButton = new JButton("关闭");
+    private JButton helpButton = new JButton(UINamesCtrl.getLocalName("Help"));
+    private JButton closeButton = new JButton(UINamesCtrl.getLocalName("Close"));
 
-	public AddrBookBackupDialog(Frame owner) {
-		super(owner);
+    public AddrBookBackupDialog(Frame owner) {
+        super(owner);
 
-		JPanel aPanel = new JPanel(new GridLayout(1, 2, GAP_SIZE * 2, GAP_SIZE));
-		aPanel.add(backupButton);
-		aPanel.add(restoreButton);
-		aPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEtchedBorder(), //
-				new EmptyBorder(new Insets(BLANK_SIZE, BLANK_SIZE, BLANK_SIZE, BLANK_SIZE))));
+        JPanel aPanel = new JPanel(new GridLayout(1, 2, GAP_SIZE * 2, GAP_SIZE));
+        aPanel.add(backupButton);
+        aPanel.add(restoreButton);
+        aPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEtchedBorder(), //
+                new EmptyBorder(new Insets(BLANK_SIZE, BLANK_SIZE, BLANK_SIZE, BLANK_SIZE))));
 
-		JPanel bPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, GAP_SIZE * 2, GAP_SIZE));
-		bPanel.add(helpButton);
-		bPanel.add(closeButton);
-		// bPanel.setBorder(BorderFactory.createEtchedBorder());
+        JPanel bPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, GAP_SIZE * 2, GAP_SIZE));
+        bPanel.add(helpButton);
+        bPanel.add(closeButton);
+        // bPanel.setBorder(BorderFactory.createEtchedBorder());
 
-		JPanel cPanel = new JPanel(new BorderLayout(BLANK_SIZE, BLANK_SIZE));
-		cPanel.add(aPanel, BorderLayout.CENTER);
-		cPanel.add(bPanel, BorderLayout.SOUTH);
-		cPanel.setBorder(new EmptyBorder(new Insets(BLANK_SIZE, BLANK_SIZE, BLANK_SIZE, BLANK_SIZE)));
+        JPanel cPanel = new JPanel(new BorderLayout(BLANK_SIZE, BLANK_SIZE));
+        cPanel.add(aPanel, BorderLayout.CENTER);
+        cPanel.add(bPanel, BorderLayout.SOUTH);
+        cPanel.setBorder(new EmptyBorder(new Insets(BLANK_SIZE, BLANK_SIZE, BLANK_SIZE, BLANK_SIZE)));
 
-		setLayout(new BorderLayout(0, 0));
-		add(cPanel, BorderLayout.CENTER);
+        setLayout(new BorderLayout(0, 0));
+        add(cPanel, BorderLayout.CENTER);
 
-		if (owner != null)
-			setIconImage(owner.getIconImage());
-		setTitle("备份/恢复 数据");
-		pack();
-		setResizable(false);
-		setLocationRelativeTo(owner);
-	}
+        if (owner != null)
+            setIconImage(owner.getIconImage());
+        setTitle(UINamesCtrl.getLocalName("Backup and Restore you data"));
+        pack();
+        setResizable(false);
+        setLocationRelativeTo(owner);
+    }
 
-	public static void main(String[] args) {
-		new AddrBookBackupDialog(null).setVisible(true);
-	}
+    public static void main(String[] args) {
+        new AddrBookBackupDialog(null).setVisible(true);
+    }
 }
