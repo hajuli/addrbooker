@@ -21,11 +21,9 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
 
     private static final long serialVersionUID = 2738957830618139780L;
 
-    private static final String USER_HOME_DIR_PATH = System.getProperty("user.home");
-    private static final String ADDRBOOKER_DIR_PATH = USER_HOME_DIR_PATH + File.separator + "AddrBooker";
+    private static final String ADDRBOOKER_DIR_PATH = System.getProperty("user.home") + File.separator + "AddrBooker";
     private static final String ADDRBOOKER_FILE_PATH = ADDRBOOKER_DIR_PATH + File.separator + "AddrBooker.abk";
     private static final String ADDRBOOKER_FILE_PATH2 = ADDRBOOKER_DIR_PATH + File.separator + "AddrBooker%s.abk";
-    private static final File LOCALIZE_FILE = new File("localize.xml");
     private static final Properties LOCALIZE_PROPS = new Properties();
     static {
         thisInit();
@@ -37,16 +35,18 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
         if (file.exists()) {
             if (file.isDirectory()) {
                 file.delete();
+                save(new AddrBookProps(), ADDRBOOKER_FILE_PATH);
             } else { // 备份
                 copyFile(file, new File(String.format(ADDRBOOKER_FILE_PATH2, getDateString())));
             }
         } else {
             save(new AddrBookProps(), ADDRBOOKER_FILE_PATH);
         }
+
         try {
             for (String key : ContactProps.KEYS)
                 LOCALIZE_PROPS.setProperty(key, "");
-            LOCALIZE_PROPS.loadFromXML(new FileInputStream(LOCALIZE_FILE));
+            LOCALIZE_PROPS.loadFromXML(AddrBookProps.class.getResourceAsStream("localize.xml"));
         } catch (InvalidPropertiesFormatException e) {
             e.printStackTrace();
         } catch (FileNotFoundException e) {
@@ -118,7 +118,7 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
                     ; // 注释行
                 } else if (line.startsWith("+")) {
                     String name = contact.getProperty(ContactProps.NAME, "");
-                    if (contact.containsKey(name)) {
+                    if (addrbook.containsKey(name)) {
                         System.err.println(String.format("Line(%d), %s, ignored!!!", line_cnt, //
                                 String.format("DUPLICATE KEY_NAME(%s)", name)));
                     } else {
@@ -183,11 +183,12 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
             int cnt = 0, size = addrbook.size();
             for (String _key : addrbook.keySet()) {
                 cnt += 1;
-                ContactProps contact = addrbook.get(_key);
                 bWriter.write(String.format("#%s", _key));
-                for (Object key : contact.keySet())
-                    bWriter.write(String.format("[%s]%s: %s", key, LOCALIZE_PROPS.getProperty(key.toString(), ""), //
-                            quote(contact.getProperty(key.toString()))));
+                ContactProps contact = addrbook.get(_key);
+                for (String key : ContactProps.KEYS) { // ContactProps.KEYS 才有顺序
+                    bWriter.write(String.format("[%s]%s: %s", key, LOCALIZE_PROPS.getProperty(key), //
+                            quote(contact.getProperty(key))));
+                }
                 bWriter.write(String.format("+%d/%d", cnt, size));
                 bWriter.write(LINE_TINY);
             }
