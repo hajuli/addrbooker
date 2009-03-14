@@ -2,142 +2,217 @@ package hoi.addrbook.data;
 
 import hoi.addrbook.Version;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.InvalidPropertiesFormatException;
 import java.util.LinkedHashMap;
-import java.util.Scanner;
+import java.util.Properties;
 
 public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
 
-	private static final long serialVersionUID = 2738957830618139780L;
-	private static final String USER_HOME_DIR = System.getProperty("user.home");
-	private static final String ADDRBOOKER_DIR_NAME = USER_HOME_DIR + File.separator + "AddrBooker";
-	private static final String ADDRBOOKER_FILE_PATH = ADDRBOOKER_DIR_NAME + File.separator + "AddrBooker.abk";
-	static {
-		new File(ADDRBOOKER_DIR_NAME).mkdirs();
-		File file = new File(ADDRBOOKER_FILE_PATH);
-		if (file.exists()) {
-			if (file.isDirectory()) {
-				file.delete();
-			} else { // 备份
-				copyFile(file, new File(ADDRBOOKER_FILE_PATH + getDateString()));
-			}
-		} else {
-			save(new AddrBookProps(), ADDRBOOKER_FILE_PATH);
-		}
-	}
-	private static final String MARK = ":";
+    private static final long serialVersionUID = 2738957830618139780L;
 
-	private static String getDateString() {
-		return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-	}
+    private static final String USER_HOME_DIR_PATH = System.getProperty("user.home");
+    private static final String ADDRBOOKER_DIR_PATH = USER_HOME_DIR_PATH + File.separator + "AddrBooker";
+    private static final String ADDRBOOKER_FILE_PATH = ADDRBOOKER_DIR_PATH + File.separator + "AddrBooker.abk";
+    private static final String ADDRBOOKER_FILE_PATH2 = ADDRBOOKER_DIR_PATH + File.separator + "AddrBooker%s.abk";
+    private static final File LOCALIZE_FILE = new File("localize.xml");
+    private static final Properties LOCALIZE_PROPS = new Properties();
+    static {
+        thisInit();
+    }
 
-	private static boolean copyFile(File src, File dest) {
-		try {
-			FileInputStream fis = new FileInputStream(src);
-			FileOutputStream fos = new FileOutputStream(dest);
-			for (int c = fis.read(); c != -1; c = fis.read())
-				fos.write(c);
-			fis.close();
-			fos.close();
-			return true;
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-			return false;
-		} catch (IOException e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
+    private static void thisInit() {
+        new File(ADDRBOOKER_DIR_PATH).mkdirs();
+        File file = new File(ADDRBOOKER_FILE_PATH);
+        if (file.exists()) {
+            if (file.isDirectory()) {
+                file.delete();
+            } else { // 备份
+                copyFile(file, new File(String.format(ADDRBOOKER_FILE_PATH2, getDateString())));
+            }
+        } else {
+            save(new AddrBookProps(), ADDRBOOKER_FILE_PATH);
+        }
+        try {
+            for (String key : ContactProps.KEYS)
+                LOCALIZE_PROPS.setProperty(key, "");
+            LOCALIZE_PROPS.loadFromXML(new FileInputStream(LOCALIZE_FILE));
+        } catch (InvalidPropertiesFormatException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-	private static String quote(String str) {
-		if (str == null)
-			return "";
-		return str.replace("\n", "\\n");
-	}
+    private static String getDateString() {
+        return new SimpleDateFormat("yyyyMMdd").format(new Date());
+    }
 
-	private static String unquote(String str) {
-		if (str == null)
-			return "";
-		return str.replace("\\n", "\n");
-	}
+    private static boolean copyFile(File src, File dest) {
+        FileInputStream fis = null;
+        FileOutputStream fos = null;
+        try {
+            fis = new FileInputStream(src);
+            fos = new FileOutputStream(dest);
+            for (int c = fis.read(); c != -1; c = fis.read())
+                fos.write(c);
+            return true;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return false;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            if (fis != null)
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            if (fos != null)
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+        }
+    }
 
-	public static AddrBookProps load(String path) {
-		try {
-			AddrBookProps addrbook = new AddrBookProps();
-			ContactProps contact = new ContactProps();
+    private static String quote(String str) {
+        if (str == null)
+            return "";
+        return str.replace("\n", "\\n");
+    }
 
-			Scanner cin = new Scanner(new File(path));
-			while (cin.hasNextLine()) {
-				String line = cin.nextLine();
-				if (line.startsWith("#")) {
+    private static String unquote(String str) {
+        if (str == null)
+            return "";
+        return str.replace("\\n", "\n");
+    }
 
-				} else if (line.startsWith("+")) {
-					if (contact.containsKey(ContactProps.NAME)) {
-						String name = contact.getProperty(ContactProps.NAME);
-						addrbook.put(name, contact);
-						contact = new ContactProps();
-					} else {
-						//
-					}
-				} else if (line.indexOf(MARK) != -1) {
-					String[] o = line.split(MARK, 2);
-					if (o.length == 2) {
-						String key = o[0].trim();
-						String value = o[1];
+    public static AddrBookProps load(String path) {
+        BufferedReader bReader = null;
+        try {
+            AddrBookProps addrbook = new AddrBookProps();
+            ContactProps contact = new ContactProps();
 
-						contact.setProperty(key, unquote(value));
-					}
-				} else {
+            bReader = new BufferedReader(new FileReader(path));
+            int line_cnt = 0;
+            for (String line = bReader.readLine(); line != null; line = bReader.readLine()) {
+                line_cnt += 1;
+                line = line.trim();
+                if (line.startsWith("#")) {
+                    ; // 注释行
+                } else if (line.startsWith("+")) {
+                    String name = contact.getProperty(ContactProps.NAME, "");
+                    if (contact.containsKey(name)) {
+                        System.err.println(String.format("Line(%d), %s, ignored!!!", line_cnt, //
+                                String.format("DUPLICATE KEY_NAME(%s)", name)));
+                    } else {
+                        addrbook.put(name, contact);
+                    }
+                    contact = new ContactProps();
+                } else if (line.indexOf(":") != -1) {
+                    String[] items = line.split(":", 2);
+                    String key = items[0].trim();
+                    String value = items[1].trim();
+                    if (key.matches("^\\[" + ContactProps.KEY_REX + "\\].*$")) {
+                        key = key.substring(key.indexOf("[") + 1, key.indexOf("]"));
+                        contact.setProperty(key, unquote(value));
+                    } else {
+                        System.err.println(String.format("Line(%d), %s, ignored!!!", line_cnt, "NO KEY"));
+                    }
+                } else {
+                    if (line.trim().equals("")) {
+                        ; // 空行
+                    } else { // 丢弃
+                        System.err.println(String.format("Line(%d), %s, ignored!!!", line_cnt, "CAN NOT DISTINGUISH"));
+                    }
+                }
+            }
+            return addrbook;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return new AddrBookProps();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new AddrBookProps();
+        } finally {
+            try {
+                bReader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
-				}
-			}
-			return addrbook;
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-			return new AddrBookProps();
-		}
-	}
+    public static AddrBookProps load() {
+        return load(ADDRBOOKER_FILE_PATH);
+    }
 
-	public static AddrBookProps load() {
-		return load(ADDRBOOKER_FILE_PATH);
-	}
+    public static boolean save(AddrBookProps addrbook, String path) {
+        String LINE_HUGE = "#===================================================================";
+        String LINE_TINY = "#-------------------------------------------------------------------";
 
-	public static void save(AddrBookProps props, String path) {
-		try {
-			FileOutputStream fos = new FileOutputStream(path);
-			String k = String.format("#Version=%s\r\n", Version.FULL_VERSION);
-			fos.write(k.getBytes());
-			fos.write(("#" + new Date().toString() + "\r\n").getBytes());
-			int cnt = 0;
-			for (String s : props.keySet()) {
-				ContactProps contact = props.get(s);
-				fos.write(String.format("\r\n#%s\r\n", contact.getProperty(ContactProps.NAME)).getBytes());
-				for (Object ss : contact.keySet().toArray())
-					fos.write(String.format("%s%s%s\r\n", ss.toString(), MARK, quote(contact.getProperty( //
-							ss.toString()))).getBytes());
-				cnt += 1;
-				fos.write(String.format("+%d/%d\r\n", cnt, props.keySet().size()).getBytes());
-			}
-			fos.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+        BufferedWriter bWriter = null;
+        try {
+            bWriter = new BufferedWriter(new FileWriter(path)) {
+                public void write(String str) throws IOException {
+                    str += System.getProperty("line.separator");
+                    write(str, 0, str.length());
+                }
+            };
+            bWriter.write(LINE_HUGE);
+            bWriter.write(String.format("#Website=%s", Version.HOME_WEBSITE));
+            bWriter.write(String.format("#Version=%s", Version.FULL_VERSION));
+            bWriter.write(String.format("#%s", new Date()));
+            bWriter.write(LINE_HUGE);
+            int cnt = 0, size = addrbook.size();
+            for (String _key : addrbook.keySet()) {
+                cnt += 1;
+                ContactProps contact = addrbook.get(_key);
+                bWriter.write(String.format("#%s", _key));
+                for (Object key : contact.keySet())
+                    bWriter.write(String.format("[%s]%s: %s", key, LOCALIZE_PROPS.getProperty(key.toString(), ""), //
+                            quote(contact.getProperty(key.toString()))));
+                bWriter.write(String.format("+%d/%d", cnt, size));
+                bWriter.write(LINE_TINY);
+            }
+            return true;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return false;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                bWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
-	public static void save(AddrBookProps props) {
-		save(props, ADDRBOOKER_FILE_PATH);
-	}
+    public static boolean save(AddrBookProps addrbook) {
+        return save(addrbook, ADDRBOOKER_FILE_PATH);
+    }
 
-	public static void main(String[] args) {
-		AddrBookProps.save(new AddrBookProps());
-		AddrBookProps.save(new AddrBookProps());
-	}
+    public static void main(String[] args) {
+        AddrBookProps.save(new AddrBookProps());
+        AddrBookProps.save(new AddrBookProps());
+    }
 }
