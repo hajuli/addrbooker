@@ -151,11 +151,12 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
             e.printStackTrace();
             return new AddrBookProps();
         } finally {
-            try {
-                bReader.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            if (bReader != null)
+                try {
+                    bReader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
         }
     }
 
@@ -200,11 +201,12 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
             e.printStackTrace();
             return false;
         } finally {
-            try {
-                bWriter.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            if (bWriter != null)
+                try {
+                    bWriter.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
         }
     }
 
