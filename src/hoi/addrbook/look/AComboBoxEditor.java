@@ -51,19 +51,19 @@ import javax.swing.plaf.basic.BasicComboBoxEditor;
  */
 class AComboBoxEditor extends BasicComboBoxEditor {
 
-	AComboBoxEditor() {
-		editor = new JTextField("", UIManager.getInt("ComboBox.editorColumns"));
-		editor.setBorder(UIManager.getBorder("ComboBox.editorBorder"));
-		editor.setBorder(new EmptyBorder(new Insets(1, 0, 1, 1)));
-	}
+    AComboBoxEditor() {
+        editor = new JTextField("", UIManager.getInt("ComboBox.editorColumns"));
+        editor.setBorder(UIManager.getBorder("ComboBox.editorBorder"));
+        editor.setBorder(new EmptyBorder(new Insets(1, 0, 1, 1)));
+    }
 
-	/**
-	 * A subclass of BasicComboBoxEditor that implements UIResource.
-	 * BasicComboBoxEditor and PlasticComboBoxEditor don't implement UIResource
-	 * directly so that applications can safely override the cellRenderer
-	 * property with BasicListCellRenderer subclasses.
-	 */
-	static final class UIResource extends AComboBoxEditor implements javax.swing.plaf.UIResource {
-		// Just an implementation of UIResource
-	}
+    /**
+     * A subclass of BasicComboBoxEditor that implements UIResource.
+     * BasicComboBoxEditor and PlasticComboBoxEditor don't implement UIResource
+     * directly so that applications can safely override the cellRenderer
+     * property with BasicListCellRenderer subclasses.
+     */
+    static final class UIResource extends AComboBoxEditor implements javax.swing.plaf.UIResource {
+        // Just an implementation of UIResource
+    }
 }
