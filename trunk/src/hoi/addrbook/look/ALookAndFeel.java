@@ -42,93 +42,93 @@ import javax.swing.plaf.metal.MetalLookAndFeel;
  */
 public class ALookAndFeel extends MetalLookAndFeel {
 
-	// System and Client Property Keys ****************************************
+    // System and Client Property Keys ****************************************
 
-	private static final long serialVersionUID = 7215321672137400256L;
+    private static final long serialVersionUID = 7215321672137400256L;
 
-	/**
-	 * Client property key to set a border style - shadows the header style.
-	 */
-	public static final String BORDER_STYLE_KEY = "Plastic.borderStyle";
+    /**
+     * Client property key to set a border style - shadows the header style.
+     */
+    public static final String BORDER_STYLE_KEY = "Plastic.borderStyle";
 
-	/**
-	 * Client property key to disable the pseudo 3D effect.
-	 */
-	public static final String IS_3D_KEY = "Plastic.is3D";
+    /**
+     * Client property key to disable the pseudo 3D effect.
+     */
+    public static final String IS_3D_KEY = "Plastic.is3D";
 
-	/**
-	 * A System property key to set the default theme.
-	 */
-	public static final String DEFAULT_THEME_KEY = "Plastic.defaultTheme";
+    /**
+     * A System property key to set the default theme.
+     */
+    public static final String DEFAULT_THEME_KEY = "Plastic.defaultTheme";
 
-	/**
-	 * A System property key that indicates that the high contrast focus colors
-	 * shall be choosen - if applicable. If not set, some focus colors look good
-	 * but have low contrast. Basically, the low contrast scheme uses the
-	 * Plastic colors before 1.0.7, and the high contrast scheme is 1.0.7 -
-	 * 1.0.9.
-	 */
-	public static final String HIGH_CONTRAST_FOCUS_ENABLED_KEY = "Plastic.highContrastFocus";
+    /**
+     * A System property key that indicates that the high contrast focus colors
+     * shall be choosen - if applicable. If not set, some focus colors look good
+     * but have low contrast. Basically, the low contrast scheme uses the
+     * Plastic colors before 1.0.7, and the high contrast scheme is 1.0.7 -
+     * 1.0.9.
+     */
+    public static final String HIGH_CONTRAST_FOCUS_ENABLED_KEY = "Plastic.highContrastFocus";
 
-	/**
-	 * A System property key for the rendering style of the Plastic TabbedPane.
-	 * Valid values are: <tt>default</tt> for the Plastic 1.0 tabs, and
-	 * <tt>metal</tt> for the Metal L&amp;F tabs.
-	 */
-	protected static final String TAB_STYLE_KEY = "Plastic.tabStyle";
+    /**
+     * A System property key for the rendering style of the Plastic TabbedPane.
+     * Valid values are: <tt>default</tt> for the Plastic 1.0 tabs, and
+     * <tt>metal</tt> for the Metal L&amp;F tabs.
+     */
+    protected static final String TAB_STYLE_KEY = "Plastic.tabStyle";
 
-	/**
-	 * A System property value that indicates that Plastic shall render tabs in
-	 * the Plastic 1.0 style. This is the default.
-	 */
-	public static final String TAB_STYLE_DEFAULT_VALUE = "default";
+    /**
+     * A System property value that indicates that Plastic shall render tabs in
+     * the Plastic 1.0 style. This is the default.
+     */
+    public static final String TAB_STYLE_DEFAULT_VALUE = "default";
 
-	/**
-	 * A System property value that indicates that Plastic shall render tabs in
-	 * the Metal L&amp;F style.
-	 */
-	public static final String TAB_STYLE_METAL_VALUE = "metal";
+    /**
+     * A System property value that indicates that Plastic shall render tabs in
+     * the Metal L&amp;F style.
+     */
+    public static final String TAB_STYLE_METAL_VALUE = "metal";
 
-	// State *****************************************************************
+    // State *****************************************************************
 
-	/** The look-global state for the 3D enabledment. */
-	private static boolean is3DEnabled = false;
+    /** The look-global state for the 3D enabledment. */
+    private static boolean is3DEnabled = false;
 
-	public String getID() {
-		return "JGoodies Plastic";
-	}
+    public String getID() {
+        return "JGoodies Plastic";
+    }
 
-	public String getName() {
-		return "JGoodies Plastic";
-	}
+    public String getName() {
+        return "JGoodies Plastic";
+    }
 
-	public String getDescription() {
-		return "The JGoodies Plastic Look and Feel" + " - \u00a9 2001-2005 JGoodies Karsten Lentzsch";
-	}
+    public String getDescription() {
+        return "The JGoodies Plastic Look and Feel" + " - \u00a9 2001-2005 JGoodies Karsten Lentzsch";
+    }
 
-	// Special Properties ***************************************************
+    // Special Properties ***************************************************
 
-	protected boolean is3DEnabled() {
-		return is3DEnabled;
-	}
+    protected boolean is3DEnabled() {
+        return is3DEnabled;
+    }
 
-	public static void set3DEnabled(boolean b) {
-		is3DEnabled = b;
-	}
+    public static void set3DEnabled(boolean b) {
+        is3DEnabled = b;
+    }
 
-	// Overriding Superclass Behavior ***************************************
+    // Overriding Superclass Behavior ***************************************
 
-	/**
-	 * Unlike my superclass I register a unified shadow color. This color is
-	 * used by my ThinBevelBorder class.
-	 * 
-	 * @param table
-	 *            the UIDefaults table to work with
-	 */
-	protected void initSystemColorDefaults(UIDefaults table) {
-		super.initSystemColorDefaults(table);
-		table.put("unifiedControlShadow", table.getColor("controlDkShadow"));
-		table.put("primaryControlHighlight", getPrimaryControlHighlight());
-	}
+    /**
+     * Unlike my superclass I register a unified shadow color. This color is
+     * used by my ThinBevelBorder class.
+     * 
+     * @param table
+     *            the UIDefaults table to work with
+     */
+    protected void initSystemColorDefaults(UIDefaults table) {
+        super.initSystemColorDefaults(table);
+        table.put("unifiedControlShadow", table.getColor("controlDkShadow"));
+        table.put("primaryControlHighlight", getPrimaryControlHighlight());
+    }
 
 }
