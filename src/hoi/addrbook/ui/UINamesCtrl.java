@@ -25,6 +25,7 @@ public class UINamesCtrl {
 
             names.put("Version", "版本");
             names.put("Found New Version", "发现新版本");
+            names.put("Reset", "清零");
         } catch (InvalidPropertiesFormatException e) {
             e.printStackTrace();
         } catch (IOException e) {
