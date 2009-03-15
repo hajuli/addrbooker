@@ -95,7 +95,7 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
     private static String quote(String str) {
         if (str == null)
             return "";
-        return str.replace("\n", "\\n");
+        return str.replace("\r\n", "\n").replace("\n", "\\n");
     }
 
     private static String unquote(String str) {
