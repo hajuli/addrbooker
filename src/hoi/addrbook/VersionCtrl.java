@@ -41,9 +41,8 @@ public class VersionCtrl {
             MAJOR_VERSION_NUMBER, MINOR_VERSION_NUMBER, REVISION_NUMBER, BUILD_NUMBER, LANGUAGE);
     public static final String SHORT_VERSION = String.format("%d.%d.%d", //
             MAJOR_VERSION_NUMBER, MINOR_VERSION_NUMBER, REVISION_NUMBER);
-    public static final String HOME_WEBSITE = "http://code.google.com/p/addrbooker/";
 
-    private static final String URL_VERSIONCTRL = HOME_WEBSITE + "wiki/versionctrl";
+    private static final String URL_VERSIONCTRL = ProjectInfo.HOME_WEBSITE + "wiki/versionctrl";
     private static final Pattern PATTERN_VERSION = Pattern.compile(String.format("Version=([0-9]+)\\.([0-9]+)\\.([0-9]+)\\.([0-9]+)_Java_%s", LANGUAGE));
 
     public static boolean hasNewVersion() {
