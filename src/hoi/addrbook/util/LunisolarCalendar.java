@@ -1,4 +1,4 @@
-package hoi.addrbook.calendar;
+package hoi.addrbook.util;
 
 /**
  * http://act1.astro.women.sohu.com/search/calendar.htm <br>
