@@ -25,7 +25,7 @@ public class UINamesCtrl {
 
             names.put("Version", "版本");
             names.put("Found New Version", "发现新版本");
-            names.put("Reset", "清零");
+            names.put("Reset", "重置");
             names.put("Years", "年");
             names.put("Year", "年");
             names.put("Months", "月");
