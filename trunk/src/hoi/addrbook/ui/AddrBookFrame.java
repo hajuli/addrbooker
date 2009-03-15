@@ -3,7 +3,7 @@ package hoi.addrbook.ui;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
-import hoi.addrbook.Version;
+import hoi.addrbook.VersionCtrl;
 import hoi.addrbook.icon.ImageHelper;
 
 import javax.swing.JFrame;
@@ -12,7 +12,7 @@ import javax.swing.SwingUtilities;
 public class AddrBookFrame extends JFrame {
 
     private static final long serialVersionUID = -3116155141455555134L;
-    public static final String TITLE = String.format("%s v%s", UINamesCtrl.getLocalName("AddrBooker"), Version.SHORT_VERSION);
+    public static final String TITLE = String.format("%s v%s", UINamesCtrl.getLocalName("AddrBooker"), VersionCtrl.SHORT_VERSION);
 
     public AddrBookFrame() {
         Dimension size = new Dimension(540, 540 / 4 * 3);
