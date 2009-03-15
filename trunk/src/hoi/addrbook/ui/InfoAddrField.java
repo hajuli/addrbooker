@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 public class InfoAddrField extends JPanel implements AccessInterface {
 
     private static final long serialVersionUID = 9087341622805152794L;
-    private static final String LS = System.getProperty("line.separator");
+    private static final char LS = '|';
     private InfoTextField address = new InfoTextField();
     private InfoTextField postcode = new InfoTextField(null, null, UINamesCtrl.getLocalName("Postcode"));
     private String contactKey = null;
@@ -27,18 +27,26 @@ public class InfoAddrField extends JPanel implements AccessInterface {
         return contactKey;
     }
 
+    private String quote(String str) {
+        return str.replace(LS + "", String.format("\\%d", (int) LS));
+    }
+
+    private String unquote(String str) {
+        return str.replace(String.format("\\%d", (int) LS), LS + "");
+    }
+
     public String getContent() {
-        return address.getText().trim() + LS + postcode.getText().trim();
+        return address.getText().trim() + LS + quote(postcode.getText().trim());
     }
 
     public void setContent(String content) {
         if (content != null) {
             int k = content.lastIndexOf(LS);
             if (k != -1) {
-                address.setText(content.substring(0, k).replace(LS, " ").trim());
-                postcode.setText(content.substring(k).replace(LS, " ").trim());
+                address.setText(content.substring(0, k).replace(LS + "", " ").trim());
+                postcode.setText(unquote(content.substring(k).replace(LS + "", " ").trim()));
             } else {
-                address.setText(content.replace(LS, " ").trim());
+                address.setText(content.replace(LS + "", " ").trim());
             }
         }
     }
