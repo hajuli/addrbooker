@@ -26,6 +26,12 @@ public class UINamesCtrl {
             names.put("Version", "版本");
             names.put("Found New Version", "发现新版本");
             names.put("Reset", "清零");
+            names.put("Years", "年");
+            names.put("Year", "年");
+            names.put("Months", "月");
+            names.put("Month", "月");
+            names.put("Days", "天");
+            names.put("Day", "天");
         } catch (InvalidPropertiesFormatException e) {
             e.printStackTrace();
         } catch (IOException e) {
