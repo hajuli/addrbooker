@@ -11,13 +11,13 @@ public class UINamesCtrl {
             names.loadFromXML(UINamesCtrl.class.getResourceAsStream("localize.xml"));
 
             names.put("AddrBooker", "草根通讯录");
-            
+
             names.put("Backup data", "数据备份");
             names.put("Restore data", "数据恢复");
             names.put("Help", "帮助");
             names.put("Close", "关闭");
             names.put("Backup and Restore you data", "备份/恢复 数据");
-            
+
             names.put("Settings", "选项 设置");
             names.put("Add Password", "创建密码");
             names.put("Change Password", "更改密码");
