@@ -13,6 +13,8 @@
  * License along with this program; if not, write to the Free 
  * Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, 
  * MA  02111-1307, USA.
+ * 
+ * http://geosoft.no/software/index.html
  */
 package hoi.addrbook.util;
 
@@ -100,21 +102,27 @@ public class Browser {
     private static boolean loadedWithoutErrors;
 
     /** The com.apple.mrj.MRJFileUtils class */
+    @SuppressWarnings("unchecked")
     private static Class mrjFileUtilsClass;
 
     /** The com.apple.mrj.MRJOSType class */
+    @SuppressWarnings("unchecked")
     private static Class mrjOSTypeClass;
 
     /** The com.apple.MacOS.AEDesc class */
+    @SuppressWarnings("unchecked")
     private static Class aeDescClass;
 
     /** The <init>(int) method of com.apple.MacOS.AETarget */
+    @SuppressWarnings("unchecked")
     private static Constructor aeTargetConstructor;
 
     /** The <init>(int, int, int) method of com.apple.MacOS.AppleEvent */
+    @SuppressWarnings("unchecked")
     private static Constructor appleEventConstructor;
 
     /** The <init>(String) method of com.apple.MacOS.AEDesc */
+    @SuppressWarnings("unchecked")
     private static Constructor aeDescConstructor;
 
     /** The findFolder method of com.apple.mrj.MRJFileUtils */
@@ -151,9 +159,11 @@ public class Browser {
     private static Integer kAnyTransactionID;
 
     /** The linkage object required for JDirect 3 on Mac OS X. */
+    @SuppressWarnings("unused")
     private static Object linkage;
 
     /** The framework to reference on Mac OS X */
+    @SuppressWarnings("unused")
     private static final String JDirect_MacOSX = "/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/HIToolbox";
 
     /** JVM constant for MRJ 2.0 */
@@ -282,6 +292,7 @@ public class Browser {
      * @return <code>true</code> if all intialization succeeded
      *         <code>false</code> if any portion of the initialization failed
      */
+    @SuppressWarnings("unchecked")
     private static boolean loadClasses() {
         switch (jvm) {
         case MRJ_2_0:
@@ -494,7 +505,7 @@ public class Browser {
                         }
                     }
                 } catch (IllegalArgumentException iare) {
-                    browser = browser;
+                    // browser = browser;
                     errorMessage = iare.getMessage();
                     return null;
                 } catch (IllegalAccessException iae) {
@@ -689,4 +700,47 @@ public class Browser {
     private native static int ICStop(int[] instance);
 
     private native static int ICLaunchURL(int instance, byte[] hint, byte[] data, int len, int[] selectionStart, int[] selectionEnd);
+
+    /**
+     * http://www.centerkey.com/java/browser/
+     * 
+     * @param url
+     * @throws Exception
+     */
+    /////////////////////////////////////////////////////////
+    //  Bare Bones Browser Launch                          //
+    //  Version 1.5 (December 10, 2005)                    //
+    //  By Dem Pilafian                                    //
+    //  Supports: Mac OS X, GNU/Linux, Unix, Windows XP    //
+    //  Example Usage:                                     //
+    //     String url = "http://www.centerkey.com/";       //
+    //     BareBonesBrowserLaunch.openURL(url);            //
+    //  Public Domain Software -- Free to Use as You Like  //
+    /////////////////////////////////////////////////////////
+    @SuppressWarnings("unchecked")
+    public static void openURL(String url) throws Exception {
+        String osName = System.getProperty("os.name");
+        if (osName.startsWith("Mac OS")) {
+            Class fileMgr = Class.forName("com.apple.eio.FileManager");
+            Method openURL = fileMgr.getDeclaredMethod("openURL", new Class[] {
+                String.class });
+            openURL.invoke(null, new Object[] {
+                url });
+        } else if (osName.startsWith("Windows"))
+            Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + url);
+        else { // assume Unix or Linux
+            String[] browsers = {
+                    "firefox", "opera", "konqueror", "epiphany", "mozilla", "netscape" };
+            String browser = null;
+            for (int count = 0; count < browsers.length && browser == null; count++)
+                if (Runtime.getRuntime().exec(new String[] {
+                        "which", browsers[count] }).waitFor() == 0)
+                    browser = browsers[count];
+            if (browser == null)
+                throw new Exception("Could not find web browser");
+            else
+                Runtime.getRuntime().exec(new String[] {
+                        browser, url });
+        }
+    }
 }
