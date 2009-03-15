@@ -95,13 +95,35 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
     private static String quote(String str) {
         if (str == null)
             return "";
-        return str.replace("\r\n", "\n").replace("\n", "\\n");
+        str = str.replace("\r", "");
+        return str.replace("\\", "\\\\").replace("\n", "\\n"); // 去掉换行符
     }
 
     private static String unquote(String str) {
         if (str == null)
             return "";
-        return str.replace("\\n", "\n");
+        String ret = "";
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == '\\') {
+                int j = i + 1;
+                if (j < str.length()) {
+                    if (str.charAt(j) == '\\') {
+                        ret += "\\";
+                        i += 1; // 后面一个不要
+                    } else if (str.charAt(j) == 'n') {
+                        ret += "\n";
+                        i += 1; // 后面一个不要
+                    } else {
+                        ret += str.charAt(i);
+                    }
+                } else {
+                    ret += str.charAt(i);
+                }
+            } else {
+                ret += str.charAt(i);
+            }
+        }
+        return ret;
     }
 
     public static AddrBookProps load(String path) {
