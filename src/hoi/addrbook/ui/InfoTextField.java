@@ -23,7 +23,7 @@ public class InfoTextField extends JTextField implements AccessInterface {
         setBorder(BorderFactory.createCompoundBorder( //
                 BorderFactory.createEtchedBorder(), new EmptyBorder(new Insets(1, 0, 1, rightInset))));
     }
-    
+
     public InfoTextField(String contactKey, String compName, String backTip) {
         this(contactKey, compName, backTip, 1);
     }
@@ -61,10 +61,6 @@ public class InfoTextField extends JTextField implements AccessInterface {
 
     public String getContent() {
         return getText();
-    }
-
-    public void setContactKey(String contactKey) {
-        this.contactKey = contactKey;
     }
 
     public void setContent(String content) {
