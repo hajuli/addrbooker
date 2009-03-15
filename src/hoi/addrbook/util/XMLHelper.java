@@ -1,6 +1,6 @@
 package hoi.addrbook.util;
 
-import hoi.addrbook.VersionCtrl;
+import hoi.addrbook.ProjectInfo;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -29,7 +29,7 @@ public class XMLHelper {
         xml.put("Version", "版本");
         xml.put("Found New Version", "发现新版本");
 
-        xml.storeToXML(new FileOutputStream(new File("localize.xml")), VersionCtrl.HOME_WEBSITE);
+        xml.storeToXML(new FileOutputStream(new File("localize.xml")), ProjectInfo.HOME_WEBSITE);
     }
 
 }
