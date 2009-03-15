@@ -1,4 +1,4 @@
-  package hoi.addrbook.ui;
+package hoi.addrbook.ui;
 
 import hoi.addrbook.icon.ImageHelper;
 
@@ -20,7 +20,8 @@ public class SreachBox extends InfoTextField {
             int x = getWidth() - image.getWidth() - 2;
             int y = (getHeight() - image.getHeight()) / 2;
             g.drawImage(image, x, y, this);
-        } catch (Exception ignore) {
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
