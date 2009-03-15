@@ -34,6 +34,7 @@ public class UINamesCtrl {
             names.put("Day", "天");
 
             names.put("Parse Error", "解析错误");
+            names.put("Postcode", "邮政编码");
         } catch (InvalidPropertiesFormatException e) {
             e.printStackTrace();
         } catch (IOException e) {

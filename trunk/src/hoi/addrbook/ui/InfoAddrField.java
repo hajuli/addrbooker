@@ -10,7 +10,7 @@ public class InfoAddrField extends JPanel implements AccessInterface {
     private static final long serialVersionUID = 9087341622805152794L;
     private static final String LS = System.getProperty("line.separator");
     private InfoTextField address = new InfoTextField();
-    private InfoTextField postcode = new InfoTextField(null, "邮政编码");
+    private InfoTextField postcode = new InfoTextField(null, null, UINamesCtrl.getLocalName("Postcode"));
     private String contactKey = null;
 
     public InfoAddrField(String contactKey, String compName) {
