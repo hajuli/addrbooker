@@ -1,6 +1,6 @@
 package hoi.addrbook.util;
 
-import hoi.addrbook.Version;
+import hoi.addrbook.VersionCtrl;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,7 +22,7 @@ public class XMLHelper {
         xml.put("Add Password", "设置密码");
         xml.put("Change Password", "更改密码");
         xml.put("Donate", "捐赠");
-        xml.storeToXML(new FileOutputStream(new File("localize.xml")), Version.HOME_WEBSITE);
+        xml.storeToXML(new FileOutputStream(new File("localize.xml")), VersionCtrl.HOME_WEBSITE);
     }
 
 }
