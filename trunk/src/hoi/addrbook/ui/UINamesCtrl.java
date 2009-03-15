@@ -32,6 +32,8 @@ public class UINamesCtrl {
             names.put("Month", "月");
             names.put("Days", "天");
             names.put("Day", "天");
+
+            names.put("Parse Error", "解析错误");
         } catch (InvalidPropertiesFormatException e) {
             e.printStackTrace();
         } catch (IOException e) {
