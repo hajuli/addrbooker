@@ -1,6 +1,6 @@
 package hoi.addrbook.data;
 
-import hoi.addrbook.Version;
+import hoi.addrbook.VersionCtrl;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -177,8 +177,8 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
                 }
             };
             bWriter.write(LINE_HUGE);
-            bWriter.write(String.format("#Website=%s", Version.HOME_WEBSITE));
-            bWriter.write(String.format("#Version=%s", Version.FULL_VERSION));
+            bWriter.write(String.format("#Website=%s", VersionCtrl.HOME_WEBSITE));
+            bWriter.write(String.format("#Version=%s", VersionCtrl.FULL_VERSION));
             bWriter.write(String.format("#%s", new Date()));
             bWriter.write(LINE_HUGE);
             int cnt = 0, size = addrbook.size();
