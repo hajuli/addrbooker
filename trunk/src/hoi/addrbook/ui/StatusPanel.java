@@ -82,7 +82,6 @@ public class StatusPanel extends JPanel {
                     if (entered)
                         versionLabel.setForeground(Color.BLACK);
                 }
-
             });
         } else {
             versionLabel.setForeground(Color.GRAY.brighter());
