@@ -55,7 +55,7 @@ public class StatusPanel extends JPanel {
                     } catch (IOException ioe) {
                         ioe.printStackTrace();
                         JOptionPane.showMessageDialog(StatusPanel.this.getTopLevelAncestor(), //
-                                VersionCtrl.HOME_WEBSITE,//
+                                VersionCtrl.HOME_WEBSITE, //
                                 UINamesCtrl.getLocalName("Error attempting to launch web browser"), //
                                 JOptionPane.ERROR_MESSAGE);
                     }
