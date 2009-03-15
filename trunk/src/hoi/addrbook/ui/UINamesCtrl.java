@@ -35,6 +35,7 @@ public class UINamesCtrl {
 
             names.put("Parse Error", "解析错误");
             names.put("Postcode", "邮政编码");
+            names.put("Typing to Search", "键入内容 搜索");
         } catch (InvalidPropertiesFormatException e) {
             e.printStackTrace();
         } catch (IOException e) {

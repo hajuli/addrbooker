@@ -11,7 +11,7 @@ public class SreachBox extends InfoTextField {
     private static final BufferedImage image = ImageHelper.getBufferedImage("search.png");
 
     public SreachBox() {
-        super(null, null, "键入内容 搜索", image.getWidth());
+        super(null, null, UINamesCtrl.getLocalName("Typing to Search"), image.getWidth());
     }
 
     public void paint(Graphics g) {
