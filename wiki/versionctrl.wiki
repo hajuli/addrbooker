@@ -1,6 +1,4 @@
 #labels Deprecated
 Version=0.0.1.-1_Java_CN Notes=None
-
-Version=0.0.1.-1_Java_CN Notes=None
-
-Version=0.0.1.-1_Java_CN Notes=None
+Version=0.0.1.2_Java_CN Notes=None
+Version=0.0.1.3_Java_CN Notes=None
