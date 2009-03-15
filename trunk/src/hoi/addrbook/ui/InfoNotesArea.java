@@ -1,4 +1,4 @@
-  package hoi.addrbook.ui;
+package hoi.addrbook.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Insets;
@@ -27,11 +27,6 @@ public class InfoNotesArea extends JPanel implements AccessInterface {
 
     public String getContent() {
         return notes.getText();
-    }
-
-    public void setContactKey(String contactKey) {
-        // TODO Auto-generated method stub
-
     }
 
     public void setContent(String content) {
