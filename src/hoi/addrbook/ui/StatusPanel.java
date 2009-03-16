@@ -1,6 +1,6 @@
 package hoi.addrbook.ui;
 
-import hoi.addrbook.ProjectInfo;
+import hoi.addrbook.AddrBookInfo;
 import hoi.addrbook.VersionCtrl;
 import hoi.addrbook.util.Browser;
 
@@ -45,18 +45,18 @@ public class StatusPanel extends JPanel {
             versionLabel.setForeground(Color.BLUE);
             versionLabel.setText("<html><u><i>" + UINamesCtrl.getLocalName("Found New Version") + "</i></u></html>");
             versionLabel.setCursor(new Cursor(Cursor.HAND_CURSOR));
-            versionLabel.setToolTipText(ProjectInfo.HOME_WEBSITE);
+            versionLabel.setToolTipText(AddrBookInfo.HOME_WEBSITE);
             versionLabel.addMouseListener(new MouseListener() {
                 private boolean clicked = false;
                 private boolean entered = false;
 
                 public void mouseClicked(MouseEvent e) {
                     try {
-                        Browser.openUrl(ProjectInfo.HOME_WEBSITE);
+                        Browser.openUrl(AddrBookInfo.HOME_WEBSITE);
                     } catch (IOException ioe) {
                         ioe.printStackTrace();
                         JOptionPane.showMessageDialog(StatusPanel.this.getTopLevelAncestor(), //
-                                ProjectInfo.HOME_WEBSITE, //
+                                AddrBookInfo.HOME_WEBSITE, //
                                 UINamesCtrl.getLocalName("Error attempting to launch web browser"), //
                                 JOptionPane.ERROR_MESSAGE);
                     }
