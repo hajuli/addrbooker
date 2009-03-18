@@ -15,6 +15,7 @@ public class UINamesCtrl {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
+
             names.put("AddrBooker", "草根通讯录");
 
             names.put("Backup data", "数据备份");
