@@ -7,4 +7,6 @@ public interface AccessInterface {
     public String getContent();
 
     public void setContent(String content);
+
+    public String getName();
 }
