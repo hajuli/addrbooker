@@ -1,6 +1,7 @@
 package hoi.addrbook.ui;
 
 import java.awt.BorderLayout;
+import java.awt.Font;
 import java.util.Vector;
 
 import javax.swing.BorderFactory;
@@ -22,6 +23,7 @@ public class InfoClassifyField extends JPanel implements AccessInterface {
         classify.setUI(new hoi.addrbook.look.AComboBoxUI());
         classify.setRenderer(new ComplexCellRenderer());
         classify.setEditable(true);
+        classify.setFont(classify.getFont().deriveFont(Font.PLAIN));
         add(classify, BorderLayout.CENTER);
     }
 
