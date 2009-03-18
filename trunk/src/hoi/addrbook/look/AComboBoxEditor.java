@@ -54,7 +54,7 @@ class AComboBoxEditor extends BasicComboBoxEditor {
     AComboBoxEditor() {
         editor = new JTextField("", UIManager.getInt("ComboBox.editorColumns"));
         editor.setBorder(UIManager.getBorder("ComboBox.editorBorder"));
-        editor.setBorder(new EmptyBorder(new Insets(1, 0, 1, 1)));
+        editor.setBorder(new EmptyBorder(new Insets(1, 1, 1, 1)));
     }
 
     /**
