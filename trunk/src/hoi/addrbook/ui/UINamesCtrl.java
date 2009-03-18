@@ -9,6 +9,10 @@ public class UINamesCtrl {
     static {
         try {
             names.loadFromXML(UINamesCtrl.class.getResourceAsStream("localize.xml"));
+        } catch (InvalidPropertiesFormatException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
 
             names.put("AddrBooker", "草根通讯录");
 
@@ -36,10 +40,6 @@ public class UINamesCtrl {
             names.put("Parse Error", "解析错误");
             names.put("Postcode", "邮政编码");
             names.put("Typing to Search", "键入内容 搜索");
-        } catch (InvalidPropertiesFormatException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
