@@ -1,10 +1,9 @@
-  package hoi.addrbook.ui;
+package hoi.addrbook.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
 
 import javax.swing.DefaultListCellRenderer;
-import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
