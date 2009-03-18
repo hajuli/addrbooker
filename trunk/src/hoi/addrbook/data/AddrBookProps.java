@@ -17,6 +17,7 @@ import java.util.Date;
 import java.util.InvalidPropertiesFormatException;
 import java.util.LinkedHashMap;
 import java.util.Properties;
+import java.util.Vector;
 
 public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
 
@@ -28,6 +29,16 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
     private static final Properties LOCALIZE_PROPS = new Properties();
     static {
         thisInit();
+    }
+
+    public Vector<String> getClassifys() {
+        Vector<String> vector = new Vector<String>();
+        for (ContactProps contact : this.values()) {
+            String classify = contact.getProperty(ContactProps.CLASSIFY);
+            if (!vector.contains(classify))
+                vector.add(classify);
+        }
+        return vector;
     }
 
     private static void thisInit() {
