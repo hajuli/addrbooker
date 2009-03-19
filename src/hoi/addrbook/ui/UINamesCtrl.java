@@ -5,7 +5,14 @@ import java.util.InvalidPropertiesFormatException;
 import java.util.Properties;
 
 public class UINamesCtrl {
-    private static Properties names = new Properties();
+    private static Properties names = new Properties() {
+        private static final long serialVersionUID = -4955005117458946693L;
+
+        public Object put(Object key, Object value) {
+            assert !this.containsKey(key);
+            return super.put(key, value);
+        }
+    };
     static {
         try {
             names.loadFromXML(UINamesCtrl.class.getResourceAsStream("localize.xml"));
@@ -24,7 +31,7 @@ public class UINamesCtrl {
             names.put("Close", "关闭");
             names.put("Backup and Restore you data", "备份/恢复 数据");
 
-            names.put("Settings", "选项 设置");
+            names.put("Option Settings", "选项 设置");
             names.put("Add Password", "创建密码");
             names.put("Change Password", "更改密码");
             names.put("Donate", "捐赠");
