@@ -48,7 +48,7 @@ public class AddrBookSettingDialog extends JDialog {
 
         if (owner != null)
             setIconImage(owner.getIconImage());
-        setTitle(UINamesCtrl.getLocalName("Settings"));
+        setTitle(UINamesCtrl.getLocalName("Option Settings"));
         pack();
         setResizable(false);
         setLocationRelativeTo(owner);
