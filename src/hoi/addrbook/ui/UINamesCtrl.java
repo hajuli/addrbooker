@@ -42,6 +42,31 @@ public class UINamesCtrl {
             names.put("Parse Error", "解析错误");
             names.put("Postcode", "邮政编码");
             names.put("Typing to Search", "键入内容 搜索");
+
+            names.put("Add", "新增");
+            names.put("Save", "保存");
+            names.put("Delete", "删除");
+            names.put("Settings", "设置");
+            names.put("Backup", "备份");
+            names.put("Exit", "退出");
+
+            names.put("Name", "姓名");
+            names.put("Classify", "分组");
+            names.put("Birthday", "生日");
+            names.put("Lunar", "农历");
+            names.put("Solar", "阳历");
+            names.put("Timer", "时间");
+            names.put("Age", "年龄");
+            names.put("QQ", "QQ");
+            names.put("MSN", "MSN");
+            names.put("Mobile", "手机");
+            names.put("Fetion", "飞信");
+            names.put("EMail", "电子邮箱");
+            names.put("Website", "个人主页");
+            names.put("Address", "家庭住址");
+            names.put("Company", "公司信息");
+
+            names.put("Birthday Reminder", "生日提醒");
         }
     }
 
