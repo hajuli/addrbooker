@@ -61,7 +61,7 @@ public class UINamesCtrl {
             names.put("MSN", "MSN");
             names.put("Mobile", "手机");
             names.put("Fetion", "飞信");
-            names.put("EMail", "电子邮箱");
+            names.put("Email", "电子邮箱");
             names.put("Website", "个人主页");
             names.put("Address", "家庭住址");
             names.put("Company", "公司信息");
