@@ -1,6 +1,7 @@
 package hoi.addrbook.ui;
 
 import hoi.addrbook.icon.ImageHelper;
+import hoi.addrbook.util.Localization;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -11,7 +12,7 @@ public class SreachBox extends InfoTextField {
     private static final BufferedImage image = ImageHelper.getBufferedImage("search.png");
 
     public SreachBox() {
-        super(null, null, UINamesCtrl.getLocalName("Typing to Search"), image.getWidth());
+        super(null, null, Localization.getLocalString("Typing to Search"), image.getWidth());
     }
 
     public void paint(Graphics g) {

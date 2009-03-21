@@ -2,6 +2,7 @@ package hoi.addrbook.data;
 
 import hoi.addrbook.AddrBookInfo;
 import hoi.addrbook.VersionCtrl;
+import hoi.addrbook.util.Localization;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -14,9 +15,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.InvalidPropertiesFormatException;
 import java.util.LinkedHashMap;
-import java.util.Properties;
 import java.util.Vector;
 
 public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
@@ -26,7 +25,6 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
     private static final String ADDRBOOKER_DIR_PATH = System.getProperty("user.home") + File.separator + "AddrBooker";
     private static final String ADDRBOOKER_FILE_PATH = ADDRBOOKER_DIR_PATH + File.separator + "AddrBooker.abk";
     private static final String ADDRBOOKER_FILE_PATH2 = ADDRBOOKER_DIR_PATH + File.separator + "AddrBooker%s.abk";
-    private static final Properties LOCALIZE_PROPS = new Properties();
     static {
         thisInit();
     }
@@ -49,27 +47,11 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
                 file.delete();
                 save(new AddrBookProps(), ADDRBOOKER_FILE_PATH);
             } else { // 备份
-                copyFile(file, new File(String.format(ADDRBOOKER_FILE_PATH2, getDateString())));
+                copyFile(file, new File(String.format(ADDRBOOKER_FILE_PATH2, new SimpleDateFormat("yyyyMMdd").format(new Date()))));
             }
         } else {
             save(new AddrBookProps(), ADDRBOOKER_FILE_PATH);
         }
-
-        try {
-            for (String key : ContactProps.KEYS)
-                LOCALIZE_PROPS.setProperty(key, "");
-            LOCALIZE_PROPS.loadFromXML(AddrBookProps.class.getResourceAsStream("localize.xml"));
-        } catch (InvalidPropertiesFormatException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static String getDateString() {
-        return new SimpleDateFormat("yyyyMMdd").format(new Date());
     }
 
     private static boolean copyFile(File src, File dest) {
@@ -150,6 +132,10 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
                 line = line.trim();
                 if (line.startsWith("#")) {
                     ; // 注释行
+                } else if (line.startsWith("@")) {
+
+                } else if (line.startsWith("!")) {
+
                 } else if (line.startsWith("+")) {
                     String name = contact.getProperty(ContactProps.NAME, "");
                     if (addrbook.containsKey(name)) {
@@ -159,16 +145,12 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
                         addrbook.put(name, contact);
                     }
                     contact = new ContactProps();
-                } else if (line.indexOf(":") != -1) {
+                } else if (line.matches("^\\s*\\[" + ContactProps.KEY_REX + "\\].*?:.*$")) {
                     String[] items = line.split(":", 2);
                     String key = items[0].trim();
                     String value = items[1].trim();
-                    if (key.matches("^\\[" + ContactProps.KEY_REX + "\\].*$")) {
-                        key = key.substring(key.indexOf("[") + 1, key.indexOf("]"));
-                        contact.setProperty(key, unquote(value));
-                    } else {
-                        System.err.println(String.format("Line(%d), %s, ignored!!!", line_cnt, "NO KEY"));
-                    }
+                    key = key.substring(key.indexOf("[") + 1, key.indexOf("]"));
+                    contact.setProperty(key, unquote(value));
                 } else {
                     if (line.trim().equals("")) {
                         ; // 空行
@@ -199,9 +181,6 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
     }
 
     public static boolean save(AddrBookProps addrbook, String path) {
-        String LINE_HUGE = "#===================================================================";
-        String LINE_TINY = "#-------------------------------------------------------------------";
-
         BufferedWriter bWriter = null;
         try {
             bWriter = new BufferedWriter(new FileWriter(path)) {
@@ -210,22 +189,20 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
                     write(str, 0, str.length());
                 }
             };
-            bWriter.write(LINE_HUGE);
-            bWriter.write(String.format("#Website=%s", AddrBookInfo.HOME_WEBSITE));
-            bWriter.write(String.format("#Version=%s", VersionCtrl.FULL_VERSION));
-            bWriter.write(String.format("#%s", new Date()));
-            bWriter.write(LINE_HUGE);
+            bWriter.write(String.format("@Project Home Page: %s", AddrBookInfo.HOME_WEBSITE));
+            bWriter.write(String.format("@AddrBooker Version: %s", VersionCtrl.FULL_VERSION));
+            bWriter.write(String.format("@Data Save Datetime: %s", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())));
             int cnt = 0, size = addrbook.size();
             for (String _key : addrbook.keySet()) {
                 cnt += 1;
-                bWriter.write(String.format("#%s", _key));
+                bWriter.write("");
+                bWriter.write(String.format("#%d/%d", cnt, size));
                 ContactProps contact = addrbook.get(_key);
                 for (String key : ContactProps.KEYS) { // ContactProps.KEYS 才有顺序
-                    bWriter.write(String.format("[%s]%s: %s", key, LOCALIZE_PROPS.getProperty(key), //
+                    bWriter.write(String.format("[%s]%s: %s", key, Localization.getLocalString(key), //
                             quote(contact.getProperty(key))));
                 }
-                bWriter.write(String.format("+%d/%d", cnt, size));
-                bWriter.write(LINE_TINY);
+                bWriter.write("+");
             }
             return true;
         } catch (FileNotFoundException e) {

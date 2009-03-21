@@ -1,5 +1,7 @@
 package hoi.addrbook.ui;
 
+import hoi.addrbook.util.Localization;
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Frame;
@@ -18,11 +20,11 @@ public class AddrBookBackupDialog extends JDialog {
     private static final int BLANK_SIZE = 20;
     private static final int GAP_SIZE = 5;
 
-    private JButton backupButton = new JButton(UINamesCtrl.getLocalName("Backup data"));
-    private JButton restoreButton = new JButton(UINamesCtrl.getLocalName("Restore data"));
+    private JButton backupButton = new JButton(Localization.getLocalString("Backup data"));
+    private JButton restoreButton = new JButton(Localization.getLocalString("Restore data"));
 
-    private JButton helpButton = new JButton(UINamesCtrl.getLocalName("Help"));
-    private JButton closeButton = new JButton(UINamesCtrl.getLocalName("Close"));
+    private JButton helpButton = new JButton(Localization.getLocalString("Help"));
+    private JButton closeButton = new JButton(Localization.getLocalString("Close"));
 
     public AddrBookBackupDialog(Frame owner) {
         super(owner);
@@ -48,7 +50,7 @@ public class AddrBookBackupDialog extends JDialog {
 
         if (owner != null)
             setIconImage(owner.getIconImage());
-        setTitle(UINamesCtrl.getLocalName("Backup and Restore you data"));
+        setTitle(Localization.getLocalString("Backup and Restore you data"));
         pack();
         setResizable(false);
         setLocationRelativeTo(owner);

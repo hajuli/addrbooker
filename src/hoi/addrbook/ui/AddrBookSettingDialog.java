@@ -1,5 +1,7 @@
 package hoi.addrbook.ui;
 
+import hoi.addrbook.util.Localization;
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Frame;
@@ -18,11 +20,11 @@ public class AddrBookSettingDialog extends JDialog {
     private static final int BLANK_SIZE = 20;
     private static final int GAP_SIZE = 5;
 
-    private JButton addPasswordButton = new JButton(UINamesCtrl.getLocalName("Add Password"));
-    private JButton changePasswordButton = new JButton(UINamesCtrl.getLocalName("Change Password"));
+    private JButton addPasswordButton = new JButton(Localization.getLocalString("Add Password"));
+    private JButton changePasswordButton = new JButton(Localization.getLocalString("Change Password"));
 
-    private JButton donateButton = new JButton(UINamesCtrl.getLocalName("Donate"));
-    private JButton closeButton = new JButton(UINamesCtrl.getLocalName("Close"));
+    private JButton donateButton = new JButton(Localization.getLocalString("Donate"));
+    private JButton closeButton = new JButton(Localization.getLocalString("Close"));
 
     public AddrBookSettingDialog(Frame owner) {
         super(owner);
@@ -48,7 +50,7 @@ public class AddrBookSettingDialog extends JDialog {
 
         if (owner != null)
             setIconImage(owner.getIconImage());
-        setTitle(UINamesCtrl.getLocalName("Option Settings"));
+        setTitle(Localization.getLocalString("Option Settings"));
         pack();
         setResizable(false);
         setLocationRelativeTo(owner);
