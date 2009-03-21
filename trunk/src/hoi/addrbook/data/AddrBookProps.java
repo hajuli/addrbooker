@@ -47,7 +47,7 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
                 file.delete();
                 save(new AddrBookProps(), ADDRBOOKER_FILE_PATH);
             } else { // 备份
-                copyFile(file, new File(String.format(ADDRBOOKER_FILE_PATH2, new SimpleDateFormat("yyyyMMdd").format(new Date()))));
+                copyFile(file, new File(String.format(ADDRBOOKER_FILE_PATH2, new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()))));
             }
         } else {
             save(new AddrBookProps(), ADDRBOOKER_FILE_PATH);
