@@ -93,11 +93,19 @@ public class AddrBookPanel extends JPanel implements ActionListener {
         toolbar.add(tbarSettingButton);
         toolbar.add(tbarBackupButton);
         toolbar.add(tbarExitButton);
+        //BorderFactory.createCompoundBorder( BorderFactory.createEmptyBorder(5,5,5,5), new JButton().getBorder() )
+        int k = 10;
+        (tbarAddButton).setBorder(BorderFactory.createEmptyBorder(k, 1, k, 1));
+        (tbarSaveButton).setBorder(BorderFactory.createEmptyBorder(k, 1, k, 1));
+        (tbarDeleteButton).setBorder(BorderFactory.createEmptyBorder(k, 1, k, 1));
+        (tbarSettingButton).setBorder(BorderFactory.createEmptyBorder(k, 1, k, 1));
+        (tbarBackupButton).setBorder(BorderFactory.createEmptyBorder(k, 1, k, 1));
+        (tbarExitButton).setBorder(BorderFactory.createEmptyBorder(k, 1, k, 1));
 
-        JPanel cPanel = new JPanel(new BorderLayout(BLANK_SIZE, BLANK_SIZE));
+        JPanel cPanel = new JPanel(new BorderLayout(BLANK_SIZE * 2, BLANK_SIZE * 2));
         cPanel.add(wPanel, BorderLayout.WEST);
         cPanel.add(createInfoPanel(), BorderLayout.CENTER);
-        cPanel.setBorder(BorderFactory.createLineBorder(BORDER_COLOR, BLANK_SIZE));
+        cPanel.setBorder(BorderFactory.createLineBorder(BORDER_COLOR, BLANK_SIZE * 2));
 
         setLayout(new BorderLayout(0, 0));
         add(toolbar, BorderLayout.NORTH);
@@ -226,7 +234,7 @@ public class AddrBookPanel extends JPanel implements ActionListener {
             JLabel label = new JLabel(String.format(" %s: ", comp.getName()), JLabel.RIGHT);
             if (comp.getName() == null) // 避免匿名组件
                 label.setText(null);
-            label.setBorder(BorderFactory.createEtchedBorder());
+            //     label.setBorder(BorderFactory.createEtchedBorder());
             aPanel.add(label);
             bPanel.add(comp);
         }
