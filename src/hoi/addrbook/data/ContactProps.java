@@ -12,8 +12,8 @@ public class ContactProps extends Properties {
 
     public static final String NAME = "Name";
     public static final String CLASSIFY = "Classify";
-    public static final String BIRTHDAY_LUNAR = LUNAR+ BIRTHDAY;
-    public static final String BIRTHDAY_SOLAR = SOLAR+ BIRTHDAY;
+    public static final String BIRTHDAY_LUNAR = LUNAR + BIRTHDAY;
+    public static final String BIRTHDAY_SOLAR = SOLAR + BIRTHDAY;
     public static final String TIMER = "Timer";
     public static final String QQ = "QQ";
     public static final String MSN = "MSN";
@@ -29,7 +29,7 @@ public class ContactProps extends Properties {
     public static final String[] KEYS = new String[] {
             NAME, CLASSIFY, AGE, BIRTHDAY_LUNAR, BIRTHDAY_SOLAR, TIMER, QQ, MSN, //
             MOBILE, FETION, EMAIL, WEBSITE, ADDRESS, COMPANY, NOTES };
-    public static final String KEY_REX = "[A-Z0-9_]+"; // KEY 都是以大写字母、数字、下划线组成
+    public static final String KEY_REX = "[A-Za-z0-9_]+"; // KEY 都是以字母、数字、下划线组成
 
     public ContactProps() {
         for (String key : KEYS)
