@@ -1,10 +1,14 @@
-package hoi.addrbook.ui;
+package hoi.addrbook.util;
 
+import hoi.addrbook.AddrBookInfo;
+
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.InvalidPropertiesFormatException;
 import java.util.Properties;
 
-public class UINamesCtrl {
+public class Localization {
     private static Properties names = new Properties() {
         private static final long serialVersionUID = -4955005117458946693L;
 
@@ -15,7 +19,7 @@ public class UINamesCtrl {
     };
     static {
         try {
-            names.loadFromXML(UINamesCtrl.class.getResourceAsStream("localize.xml"));
+            names.loadFromXML(Localization.class.getResourceAsStream("localize.xml"));
         } catch (InvalidPropertiesFormatException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -62,6 +66,8 @@ public class UINamesCtrl {
             names.put("Birthday", "生日");
             names.put("Lunar", "农历");
             names.put("Solar", "阳历");
+            names.put("LunarBirthday", "农历生日");
+            names.put("SolarBirthday", "阳历生日");
             names.put("Timer", "时间");
             names.put("Age", "年龄");
             names.put("QQ", "QQ");
@@ -72,12 +78,19 @@ public class UINamesCtrl {
             names.put("Website", "个人主页");
             names.put("Address", "家庭住址");
             names.put("Company", "公司信息");
+            names.put("Notes", "附注");
 
             names.put("Birthday Reminder", "生日提醒");
+
+            try {
+                names.storeToXML(new FileOutputStream(new File("localize.xml")), AddrBookInfo.HOME_WEBSITE);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
     }
 
-    public static String getLocalName(String name) {
-        return names.getProperty(name, name);
+    public static String getLocalString(String str) {
+        return names.getProperty(str, str);
     }
 }

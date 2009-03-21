@@ -1,5 +1,7 @@
 package hoi.addrbook.ui;
 
+import hoi.addrbook.util.Localization;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
@@ -10,7 +12,7 @@ public class InfoAddrField extends JPanel implements AccessInterface {
     private static final long serialVersionUID = 9087341622805152794L;
     private static final String LS = "|";
     private InfoTextField address = new InfoTextField();
-    private InfoTextField postcode = new InfoTextField(null, null, UINamesCtrl.getLocalName("Postcode"));
+    private InfoTextField postcode = new InfoTextField(null, null, Localization.getLocalString("Postcode"));
     private String contactKey = null;
 
     public InfoAddrField(String contactKey, String compName) {

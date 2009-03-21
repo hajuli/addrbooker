@@ -26,7 +26,7 @@ public class InfoNotesArea extends JPanel implements AccessInterface {
     }
 
     public String getContent() {
-        return notes.getText();
+        return notes.getText().trim();
     }
 
     public void setContent(String content) {

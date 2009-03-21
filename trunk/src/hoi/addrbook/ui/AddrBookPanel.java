@@ -3,6 +3,7 @@ package hoi.addrbook.ui;
 import hoi.addrbook.data.AddrBookProps;
 import hoi.addrbook.data.ContactProps;
 import hoi.addrbook.icon.ImageHelper;
+import hoi.addrbook.util.Localization;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -36,12 +37,12 @@ public class AddrBookPanel extends JPanel implements ActionListener {
     private AddrBookBackupDialog backupDialog = null;
     private AddrBookSettingDialog settingDialog = null;
 
-    private JButton tbarAddButton = new JButton(UINamesCtrl.getLocalName("Add"), ImageHelper.ICON_ADD);
-    private JButton tbarSaveButton = new JButton(UINamesCtrl.getLocalName("Save"), ImageHelper.ICON_SAVE);
-    private JButton tbarDeleteButton = new JButton(UINamesCtrl.getLocalName("Delete"), ImageHelper.ICON_DELETE);
-    private JButton tbarSettingButton = new JButton(UINamesCtrl.getLocalName("Settings"), ImageHelper.ICON_SETTING);
-    private JButton tbarBackupButton = new JButton(UINamesCtrl.getLocalName("Backup"), ImageHelper.ICON_BACKUP);
-    private JButton tbarExitButton = new JButton(UINamesCtrl.getLocalName("Exit"), ImageHelper.ICON_EXIT);
+    private JButton tbarAddButton = new JButton(Localization.getLocalString("Add"), ImageHelper.ICON_ADD);
+    private JButton tbarSaveButton = new JButton(Localization.getLocalString("Save"), ImageHelper.ICON_SAVE);
+    private JButton tbarDeleteButton = new JButton(Localization.getLocalString("Delete"), ImageHelper.ICON_DELETE);
+    private JButton tbarSettingButton = new JButton(Localization.getLocalString("Settings"), ImageHelper.ICON_SETTING);
+    private JButton tbarBackupButton = new JButton(Localization.getLocalString("Backup"), ImageHelper.ICON_BACKUP);
+    private JButton tbarExitButton = new JButton(Localization.getLocalString("Exit"), ImageHelper.ICON_EXIT);
 
     private DefaultListModel contactListModel = new DefaultListModel();
     private JList contactList = new JList(contactListModel);
@@ -49,26 +50,26 @@ public class AddrBookPanel extends JPanel implements ActionListener {
     private SreachBox searchBox = new SreachBox();
     private ContactListPanel contactListPanel = new ContactListPanel(contactList);
     private StatusPanel statusPanel = new StatusPanel();
-    private InfoTextField birthdayReminder = new InfoTextField(null, null, UINamesCtrl.getLocalName("Birthday Reminder"));
+    private InfoTextField birthdayReminder = new InfoTextField(null, null, Localization.getLocalString("Birthday Reminder"));
 
     private AddrBookProps addrbook = AddrBookProps.load();
 
-    private InfoTextField infoNameField = new InfoTextField(ContactProps.NAME, UINamesCtrl.getLocalName("Name"));
-    private InfoClassifyField infoClassifyField = new InfoClassifyField(ContactProps.CLASSIFY, UINamesCtrl.getLocalName("Classify"), addrbook.getClassifys());
-    private InfoTextField infoBirthdayLunarField = new InfoTextField(ContactProps.BIRTHDAY_LUNAR, UINamesCtrl.getLocalName("Birthday"), //
-            UINamesCtrl.getLocalName("Lunar") + " 1900-01-01");
+    private InfoTextField infoNameField = new InfoTextField(ContactProps.NAME, Localization.getLocalString(ContactProps.NAME));
+    private InfoClassifyField infoClassifyField = new InfoClassifyField(ContactProps.CLASSIFY, Localization.getLocalString(ContactProps.CLASSIFY), addrbook.getClassifys());
+    private InfoTextField infoBirthdayLunarField = new InfoTextField(ContactProps.BIRTHDAY_LUNAR, Localization.getLocalString(ContactProps.BIRTHDAY), //
+            Localization.getLocalString(ContactProps.LUNAR) + " 1900-01-01");
     private InfoTextField infoBirthdaySolarField = new InfoTextField(ContactProps.BIRTHDAY_SOLAR, null, //
-            UINamesCtrl.getLocalName("Solar") + " 1900-01-01");
-    private InfoTimerField infoTimerField = new InfoTimerField(ContactProps.TIMER, UINamesCtrl.getLocalName("Timer"));
-    private InfoTextField infoAgeField = new InfoTextField(ContactProps.AGE, UINamesCtrl.getLocalName("Age"));
-    private InfoTextField infoQQField = new InfoTextField(ContactProps.QQ, UINamesCtrl.getLocalName("QQ"));
-    private InfoTextField infoMSNField = new InfoTextField(ContactProps.MSN, UINamesCtrl.getLocalName("MSN"));
-    private InfoTextField infoMobileField = new InfoTextField(ContactProps.MOBILE, UINamesCtrl.getLocalName("Mobile"));
-    private InfoTextField infoFetionField = new InfoTextField(ContactProps.FETION, UINamesCtrl.getLocalName("Fetion"));
-    private InfoTextField infoEmailField = new InfoTextField(ContactProps.EMAIL, UINamesCtrl.getLocalName("Email"));
-    private InfoTextField infoWebsiteField = new InfoTextField(ContactProps.WEBSITE, UINamesCtrl.getLocalName("Website"));
-    private InfoAddrField infoHomeAddrField = new InfoAddrField(ContactProps.HOMEADDR, UINamesCtrl.getLocalName("Address"));
-    private InfoTextField infoCompanyField = new InfoTextField(ContactProps.COMPANY, UINamesCtrl.getLocalName("Company"));
+            Localization.getLocalString(ContactProps.SOLAR) + " 1900-01-01");
+    private InfoTimerField infoTimerField = new InfoTimerField(ContactProps.TIMER, Localization.getLocalString(ContactProps.TIMER));
+    private InfoTextField infoAgeField = new InfoTextField(ContactProps.AGE, Localization.getLocalString(ContactProps.AGE));
+    private InfoTextField infoQQField = new InfoTextField(ContactProps.QQ, Localization.getLocalString(ContactProps.QQ));
+    private InfoTextField infoMSNField = new InfoTextField(ContactProps.MSN, Localization.getLocalString(ContactProps.MSN));
+    private InfoTextField infoMobileField = new InfoTextField(ContactProps.MOBILE, Localization.getLocalString(ContactProps.MOBILE));
+    private InfoTextField infoFetionField = new InfoTextField(ContactProps.FETION, Localization.getLocalString(ContactProps.FETION));
+    private InfoTextField infoEmailField = new InfoTextField(ContactProps.EMAIL, Localization.getLocalString(ContactProps.EMAIL));
+    private InfoTextField infoWebsiteField = new InfoTextField(ContactProps.WEBSITE, Localization.getLocalString(ContactProps.WEBSITE));
+    private InfoAddrField infoHomeAddrField = new InfoAddrField(ContactProps.ADDRESS, Localization.getLocalString(ContactProps.ADDRESS));
+    private InfoTextField infoCompanyField = new InfoTextField(ContactProps.COMPANY, Localization.getLocalString(ContactProps.COMPANY));
     private InfoNotesArea infoNotesArea = new InfoNotesArea(ContactProps.NOTES);
 
     private AccessInterface[] infoFields = new AccessInterface[] {
@@ -121,6 +122,7 @@ public class AddrBookPanel extends JPanel implements ActionListener {
             contact.setProperty(infoField.getContactKey(), infoField.getContent());
         String newname = contact.getProperty(ContactProps.NAME);
         if (newname == null || newname.trim().equals("")) {
+            AddrBookProps.save(addrbook);
             return;
         }
         if (contactList.getSelectedIndex() != -1) {
@@ -143,6 +145,7 @@ public class AddrBookPanel extends JPanel implements ActionListener {
         }
         refreshContactList();
         contactList.setSelectedValue(newname, true);
+        AddrBookProps.save(addrbook);
     }
 
     private void doDelete() {
@@ -193,7 +196,6 @@ public class AddrBookPanel extends JPanel implements ActionListener {
         contactListModel.removeAllElements();
         for (Object key : list)
             contactListModel.addElement(key.toString());
-        AddrBookProps.save(addrbook);
     }
 
     public void actionPerformed(ActionEvent e) {

@@ -3,6 +3,7 @@ package hoi.addrbook.ui;
 import hoi.addrbook.AddrBookInfo;
 import hoi.addrbook.VersionCtrl;
 import hoi.addrbook.util.Browser;
+import hoi.addrbook.util.Localization;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -43,7 +44,7 @@ public class StatusPanel extends JPanel {
     private void checkNewVersion() {
         if (VersionCtrl.hasNewVersion()) {
             versionLabel.setForeground(Color.BLUE);
-            versionLabel.setText("<html><u><i>" + UINamesCtrl.getLocalName("Found New Version") + "</i></u></html>");
+            versionLabel.setText("<html><u><i>" + Localization.getLocalString("Found New Version") + "</i></u></html>");
             versionLabel.setCursor(new Cursor(Cursor.HAND_CURSOR));
             versionLabel.setToolTipText(AddrBookInfo.HOME_WEBSITE);
             versionLabel.addMouseListener(new MouseListener() {
@@ -57,7 +58,7 @@ public class StatusPanel extends JPanel {
                         ioe.printStackTrace();
                         JOptionPane.showMessageDialog(StatusPanel.this.getTopLevelAncestor(), //
                                 AddrBookInfo.HOME_WEBSITE, //
-                                UINamesCtrl.getLocalName("Error attempting to launch web browser"), //
+                                Localization.getLocalString("Error attempting to launch web browser"), //
                                 JOptionPane.ERROR_MESSAGE);
                     }
                     clicked = true;
@@ -86,7 +87,7 @@ public class StatusPanel extends JPanel {
             });
         } else {
             versionLabel.setForeground(Color.GRAY.brighter());
-            versionLabel.setText(UINamesCtrl.getLocalName("Version") + ": " + VersionCtrl.FULL_VERSION);
+            versionLabel.setText(Localization.getLocalString("Version") + ": " + VersionCtrl.FULL_VERSION);
         }
     }
 }
