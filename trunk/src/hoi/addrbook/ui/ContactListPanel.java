@@ -9,6 +9,7 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListCellRenderer;
+import javax.swing.ListSelectionModel;
 
 public class ContactListPanel extends JPanel {
 
@@ -17,6 +18,7 @@ public class ContactListPanel extends JPanel {
 
     public ContactListPanel(JList contactList) {
         super(new BorderLayout(0, 0));
+        contactList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         this.contacts = contactList;
         this.contacts.setCellRenderer(new ComplexCellRenderer());
         add(new JScrollPane(contacts, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED));
