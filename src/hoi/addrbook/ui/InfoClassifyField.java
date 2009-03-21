@@ -32,7 +32,11 @@ public class InfoClassifyField extends JPanel implements AccessInterface {
     }
 
     public String getContent() {
-        return classify.getSelectedItem().toString();
+        try {
+            return classify.getSelectedItem().toString();
+        } catch (NullPointerException e) {
+            return "";
+        }
     }
 
     public void setContent(String content) {
