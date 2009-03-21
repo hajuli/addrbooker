@@ -27,7 +27,7 @@ public class ContactProps extends Properties {
     public static final String AGE = "Age";
 
     public static final String[] KEYS = new String[] {
-            NAME, CLASSIFY, AGE, BIRTHDAY_LUNAR, BIRTHDAY_SOLAR, TIMER, QQ, MSN, //
+            NAME, CLASSIFY, TIMER, AGE, BIRTHDAY_LUNAR, BIRTHDAY_SOLAR, QQ, MSN, //
             MOBILE, FETION, EMAIL, WEBSITE, ADDRESS, COMPANY, NOTES };
     public static final String KEY_REX = "[A-Za-z0-9_]+"; // KEY 都是以字母、数字、下划线组成
 
