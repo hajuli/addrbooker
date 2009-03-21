@@ -7,7 +7,6 @@ import java.awt.BorderLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -24,7 +23,7 @@ public class InfoTimerField extends JPanel implements AccessInterface {
     private JButton clear = new JButton(Localization.getLocalString("Reset"));
     private String contactKey = null;
     private String contentDate = null;
-    private DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    private String dateFormat = "yyyy-MM-dd";
 
     public InfoTimerField(String contactKey, String compName) {
         super(new BorderLayout(1, 1));
@@ -38,10 +37,10 @@ public class InfoTimerField extends JPanel implements AccessInterface {
         add(clear, BorderLayout.EAST);
         clear.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                setContent(dateFormat.format(new Date()));
+                setContent(new SimpleDateFormat(dateFormat).format(new Date()));
             }
         });
-        setContent(dateFormat.format(new Date())); // 默认值
+        setContent(new SimpleDateFormat(dateFormat).format(new Date())); // 默认值
     }
 
     private String formatDelataDate(DeltaDate delta) {
@@ -65,20 +64,23 @@ public class InfoTimerField extends JPanel implements AccessInterface {
     }
 
     public String getContent() {
-        return contentDate;
+        return contentDate + "; " + delta.getText();
     }
 
     public void setContent(Date date) {
-        setContent(dateFormat.format(date));
+        setContent(new SimpleDateFormat(dateFormat).format(date));
     }
 
     public void setContent(String content) {
         if (content == null || content.trim().equals("")) {
             setContent(new Date());
         } else {
-            this.contentDate = content.trim();
+            content = content.trim();
+            if (content.length() > dateFormat.length())
+                content = content.substring(0, dateFormat.length());
+            this.contentDate = content;
             try {
-                delta.setText(formatDelataDate(new DeltaDate(dateFormat.parse(contentDate), new Date())));
+                delta.setText(formatDelataDate(new DeltaDate(new SimpleDateFormat(dateFormat).parse(contentDate), new Date())));
             } catch (ParseException e) {
                 delta.setText(Localization.getLocalString("Parse Error"));
             }
