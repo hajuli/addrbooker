@@ -16,7 +16,7 @@ public class AddrBookFrame extends JFrame {
     public static final String TITLE = String.format("%s v%s", Localization.getLocalString("AddrBooker"), VersionCtrl.SHORT_VERSION);
 
     public AddrBookFrame() {
-        Dimension size = new Dimension(540, 540 / 4 * 3);
+        Dimension size = new Dimension(560, 580 / 4 * 3);
         setPreferredSize(size);
         setMinimumSize(size);
         setLocationRelativeTo(null);
