@@ -35,7 +35,7 @@ public class Localization {
             names.put("Close", "关闭");
             names.put("Backup and Restore you data", "备份/恢复 数据");
 
-            names.put("Option Settings", "选项 设置");
+            names.put("Option Setting", "选项 设置");
             names.put("Add Password", "创建密码");
             names.put("Change Password", "更改密码");
             names.put("Donate", "捐赠");
