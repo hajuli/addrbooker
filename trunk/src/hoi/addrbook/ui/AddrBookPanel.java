@@ -245,7 +245,7 @@ public class AddrBookPanel extends JPanel implements ActionListener {
     }
 
     private JPanel createInfoPanel() {
-        JPanel aPanel = new JPanel(new GridLayout(1, 2, BLANK_SIZE, BLANK_SIZE));
+        JPanel aPanel = new JPanel(new GridLayout(1, 2, BLANK_SIZE * 2, BLANK_SIZE * 2));
         aPanel.add(createTempPanel(infoNameField, infoBirthdayLunarField, infoBirthdaySolarField, infoQQField, infoMobileField));
         aPanel.add(createTempPanel(infoClassifyField, infoTimerField, infoAgeField, infoMSNField, infoFetionField));
 
