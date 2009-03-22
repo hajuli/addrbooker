@@ -94,7 +94,7 @@ public class AddrBookPanel extends JPanel implements ActionListener {
         toolbar.add(tbarBackupButton);
         toolbar.add(tbarExitButton);
         //BorderFactory.createCompoundBorder( BorderFactory.createEmptyBorder(5,5,5,5), new JButton().getBorder() )
-        int k = 10;
+        int k = 11;
         (tbarAddButton).setBorder(BorderFactory.createEmptyBorder(k, 1, k, 1));
         (tbarSaveButton).setBorder(BorderFactory.createEmptyBorder(k, 1, k, 1));
         (tbarDeleteButton).setBorder(BorderFactory.createEmptyBorder(k, 1, k, 1));
@@ -245,7 +245,7 @@ public class AddrBookPanel extends JPanel implements ActionListener {
     }
 
     private JPanel createInfoPanel() {
-        JPanel aPanel = new JPanel(new GridLayout(1, 2, BLANK_SIZE * 2, BLANK_SIZE * 2));
+        JPanel aPanel = new JPanel(new GridLayout(1, 2, BLANK_SIZE * 3 / 2, BLANK_SIZE * 3 / 2));
         aPanel.add(createTempPanel(infoNameField, infoBirthdayLunarField, infoBirthdaySolarField, infoQQField, infoMobileField));
         aPanel.add(createTempPanel(infoClassifyField, infoTimerField, infoAgeField, infoMSNField, infoFetionField));
 
