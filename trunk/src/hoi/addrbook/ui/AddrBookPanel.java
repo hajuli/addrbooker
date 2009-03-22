@@ -231,21 +231,21 @@ public class AddrBookPanel extends JPanel implements ActionListener {
         JPanel aPanel = new JPanel(new GridLayout(comps.length, 1, GAP_SIZE, GAP_SIZE));
         JPanel bPanel = new JPanel(new GridLayout(comps.length, 1, GAP_SIZE, GAP_SIZE));
         for (JComponent comp : comps) {
-            JLabel label = new JLabel(String.format(" %s: ", comp.getName()), JLabel.RIGHT);
+            JLabel label = new JLabel(String.format("%s:", comp.getName()), JLabel.RIGHT);
             if (comp.getName() == null) // 避免匿名组件
                 label.setText(null);
             //     label.setBorder(BorderFactory.createEtchedBorder());
             aPanel.add(label);
             bPanel.add(comp);
         }
-        JPanel cPanel = new JPanel(new BorderLayout(GAP_SIZE, GAP_SIZE));
+        JPanel cPanel = new JPanel(new BorderLayout(BLANK_SIZE, BLANK_SIZE));
         cPanel.add(aPanel, BorderLayout.WEST);
         cPanel.add(bPanel, BorderLayout.CENTER);
         return cPanel;
     }
 
     private JPanel createInfoPanel() {
-        JPanel aPanel = new JPanel(new GridLayout(1, 2, GAP_SIZE, GAP_SIZE));
+        JPanel aPanel = new JPanel(new GridLayout(1, 2, BLANK_SIZE, BLANK_SIZE));
         aPanel.add(createTempPanel(infoNameField, infoBirthdayLunarField, infoBirthdaySolarField, infoQQField, infoMobileField));
         aPanel.add(createTempPanel(infoClassifyField, infoTimerField, infoAgeField, infoMSNField, infoFetionField));
 
