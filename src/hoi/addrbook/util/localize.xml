@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>http://code.google.com/p/addrbooker/</comment>
+<entry key="Found New Version">发现新版本</entry>
+<entry key="Mobile">手机</entry>
+<entry key="Delete">删除</entry>
+<entry key="Name">姓名</entry>
+<entry key="MSN">MSN</entry>
+<entry key="Day">天</entry>
+<entry key="Company">公司信息</entry>
+<entry key="Add Password">创建密码</entry>
+<entry key="Email">电子邮箱</entry>
+<entry key="Postcode">邮政编码</entry>
+<entry key="Option Settings">选项 设置</entry>
+<entry key="Save">保存</entry>
+<entry key="Timer">时间</entry>
+<entry key="Backup">备份</entry>
+<entry key="Settings">设置</entry>
+<entry key="Help">帮助</entry>
+<entry key="Years">年</entry>
+<entry key="Backup and Restore you data">备份/恢复 数据</entry>
+<entry key="Solar">阳历</entry>
+<entry key="Typing to Search">键入内容 搜索</entry>
+<entry key="Reset">重置</entry>
+<entry key="Fetion">飞信</entry>
+<entry key="Close">关闭</entry>
+<entry key="SolarBirthday">阳历生日</entry>
+<entry key="Classify">分组</entry>
+<entry key="Notes">附注</entry>
+<entry key="Lunar">农历</entry>
+<entry key="Website">个人主页</entry>
+<entry key="Parse Error">解析错误</entry>
+<entry key="Donate">捐赠</entry>
+<entry key="Birthday">生日</entry>
+<entry key="QQ">QQ</entry>
+<entry key="Birthday Reminder">生日提醒</entry>
+<entry key="LunarBirthday">农历生日</entry>
+<entry key="Address">家庭住址</entry>
+<entry key="Add">新增</entry>
+<entry key="Age">年龄</entry>
+<entry key="Version">版本</entry>
+<entry key="Backup data">数据备份</entry>
+<entry key="Month">月</entry>
+<entry key="Change Password">更改密码</entry>
+<entry key="Restore data">数据恢复</entry>
+<entry key="AddrBooker">草根通讯录</entry>
+<entry key="Exit">退出</entry>
+<entry key="Months">月</entry>
+<entry key="Year">年</entry>
+<entry key="Days">天</entry>
+</properties>
