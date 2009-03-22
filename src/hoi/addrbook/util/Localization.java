@@ -39,6 +39,7 @@ public class Localization {
             names.put("Add Password", "创建密码");
             names.put("Change Password", "更改密码");
             names.put("Donate", "捐赠");
+            names.put("Password Protection", "密码保护");
 
             names.put("Version", "版本");
             names.put("Found New Version", "发现新版本");
