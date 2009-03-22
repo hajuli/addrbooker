@@ -88,6 +88,33 @@ public class StatusPanel extends JPanel {
         } else {
             versionLabel.setForeground(Color.GRAY.brighter());
             versionLabel.setText(Localization.getLocalString("Version") + ": " + VersionCtrl.FULL_VERSION);
+            versionLabel.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            versionLabel.setToolTipText(AddrBookInfo.HOME_WEBSITE);
+            versionLabel.addMouseListener(new MouseListener() {
+                public void mouseClicked(MouseEvent e) {
+                    try {
+                        Browser.openUrl(AddrBookInfo.HOME_WEBSITE);
+                    } catch (IOException ioe) {
+                        ioe.printStackTrace();
+                        JOptionPane.showMessageDialog(StatusPanel.this.getTopLevelAncestor(), //
+                                AddrBookInfo.HOME_WEBSITE, //
+                                Localization.getLocalString("Error attempting to launch web browser"), //
+                                JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+
+                public void mouseEntered(MouseEvent e) {
+                }
+
+                public void mouseExited(MouseEvent e) {
+                }
+
+                public void mousePressed(MouseEvent e) {
+                }
+
+                public void mouseReleased(MouseEvent e) {
+                }
+            });
         }
     }
 }
