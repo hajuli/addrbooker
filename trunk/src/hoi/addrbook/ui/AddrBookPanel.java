@@ -24,6 +24,7 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JToolBar;
+import javax.swing.border.Border;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -40,7 +41,7 @@ public class AddrBookPanel extends JPanel implements ActionListener {
     private JButton tbarAddButton = new JButton(Localization.getLocalString("Add"), ImageHelper.ICON_ADD);
     private JButton tbarSaveButton = new JButton(Localization.getLocalString("Save"), ImageHelper.ICON_SAVE);
     private JButton tbarDeleteButton = new JButton(Localization.getLocalString("Delete"), ImageHelper.ICON_DELETE);
-    private JButton tbarSettingButton = new JButton(Localization.getLocalString("Settings"), ImageHelper.ICON_SETTING);
+    private JButton tbarSettingButton = new JButton(Localization.getLocalString("Setting"), ImageHelper.ICON_SETTING);
     private JButton tbarBackupButton = new JButton(Localization.getLocalString("Backup"), ImageHelper.ICON_BACKUP);
     private JButton tbarExitButton = new JButton(Localization.getLocalString("Exit"), ImageHelper.ICON_EXIT);
 
@@ -95,12 +96,13 @@ public class AddrBookPanel extends JPanel implements ActionListener {
         toolbar.add(tbarExitButton);
         //BorderFactory.createCompoundBorder( BorderFactory.createEmptyBorder(5,5,5,5), new JButton().getBorder() )
         int k = 11;
-        (tbarAddButton).setBorder(BorderFactory.createEmptyBorder(k, 1, k, 1));
-        (tbarSaveButton).setBorder(BorderFactory.createEmptyBorder(k, 1, k, 1));
-        (tbarDeleteButton).setBorder(BorderFactory.createEmptyBorder(k, 1, k, 1));
-        (tbarSettingButton).setBorder(BorderFactory.createEmptyBorder(k, 1, k, 1));
-        (tbarBackupButton).setBorder(BorderFactory.createEmptyBorder(k, 1, k, 1));
-        (tbarExitButton).setBorder(BorderFactory.createEmptyBorder(k, 1, k, 1));
+        Border border = BorderFactory.createCompoundBorder(BorderFactory.createEtchedBorder(), BorderFactory.createEmptyBorder(k, 1, k, 1));
+        (tbarAddButton).setBorder(border);
+        (tbarSaveButton).setBorder(border);
+        (tbarDeleteButton).setBorder(border);
+        (tbarSettingButton).setBorder(border);
+        (tbarBackupButton).setBorder(border);
+        (tbarExitButton).setBorder(border);
 
         JPanel cPanel = new JPanel(new BorderLayout(BLANK_SIZE * 2, BLANK_SIZE * 2));
         cPanel.add(wPanel, BorderLayout.WEST);

@@ -58,7 +58,7 @@ public class Localization {
             names.put("Add", "新增");
             names.put("Save", "保存");
             names.put("Delete", "删除");
-            names.put("Settings", "设置");
+            names.put("Setting", "设置");
             names.put("Backup", "备份");
             names.put("Exit", "退出");
 
