@@ -5,6 +5,7 @@ import java.awt.Dimension;
 
 import hoi.addrbook.VersionCtrl;
 import hoi.addrbook.icon.ImageHelper;
+import hoi.addrbook.util.InstanceControl;
 import hoi.addrbook.util.Localization;
 
 import javax.swing.JFrame;
@@ -38,6 +39,10 @@ public class AddrBookFrame extends JFrame {
     }
 
     public static void main(String[] args) {
-        new AddrBookFrame().setVisible(true);
+        InstanceControl ic = new InstanceControl();
+        ic.start();
+        AddrBookFrame frame = new AddrBookFrame();
+        frame.setVisible(true);
+        ic.setFrame(frame);
     }
 }
