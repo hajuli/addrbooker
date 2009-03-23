@@ -56,7 +56,7 @@ public class VersionCtrl {
                     int minor = Integer.parseInt(matcher.group(2));
                     int release = Integer.parseInt(matcher.group(3));
                     return (major > MAJOR_VERSION_NUMBER) // 比较前三位
-                            || (major == MAJOR_VERSION_NUMBER && minor > MINOR_VERSION_NUMBER)
+                            || (major == MAJOR_VERSION_NUMBER && minor > MINOR_VERSION_NUMBER) //
                             || (major == MAJOR_VERSION_NUMBER && minor == MINOR_VERSION_NUMBER && release > REVISION_NUMBER);
                 }
             }
