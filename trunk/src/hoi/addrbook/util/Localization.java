@@ -25,7 +25,6 @@ public class Localization {
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
-            //            e.printStackTrace();
 
             names.put("AddrBooker", "草根通讯录");
 
