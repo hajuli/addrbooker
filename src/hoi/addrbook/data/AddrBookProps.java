@@ -22,9 +22,9 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
 
     private static final long serialVersionUID = 2738957830618139780L;
 
-    private static final String ADDRBOOKER_DIR_PATH = System.getProperty("user.home") + File.separator + "AddrBooker";
-    private static final String ADDRBOOKER_FILE_PATH = ADDRBOOKER_DIR_PATH + File.separator + "AddrBooker.abk";
-    private static final String ADDRBOOKER_FILE_PATH2 = ADDRBOOKER_DIR_PATH + File.separator + "AddrBooker%s.abk";
+    private static final String ADDRBOOK_DIR_PATH = System.getProperty("user.home") + File.separator + "AddrBooker";
+    private static final String ADDRBOOK_FILE_PATH = ADDRBOOK_DIR_PATH + File.separator + "AddrBooker.abk";
+    private static final String ADDRBOOK_FILE_PATH2 = ADDRBOOK_DIR_PATH + File.separator + "AddrBooker%s.abk";
     static {
         thisInit();
     }
@@ -32,7 +32,7 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
     public Vector<String> getClassifys() {
         Vector<String> vector = new Vector<String>();
         for (ContactProps contact : this.values()) {
-            String classify = contact.getProperty(ContactProps.CLASSIFY);
+            String classify = contact.getProperty(ContactProps.CLASSIFY).trim();
             if (!vector.contains(classify))
                 vector.add(classify);
         }
@@ -40,17 +40,17 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
     }
 
     private static void thisInit() {
-        new File(ADDRBOOKER_DIR_PATH).mkdirs();
-        File file = new File(ADDRBOOKER_FILE_PATH);
+        new File(ADDRBOOK_DIR_PATH).mkdirs();
+        File file = new File(ADDRBOOK_FILE_PATH);
         if (file.exists()) {
             if (file.isDirectory()) {
                 file.delete();
-                save(new AddrBookProps(), ADDRBOOKER_FILE_PATH);
-            } else { // 备份
-                copyFile(file, new File(String.format(ADDRBOOKER_FILE_PATH2, new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()))));
+                save(new AddrBookProps(), ADDRBOOK_FILE_PATH);
+            } else { // 数据备份
+                copyFile(file, new File(String.format(ADDRBOOK_FILE_PATH2, new SimpleDateFormat("yyyyMMddHH").format(new Date()))));
             }
         } else {
-            save(new AddrBookProps(), ADDRBOOKER_FILE_PATH);
+            save(new AddrBookProps(), ADDRBOOK_FILE_PATH);
         }
     }
 
@@ -133,9 +133,7 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
                 if (line.startsWith("#")) {
                     ; // 注释行
                 } else if (line.startsWith("@")) {
-
-                } else if (line.startsWith("!")) {
-
+                    ; // 配置行
                 } else if (line.startsWith("+")) {
                     String name = contact.getProperty(ContactProps.NAME, "");
                     if (addrbook.containsKey(name)) {
@@ -177,7 +175,7 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
     }
 
     public static AddrBookProps load() {
-        return load(ADDRBOOKER_FILE_PATH);
+        return load(ADDRBOOK_FILE_PATH);
     }
 
     public static boolean save(AddrBookProps addrbook, String path) {
@@ -186,7 +184,7 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
             bWriter = new BufferedWriter(new FileWriter(path)) {
                 public void write(String str) throws IOException {
                     str += System.getProperty("line.separator");
-                    write(str, 0, str.length());
+                    this.write(str, 0, str.length());
                 }
             };
             bWriter.write(String.format("@Project Home Page: %s", AddrBookInfo.HOME_WEBSITE));
@@ -222,7 +220,7 @@ public class AddrBookProps extends LinkedHashMap<String, ContactProps> {
     }
 
     public static boolean save(AddrBookProps addrbook) {
-        return save(addrbook, ADDRBOOKER_FILE_PATH);
+        return save(addrbook, ADDRBOOK_FILE_PATH);
     }
 
     public static void main(String[] args) {
