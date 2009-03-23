@@ -32,7 +32,7 @@ public class AddrBookSettingDialog extends JDialog {
         JPanel aPanel = new JPanel(new GridLayout(1, 2, GAP_SIZE * 2, GAP_SIZE));
         aPanel.add(addPasswordButton);
         aPanel.add(changePasswordButton);
-        aPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder(Localization.getLocalString("Password Protection")), //
+        aPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder(" " + Localization.getLocalString("Password Protection") + " "), //
                 new EmptyBorder(new Insets(BLANK_SIZE, BLANK_SIZE, BLANK_SIZE, BLANK_SIZE))));
 
         JPanel bPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, GAP_SIZE * 2, GAP_SIZE));

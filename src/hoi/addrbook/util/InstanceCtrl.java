@@ -6,7 +6,7 @@ import java.net.Socket;
 
 import javax.swing.JFrame;
 
-public class InstanceControl extends Thread {
+public class InstanceCtrl extends Thread {
     private JFrame frame = null;
 
     public void run() {
@@ -16,7 +16,7 @@ public class InstanceControl extends Thread {
         try {
             for (int i = 0; i < ports.length; i++)
                 new Socket("127.0.0.1", ports[i]);
-            throw new RuntimeException("An instance already running!");
+            throw new RuntimeException("An instance already running!!!");
         } catch (RuntimeException re) {
             System.err.println(re.toString());
             System.exit(0);
@@ -32,11 +32,10 @@ public class InstanceControl extends Thread {
                         while (true) {
                             server.accept();
                             if (frame != null) {
-                                frame.setVisible(true);
-                                frame.requestFocus();
-                                frame.requestFocusInWindow();
-                                frame.toFront();
                                 frame.setState(JFrame.NORMAL);
+                                frame.setVisible(true);
+                                frame.toFront();
+                                frame.requestFocus();
                             }
                         }
                     } catch (IOException ioe) {
