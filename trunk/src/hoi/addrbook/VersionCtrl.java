@@ -30,7 +30,7 @@ public class VersionCtrl {
     /**
      * 第四位为编译版本号，属于内部的小版本号，只是简单的标志编译次数，对客户表现为无序增长。
      */
-    private static final int BUILD_NUMBER = 243; // SVN VERSION
+    private static final int BUILD_NUMBER = 244; // SVN VERSION
 
     //	private static final String SOFT_PHASE = new String[] {
     //			"Base", "Alpha", "Beta", "RC", "Release" }[2];

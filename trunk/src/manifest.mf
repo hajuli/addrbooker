@@ -1,0 +1,2 @@
+Main-Class: hoi.addrbook.ui.AddrBookFrame
+Project-Home-Page: http://code.google.com/p/addrbooker/

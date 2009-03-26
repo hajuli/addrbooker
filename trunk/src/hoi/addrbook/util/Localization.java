@@ -83,7 +83,7 @@ public class Localization {
             names.put("Birthday Reminder", "生日提醒");
 
             try {
-                names.storeToXML(new FileOutputStream(new File("localize.xml")), AddrBookInfo.HOME_WEBSITE);
+                //names.storeToXML(new FileOutputStream(new File("localize.xml")), AddrBookInfo.HOME_WEBSITE);
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
