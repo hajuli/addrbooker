@@ -1,9 +1,9 @@
 package hoi.addrbook.util;
 
-import hoi.addrbook.AddrBookInfo;
+//import hoi.addrbook.AddrBookInfo;
 
-import java.io.File;
-import java.io.FileOutputStream;
+//import java.io.File;
+//import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.InvalidPropertiesFormatException;
 import java.util.Properties;
