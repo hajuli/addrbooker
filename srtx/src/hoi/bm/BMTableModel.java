@@ -155,7 +155,6 @@ public class BMTableModel extends AbstractTableModel {
             System.out.println("invalid index");
         }
         fireTableCellUpdated(row, column);
-        save();
     }
 
     public int getRowCount() {
@@ -179,5 +178,14 @@ public class BMTableModel extends AbstractTableModel {
     public void addEmptyRow() {
         dataVector.add(new BMRecord());
         fireTableRowsInserted(dataVector.size() - 1, dataVector.size() - 1);
+    }
+
+    public void deleteRows(int[] rows) {
+        for (int row : rows)
+            if (row < dataVector.size())
+                dataVector.remove(row);
+        this.fireTableDataChanged();
+        if (dataVector.size() == 0)
+            addEmptyRow();
     }
 }
