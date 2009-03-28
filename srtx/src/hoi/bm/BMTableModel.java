@@ -13,16 +13,14 @@ public class BMTableModel extends AbstractTableModel {
 
     private static final long serialVersionUID = -5559688802287696318L;
     public static final int NAME_INDEX = 0;
-    public static final int TIMER_INDEX = 1;
+    public static final int TIME_INDEX = 1;
     public static final int NOTES_INDEX = 2;
     public static final int WEBSITE_INDEX = 3;
     public static final int BIRTHDAY_INDEX = 4;
-    public static final int AGE_INDEX = 5;
-    public static final int TIME_INDEX = 6;
-    public static final int HIDDEN_INDEX = 7;
+    public static final int HIDDEN_INDEX = 5;
 
     protected String[] columnNames = {
-            "姓名", "好久没联系了", "备注", "主页/博客", "[农/公]出生日期", "年龄", "最后修改时间", "" };
+            "姓名", "好久没联系了", "备注", "主页/博客", "[农/公]出生日期", "" };
     protected Vector<BMRecord> dataVector = new Vector<BMRecord>();
 
     public BMTableModel() {
@@ -83,7 +81,7 @@ public class BMTableModel extends AbstractTableModel {
     }
 
     public boolean isCellEditable(int row, int column) {
-        if (column == HIDDEN_INDEX || column == AGE_INDEX || column == TIMER_INDEX)
+        if (column == HIDDEN_INDEX)
             return false;
         else
             return true;
@@ -93,9 +91,7 @@ public class BMTableModel extends AbstractTableModel {
         switch (column) {
         case NAME_INDEX:
         case BIRTHDAY_INDEX:
-        case AGE_INDEX:
         case TIME_INDEX:
-        case TIMER_INDEX:
         case WEBSITE_INDEX:
         case NOTES_INDEX:
             return String.class;
@@ -111,12 +107,8 @@ public class BMTableModel extends AbstractTableModel {
             return record.getName();
         case BIRTHDAY_INDEX:
             return record.getBirthday();
-        case AGE_INDEX:
-            return record.getAge();
         case TIME_INDEX:
             return record.getTime();
-        case TIMER_INDEX:
-            return record.getTimer();
         case WEBSITE_INDEX:
             return record.getWebsite();
         case NOTES_INDEX:
@@ -135,14 +127,8 @@ public class BMTableModel extends AbstractTableModel {
         case BIRTHDAY_INDEX:
             record.setBirthday((String) value);
             break;
-        case AGE_INDEX:
-            record.setAge((String) value);
-            break;
         case TIME_INDEX:
             record.setTime((String) value);
-            break;
-        case TIMER_INDEX:
-            record.setTimer((String) value);
             break;
         case WEBSITE_INDEX:
             record.setWebsite((String) value);

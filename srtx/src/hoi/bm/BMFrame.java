@@ -63,16 +63,16 @@ public class BMFrame extends JPanel implements ActionListener {
         hidden.setPreferredWidth(2);
         hidden.setMaxWidth(2);
         hidden.setCellRenderer(new InteractiveRenderer(BMTableModel.HIDDEN_INDEX));
-        
+
         TableColumn time = table.getColumnModel().getColumn(BMTableModel.TIME_INDEX);
-        time.setCellRenderer(new DefaultTableCellRenderer(){
+        time.setCellRenderer(new DefaultTableCellRenderer() {
 
             private static final long serialVersionUID = 5154542079793970051L;
 
             public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-                JLabel c = (JLabel)super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+                JLabel c = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
                 String str = c.getText();
-                
+
                 Pattern pattern = Pattern.compile("^([0-9]+)-([0-9]+)-([0-9]+)$");
                 Matcher matcher = pattern.matcher(str);
                 if (matcher.find()) {
@@ -88,10 +88,39 @@ public class BMFrame extends JPanel implements ActionListener {
                     int kday = cyear * 365 + cmonth * 30 + cday - tyear * 365 - tmonth * 30 - tday; // 大概的算一下，不用那么精确
                     c.setText(String.format("%d个月%d天", kday / 30, kday % 30));
                 }
-                
+
                 return c;
             }
-            
+
+        });
+
+        TableColumn birthday = table.getColumnModel().getColumn(BMTableModel.BIRTHDAY_INDEX);
+        birthday.setCellRenderer(new DefaultTableCellRenderer() {
+
+            private static final long serialVersionUID = 5154542079793970051L;
+
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                JLabel c = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+                String str = c.getText();
+
+                Pattern pattern = Pattern.compile("^([0-9]+)-([0-9]+)-([0-9]+)$");
+                Matcher matcher = pattern.matcher(str);
+                if (matcher.find()) {
+                    int byear = Integer.parseInt(matcher.group(1));
+                    int bmonth = Integer.parseInt(matcher.group(2));
+                    int bday = Integer.parseInt(matcher.group(3));
+                    String current = new SimpleDateFormat("yyyy-M-d").format(new Date());
+                    matcher = pattern.matcher(current);
+                    matcher.find();
+                    int cyear = Integer.parseInt(matcher.group(1));
+                    int cmonth = Integer.parseInt(matcher.group(2));
+                    int kmonth = cyear * 12 + cmonth - byear * 12 - bmonth;
+                    c.setText(String.format("%s%d月%d %d.%d岁", "公历", bmonth, bday, kmonth / 12, kmonth % 12));
+                }
+
+                return c;
+            }
+
         });
 
         setLayout(new BorderLayout());
