@@ -1,6 +1,12 @@
 package hoi.bm;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class BMRecord {
+
     protected String name = "";
     protected String type = "";
     protected String birthday = "";
@@ -11,6 +17,27 @@ public class BMRecord {
     protected String notes = "";
 
     public BMRecord() {
+    }
+
+    public BMRecord(String line) {
+        String[] items = line.trim().split("\\|", 6);
+        setName(items[0]);
+        setType(items[1]);
+        setBirthday(items[2]);
+        setTime(items[3]);
+        setWebsite(items[4]);
+        setNotes(items[5]);
+    }
+
+    public String toString() {
+        StringBuffer buffer = new StringBuffer();
+        buffer.append(getName() + "|");
+        buffer.append(getType() + "|");
+        buffer.append(getBirthday() + "|");
+        buffer.append(getTime() + "|");
+        buffer.append(getWebsite() + "|");
+        buffer.append(getNotes());
+        return buffer.toString().trim();
     }
 
     public String getName() {
@@ -35,6 +62,7 @@ public class BMRecord {
 
     public void setBirthday(String birthday) {
         this.birthday = birthday;
+        setAge(getDeltaDate(birthday));
     }
 
     public String getAge() {
@@ -49,8 +77,32 @@ public class BMRecord {
         return time;
     }
 
+    private int getMonths(String str) {
+        Pattern pattern = Pattern.compile("([0-9]+)-([0-9]+)-([0-9]+)");
+        Matcher matcher = pattern.matcher(str);
+        if (matcher.find()) {
+            int year = Integer.parseInt(matcher.group(1));
+            int month = Integer.parseInt(matcher.group(2));
+            return year * 12 + month;
+        } else {
+            return 0;
+        }
+    }
+
+    private String getDeltaDate(String str) {
+        int a = getMonths(str);
+        int b = getMonths(new SimpleDateFormat("yyyy-M-d").format(new Date()));
+        if (a != 0 && b != 0) {
+            int c = b - a;
+            return String.format("%d个月%d天", c / 12, c % 12);
+        } else {
+            return "";
+        }
+    }
+
     public void setTime(String time) {
         this.time = time;
+        setTimer(getDeltaDate(time));
     }
 
     public String getTimer() {
