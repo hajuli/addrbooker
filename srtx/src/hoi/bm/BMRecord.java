@@ -5,6 +5,7 @@ public class BMRecord {
     protected String type = "";
     protected String birthday = "";
     protected String age = "";
+    protected String time = "";
     protected String timer = "";
     protected String website = "";
     protected String notes = "";
@@ -44,6 +45,14 @@ public class BMRecord {
         this.age = age;
     }
 
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
     public String getTimer() {
         return timer;
     }
@@ -73,6 +82,7 @@ public class BMRecord {
                 type.trim().equals("") && //
                 birthday.trim().equals("") && //
                 age.trim().equals("") && //
+                time.trim().equals("") && //
                 timer.trim().equals("") && //
                 website.trim().equals("") && //
                 notes.trim().equals("");
