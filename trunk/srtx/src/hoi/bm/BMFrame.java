@@ -1,8 +1,5 @@
 package hoi.bm;
 
-//import hoi.swing.DateComboBox;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Font;
@@ -23,23 +20,24 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.UIManager;
 
-public class BMForm extends JPanel {
+public class BMFrame extends JPanel {
 
     private static final long serialVersionUID = 5084217279659068855L;
+
     protected JTable table;
     protected JScrollPane scroller;
     protected BMTableModel tableModel;
 
-    public BMForm() {
+    public BMFrame() {
         initComponent();
     }
 
     public void initComponent() {
         tableModel = new BMTableModel();
-        tableModel.addTableModelListener(new BMForm.InteractiveTableModelListener());
+        tableModel.addTableModelListener(new BMFrame.InteractiveTableModelListener());
         table = new JTable();
         table.setModel(tableModel);
-        table.getTableHeader().setReorderingAllowed(false);
+        table.getTableHeader().setReorderingAllowed(false); // 表头的顺序不可改变
         table.setRowHeight(24);
         table.setSurrendersFocusOnKeystroke(true);
         if (!tableModel.hasEmptyRow()) {
@@ -88,8 +86,8 @@ public class BMForm extends JPanel {
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
             Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
             if (column == interactiveColumn && hasFocus) {
-                if ((BMForm.this.tableModel.getRowCount() - 1) == row && !BMForm.this.tableModel.hasEmptyRow()) {
-                    BMForm.this.tableModel.addEmptyRow();
+                if ((BMFrame.this.tableModel.getRowCount() - 1) == row && !BMFrame.this.tableModel.hasEmptyRow()) {
+                    BMFrame.this.tableModel.addEmptyRow();
                 }
 
                 highlightLastRow(row);
@@ -123,16 +121,10 @@ public class BMForm extends JPanel {
 
     public static void main(String[] args) {
         try {
-            initGlobalFontSetting(new Font("Dialog", Font.PLAIN, 16));
-
-            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-            JFrame frame = new JFrame("Birthday Manager");
-            frame.addWindowListener(new WindowAdapter() {
-                public void windowClosing(WindowEvent evt) {
-                    System.exit(0);
-                }
-            });
-            frame.getContentPane().add(new BMForm());
+            initGlobalFontSetting(new Font("Dialog", Font.BOLD, 15));
+            JFrame frame = new JFrame("草根生日提醒");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.getContentPane().add(new BMFrame());
             frame.pack();
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);

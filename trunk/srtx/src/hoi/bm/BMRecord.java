@@ -30,7 +30,7 @@ public class BMRecord {
     }
 
     public String toString() {
-        StringBuffer buffer = new StringBuffer();
+        StringBuffer buffer = new StringBuffer("");
         buffer.append(getName() + "|");
         buffer.append(getType() + "|");
         buffer.append(getBirthday() + "|");
@@ -62,7 +62,19 @@ public class BMRecord {
 
     public void setBirthday(String birthday) {
         this.birthday = birthday;
-        setAge(getDeltaDate(birthday));
+        Pattern pattern = Pattern.compile("^([0-9]+)-([0-9]+)-([0-9]+)$");
+        Matcher matcher = pattern.matcher(birthday);
+        if (matcher.find()) {
+            int byear = Integer.parseInt(matcher.group(1));
+            int bmonth = Integer.parseInt(matcher.group(2));
+            String current = new SimpleDateFormat("yyyy-M-d").format(new Date());
+            matcher = pattern.matcher(current);
+            matcher.find();
+            int cyear = Integer.parseInt(matcher.group(1));
+            int cmonth = Integer.parseInt(matcher.group(2));
+            int kmonth = cyear * 12 + cmonth - byear * 12 - bmonth;
+            setAge(String.format("%d年%d个月", kmonth / 12, kmonth % 12));
+        }
     }
 
     public String getAge() {
@@ -77,32 +89,23 @@ public class BMRecord {
         return time;
     }
 
-    private int getMonths(String str) {
-        Pattern pattern = Pattern.compile("([0-9]+)-([0-9]+)-([0-9]+)");
-        Matcher matcher = pattern.matcher(str);
-        if (matcher.find()) {
-            int year = Integer.parseInt(matcher.group(1));
-            int month = Integer.parseInt(matcher.group(2));
-            return year * 12 + month;
-        } else {
-            return 0;
-        }
-    }
-
-    private String getDeltaDate(String str) {
-        int a = getMonths(str);
-        int b = getMonths(new SimpleDateFormat("yyyy-M-d").format(new Date()));
-        if (a != 0 && b != 0) {
-            int c = b - a;
-            return String.format("%d个月%d天", c / 12, c % 12);
-        } else {
-            return "";
-        }
-    }
-
     public void setTime(String time) {
         this.time = time;
-        setTimer(getDeltaDate(time));
+        Pattern pattern = Pattern.compile("^([0-9]+)-([0-9]+)-([0-9]+)$");
+        Matcher matcher = pattern.matcher(time);
+        if (matcher.find()) {
+            int tyear = Integer.parseInt(matcher.group(1));
+            int tmonth = Integer.parseInt(matcher.group(2));
+            int tday = Integer.parseInt(matcher.group(3));
+            String current = new SimpleDateFormat("yyyy-M-d").format(new Date());
+            matcher = pattern.matcher(current);
+            matcher.find();
+            int cyear = Integer.parseInt(matcher.group(1));
+            int cmonth = Integer.parseInt(matcher.group(2));
+            int cday = Integer.parseInt(matcher.group(3));
+            int kday = cyear * 365 + cmonth * 30 + cday - tyear * 365 - tmonth * 30 - tday; // 大概的算一下，不用那么精确
+            setTimer(String.format("%d个月%d天", kday / 30, kday % 30));
+        }
     }
 
     public String getTimer() {

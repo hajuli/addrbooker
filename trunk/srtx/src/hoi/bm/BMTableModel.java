@@ -22,7 +22,7 @@ public class BMTableModel extends AbstractTableModel {
     public static final int HIDDEN_INDEX = 7;
 
     protected String[] columnNames = {
-            "姓名", "好久没联系了", "备忘录", "主页/博客", "[农/公]出生日期", "年龄", "最后修改时间", "" };
+            "姓名", "好久没联系了", "备注", "主页/博客", "[农/公]出生日期", "年龄", "最后修改时间", "" };
     protected Vector<BMRecord> dataVector = new Vector<BMRecord>();
 
     public BMTableModel() {
