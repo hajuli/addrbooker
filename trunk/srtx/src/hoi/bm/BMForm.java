@@ -4,24 +4,19 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.BorderLayout;
 import java.awt.Component;
-import java.awt.FlowLayout;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumn;
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.UIManager;
 
 public class BMForm extends JPanel {
-    public static final String[] columnNames = {
-            "Title", "Artist", "Album", "" };
 
+    private static final long serialVersionUID = 5084217279659068855L;
     protected JTable table;
     protected JScrollPane scroller;
     protected BMTableModel tableModel;
@@ -31,7 +26,7 @@ public class BMForm extends JPanel {
     }
 
     public void initComponent() {
-        tableModel = new BMTableModel(columnNames);
+        tableModel = new BMTableModel();
         tableModel.addTableModelListener(new BMForm.InteractiveTableModelListener());
         table = new JTable();
         table.setModel(tableModel);
@@ -41,7 +36,7 @@ public class BMForm extends JPanel {
         }
 
         scroller = new javax.swing.JScrollPane(table);
-        table.setPreferredScrollableViewportSize(new java.awt.Dimension(500, 300));
+        table.setPreferredScrollableViewportSize(new java.awt.Dimension(800, 600));
         TableColumn hidden = table.getColumnModel().getColumn(BMTableModel.HIDDEN_INDEX);
         hidden.setMinWidth(2);
         hidden.setPreferredWidth(2);
@@ -64,6 +59,7 @@ public class BMForm extends JPanel {
     }
 
     class InteractiveRenderer extends DefaultTableCellRenderer {
+        private static final long serialVersionUID = -985691893198596378L;
         protected int interactiveColumn;
 
         public InteractiveRenderer(int interactiveColumn) {
@@ -99,7 +95,7 @@ public class BMForm extends JPanel {
     public static void main(String[] args) {
         try {
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-            JFrame frame = new JFrame("Interactive Form");
+            JFrame frame = new JFrame("Birthday Manager");
             frame.addWindowListener(new WindowAdapter() {
                 public void windowClosing(WindowEvent evt) {
                     System.exit(0);
@@ -107,6 +103,7 @@ public class BMForm extends JPanel {
             });
             frame.getContentPane().add(new BMForm());
             frame.pack();
+            frame.setLocationRelativeTo(null);
             frame.setVisible(true);
         } catch (Exception e) {
             e.printStackTrace();
