@@ -5,9 +5,14 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.Font;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Enumeration;
 
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
+import javax.swing.plaf.FontUIResource;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.DefaultCellEditor;
@@ -34,6 +39,8 @@ public class BMForm extends JPanel {
         tableModel.addTableModelListener(new BMForm.InteractiveTableModelListener());
         table = new JTable();
         table.setModel(tableModel);
+        table.getTableHeader().setReorderingAllowed(false);
+        table.setRowHeight(24);
         table.setSurrendersFocusOnKeystroke(true);
         if (!tableModel.hasEmptyRow()) {
             tableModel.addEmptyRow();
@@ -54,9 +61,9 @@ public class BMForm extends JPanel {
 
     private void setCellEditor() {
         JComboBox comboBox = new JComboBox();
-        comboBox.addItem("公历"); // 默认为 公历
-        comboBox.addItem("农历");
-        table.getColumnModel().getColumn(BMTableModel.TYPE_INDEX).setCellEditor(new DefaultCellEditor(comboBox));
+        comboBox.addItem("");
+        comboBox.addItem(new SimpleDateFormat("yyyy-M-d").format(new Date()));
+        table.getColumnModel().getColumn(BMTableModel.TIME_INDEX).setCellEditor(new DefaultCellEditor(comboBox));
     }
 
     public void highlightLastRow(int row) {
@@ -104,8 +111,20 @@ public class BMForm extends JPanel {
         }
     }
 
+    public static void initGlobalFontSetting(Font fnt) {
+        FontUIResource fontRes = new FontUIResource(fnt);
+        for (Enumeration<?> keys = UIManager.getDefaults().keys(); keys.hasMoreElements();) {
+            Object key = keys.nextElement();
+            Object value = UIManager.get(key);
+            if (value instanceof FontUIResource)
+                UIManager.put(key, fontRes);
+        }
+    }
+
     public static void main(String[] args) {
         try {
+            initGlobalFontSetting(new Font("Dialog", Font.PLAIN, 16));
+
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
             JFrame frame = new JFrame("Birthday Manager");
             frame.addWindowListener(new WindowAdapter() {
