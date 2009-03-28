@@ -3,6 +3,8 @@ package hoi.bm;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Enumeration;
@@ -13,20 +15,27 @@ import javax.swing.plaf.FontUIResource;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.DefaultCellEditor;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JToolBar;
 import javax.swing.UIManager;
 
-public class BMFrame extends JPanel {
+public class BMFrame extends JPanel implements ActionListener {
 
     private static final long serialVersionUID = 5084217279659068855L;
 
     protected JTable table;
     protected JScrollPane scroller;
     protected BMTableModel tableModel;
+
+    protected JButton upButton, downButton;
+    protected JButton deleteButton;
+    protected JButton newButton;
+    protected JButton saveButton;
 
     public BMFrame() {
         initComponent();
@@ -45,7 +54,7 @@ public class BMFrame extends JPanel {
         }
 
         scroller = new javax.swing.JScrollPane(table);
-        table.setPreferredScrollableViewportSize(new java.awt.Dimension(800, 600));
+        table.setPreferredScrollableViewportSize(new java.awt.Dimension(800, 500));
         TableColumn hidden = table.getColumnModel().getColumn(BMTableModel.HIDDEN_INDEX);
         hidden.setMinWidth(2);
         hidden.setPreferredWidth(2);
@@ -55,6 +64,31 @@ public class BMFrame extends JPanel {
         setLayout(new BorderLayout());
         add(scroller, BorderLayout.CENTER);
         setCellEditor();
+
+        deleteButton = new JButton("删除选中行");
+        deleteButton.addActionListener(this);
+        newButton = new JButton("新增空行");
+        newButton.addActionListener(this);
+        saveButton = new JButton("保存数据");
+        saveButton.addActionListener(this);
+        JToolBar toolbar = new JToolBar();
+        toolbar.setFloatable(false);
+        toolbar.add(newButton);
+        toolbar.add(saveButton);
+        toolbar.add(deleteButton);
+        add(toolbar, BorderLayout.NORTH);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        Object obj = e.getSource();
+        if (obj == deleteButton) {
+            int[] rows = table.getSelectedRows();
+            tableModel.deleteRows(rows);
+        } else if (obj == newButton) {
+            tableModel.addEmptyRow();
+        } else if (obj == saveButton) {
+            tableModel.save();
+        }
     }
 
     private void setCellEditor() {
@@ -103,8 +137,10 @@ public class BMFrame extends JPanel {
                 int column = evt.getColumn();
                 int row = evt.getFirstRow();
                 System.out.println("row: " + row + " column: " + column);
-                table.setColumnSelectionInterval(column + 1, column + 1);
-                table.setRowSelectionInterval(row, row);
+                if (column != -1) {
+                    table.setColumnSelectionInterval(column + 1, column + 1);
+                    table.setRowSelectionInterval(row, row);
+                }
             }
         }
     }
