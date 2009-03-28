@@ -8,6 +8,8 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumn;
+import javax.swing.DefaultCellEditor;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -45,6 +47,14 @@ public class BMForm extends JPanel {
 
         setLayout(new BorderLayout());
         add(scroller, BorderLayout.CENTER);
+        setCellEditor();
+    }
+
+    private void setCellEditor() {
+        JComboBox comboBox = new JComboBox();
+        comboBox.addItem("农历");
+        comboBox.addItem("公历");
+        table.getColumnModel().getColumn(BMTableModel.TYPE_INDEX).setCellEditor(new DefaultCellEditor(comboBox));
     }
 
     public void highlightLastRow(int row) {
