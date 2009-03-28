@@ -27,7 +27,7 @@ public class BMTableModel extends AbstractTableModel {
     }
 
     public boolean isCellEditable(int row, int column) {
-        if (column == HIDDEN_INDEX)
+        if (column == HIDDEN_INDEX || column == AGE_INDEX)
             return false;
         else
             return true;
