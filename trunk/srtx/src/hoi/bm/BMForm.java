@@ -52,8 +52,8 @@ public class BMForm extends JPanel {
 
     private void setCellEditor() {
         JComboBox comboBox = new JComboBox();
+        comboBox.addItem("公历"); // 默认为 公历
         comboBox.addItem("农历");
-        comboBox.addItem("公历");
         table.getColumnModel().getColumn(BMTableModel.TYPE_INDEX).setCellEditor(new DefaultCellEditor(comboBox));
     }
 
