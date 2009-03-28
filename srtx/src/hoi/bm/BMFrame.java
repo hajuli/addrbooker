@@ -8,6 +8,8 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Enumeration;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
@@ -18,6 +20,7 @@ import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -60,6 +63,36 @@ public class BMFrame extends JPanel implements ActionListener {
         hidden.setPreferredWidth(2);
         hidden.setMaxWidth(2);
         hidden.setCellRenderer(new InteractiveRenderer(BMTableModel.HIDDEN_INDEX));
+        
+        TableColumn time = table.getColumnModel().getColumn(BMTableModel.TIME_INDEX);
+        time.setCellRenderer(new DefaultTableCellRenderer(){
+
+            private static final long serialVersionUID = 5154542079793970051L;
+
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                JLabel c = (JLabel)super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+                String str = c.getText();
+                
+                Pattern pattern = Pattern.compile("^([0-9]+)-([0-9]+)-([0-9]+)$");
+                Matcher matcher = pattern.matcher(str);
+                if (matcher.find()) {
+                    int tyear = Integer.parseInt(matcher.group(1));
+                    int tmonth = Integer.parseInt(matcher.group(2));
+                    int tday = Integer.parseInt(matcher.group(3));
+                    String current = new SimpleDateFormat("yyyy-M-d").format(new Date());
+                    matcher = pattern.matcher(current);
+                    matcher.find();
+                    int cyear = Integer.parseInt(matcher.group(1));
+                    int cmonth = Integer.parseInt(matcher.group(2));
+                    int cday = Integer.parseInt(matcher.group(3));
+                    int kday = cyear * 365 + cmonth * 30 + cday - tyear * 365 - tmonth * 30 - tday; // 大概的算一下，不用那么精确
+                    c.setText(String.format("%d个月%d天", kday / 30, kday % 30));
+                }
+                
+                return c;
+            }
+            
+        });
 
         setLayout(new BorderLayout());
         add(scroller, BorderLayout.CENTER);
