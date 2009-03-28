@@ -1,21 +1,25 @@
 package hoi.bm;
 
-import java.util.Collection;
 import java.util.Vector;
 import javax.swing.table.AbstractTableModel;
 
 public class BMTableModel extends AbstractTableModel {
-    public static final int TITLE_INDEX = 0;
-    public static final int ARTIST_INDEX = 1;
-    public static final int ALBUM_INDEX = 2;
-    public static final int HIDDEN_INDEX = 3;
 
-    protected String[] columnNames;
-    protected Vector dataVector;
+    private static final long serialVersionUID = -5559688802287696318L;
+    public static final int NAME_INDEX = 0;
+    public static final int TYPE_INDEX = 1;
+    public static final int BIRTHDAY_INDEX = 2;
+    public static final int AGE_INDEX = 3;
+    public static final int TIMER_INDEX = 4;
+    public static final int WEBSITE_INDEX = 5;
+    public static final int NOTES_INDEX = 6;
+    public static final int HIDDEN_INDEX = 7;
 
-    public BMTableModel(String[] columnNames) {
-        this.columnNames = columnNames;
-        dataVector = new Vector();
+    protected String[] columnNames = {
+            "姓名", "类型", "生日", "年龄", "时间", "博客", "备注", "" };
+    protected Vector<BMRecord> dataVector = new Vector<BMRecord>();
+
+    public BMTableModel() {
     }
 
     public String getColumnName(int column) {
@@ -29,11 +33,15 @@ public class BMTableModel extends AbstractTableModel {
             return true;
     }
 
-    public Class getColumnClass(int column) {
+    public Class<?> getColumnClass(int column) {
         switch (column) {
-        case TITLE_INDEX:
-        case ARTIST_INDEX:
-        case ALBUM_INDEX:
+        case NAME_INDEX:
+        case TYPE_INDEX:
+        case BIRTHDAY_INDEX:
+        case AGE_INDEX:
+        case TIMER_INDEX:
+        case WEBSITE_INDEX:
+        case NOTES_INDEX:
             return String.class;
         default:
             return Object.class;
@@ -41,31 +49,52 @@ public class BMTableModel extends AbstractTableModel {
     }
 
     public Object getValueAt(int row, int column) {
-        BMRecord record = (BMRecord) dataVector.get(row);
+        BMRecord record = dataVector.get(row);
         switch (column) {
-        case TITLE_INDEX:
-            return record.getTitle();
-        case ARTIST_INDEX:
-            return record.getArtist();
-        case ALBUM_INDEX:
-            return record.getAlbum();
+        case NAME_INDEX:
+            return record.getName();
+        case TYPE_INDEX:
+            return record.getType();
+        case BIRTHDAY_INDEX:
+            return record.getBirthday();
+        case AGE_INDEX:
+            return record.getAge();
+        case TIMER_INDEX:
+            return record.getTimer();
+        case WEBSITE_INDEX:
+            return record.getWebsite();
+        case NOTES_INDEX:
+            return record.getNotes();
         default:
             return new Object();
         }
     }
 
     public void setValueAt(Object value, int row, int column) {
-        BMRecord record = (BMRecord) dataVector.get(row);
+        BMRecord record = dataVector.get(row);
         switch (column) {
-        case TITLE_INDEX:
-            record.setTitle((String) value);
+        case NAME_INDEX:
+            record.setName((String) value);
             break;
-        case ARTIST_INDEX:
-            record.setArtist((String) value);
+        case TYPE_INDEX:
+            record.setType((String) value);
             break;
-        case ALBUM_INDEX:
-            record.setAlbum((String) value);
+        case BIRTHDAY_INDEX:
+            record.setBirthday((String) value);
             break;
+        case AGE_INDEX:
+            record.setAge((String) value);
+            break;
+        case TIMER_INDEX:
+            record.setTimer((String) value);
+            break;
+        case WEBSITE_INDEX:
+            record.setWebsite((String) value);
+            break;
+        case NOTES_INDEX:
+            record.setNotes((String) value);
+            break;
+
         default:
             System.out.println("invalid index");
         }
@@ -83,8 +112,8 @@ public class BMTableModel extends AbstractTableModel {
     public boolean hasEmptyRow() {
         if (dataVector.size() == 0)
             return false;
-        BMRecord audioRecord = (BMRecord) dataVector.get(dataVector.size() - 1);
-        if (audioRecord.getTitle().trim().equals("") && audioRecord.getArtist().trim().equals("") && audioRecord.getAlbum().trim().equals("")) {
+        BMRecord record = dataVector.get(dataVector.size() - 1);
+        if (record.isEmptyRow()) {
             return true;
         } else
             return false;
