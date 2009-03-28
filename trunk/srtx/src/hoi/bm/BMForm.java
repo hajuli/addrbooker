@@ -1,11 +1,11 @@
 package hoi.bm;
 
-import hoi.swing.DateComboBox;
-
+//import hoi.swing.DateComboBox;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.BorderLayout;
 import java.awt.Component;
+
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -57,9 +57,6 @@ public class BMForm extends JPanel {
         comboBox.addItem("公历"); // 默认为 公历
         comboBox.addItem("农历");
         table.getColumnModel().getColumn(BMTableModel.TYPE_INDEX).setCellEditor(new DefaultCellEditor(comboBox));
-
-        DateComboBox dateComboBox = new DateComboBox();
-        table.getColumnModel().getColumn(BMTableModel.BIRTHDAY_INDEX).setCellEditor(new DefaultCellEditor(dateComboBox));
     }
 
     public void highlightLastRow(int row) {

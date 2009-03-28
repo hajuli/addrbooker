@@ -10,13 +10,14 @@ public class BMTableModel extends AbstractTableModel {
     public static final int TYPE_INDEX = 1;
     public static final int BIRTHDAY_INDEX = 2;
     public static final int AGE_INDEX = 3;
-    public static final int TIMER_INDEX = 4;
-    public static final int WEBSITE_INDEX = 5;
-    public static final int NOTES_INDEX = 6;
-    public static final int HIDDEN_INDEX = 7;
+    public static final int TIME_INDEX = 4;
+    public static final int TIMER_INDEX = 5;
+    public static final int WEBSITE_INDEX = 6;
+    public static final int NOTES_INDEX = 7;
+    public static final int HIDDEN_INDEX = 8;
 
     protected String[] columnNames = {
-            "姓名", "类型", "生日", "年龄", "时间", "博客", "备注", "" };
+            "姓名", "类型", "生日", "年龄", "时间", "联系", "博客", "备注", "" };
     protected Vector<BMRecord> dataVector = new Vector<BMRecord>();
 
     public BMTableModel() {
@@ -27,7 +28,7 @@ public class BMTableModel extends AbstractTableModel {
     }
 
     public boolean isCellEditable(int row, int column) {
-        if (column == HIDDEN_INDEX || column == AGE_INDEX)
+        if (column == HIDDEN_INDEX || column == AGE_INDEX || column == TIMER_INDEX)
             return false;
         else
             return true;
@@ -39,6 +40,7 @@ public class BMTableModel extends AbstractTableModel {
         case TYPE_INDEX:
         case BIRTHDAY_INDEX:
         case AGE_INDEX:
+        case TIME_INDEX:
         case TIMER_INDEX:
         case WEBSITE_INDEX:
         case NOTES_INDEX:
@@ -59,6 +61,8 @@ public class BMTableModel extends AbstractTableModel {
             return record.getBirthday();
         case AGE_INDEX:
             return record.getAge();
+        case TIME_INDEX:
+            return record.getTime();
         case TIMER_INDEX:
             return record.getTimer();
         case WEBSITE_INDEX:
@@ -84,6 +88,9 @@ public class BMTableModel extends AbstractTableModel {
             break;
         case AGE_INDEX:
             record.setAge((String) value);
+            break;
+        case TIME_INDEX:
+            record.setTime((String) value);
             break;
         case TIMER_INDEX:
             record.setTimer((String) value);
