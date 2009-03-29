@@ -61,7 +61,7 @@ public class BMTableModel extends AbstractTableModel {
     public void save() {
         BufferedWriter bWriter = null;
         try {
-            bWriter = new BufferedWriter(new FileWriter("bm.data")) {
+            bWriter = new BufferedWriter(new FileWriter("data.bm")) {
                 public void write(String str) throws IOException {
                     str += System.getProperty("line.separator");
                     this.write(str, 0, str.length());
