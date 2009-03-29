@@ -37,7 +37,7 @@ public class BMTableModel extends AbstractTableModel {
     private void load() {
         BufferedReader bReader = null;
         try {
-            bReader = new BufferedReader(new FileReader("bm.data"));
+            bReader = new BufferedReader(new FileReader("data.bm"));
             for (String line = bReader.readLine(); line != null; line = bReader.readLine()) {
                 if (line != null && !line.trim().equals("")) {
                     dataVector.add(new BMRecord(line.trim()));
