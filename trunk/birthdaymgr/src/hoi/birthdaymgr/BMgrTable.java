@@ -1,17 +1,30 @@
 package hoi.birthdaymgr;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Vector;
 
 import javax.swing.DefaultCellEditor;
 import javax.swing.JComboBox;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
 import javax.swing.JTable;
+import javax.swing.SwingUtilities;
 import javax.swing.table.TableCellEditor;
 
-public class BMgrTable extends JTable {
+public class BMgrTable extends JTable implements MouseMotionListener, MouseListener {
 
     private static final long serialVersionUID = -1083220712281080152L;
+
+    public BMgrTable() {
+        addMouseMotionListener(this);
+        addMouseListener(this);
+    }
 
     public TableCellEditor getCellEditor(int row, int column) {
         if (convertColumnIndexToModel(column) == BMgrTableModel.TIME_INDEX) {
@@ -46,5 +59,94 @@ public class BMgrTable extends JTable {
         if (tip == null || tip.trim().equals(""))
             tip = null;
         return tip;
+    }
+
+    public void mouseDragged(MouseEvent e) {
+    }
+
+    public void mouseMoved(MouseEvent e) {
+        int row = rowAtPoint(e.getPoint());
+        int column = columnAtPoint(e.getPoint());
+
+        changeSelection(row, column, false, false);
+        requestFocus();
+
+        TableCellEditor editor = getCellEditor();
+        if (editor != null)
+            editor.stopCellEditing();
+    }
+
+    public void mouseClicked(MouseEvent evt) {
+        if (evt.getClickCount() == 1) {
+            int row = rowAtPoint(evt.getPoint());
+            int column = columnAtPoint(evt.getPoint());
+            editCellAt(row, column);
+        }
+    }
+
+    public void mouseEntered(MouseEvent e) {
+    }
+
+    public void mouseExited(MouseEvent e) {
+    }
+
+    public void mousePressed(MouseEvent evt) {
+        if (SwingUtilities.isRightMouseButton(evt)) {
+            int row = rowAtPoint(evt.getPoint());
+            int column = columnAtPoint(evt.getPoint());
+            int realColumnIndex = convertColumnIndexToModel(column);
+
+            if (realColumnIndex == BMgrTableModel.WEBSITE_INDEX) {
+                String str = getValueAt(row, column).toString().trim().toLowerCase();
+                final Vector<String> urls = new Vector<String>();
+                for (String item : str.split("[;；]")) {
+                    item = item.trim();
+                    if (!item.equals("")) {
+                        if (!item.matches("^[a-z]:/.*$"))
+                            item = "http://" + item;
+                        urls.addElement(item.trim());
+                    }
+                }
+
+                if (urls.size() > 0) {
+                    JPopupMenu popupMenu = new JPopupMenu();
+                    JMenuItem visitMenuItem = new JMenuItem("访问 全部");
+                    popupMenu.add(visitMenuItem);
+                    visitMenuItem.addActionListener(new ActionListener() {
+                        @SuppressWarnings("deprecation")
+                        public void actionPerformed(ActionEvent e) {
+                            for (String url : urls)
+                                try {
+                                    Browser.openURL(url);
+                                } catch (Exception ex) {
+                                    ex.printStackTrace();
+                                }
+                        }
+                    });
+                    popupMenu.add(new javax.swing.JSeparator());
+                    for (String _url : urls) {
+                        final String url = _url;
+                        JMenuItem menuItem = new JMenuItem("访问 " + url);
+                        popupMenu.add(menuItem);
+                        menuItem.addActionListener(new ActionListener() {
+                            @SuppressWarnings("deprecation")
+                            public void actionPerformed(ActionEvent e) {
+                                try {
+                                    Browser.openURL(url);
+                                } catch (Exception ex) {
+                                    ex.printStackTrace();
+                                }
+                            }
+                        });
+                    }
+                    popupMenu.show(evt.getComponent(), evt.getX(), evt.getY());
+                }
+            }
+            changeSelection(row, column, false, false);
+            requestFocus();
+        }
+    }
+
+    public void mouseReleased(MouseEvent e) {
     }
 }
