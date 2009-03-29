@@ -2,6 +2,7 @@ package hoi.bm;
 
 public class BMRecord {
 
+    protected Boolean selected = false;
     protected String name = "";
     protected String type = "";
     protected String birthday = "";
@@ -88,5 +89,13 @@ public class BMRecord {
                 time.trim().equals("") && //
                 website.trim().equals("") && //
                 notes.trim().equals("");
+    }
+
+    public Boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(Boolean selected) {
+        this.selected = selected;
     }
 }
