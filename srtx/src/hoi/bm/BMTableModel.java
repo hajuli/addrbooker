@@ -15,14 +15,14 @@ public class BMTableModel extends AbstractTableModel {
     private static final long serialVersionUID = -5559688802287696318L;
     public static final int SELECTED_INDEX = 0;
     public static final int NAME_INDEX = 1;
-    public static final int TIME_INDEX = 2;
-    public static final int NOTES_INDEX = 3;
-    public static final int WEBSITE_INDEX = 4;
-    public static final int BIRTHDAY_INDEX = 5;
+    public static final int BIRTHDAY_INDEX = 2;
+    public static final int WEBSITE_INDEX = 3;
+    public static final int NOTES_INDEX = 4;
+    public static final int TIME_INDEX = 5;
     public static final int HIDDEN_INDEX = 6;
 
     protected String[] columnNames = {
-            "", "姓名", "好久没联系了", "备注", "主页/博客", "[农/公]出生日期", "" };
+            "", "姓名", "[农/公]出生日期", "主页/博客", "备注", "好久没联系了", "" };
     protected Vector<BMRecord> dataVector = new Vector<BMRecord>();
 
     public BMTableModel() {
