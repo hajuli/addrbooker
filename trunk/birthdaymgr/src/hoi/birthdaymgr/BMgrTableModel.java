@@ -16,7 +16,7 @@ public class BMgrTableModel extends AbstractTableModel {
     public static final int HIDDEN_INDEX = 6;
 
     protected String[] columnNames = {
-            "", "姓名", "[农/公]出生日期", "主页/博客", "备注", "岁月痕迹", "" };
+            "", "姓名", "[农/公]出生日期", "主页/博客", "备注", "岁月的痕迹", "" };
     protected Vector<BMgrRecord> dataVector = new Vector<BMgrRecord>();
 
     public BMgrTableModel() {

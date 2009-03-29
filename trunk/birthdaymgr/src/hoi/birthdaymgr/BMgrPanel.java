@@ -105,7 +105,7 @@ public class BMgrPanel extends JPanel implements ActionListener {
         newRowButton.addActionListener(this);
         saveButton = new JButton("保存数据");
         saveButton.addActionListener(this);
-        reloadButton = new JButton("放弃编辑");
+        reloadButton = new JButton("重新读取");
         reloadButton.addActionListener(this);
         exitButton = new JButton("退出");
         exitButton.addActionListener(this);
