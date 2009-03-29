@@ -17,6 +17,7 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableColumn;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
@@ -51,7 +52,27 @@ public class BMFrame extends JPanel implements ActionListener {
     public void initComponent() {
         tableModel = new BMTableModel();
         tableModel.addTableModelListener(new BMFrame.InteractiveTableModelListener());
-        table = new JTable();
+        table = new JTable() {
+            private static final long serialVersionUID = -4971187277500151465L;
+
+            public TableCellEditor getCellEditor(int row, int column) {
+                // Set custom cell editor only for first column.
+                if (convertColumnIndexToModel(column) == BMTableModel.TIME_INDEX) {
+                    // Based on row number passed decide which model to be used in drop-down.
+
+                    String sValue = (String) tableModel.getValueAt(row, column);
+
+                    JComboBox comboBox = new JComboBox();
+                    comboBox.addItem(sValue.toString());
+                    String sValue2 = new SimpleDateFormat("yyyy-M-d").format(new Date());
+                    if (!sValue2.equals(sValue))
+                        comboBox.addItem(sValue2);
+                    return new DefaultCellEditor(comboBox);
+                } else {
+                    return super.getCellEditor(row, column);
+                }
+            }
+        };
         table.setModel(tableModel);
         //  table.getTableHeader().setReorderingAllowed(false); // 表头的顺序不可改变
         table.setRowHeight(24);
@@ -160,7 +181,6 @@ public class BMFrame extends JPanel implements ActionListener {
 
         setLayout(new BorderLayout());
         add(scroller, BorderLayout.CENTER);
-        setCellEditor();
 
         deleteButton = new JButton("删除选中行");
         deleteButton.addActionListener(this);
@@ -186,13 +206,6 @@ public class BMFrame extends JPanel implements ActionListener {
         } else if (obj == saveButton) {
             tableModel.save();
         }
-    }
-
-    private void setCellEditor() {
-        JComboBox comboBox = new JComboBox();
-        comboBox.addItem("");
-        comboBox.addItem(new SimpleDateFormat("yyyy-M-d").format(new Date()));
-        table.getColumnModel().getColumn(BMTableModel.TIME_INDEX).setCellEditor(new DefaultCellEditor(comboBox));
     }
 
     public void highlightLastRow(int row) {
