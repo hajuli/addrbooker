@@ -1,5 +1,5 @@
 //http://www.javapractices.com/topic/TopicAction.do?Id=96
-package hoi.birthdaymgr;
+package hoi.birthdaymgr.utility;
 
 import java.net.URLEncoder;
 import java.io.UnsupportedEncodingException;
