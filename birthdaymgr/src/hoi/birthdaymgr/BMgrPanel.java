@@ -80,7 +80,7 @@ public class BMgrPanel extends JPanel implements ActionListener {
         int[][] k = new int[][] {
                 {
                         BMgrTableModel.SELECTED_INDEX, 40, 45, 45 }, {
-                        BMgrTableModel.NAME_INDEX, 90, 90, 90 }, {
+                        BMgrTableModel.NAME_INDEX, 100, 90, 90 }, {
                         BMgrTableModel.BIRTHDAY_INDEX, 200, 200, 200 }, {
                         BMgrTableModel.TIME_INDEX, 125, 125, 100 }, };
         for (int i = 0; i < k.length; i++) {
