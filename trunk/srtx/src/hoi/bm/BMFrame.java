@@ -162,6 +162,11 @@ public class BMFrame extends JPanel implements ActionListener {
         hidden.setMaxWidth(2);
         hidden.setCellRenderer(new InteractiveRenderer(BMTableModel.HIDDEN_INDEX));
 
+        TableColumn selected = table.getColumnModel().getColumn(BMTableModel.SELECTED_INDEX);
+        selected.setMinWidth(45);
+        selected.setPreferredWidth(45);
+        selected.setMaxWidth(45);
+
         TableColumn time = table.getColumnModel().getColumn(BMTableModel.TIME_INDEX);
         time.setCellRenderer(new DefaultTableCellRenderer() {
 
@@ -241,8 +246,7 @@ public class BMFrame extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
         if (obj == deleteButton) {
-            int[] rows = table.getSelectedRows();
-            tableModel.deleteRows(rows);
+            tableModel.deleteSelectedRows();
         } else if (obj == newButton) {
             tableModel.addEmptyRow();
         } else if (obj == saveButton) {

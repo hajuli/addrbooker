@@ -6,21 +6,23 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Vector;
 import javax.swing.table.AbstractTableModel;
 
 public class BMTableModel extends AbstractTableModel {
 
     private static final long serialVersionUID = -5559688802287696318L;
-    public static final int NAME_INDEX = 0;
-    public static final int TIME_INDEX = 1;
-    public static final int NOTES_INDEX = 2;
-    public static final int WEBSITE_INDEX = 3;
-    public static final int BIRTHDAY_INDEX = 4;
-    public static final int HIDDEN_INDEX = 5;
+    public static final int SELECTED_INDEX = 0;
+    public static final int NAME_INDEX = 1;
+    public static final int TIME_INDEX = 2;
+    public static final int NOTES_INDEX = 3;
+    public static final int WEBSITE_INDEX = 4;
+    public static final int BIRTHDAY_INDEX = 5;
+    public static final int HIDDEN_INDEX = 6;
 
     protected String[] columnNames = {
-            "姓名", "好久没联系了", "备注", "主页/博客", "[农/公]出生日期", "" };
+            "", "姓名", "好久没联系了", "备注", "主页/博客", "[农/公]出生日期", "" };
     protected Vector<BMRecord> dataVector = new Vector<BMRecord>();
 
     public BMTableModel() {
@@ -89,6 +91,8 @@ public class BMTableModel extends AbstractTableModel {
 
     public Class<?> getColumnClass(int column) {
         switch (column) {
+        case SELECTED_INDEX:
+            return Boolean.class;
         case NAME_INDEX:
         case BIRTHDAY_INDEX:
         case TIME_INDEX:
@@ -103,6 +107,8 @@ public class BMTableModel extends AbstractTableModel {
     public Object getValueAt(int row, int column) {
         BMRecord record = dataVector.get(row);
         switch (column) {
+        case SELECTED_INDEX:
+            return record.isSelected();
         case NAME_INDEX:
             return record.getName();
         case BIRTHDAY_INDEX:
@@ -121,6 +127,9 @@ public class BMTableModel extends AbstractTableModel {
     public void setValueAt(Object value, int row, int column) {
         BMRecord record = dataVector.get(row);
         switch (column) {
+        case SELECTED_INDEX:
+            record.setSelected((Boolean) value);
+            break;
         case NAME_INDEX:
             record.setName((String) value);
             break;
@@ -167,11 +176,29 @@ public class BMTableModel extends AbstractTableModel {
     }
 
     public void deleteRows(int[] rows) {
-        for (int row : rows)
-            if (row < dataVector.size())
-                dataVector.remove(row);
+        Arrays.sort(rows);
+        for (int i = rows.length - 1; i >= 0; i--)
+            dataVector.remove(rows[i]);
         this.fireTableDataChanged();
         if (dataVector.size() == 0)
             addEmptyRow();
+    }
+
+    public void deleteSelectedRows() {
+        Vector<Integer> v = new Vector<Integer>();
+        int cnt = 0;
+        for (BMRecord row : dataVector) {
+            if (row.isSelected())
+                v.add(cnt);
+            cnt++;
+        }
+        
+        int[] vv = new int[v.size()];
+        cnt = 0;
+        for (Integer k: v) {
+            vv[cnt] = k;
+            cnt++;
+        }
+        deleteRows(vv);
     }
 }
