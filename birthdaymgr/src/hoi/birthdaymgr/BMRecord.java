@@ -1,4 +1,4 @@
-package hoi.bm;
+package hoi.birthdaymgr;
 
 public class BMRecord {
 

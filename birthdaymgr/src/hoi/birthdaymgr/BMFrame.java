@@ -1,4 +1,4 @@
-package hoi.bm;
+package hoi.birthdaymgr;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
