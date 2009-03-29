@@ -50,7 +50,26 @@ public class BMgrTable extends JTable implements MouseMotionListener, MouseListe
         if (realColumnIndex == BMgrTableModel.NOTES_INDEX) {
             tip = getValueAt(rowIndex, colIndex).toString();
         } else if (realColumnIndex == BMgrTableModel.WEBSITE_INDEX) {
-            tip = getValueAt(rowIndex, colIndex).toString();
+            String str = getValueAt(rowIndex, colIndex).toString().trim().toLowerCase();
+            final Vector<String> urls = new Vector<String>();
+            for (String item : str.split("[;；]")) {
+                item = item.trim();
+                if (!item.equals("")) {
+                    if (!item.matches("^[a-z]:/.*$"))
+                        item = "http://" + item;
+                    urls.addElement(item.trim());
+                }
+            }
+            if (urls.size() > 0) {
+                tip = "";
+                for (String url : urls)
+                    if (tip.equals(""))
+                        tip = "<html>" + EscapeChars.forHTML(url);
+                    else
+                        tip += "<br>" + EscapeChars.forHTML(url);
+            } else {
+                tip = getValueAt(rowIndex, colIndex).toString();
+            }
         } else if (realColumnIndex == BMgrTableModel.BIRTHDAY_INDEX || realColumnIndex == BMgrTableModel.TIME_INDEX) {
             tip = getValueAt(rowIndex, colIndex).toString();
         } else {
