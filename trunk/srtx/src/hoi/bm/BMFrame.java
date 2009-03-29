@@ -2,6 +2,7 @@ package hoi.bm;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,18 +12,22 @@ import java.awt.event.MouseMotionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Enumeration;
+import java.util.EventObject;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.swing.event.CellEditorListener;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableColumn;
+import javax.swing.AbstractCellEditor;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuItem;
@@ -30,7 +35,9 @@ import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JToolBar;
+import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 public class BMFrame extends JPanel implements ActionListener {
@@ -45,7 +52,7 @@ public class BMFrame extends JPanel implements ActionListener {
     protected JButton deleteButton;
     protected JButton newButton;
     protected JButton saveButton;
-    protected JButton reloadButton;
+    protected JButton reloadButton, exitButton;
 
     public BMFrame() {
         initComponent();
@@ -107,6 +114,61 @@ public class BMFrame extends JPanel implements ActionListener {
             tableModel.addEmptyRow();
         }
 
+        class MyTableCellEditor extends AbstractCellEditor implements TableCellEditor {
+            private static final long serialVersionUID = 3035808367556280155L;
+            // This is the component that will handle the editing of the cell value
+            JComponent component = new JTextArea();
+
+            // This method is called when a cell value is edited by the user.
+            public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int rowIndex, int vColIndex) {
+                // 'value' is value contained in the cell located at (rowIndex, vColIndex)
+
+                if (isSelected) {
+                    // cell (and perhaps other cells) are selected
+                }
+
+                // Configure the component with the specified value
+                value = value.toString().replace("<br>", "\n").replace("<html>", "");
+                ((JTextArea) component).setText((String) value);
+
+                // Return the configured component
+                return component;
+            }
+
+            // This method is called when editing is completed.
+            // It must return the new value to be stored in the cell.
+            public Object getCellEditorValue() {
+                String text = ((JTextArea) component).getText();
+                text = "<html>" + text.replace("\n", "<br>").replace("\r", "");
+                return text;
+            }
+
+            public void addCellEditorListener(CellEditorListener l) {
+                super.addCellEditorListener(l);
+            }
+
+            public void cancelCellEditing() {
+                super.cancelCellEditing();
+            }
+
+            public boolean isCellEditable(EventObject anEvent) {
+                return super.isCellEditable(anEvent);
+            }
+
+            public void removeCellEditorListener(CellEditorListener l) {
+                super.removeCellEditorListener(l);
+            }
+
+            public boolean shouldSelectCell(EventObject anEvent) {
+                return super.shouldSelectCell(anEvent);
+            }
+
+            public boolean stopCellEditing() {
+                return super.stopCellEditing();
+            }
+        }
+        table.getColumnModel().getColumn(BMTableModel.NOTES_INDEX).setCellEditor(new MyTableCellEditor());
+
         table.addMouseMotionListener(new MouseMotionListener() {
 
             public void mouseDragged(MouseEvent e) {
@@ -141,7 +203,7 @@ public class BMFrame extends JPanel implements ActionListener {
             }
 
             public void mousePressed(MouseEvent evt) {
-                if (evt.getButton() == MouseEvent.BUTTON3) {
+                if (SwingUtilities.isRightMouseButton(evt)) {
                     int row = table.rowAtPoint(evt.getPoint());
                     int column = table.columnAtPoint(evt.getPoint());
 
@@ -159,15 +221,6 @@ public class BMFrame extends JPanel implements ActionListener {
                         popupMenu.show(evt.getComponent(), evt.getX(), evt.getY());
                         //                        table.editCellAt(row, column);
 
-                    } else if (table.getColumnName(column) == "姓名") {
-
-                        JPopupMenu popupMenu = new JPopupMenu();
-                        JMenuItem visitMenuItem = new JMenuItem("删除此行");
-                        popupMenu.add(visitMenuItem);
-
-                        popupMenu.show(evt.getComponent(), evt.getX(), evt.getY());
-                        //                        table.editCellAt(row, column);
-
                     }
                     //                    table.getCellRenderer(row, column);
                     table.getSelectionModel().setSelectionInterval(row, row);
@@ -180,7 +233,7 @@ public class BMFrame extends JPanel implements ActionListener {
         });
 
         scroller = new javax.swing.JScrollPane(table);
-        table.setPreferredScrollableViewportSize(new java.awt.Dimension(800, 500));
+        //        table.setPreferredScrollableViewportSize(new java.awt.Dimension(800, 500));
         TableColumn hidden = table.getColumnModel().getColumn(BMTableModel.HIDDEN_INDEX);
         hidden.setMinWidth(2);
         hidden.setPreferredWidth(2);
@@ -262,12 +315,15 @@ public class BMFrame extends JPanel implements ActionListener {
         saveButton.addActionListener(this);
         reloadButton = new JButton("放弃编辑");
         reloadButton.addActionListener(this);
+        exitButton = new JButton("退出");
+        exitButton.addActionListener(this);
         JToolBar toolbar = new JToolBar();
         toolbar.setFloatable(false);
         toolbar.add(newButton);
         toolbar.add(saveButton);
         toolbar.add(deleteButton);
         toolbar.add(reloadButton);
+        toolbar.add(exitButton);
         add(toolbar, BorderLayout.NORTH);
     }
 
@@ -281,6 +337,8 @@ public class BMFrame extends JPanel implements ActionListener {
             tableModel.save();
         } else if (obj == reloadButton) {
             tableModel.reload();
+        } else if (obj == exitButton) {
+            System.exit(0);
         }
         table.repaint();
     }
@@ -348,6 +406,8 @@ public class BMFrame extends JPanel implements ActionListener {
             JFrame frame = new JFrame("草根生日提醒");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.getContentPane().add(new BMFrame());
+            frame.setPreferredSize(new Dimension(800, 500));
+            frame.setMinimumSize(new Dimension(800, 500));
             frame.pack();
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
