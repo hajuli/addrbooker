@@ -5,6 +5,8 @@ import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Enumeration;
@@ -21,7 +23,9 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JToolBar;
@@ -49,12 +53,43 @@ public class BMFrame extends JPanel implements ActionListener {
         tableModel.addTableModelListener(new BMFrame.InteractiveTableModelListener());
         table = new JTable();
         table.setModel(tableModel);
-        table.getTableHeader().setReorderingAllowed(false); // 表头的顺序不可改变
+        //  table.getTableHeader().setReorderingAllowed(false); // 表头的顺序不可改变
         table.setRowHeight(24);
         table.setSurrendersFocusOnKeystroke(true);
         if (!tableModel.hasEmptyRow()) {
             tableModel.addEmptyRow();
         }
+
+        table.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent evt) {
+                if (evt.getButton() == MouseEvent.BUTTON3) {
+                    int row = table.rowAtPoint(evt.getPoint());
+                    int column = table.columnAtPoint(evt.getPoint());
+
+                    if (table.getColumnName(column) == "主页/博客") {
+
+                        JPopupMenu popupMenu = new JPopupMenu();
+                        JMenuItem visitMenuItem = new JMenuItem("访问 全部");
+                        JMenuItem aMenuItem = new JMenuItem("访问 http://www.google.com");
+                        JMenuItem bMenuItem = new JMenuItem("访问 http://www.baidu.com");
+                        popupMenu.add(visitMenuItem);
+                        popupMenu.add(new javax.swing.JSeparator());
+                        popupMenu.add(aMenuItem);
+                        popupMenu.add(bMenuItem);
+
+                        popupMenu.show(evt.getComponent(), evt.getX(), evt.getY());
+                        //                        table.editCellAt(row, column);
+
+                    }
+                    //                    table.getCellRenderer(row, column);
+                    table.getSelectionModel().setSelectionInterval(row, row);
+                    table.setColumnSelectionInterval(column, column);
+                    table.setRowSelectionInterval(row, row);
+                    table.changeSelection(row, column, false, false);
+                    table.requestFocus();
+                }
+            }
+        });
 
         scroller = new javax.swing.JScrollPane(table);
         table.setPreferredScrollableViewportSize(new java.awt.Dimension(800, 500));
