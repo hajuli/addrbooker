@@ -16,7 +16,7 @@ public class TimerTableCellRenderer extends DefaultTableCellRenderer {
 
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
         JLabel c = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-        String str = c.getText();
+        String str = c.getText().trim();
 
         Pattern pattern = Pattern.compile("^([0-9]+)-([0-9]+)-([0-9]+)$");
         Matcher matcher = pattern.matcher(str);

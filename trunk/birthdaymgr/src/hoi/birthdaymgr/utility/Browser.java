@@ -16,7 +16,7 @@
  * 
  * http://geosoft.no/software/index.html
  */
-package hoi.birthdaymgr;
+package hoi.birthdaymgr.utility;
 
 import java.io.File;
 import java.io.IOException;
