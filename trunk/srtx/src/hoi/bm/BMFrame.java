@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Enumeration;
@@ -81,7 +82,39 @@ public class BMFrame extends JPanel implements ActionListener {
             tableModel.addEmptyRow();
         }
 
+        table.addMouseMotionListener(new MouseMotionListener() {
+
+            public void mouseDragged(MouseEvent e) {
+            }
+
+            public void mouseMoved(MouseEvent evt) {
+                int row = table.rowAtPoint(evt.getPoint());
+                int column = table.columnAtPoint(evt.getPoint());
+
+                //                table.editCellAt(row, column);
+                table.getSelectionModel().setSelectionInterval(row, row);
+                table.setColumnSelectionInterval(column, column);
+                table.setRowSelectionInterval(row, row);
+                table.changeSelection(row, column, false, false);
+                table.requestFocus();
+
+                TableCellEditor edit = table.getCellEditor();
+                if (edit != null)
+                    edit.stopCellEditing();
+            }
+
+        });
+
         table.addMouseListener(new MouseAdapter() {
+
+            public void mouseClicked(MouseEvent evt) {
+                if (evt.getClickCount() == 1) {
+                    int row = table.rowAtPoint(evt.getPoint());
+                    int column = table.columnAtPoint(evt.getPoint());
+                    table.editCellAt(row, column);
+                }
+            }
+
             public void mousePressed(MouseEvent evt) {
                 if (evt.getButton() == MouseEvent.BUTTON3) {
                     int row = table.rowAtPoint(evt.getPoint());
@@ -97,6 +130,15 @@ public class BMFrame extends JPanel implements ActionListener {
                         popupMenu.add(new javax.swing.JSeparator());
                         popupMenu.add(aMenuItem);
                         popupMenu.add(bMenuItem);
+
+                        popupMenu.show(evt.getComponent(), evt.getX(), evt.getY());
+                        //                        table.editCellAt(row, column);
+
+                    } else if (table.getColumnName(column) == "姓名") {
+
+                        JPopupMenu popupMenu = new JPopupMenu();
+                        JMenuItem visitMenuItem = new JMenuItem("删除此行");
+                        popupMenu.add(visitMenuItem);
 
                         popupMenu.show(evt.getComponent(), evt.getX(), evt.getY());
                         //                        table.editCellAt(row, column);
@@ -206,6 +248,7 @@ public class BMFrame extends JPanel implements ActionListener {
         } else if (obj == saveButton) {
             tableModel.save();
         }
+        table.repaint();
     }
 
     public void highlightLastRow(int row) {
