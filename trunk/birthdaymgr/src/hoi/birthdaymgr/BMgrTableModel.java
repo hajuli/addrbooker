@@ -102,7 +102,7 @@ public class BMgrTableModel extends AbstractTableModel {
         return columnNames.length;
     }
 
-    public boolean hasLastEmptyRow() {
+    public boolean hasEmptyLastRow() {
         if (dataVector.size() == 0)
             return false;
         BMgrRecord record = dataVector.get(dataVector.size() - 1);
