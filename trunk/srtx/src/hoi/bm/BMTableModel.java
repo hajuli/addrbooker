@@ -29,6 +29,11 @@ public class BMTableModel extends AbstractTableModel {
         load();
     }
 
+    public void reload() {
+        dataVector.removeAllElements();
+        load();
+    }
+
     private void load() {
         BufferedReader bReader = null;
         try {
@@ -192,10 +197,10 @@ public class BMTableModel extends AbstractTableModel {
                 v.add(cnt);
             cnt++;
         }
-        
+
         int[] vv = new int[v.size()];
         cnt = 0;
-        for (Integer k: v) {
+        for (Integer k : v) {
             vv[cnt] = k;
             cnt++;
         }

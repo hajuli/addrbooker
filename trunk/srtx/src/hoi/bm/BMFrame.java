@@ -45,6 +45,7 @@ public class BMFrame extends JPanel implements ActionListener {
     protected JButton deleteButton;
     protected JButton newButton;
     protected JButton saveButton;
+    protected JButton reloadButton;
 
     public BMFrame() {
         initComponent();
@@ -72,6 +73,30 @@ public class BMFrame extends JPanel implements ActionListener {
                 } else {
                     return super.getCellEditor(row, column);
                 }
+            }
+
+            //Implement table cell tool tips.
+            public String getToolTipText(MouseEvent e) {
+                String tip = null;
+                java.awt.Point p = e.getPoint();
+                int rowIndex = rowAtPoint(p);
+                int colIndex = columnAtPoint(p);
+                int realColumnIndex = convertColumnIndexToModel(colIndex);
+
+                if (realColumnIndex == BMTableModel.NOTES_INDEX) {
+                    tip = getValueAt(rowIndex, colIndex).toString();
+                } else if (realColumnIndex == BMTableModel.WEBSITE_INDEX) {
+                    tip = getValueAt(rowIndex, colIndex).toString();
+                } else if (realColumnIndex == BMTableModel.BIRTHDAY_INDEX || realColumnIndex == BMTableModel.TIME_INDEX) {
+                    tip = getValueAt(rowIndex, colIndex).toString();
+                    //                    if (tip != null && !tip.trim().equals(""))
+                    //                        tip = String.format("<html>%s<br>%s</html>", tip, new SimpleDateFormat("yyyy-M-d").format(new Date()));
+                } else {
+                    tip = super.getToolTipText(e);
+                }
+                if (tip == null || tip.trim().equals(""))
+                    tip = null;
+                return tip;
             }
         };
         table.setModel(tableModel);
@@ -235,11 +260,14 @@ public class BMFrame extends JPanel implements ActionListener {
         newButton.addActionListener(this);
         saveButton = new JButton("保存数据");
         saveButton.addActionListener(this);
+        reloadButton = new JButton("放弃编辑");
+        reloadButton.addActionListener(this);
         JToolBar toolbar = new JToolBar();
         toolbar.setFloatable(false);
         toolbar.add(newButton);
         toolbar.add(saveButton);
         toolbar.add(deleteButton);
+        toolbar.add(reloadButton);
         add(toolbar, BorderLayout.NORTH);
     }
 
@@ -251,6 +279,8 @@ public class BMFrame extends JPanel implements ActionListener {
             tableModel.addEmptyRow();
         } else if (obj == saveButton) {
             tableModel.save();
+        } else if (obj == reloadButton) {
+            tableModel.reload();
         }
         table.repaint();
     }
