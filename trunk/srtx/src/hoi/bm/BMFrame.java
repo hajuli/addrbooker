@@ -107,7 +107,8 @@ public class BMFrame extends JPanel implements ActionListener {
             }
         };
         table.setModel(tableModel);
-        //  table.getTableHeader().setReorderingAllowed(false); // 表头的顺序不可改变
+        table.getTableHeader().setReorderingAllowed(false); // 表头的顺序不可改变
+        //          table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         table.setRowHeight(24);
         table.setSurrendersFocusOnKeystroke(true);
         if (!tableModel.hasEmptyRow()) {
@@ -240,10 +241,18 @@ public class BMFrame extends JPanel implements ActionListener {
         hidden.setMaxWidth(2);
         hidden.setCellRenderer(new InteractiveRenderer(BMTableModel.HIDDEN_INDEX));
 
-        TableColumn selected = table.getColumnModel().getColumn(BMTableModel.SELECTED_INDEX);
-        selected.setMinWidth(45);
-        selected.setPreferredWidth(45);
-        selected.setMaxWidth(45);
+        int[][] k = new int[][] {
+                {
+                        BMTableModel.SELECTED_INDEX, 45, 45, 45 }, {
+                        BMTableModel.NAME_INDEX, 100, 100, 100 }, {
+                        BMTableModel.BIRTHDAY_INDEX, 175, 175, 175 }, {
+                        BMTableModel.TIME_INDEX, 125, 125, 125 }, };
+        for (int i = 0; i < k.length; i++) {
+            TableColumn column = table.getColumnModel().getColumn(k[i][0]);
+            column.setMinWidth(k[i][1]);
+            column.setPreferredWidth(k[i][2]);
+            column.setMaxWidth(k[i][3]);
+        }
 
         TableColumn time = table.getColumnModel().getColumn(BMTableModel.TIME_INDEX);
         time.setCellRenderer(new DefaultTableCellRenderer() {
@@ -402,12 +411,12 @@ public class BMFrame extends JPanel implements ActionListener {
 
     public static void main(String[] args) {
         try {
-            initGlobalFontSetting(new Font("Dialog", Font.BOLD, 15));
-            JFrame frame = new JFrame("草根生日提醒");
+            initGlobalFontSetting(new Font("Dialog", Font.BOLD, 17));
+            JFrame frame = new JFrame("草根生日提醒器");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.getContentPane().add(new BMFrame());
             frame.setPreferredSize(new Dimension(800, 500));
-            frame.setMinimumSize(new Dimension(800, 500));
+            frame.setMinimumSize(new Dimension(800, 200));
             frame.pack();
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
