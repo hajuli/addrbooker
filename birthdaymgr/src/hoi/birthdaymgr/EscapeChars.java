@@ -1,3 +1,4 @@
+//http://www.javapractices.com/topic/TopicAction.do?Id=96
 package hoi.birthdaymgr;
 
 import java.net.URLEncoder;
