@@ -2,6 +2,9 @@ package hoi.birthdaymgr;
 
 import java.util.Arrays;
 import java.util.Vector;
+
+import javax.swing.event.UndoableEditEvent;
+import javax.swing.event.UndoableEditListener;
 import javax.swing.table.AbstractTableModel;
 
 public class BMgrTableModel extends AbstractTableModel {
@@ -66,7 +69,31 @@ public class BMgrTableModel extends AbstractTableModel {
         }
     }
 
+    @Override
     public void setValueAt(Object value, int row, int column) {
+        setValueAt(value, row, column, true);
+    }
+
+    public void setValueAt(Object value, int row, int column, boolean undoable) {
+        UndoableEditListener listeners[] = getListeners(UndoableEditListener.class);
+        if (undoable == false || listeners == null) {
+            _setValueAt(value, row, column);
+            return;
+        }
+
+        Object oldValue = getValueAt(row, column);
+        _setValueAt(value, row, column);
+        JvCellEdit cellEdit = new JvCellEdit(this, oldValue, value, row, column);
+        UndoableEditEvent editEvent = new UndoableEditEvent(this, cellEdit);
+        for (UndoableEditListener listener : listeners)
+            listener.undoableEditHappened(editEvent);
+    }
+
+    public void addUndoableEditListener(UndoableEditListener listener) {
+        listenerList.add(UndoableEditListener.class, listener);
+    }
+
+    private void _setValueAt(Object value, int row, int column) {
         BMgrRecord record = dataVector.get(row);
         switch (column) {
         case SELECTED_INDEX:
