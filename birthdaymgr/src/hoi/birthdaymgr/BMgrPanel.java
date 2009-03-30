@@ -149,7 +149,7 @@ public class BMgrPanel extends JPanel implements ActionListener {
             if (evt.getType() == TableModelEvent.UPDATE) {
                 int column = evt.getColumn();
                 int row = evt.getFirstRow();
-                if (column != -1) {
+                if (column != BMgrTableModel.SELECTED_INDEX) {
                     table.setColumnSelectionInterval(column + 1, column + 1);
                     table.setRowSelectionInterval(row, row);
                 }

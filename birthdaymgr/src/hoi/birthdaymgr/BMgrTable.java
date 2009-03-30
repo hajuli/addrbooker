@@ -86,7 +86,7 @@ public class BMgrTable extends JTable implements MouseMotionListener, MouseListe
     public void mouseDragged(MouseEvent e) {
     }
 
-    public void mouseMoved(MouseEvent e) {
+    private void focusOnCurrentCell(MouseEvent e) {
         int row = rowAtPoint(e.getPoint());
         int column = columnAtPoint(e.getPoint());
 
@@ -96,6 +96,10 @@ public class BMgrTable extends JTable implements MouseMotionListener, MouseListe
         TableCellEditor editor = getCellEditor();
         if (editor != null)
             editor.stopCellEditing();
+    }
+
+    public void mouseMoved(MouseEvent e) {
+        focusOnCurrentCell(e);
     }
 
     public void mouseClicked(MouseEvent evt) {
