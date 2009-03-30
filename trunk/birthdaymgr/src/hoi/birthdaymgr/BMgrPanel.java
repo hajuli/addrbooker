@@ -29,6 +29,8 @@ public class BMgrPanel extends JPanel implements ActionListener {
     protected JButton reloadButton;
     protected JButton exitButton;
 
+    protected JButton undoButton, redoButton;
+
     public BMgrPanel() {
         initComponent();
     }
@@ -85,11 +87,21 @@ public class BMgrPanel extends JPanel implements ActionListener {
         reloadButton.addActionListener(this);
         exitButton = new JButton("退出");
         exitButton.addActionListener(this);
+
+        JvUndoManager undoManager = new JvUndoManager();
+        tableModel.addUndoableEditListener(undoManager);
+        redoButton = new JButton("重做");
+        redoButton.addActionListener(undoManager.getRedoAction());
+        undoButton = new JButton("撤销");
+        undoButton.addActionListener(undoManager.getUndoAction());
+
         JToolBar toolbar = new JToolBar();
         toolbar.setFloatable(false);
         toolbar.add(addNewRowButton);
         toolbar.add(saveButton);
         toolbar.add(deleteButton);
+        toolbar.add(undoButton);
+        toolbar.add(redoButton);
         toolbar.add(reloadButton);
         toolbar.add(exitButton);
         add(toolbar, BorderLayout.NORTH);
