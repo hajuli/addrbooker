@@ -26,7 +26,7 @@ public class BMgrMain {
     public static void main(String[] args) {
         try {
             initGlobalFontSetting(new Font("Dialog", Font.BOLD, 17));
-            JFrame frame = new JFrame("草根 生日提醒 控件");
+            JFrame frame = new JFrame("草根 生日提醒王");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.getContentPane().add(new BMgrPanel());
             frame.setPreferredSize(new Dimension(800, 600));
