@@ -4,33 +4,16 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.EventObject;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import javax.swing.event.CellEditorListener;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableColumn;
-import javax.swing.AbstractCellEditor;
 import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.JTextArea;
 import javax.swing.JToolBar;
-import javax.swing.SwingUtilities;
 
 public class BMgrPanel extends JPanel implements ActionListener {
 
@@ -40,7 +23,7 @@ public class BMgrPanel extends JPanel implements ActionListener {
     protected JScrollPane scroller;
     protected BMgrTableModel tableModel;
 
-    protected JButton newRowButton;
+    protected JButton addNewRowButton;
     protected JButton saveButton;
     protected JButton deleteButton;
     protected JButton reloadButton;
@@ -62,20 +45,13 @@ public class BMgrPanel extends JPanel implements ActionListener {
             tableModel.addEmptyRow();
         }
 
-        table.addMouseListener(new MouseAdapter() {
-
-            public void mousePressed(MouseEvent evt) {
-
-            }
-        });
-
         scroller = new javax.swing.JScrollPane(table);
-        //        table.setPreferredScrollableViewportSize(new java.awt.Dimension(800, 500));
+        table.setPreferredScrollableViewportSize(new java.awt.Dimension(600, 450));
         TableColumn hidden = table.getColumnModel().getColumn(BMgrTableModel.HIDDEN_INDEX);
+        hidden.setCellRenderer(new InteractiveRenderer(BMgrTableModel.HIDDEN_INDEX));
         hidden.setMinWidth(2);
         hidden.setPreferredWidth(2);
         hidden.setMaxWidth(2);
-        hidden.setCellRenderer(new InteractiveRenderer(BMgrTableModel.HIDDEN_INDEX));
 
         int[][] k = new int[][] {
                 {
@@ -101,8 +77,8 @@ public class BMgrPanel extends JPanel implements ActionListener {
 
         deleteButton = new JButton("删除选中行");
         deleteButton.addActionListener(this);
-        newRowButton = new JButton("新增空行");
-        newRowButton.addActionListener(this);
+        addNewRowButton = new JButton("新增空行");
+        addNewRowButton.addActionListener(this);
         saveButton = new JButton("保存数据");
         saveButton.addActionListener(this);
         reloadButton = new JButton("重新读取");
@@ -111,7 +87,7 @@ public class BMgrPanel extends JPanel implements ActionListener {
         exitButton.addActionListener(this);
         JToolBar toolbar = new JToolBar();
         toolbar.setFloatable(false);
-        toolbar.add(newRowButton);
+        toolbar.add(addNewRowButton);
         toolbar.add(saveButton);
         toolbar.add(deleteButton);
         toolbar.add(reloadButton);
@@ -123,7 +99,7 @@ public class BMgrPanel extends JPanel implements ActionListener {
         Object obj = e.getSource();
         if (obj == deleteButton) {
             tableModel.deleteSelectedRows();
-        } else if (obj == newRowButton) {
+        } else if (obj == addNewRowButton) {
             tableModel.addEmptyRow();
         } else if (obj == saveButton) {
             tableModel.save();
