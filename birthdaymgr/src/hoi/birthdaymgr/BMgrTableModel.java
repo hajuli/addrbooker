@@ -121,6 +121,7 @@ public class BMgrTableModel extends AbstractTableModel {
             System.out.println("invalid index");
         }
         fireTableCellUpdated(row, column);
+        save(); // 有编辑就保存
     }
 
     public int getRowCount() {
