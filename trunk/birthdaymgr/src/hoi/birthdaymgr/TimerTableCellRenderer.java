@@ -31,7 +31,16 @@ public class TimerTableCellRenderer extends DefaultTableCellRenderer {
             int cmonth = Integer.parseInt(matcher.group(2));
             int cday = Integer.parseInt(matcher.group(3));
             int kday = cyear * 365 + cmonth * 30 + cday - tyear * 365 - tmonth * 30 - tday; // 大概的算一下，不用那么精确
-            c.setText(String.format("%d个月%d天", kday / 30, kday % 30));
+            if (kday == 0)
+                c.setText(String.format("今天"));
+            else if (kday == 1)
+                c.setText(String.format("昨天"));
+            else if (kday / 30 == 0)
+                c.setText(String.format("%d天前", kday % 30));
+            else if (kday % 30 == 0)
+                c.setText(String.format("%d个月前", kday / 30));
+            else
+                c.setText(String.format("%d个月%d天前", kday / 30, kday % 30));
         }
 
         return c;
