@@ -85,7 +85,7 @@ public class BMgrPanel extends JPanel implements ActionListener {
         saveButton.addActionListener(this);
         reloadButton = new JButton("重新读取");
         reloadButton.addActionListener(this);
-        exitButton = new JButton("退出");
+        exitButton = new JButton("退出程序");
         exitButton.addActionListener(this);
 
         JvUndoManager undoManager = new JvUndoManager();
