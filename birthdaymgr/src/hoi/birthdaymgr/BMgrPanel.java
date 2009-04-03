@@ -1,6 +1,6 @@
 package hoi.birthdaymgr;
 
-import hoi.birthdaymgr.swing.TablePopupEditor;
+import hoi.birthdaymgr.utility.TablePopupEditor;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
