@@ -121,11 +121,11 @@ public class BMgrTable extends JTable implements MouseMotionListener, MouseListe
     }
 
     public void mouseClicked(MouseEvent evt) {
-        if (evt.getClickCount() == 1) {
-            int row = rowAtPoint(evt.getPoint());
-            int column = columnAtPoint(evt.getPoint());
-            editCellAt(row, column);
-        }
+        int row = rowAtPoint(evt.getPoint());
+        int column = columnAtPoint(evt.getPoint());
+        if (column != BMgrTableModel.NOTES_INDEX && column != BMgrTableModel.WEBSITE_INDEX)
+            if (evt.getClickCount() == 1)
+                editCellAt(row, column);
     }
 
     public void mouseEntered(MouseEvent e) {
