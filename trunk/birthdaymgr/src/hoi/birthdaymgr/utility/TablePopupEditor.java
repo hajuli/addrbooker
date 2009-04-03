@@ -1,4 +1,4 @@
-package hoi.birthdaymgr.swing;
+package hoi.birthdaymgr.utility;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
