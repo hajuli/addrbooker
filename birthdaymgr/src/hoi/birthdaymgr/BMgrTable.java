@@ -3,6 +3,8 @@ package hoi.birthdaymgr;
 import hoi.birthdaymgr.utility.Browser;
 import hoi.birthdaymgr.utility.EscapeChars;
 
+import java.awt.FontMetrics;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -17,12 +19,15 @@ import javax.swing.JComboBox;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.JTable;
+import javax.swing.JToolTip;
 import javax.swing.SwingUtilities;
 import javax.swing.table.TableCellEditor;
 
+@SuppressWarnings("deprecation")
 public class BMgrTable extends JTable implements MouseMotionListener, MouseListener {
 
     private static final long serialVersionUID = -1083220712281080152L;
+    private static final FontMetrics fm = Toolkit.getDefaultToolkit().getFontMetrics(new JToolTip().getFont());
 
     public BMgrTable() {
         addMouseMotionListener(this);
@@ -51,14 +56,27 @@ public class BMgrTable extends JTable implements MouseMotionListener, MouseListe
         int realColumnIndex = convertColumnIndexToModel(colIndex);
 
         if (realColumnIndex == BMgrTableModel.NOTES_INDEX) {
-            tip = getValueAt(rowIndex, colIndex).toString();
+            String str = getValueAt(rowIndex, colIndex).toString().trim();
+            if (!str.equals("")) {
+                str = EscapeChars.forHTML(str);
+                tip = "<html>";
+                int len = 0;
+                for (int i = 0; i < str.length(); i++) {
+                    len += fm.stringWidth(str.substring(i, i + 1));
+                    if (len > 300) {
+                        tip += "<br>";
+                        len = 0;
+                    }
+                    tip += str.substring(i, i + 1);
+                }
+            }
         } else if (realColumnIndex == BMgrTableModel.WEBSITE_INDEX) {
             String str = getValueAt(rowIndex, colIndex).toString().trim().toLowerCase();
             final Vector<String> urls = new Vector<String>();
-            for (String item : str.split("[;；]")) {
+            for (String item : str.split("[;； 　]+")) {
                 item = item.trim();
                 if (!item.equals("")) {
-                    if (!item.matches("^[a-z]:/.*$"))
+                    if (!item.matches("^[a-z]+:/.*$"))
                         item = "http://" + item;
                     urls.addElement(item.trim());
                 }
@@ -121,14 +139,13 @@ public class BMgrTable extends JTable implements MouseMotionListener, MouseListe
             int row = rowAtPoint(evt.getPoint());
             int column = columnAtPoint(evt.getPoint());
             int realColumnIndex = convertColumnIndexToModel(column);
-
             if (realColumnIndex == BMgrTableModel.WEBSITE_INDEX) {
                 String str = getValueAt(row, column).toString().trim().toLowerCase();
                 final Vector<String> urls = new Vector<String>();
-                for (String item : str.split("[;；]")) {
+                for (String item : str.split("[;； 　]+")) {
                     item = item.trim();
                     if (!item.equals("")) {
-                        if (!item.matches("^[a-z]:/.*$"))
+                        if (!item.matches("^[a-z]+:/.*$"))
                             item = "http://" + item;
                         urls.addElement(item.trim());
                     }
