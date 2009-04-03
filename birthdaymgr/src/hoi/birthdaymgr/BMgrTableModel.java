@@ -50,6 +50,8 @@ public class BMgrTableModel extends AbstractTableModel {
     }
 
     public Object getValueAt(int row, int column) {
+        if (row >= dataVector.size() || row < 0)
+            return new Object();
         BMgrRecord record = dataVector.get(row);
         switch (column) {
         case SELECTED_INDEX:
@@ -94,7 +96,7 @@ public class BMgrTableModel extends AbstractTableModel {
     }
 
     private void _setValueAt(Object value, int row, int column) {
-        if (row >= dataVector.size())
+        if (row >= dataVector.size() || row < 0)
             return;
         BMgrRecord record = dataVector.get(row);
         switch (column) {
