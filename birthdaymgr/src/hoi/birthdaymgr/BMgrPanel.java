@@ -1,5 +1,7 @@
 package hoi.birthdaymgr;
 
+import hoi.birthdaymgr.swing.TablePopupEditor;
+
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -73,6 +75,12 @@ public class BMgrPanel extends JPanel implements ActionListener {
 
         TableColumn birthday = table.getColumnModel().getColumn(BMgrTableModel.BIRTHDAY_INDEX);
         birthday.setCellRenderer(new BirthdayTableCellRenderer());
+
+        TableColumn notes = table.getColumnModel().getColumn(BMgrTableModel.NOTES_INDEX);
+        notes.setCellEditor(new TablePopupEditor());
+
+        TableColumn website = table.getColumnModel().getColumn(BMgrTableModel.WEBSITE_INDEX);
+        website.setCellEditor(new TablePopupEditor());
 
         setLayout(new BorderLayout());
         add(scroller, BorderLayout.CENTER);
