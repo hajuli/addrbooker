@@ -63,7 +63,7 @@ public class BMgrTable extends JTable implements MouseMotionListener, MouseListe
                 int len = 0;
                 for (int i = 0; i < str.length(); i++) {
                     len += fm.stringWidth(str.substring(i, i + 1));
-                    if (len > 300) {
+                    if (len > 280) {
                         tip += "<br>";
                         len = 0;
                     }
