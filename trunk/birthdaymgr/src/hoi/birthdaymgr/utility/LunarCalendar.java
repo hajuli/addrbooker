@@ -20,6 +20,14 @@ public class LunarCalendar extends BaseCalendar {
         return toSolarCalendar().next().toLunarCalendar();
     }
 
+    public LunarCalendar copy() {
+        try {
+            return new LunarCalendar(year, month, day);
+        } catch (Exception ignore) {
+            return null;
+        }
+    }
+
     public static LunarCalendar today() {
         try {
             return SolarCalendar.today().toLunarCalendar();
