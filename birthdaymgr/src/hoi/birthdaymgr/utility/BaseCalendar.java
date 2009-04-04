@@ -1,5 +1,8 @@
 package hoi.birthdaymgr.utility;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * http://act1.astro.women.sohu.com/search/calendar.htm <br>
  * http://www.gio.gov.tw/info/festival_c/calendar/calendar.htm <br>
@@ -18,6 +21,18 @@ public abstract class BaseCalendar {
         this.year = year;
         this.month = month;
         this.day = day;
+    }
+
+    public BaseCalendar(String str) throws Exception {
+        Pattern pattern = Pattern.compile("^([0-9]+)-([0-9]+)-([0-9]+)$");
+        Matcher matcher = pattern.matcher(str);
+        if (matcher.find() && matcher.groupCount() == 3) {
+            this.year = Integer.parseInt(matcher.group(1));
+            this.month = Integer.parseInt(matcher.group(2));
+            this.day = Integer.parseInt(matcher.group(3));
+        } else {
+            throw new Exception("Input format Error");
+        }
     }
 
     public int getYear() {
