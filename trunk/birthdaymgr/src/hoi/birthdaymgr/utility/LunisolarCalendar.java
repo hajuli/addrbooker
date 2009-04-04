@@ -170,6 +170,10 @@ public class LunisolarCalendar { //
         return new LunisolarCalendar(solar.year, solar.month + 1, 1); // 月末
     }
 
+    public static LunisolarCalendar nextLunar(LunisolarCalendar lunar) throws Exception {
+        return solar2lunar(nextSolar(lunar2solar(lunar)));
+    }
+
     /**
      * 阳历转阴历
      * 
