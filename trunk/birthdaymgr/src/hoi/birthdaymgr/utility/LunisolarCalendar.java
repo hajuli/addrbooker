@@ -11,14 +11,33 @@ package hoi.birthdaymgr.utility;
  */
 public class LunisolarCalendar { // 
 
+    private String type;
     private int year;
     private int month;
     private int day;
 
-    public LunisolarCalendar(int year, int month, int day) {
+    public LunisolarCalendar(String type, int year, int month, int day) {
+        assert type.equals("农历") || type.equals("公历");
+        this.type = type;
         this.year = year;
         this.month = month;
         this.day = day;
+    }
+
+    public static boolean checkLunisolarCalendar(LunisolarCalendar date) {
+        try {
+            if (date.type.equals("农历"))
+                lunar2solar(date);
+            else
+                solar2lunar(date);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public String getType() {
+        return type;
     }
 
     public int getYear() {
@@ -46,7 +65,7 @@ public class LunisolarCalendar { //
     }
 
     public String toString() {
-        return String.format("%d-%02d-%02d", this.year, this.month, this.day);
+        return String.format("%s %d-%02d-%02d", type, year, month, day);
     }
 
     private static final int FIRSTYEAR = 1936;
@@ -155,6 +174,7 @@ public class LunisolarCalendar { //
             0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 };
 
     public static LunisolarCalendar nextSolar(LunisolarCalendar solar) throws Exception {
+        assert solar.type.equals("公历");
         if (solar.month <= 0 || solar.month > 12)
             throw new Exception("Month Error");
         if (solar.year < 0) // if (SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR)
@@ -164,10 +184,10 @@ public class LunisolarCalendar { //
             throw new Exception("Day Error");
 
         if (solar.day < maxDay) // 此月还没完
-            return new LunisolarCalendar(solar.year, solar.month, solar.day + 1);
+            return new LunisolarCalendar("公历", solar.year, solar.month, solar.day + 1);
         if (solar.month == 12) // 月末，年末
-            return new LunisolarCalendar(solar.year + 1, 1, 1);
-        return new LunisolarCalendar(solar.year, solar.month + 1, 1); // 月末
+            return new LunisolarCalendar("公历", solar.year + 1, 1, 1);
+        return new LunisolarCalendar("公历", solar.year, solar.month + 1, 1); // 月末
     }
 
     public static LunisolarCalendar nextLunar(LunisolarCalendar lunar) throws Exception {
@@ -182,6 +202,7 @@ public class LunisolarCalendar { //
      * @throws Exception
      */
     public static LunisolarCalendar solar2lunar(LunisolarCalendar date) throws Exception { // 
+        assert date.type.equals("公历");
         int SolarYear = date.year;
         int SolarMonth = date.month;
         int SolarDate = date.day;
@@ -242,7 +263,7 @@ public class LunisolarCalendar { //
         if (LunarMonth > 12)
             LunarMonth -= 12;
 
-        return new LunisolarCalendar(LunarYear, LunarMonth, LunarDate);
+        return new LunisolarCalendar("农历", LunarYear, LunarMonth, LunarDate);
     }
 
     /**
@@ -253,6 +274,7 @@ public class LunisolarCalendar { //
      * @throws Exception
      */
     public static LunisolarCalendar lunar2solar(LunisolarCalendar date) throws Exception { // 
+        assert date.type.equals("农历");
         int LunarYear = date.year;
         int LunarMonth = date.month;
         int LunarDate = date.day;
@@ -302,7 +324,7 @@ public class LunisolarCalendar { //
         y = SolarYear - FIRSTYEAR;
         acc = SolarDays[leap * 14 + SolarMonth - 1] + SolarDate;
 
-        return new LunisolarCalendar(SolarYear, SolarMonth, SolarDate);
+        return new LunisolarCalendar("公历", SolarYear, SolarMonth, SolarDate);
     }
 
     /* 闰年, 返回 0 平年, 1 闰年 */
@@ -318,10 +340,10 @@ public class LunisolarCalendar { //
     }
 
     public static void main(String[] args) throws Exception {
-        System.out.println(LunisolarCalendar.lunar2solar(new LunisolarCalendar(1936, 10, 25)));
-        System.out.println(LunisolarCalendar.solar2lunar(new LunisolarCalendar(1986, 11, 26)));
-        System.out.println(LunisolarCalendar.lunar2solar(new LunisolarCalendar(1986, 3, 0)));
-        System.out.println(LunisolarCalendar.solar2lunar(new LunisolarCalendar(1986, 3, 2)));
+        System.out.println(LunisolarCalendar.lunar2solar(new LunisolarCalendar("农历", 1937, 10, 25)));
+        System.out.println(LunisolarCalendar.solar2lunar(new LunisolarCalendar("公历", 1986, 11, 26)));
+        System.out.println(LunisolarCalendar.lunar2solar(new LunisolarCalendar("农历", 1986, 3, 0)));
+        System.out.println(LunisolarCalendar.solar2lunar(new LunisolarCalendar("公历", 1986, 3, 2)));
     }
 }
 
