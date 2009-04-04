@@ -6,6 +6,7 @@ import hoi.birthdaymgr.utility.SolarCalendar;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.util.HashMap;
 
 import javax.swing.JLabel;
 import javax.swing.JTable;
@@ -105,6 +106,15 @@ public class BirthdayTableCellRenderer extends DefaultTableCellRenderer {
         return comp;
     }
 
+    private static final HashMap<String, Integer> daysCache = new HashMap<String, Integer>();
+
+    private static int getWaitDays(final BaseCalendar birthday_, final BaseCalendar today_) {
+        String key = birthday_.toString2() + today_.toString2();
+        if (!daysCache.containsKey(key))
+            daysCache.put(key, _getWaitDays(birthday_, today_));
+        return daysCache.get(key);
+    }
+
     /**
      * 特殊处理：公历2月29日生日，以及农历12月30日生日 等
      * 
@@ -112,7 +122,7 @@ public class BirthdayTableCellRenderer extends DefaultTableCellRenderer {
      * @param today_
      * @return
      */
-    private static int getWaitDays(final BaseCalendar birthday_, final BaseCalendar today_) {
+    private static int _getWaitDays(final BaseCalendar birthday_, final BaseCalendar today_) {
         BaseCalendar birthday = birthday_.copy();
         BaseCalendar today = today_.copy();
 
