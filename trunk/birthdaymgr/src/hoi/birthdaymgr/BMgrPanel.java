@@ -48,6 +48,7 @@ public class BMgrPanel extends JPanel implements ActionListener {
         if (!tableModel.hasEmptyLastRow()) {
             tableModel.addEmptyRow();
         }
+        table.setAutoCreateRowSorter(true);
 
         scroller = new javax.swing.JScrollPane(table);
         table.setPreferredScrollableViewportSize(new java.awt.Dimension(600, 450));
@@ -61,7 +62,7 @@ public class BMgrPanel extends JPanel implements ActionListener {
                 {
                         BMgrTableModel.SELECTED_INDEX, 40, 45, 45 }, {
                         BMgrTableModel.NAME_INDEX, 100, 90, 90 }, {
-                        BMgrTableModel.BIRTHDAY_INDEX, 200, 200, 200 }, {
+                        BMgrTableModel.BIRTHDAY_INDEX, 225, 225, 225 }, {
                         BMgrTableModel.TIME_INDEX, 125, 125, 100 }, };
         for (int i = 0; i < k.length; i++) {
             TableColumn column = table.getColumnModel().getColumn(k[i][0]);
