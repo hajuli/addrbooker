@@ -154,6 +154,22 @@ public class LunisolarCalendar { //
             0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396, //
             0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 };
 
+    public static LunisolarCalendar nextSolar(LunisolarCalendar solar) throws Exception {
+        if (solar.month <= 0 || solar.month > 12)
+            throw new Exception("Month Error");
+        if (solar.year < 0) // if (SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR)
+            throw new Exception("Year Error");
+        int maxDay = SolarCal[solar.month - 1] + GetLeap(solar.year);
+        if (solar.day <= 0 || solar.day > maxDay)
+            throw new Exception("Day Error");
+
+        if (solar.day < maxDay) // 此月还没完
+            return new LunisolarCalendar(solar.year, solar.month, solar.day + 1);
+        if (solar.month == 12) // 月末，年末
+            return new LunisolarCalendar(solar.year + 1, 1, 1);
+        return new LunisolarCalendar(solar.year, solar.month + 1, 1); // 月末
+    }
+
     /**
      * 阳历转阴历
      * 
