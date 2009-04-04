@@ -23,8 +23,8 @@ public class LunarCalendar extends BaseCalendar {
     public static LunarCalendar today() {
         try {
             return SolarCalendar.today().toLunarCalendar();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception ignore) {
+            ignore.printStackTrace();
             return null;
         }
     }
