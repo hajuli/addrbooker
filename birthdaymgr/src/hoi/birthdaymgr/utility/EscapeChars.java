@@ -538,4 +538,57 @@ public final class EscapeChars {
         String number = padding + aIdx.toString();
         aBuilder.append("&#" + number + ";");
     }
+
+    public static String escape(String text) {
+        if (text == null)
+            return null;
+        text = text.replace("\\", "\\\\");
+        text = text.replace("\b", "\\b");
+        text = text.replace("\0", "\\0");
+        text = text.replace("\t", "\\t");
+        text = text.replace("\"", "\\\"");
+        text = text.replace("\n", "\\n");
+        text = text.replace("\r", "\\r");
+        return text;
+    }
+
+    public static String unescape(String text) {
+        if (text == null)
+            return null;
+        StringBuffer sb = new StringBuffer(text.length());
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (c == '\\' && i != text.length() - 1) {
+                char d = text.charAt(i + 1);
+                switch (d) {
+                case 'b':
+                    sb.append('\b');
+                    break;
+                case '0':
+                    sb.append('\0');
+                    break;
+                case 't':
+                    sb.append('\t');
+                    break;
+                case 'n':
+                    sb.append('\n');
+                    break;
+                case 'r':
+                    sb.append('\r');
+                    break;
+                case '"':
+                    sb.append('"');
+                    break;
+                case '\\':
+                    sb.append('\\');
+                    break;
+                default:
+                    sb.append(("" + c) + d);
+                }
+                i++;
+            } else
+                sb.append(c);
+        }
+        return sb.toString();
+    }
 }
