@@ -12,6 +12,11 @@ public class SolarCalendar extends BaseCalendar {
         check();
     }
 
+    public SolarCalendar(String str) throws Exception {
+        super(str);
+        check();
+    }
+
     public String toString() {
         return String.format("公历 %d-%02d-%02d", year, month, day);
     }
