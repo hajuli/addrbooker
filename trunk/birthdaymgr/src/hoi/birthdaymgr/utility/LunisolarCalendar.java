@@ -36,6 +36,10 @@ public class LunisolarCalendar { //
         }
     }
 
+    public static boolean checkLunisolarCalendar(String type, int year, int month, int day) {
+        return checkLunisolarCalendar(new LunisolarCalendar(type, year, month, day));
+    }
+
     public String getType() {
         return type;
     }
