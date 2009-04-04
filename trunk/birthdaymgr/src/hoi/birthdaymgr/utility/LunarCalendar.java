@@ -15,6 +15,15 @@ public class LunarCalendar extends BaseCalendar {
         return toSolarCalendar().next().toLunarCalendar();
     }
 
+    public static LunarCalendar today() {
+        try {
+            return SolarCalendar.today().toLunarCalendar();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public boolean check2() {
         try {
             return check();
