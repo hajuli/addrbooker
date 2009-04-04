@@ -51,7 +51,7 @@ public class TablePopupEditor extends DefaultCellEditor implements TableCellEdit
     }
 
     public Object getCellEditorValue() {
-        return currentText;
+        return currentText.replace("\r", "").replace("\n", " ");
     }
 
     public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
