@@ -35,7 +35,7 @@ public abstract class BaseCalendar {
         }
     }
 
-    public abstract BaseCalendar next() throws Exception; // 必须返回本身
+    public abstract BaseCalendar next() throws Exception; // 必须返回本身类型
 
     public int getYear() {
         return year;
