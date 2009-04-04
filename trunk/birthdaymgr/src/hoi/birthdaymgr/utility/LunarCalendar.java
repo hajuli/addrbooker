@@ -7,6 +7,11 @@ public class LunarCalendar extends BaseCalendar {
         check();
     }
 
+    public LunarCalendar(String str) throws Exception {
+        super(str);
+        check();
+    }
+
     public String toString() {
         return String.format("农历 %d-%02d-%02d", year, month, day);
     }
