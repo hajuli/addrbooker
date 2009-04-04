@@ -1,5 +1,10 @@
 package hoi.birthdaymgr.utility;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class SolarCalendar extends BaseCalendar {
 
     public SolarCalendar(int year, int month, int day) throws Exception {
@@ -30,6 +35,22 @@ public class SolarCalendar extends BaseCalendar {
         if (month == 12) // 月末，年末
             return new SolarCalendar(year + 1, 1, 1);
         return new SolarCalendar(year, month + 1, 1); // 月末
+    }
+
+    public static SolarCalendar today() {
+        String current = new SimpleDateFormat("yyyy-M-d").format(new Date());
+        Pattern pattern = Pattern.compile("^([0-9]+)-([0-9]+)-([0-9]+)$");
+        Matcher matcher = pattern.matcher(current);
+        matcher.find();
+        int year = Integer.parseInt(matcher.group(1));
+        int month = Integer.parseInt(matcher.group(2));
+        int day = Integer.parseInt(matcher.group(3));
+        try {
+            return new SolarCalendar(year, month, day);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public boolean check2() {
