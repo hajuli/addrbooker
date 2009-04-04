@@ -23,6 +23,10 @@ public abstract class BaseCalendar {
         this.day = day;
     }
 
+    public String toString2() {
+        return String.format("%05d-%02d-%02d", year, month, day);
+    }
+
     public BaseCalendar(String str) throws Exception {
         Pattern pattern = Pattern.compile("^([0-9]+)-([0-9]+)-([0-9]+)$");
         Matcher matcher = pattern.matcher(str);
