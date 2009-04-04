@@ -32,12 +32,23 @@ public class SolarCalendar extends BaseCalendar {
     }
 
     public SolarCalendar next() throws Exception {
-        int maxDay = SolarCal[month - 1] + GetLeap(year);
+        int maxDay = SolarCal[month - 1];
+        if (month == 2)
+            maxDay = 28 + GetLeap(year);
+
         if (day < maxDay) // 此月还没完
             return new SolarCalendar(year, month, day + 1);
         if (month == 12) // 月末，年末
             return new SolarCalendar(year + 1, 1, 1);
         return new SolarCalendar(year, month + 1, 1); // 月末
+    }
+
+    public SolarCalendar copy() {
+        try {
+            return new SolarCalendar(year, month, day);
+        } catch (Exception ignore) {
+            return null;
+        }
     }
 
     public static SolarCalendar today() {
