@@ -9,9 +9,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Vector;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class BMgrIO {
     private static final String fname = "data.bm";
+    private static final ReentrantLock lock = new ReentrantLock();
 
     private static String escape(String text) {
         text = text.replace("\\", "\\\\");
@@ -78,6 +80,7 @@ public class BMgrIO {
     }
 
     public static void load(Vector<BMgrRecord> dataVector) {
+        lock.lock(); // block until condition holds
         BufferedReader bReader = null;
         try {
             bReader = new BufferedReader(new InputStreamReader(new FileInputStream(fname), "UTF-8"));
@@ -103,11 +106,13 @@ public class BMgrIO {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+            lock.unlock();
         }
     }
 
     public static void save(Vector<BMgrRecord> dataVector) {
         BufferedWriter bWriter = null;
+        lock.lock(); // block until condition holds
         try {
             bWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fname), "UTF-8"));
             bWriter.write("#一行一条记录, 请不要手动更改(One Line One Record, Please DO NOT Change Manually)!!!");
@@ -132,6 +137,7 @@ public class BMgrIO {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+            lock.unlock();
         }
     }
 }
