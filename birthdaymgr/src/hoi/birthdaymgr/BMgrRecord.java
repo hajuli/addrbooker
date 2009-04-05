@@ -31,7 +31,12 @@ public class BMgrRecord {
         time = contents[4];
     }
 
-    public static BMgrRecord loadFromXMLString(String page) throws IOException {
+    public String toString() {
+        return String.format("%s %s %s %s %s %s", //
+                selected.toString(), name, birthday, website, notes, time);
+    }
+
+    public static BMgrRecord loadFromXMLString(String page) throws IOException { // ???
         Properties props = new Properties();
         PipedInputStream pis = new PipedInputStream();
         PipedOutputStream pos = new PipedOutputStream();
@@ -52,7 +57,7 @@ public class BMgrRecord {
         return record;
     }
 
-    public static String saveAsXMLString(BMgrRecord record) throws IOException {
+    public static String saveAsXMLString(BMgrRecord record) throws IOException { /// ???
         Properties props = new Properties();
         props.setProperty("name", record.getName());
         props.setProperty("birthday", record.getBirthday());
@@ -77,7 +82,7 @@ public class BMgrRecord {
         BMgrRecord record = new BMgrRecord();
         record.setName("杨全海");
         System.out.println(record.getName());
-        record = loadFromXMLString(saveAsXMLString(record));
+        record = loadFromXMLString(saveAsXMLString(record)); // 编码不对
         System.out.println(record.getName());
     }
 
