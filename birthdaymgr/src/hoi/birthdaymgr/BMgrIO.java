@@ -146,14 +146,29 @@ public class BMgrIO {
 
     private static final String BMGR_DIR_PATH = System.getProperty("user.home") + File.separator + "BirthdayMgr";
     private static final String BMGR_FILE_PATTERN = BMGR_DIR_PATH + File.separator + "BirthdayMgr%s.bak";
+    private static final String BMGR_FILE_FORMAT = "yyyyMMddHHmmss";
+    private static final String BMGR_FILE_REGEX = "BirthdayMgr[0-9]+\\.bak";
 
     private static void tryBackupData() {
         try {
-            new File(BMGR_DIR_PATH).mkdirs();
             File src = new File(fname);
-            File dest = new File(String.format(BMGR_FILE_PATTERN, new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())));
+            File dest = new File(String.format(BMGR_FILE_PATTERN, //
+                    new SimpleDateFormat(BMGR_FILE_FORMAT).format(new Date())));
             if (src.exists() && src.isFile())
                 copyFile(src, dest);
+        } catch (Exception ignore) {
+        }
+    }
+
+    static {
+        try {
+            File dir = new File(BMGR_DIR_PATH);
+            dir.mkdirs();
+            for (File file : dir.listFiles()) {
+                // System.out.println(file.getPath());
+                if (file.isFile() && file.getName().matches(BMGR_FILE_REGEX))
+                    file.delete();
+            }
         } catch (Exception ignore) {
         }
     }
