@@ -15,8 +15,8 @@ public class TimerTableCellRenderer extends DefaultTableCellRenderer {
     private static final long serialVersionUID = 2914673474705829821L;
 
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-        JLabel c = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-        String str = c.getText().trim();
+        JLabel comp = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+        String str = comp.getText().trim();
 
         Pattern pattern = Pattern.compile("^([0-9]+)-([0-9]+)-([0-9]+)$");
         Matcher matcher = pattern.matcher(str);
@@ -32,17 +32,17 @@ public class TimerTableCellRenderer extends DefaultTableCellRenderer {
             int cday = Integer.parseInt(matcher.group(3));
             int kday = cyear * 365 + cmonth * 30 + cday - tyear * 365 - tmonth * 30 - tday; // 大概的算一下，不用那么精确
             if (kday == 0)
-                c.setText(String.format("今天"));
+                comp.setText(String.format("今天"));
             else if (kday == 1)
-                c.setText(String.format("昨天"));
+                comp.setText(String.format("昨天"));
             else if (kday / 30 == 0)
-                c.setText(String.format("%d天前", kday % 30));
+                comp.setText(String.format("%d天前", kday % 30));
             else if (kday % 30 == 0)
-                c.setText(String.format("%d个月前", kday / 30));
+                comp.setText(String.format("%d个月前", kday / 30));
             else
-                c.setText(String.format("%d个月%d天前", kday / 30, kday % 30));
+                comp.setText(String.format("%d个月%d天前", kday / 30, kday % 30));
         }
 
-        return c;
+        return comp;
     }
 }
