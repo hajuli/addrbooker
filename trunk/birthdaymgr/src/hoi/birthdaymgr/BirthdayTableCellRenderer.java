@@ -10,6 +10,7 @@ import java.util.HashMap;
 
 import javax.swing.JLabel;
 import javax.swing.JTable;
+import javax.swing.UIManager;
 import javax.swing.table.DefaultTableCellRenderer;
 
 public class BirthdayTableCellRenderer extends DefaultTableCellRenderer {
@@ -39,10 +40,44 @@ public class BirthdayTableCellRenderer extends DefaultTableCellRenderer {
         if (type == null)
             type = "公历";
 
+        // -----------------------------------------------------------------------
+        Color bg = null;
+
+        JTable.DropLocation dropLocation = table.getDropLocation();
+        if (dropLocation != null && !dropLocation.isInsertRow() && !dropLocation.isInsertColumn() && dropLocation.getRow() == row && dropLocation.getColumn() == column) {
+
+            bg = UIManager.getColor("Table.dropCellBackground");
+
+            isSelected = true;
+        }
+
+        if (isSelected) {
+            super.setBackground(bg == null ? table.getSelectionBackground() : bg);
+        } else {
+            super.setBackground(table.getBackground());
+        }
+
+        if (hasFocus) {
+
+            if (!isSelected && table.isCellEditable(row, column)) {
+                Color col;
+                col = UIManager.getColor("Table.focusCellForeground");
+                if (col != null) {
+                    super.setForeground(col);
+                }
+                col = UIManager.getColor("Table.focusCellBackground");
+                if (col != null) {
+                    super.setBackground(col);
+                }
+            }
+        } else {
+        }
+        // -----------------------------------------------------------------------
+
         BaseCalendar birthday, today;
         while (true) {
             if (str.trim().equals(""))
-                comp.setBackground(Color.WHITE);
+                break;//comp.setBackground(Color.WHITE);
             else
                 comp.setBackground(Color.GRAY);
             if (type.equals("农历")) {
