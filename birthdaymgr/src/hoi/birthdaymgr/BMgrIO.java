@@ -2,12 +2,15 @@ package hoi.birthdaymgr;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Vector;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -110,10 +113,56 @@ public class BMgrIO {
         }
     }
 
+    private static boolean copyFile(File src, File dest) {
+        FileInputStream fis = null;
+        FileOutputStream fos = null;
+        try {
+            fis = new FileInputStream(src);
+            fos = new FileOutputStream(dest);
+            for (int c = fis.read(); c != -1; c = fis.read())
+                fos.write(c);
+            return true;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return false;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            if (fis != null)
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            if (fos != null)
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+        }
+    }
+
+    private static final String BMGR_DIR_PATH = System.getProperty("user.home") + File.separator + "BirthdayMgr";
+    private static final String BMGR_FILE_PATTERN = BMGR_DIR_PATH + File.separator + "BirthdayMgr%s.bak";
+
+    private static void tryBackupData() {
+        try {
+            new File(BMGR_DIR_PATH).mkdirs();
+            File src = new File(fname);
+            File dest = new File(String.format(BMGR_FILE_PATTERN, new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())));
+            if (src.exists() && src.isFile())
+                copyFile(src, dest);
+        } catch (Exception ignore) {
+        }
+    }
+
     public static void save(Vector<BMgrRecord> dataVector) {
         BufferedWriter bWriter = null;
         lock.lock(); // block until condition holds
         try {
+            tryBackupData(); // 数据备份
             bWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fname), "UTF-8"));
             bWriter.write("#一行一条记录, 请不要手动更改(One Line One Record, Please DO NOT Change Manually)!!!");
             bWriter.write(System.getProperty("line.separator"));
