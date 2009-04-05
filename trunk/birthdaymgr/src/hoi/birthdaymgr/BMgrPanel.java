@@ -107,7 +107,7 @@ public class BMgrPanel extends JPanel implements ActionListener {
         JToolBar toolbar = new JToolBar();
         toolbar.setFloatable(false);
         toolbar.add(addNewRowButton);
-        // toolbar.add(saveButton);
+        toolbar.add(saveButton);
         toolbar.add(deleteButton);
         toolbar.add(undoButton);
         toolbar.add(redoButton);
