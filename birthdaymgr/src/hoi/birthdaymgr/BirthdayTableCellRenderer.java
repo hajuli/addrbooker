@@ -6,7 +6,6 @@ import hoi.birthdaymgr.utility.SolarCalendar;
 
 import java.awt.Color;
 import java.awt.Component;
-import java.util.HashMap;
 
 import javax.swing.JLabel;
 import javax.swing.JTable;
@@ -92,7 +91,7 @@ public class BirthdayTableCellRenderer extends DefaultTableCellRenderer {
             int kmonth = today.getYear() * 12 + today.getMonth() - //
                     birthday.getYear() * 12 - birthday.getMonth();
 
-            int len = getWaitDays(birthday, today);
+            int len = BaseCalendar.getWaitDays(birthday, today);
             boolean yesterday = false;
             if (len < 0)
                 comp.setBackground(Color.GRAY);
@@ -104,7 +103,7 @@ public class BirthdayTableCellRenderer extends DefaultTableCellRenderer {
                 comp.setBackground(Color.GREEN);
             else {
                 try {
-                    if (getWaitDays(birthday.next(), today) == 0) {
+                    if (BaseCalendar.getWaitDays(birthday.next(), today) == 0) {
                         comp.setBackground(Color.PINK);
                         yesterday = true;
                     } else
@@ -141,51 +140,5 @@ public class BirthdayTableCellRenderer extends DefaultTableCellRenderer {
             break;
         }
         return comp;
-    }
-
-    private static final HashMap<String, Integer> daysCache = new HashMap<String, Integer>();
-
-    private static int getWaitDays(final BaseCalendar birthday_, final BaseCalendar today_) {
-        String key = birthday_.toString2() + today_.toString2();
-        if (!daysCache.containsKey(key))
-            daysCache.put(key, _getWaitDays(birthday_, today_));
-        return daysCache.get(key);
-    }
-
-    /**
-     * 特殊处理：公历2月29日生日，以及农历12月30日生日 等
-     * 
-     * @param birthday_
-     * @param today_
-     * @return
-     */
-    private static int _getWaitDays(final BaseCalendar birthday_, final BaseCalendar today_) {
-        BaseCalendar birthday = birthday_.copy();
-        BaseCalendar today = today_.copy();
-
-        birthday.setYear(today.getYear());
-        int k = birthday.toString2().compareTo(today.toString2());
-        if (k < 0)
-            birthday.setYear(today.getYear() + 1);
-        else if (k == 0)
-            return 0;
-        else if (k > 0)
-            ;
-
-        try {
-            String b = birthday.toString2();
-            for (int cnt = 0; cnt < 400; cnt++) {
-                BaseCalendar next = today.next();
-                String a = today.toString2();
-                String c = next.toString2();
-                if (a.compareTo(b) <= 0 && c.compareTo(b) > 0)
-                    return cnt;
-                today = next;
-            }
-            return -1;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return -1;
-        }
     }
 }

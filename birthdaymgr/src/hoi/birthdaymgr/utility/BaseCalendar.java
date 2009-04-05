@@ -1,5 +1,6 @@
 package hoi.birthdaymgr.utility;
 
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -24,7 +25,54 @@ public abstract class BaseCalendar {
     }
 
     public String toString2() {
-        return String.format("%05d-%02d-%02d", year, month, day);
+        return String.format("%s: %04d-%02d-%02d", getClass(), year, month, day);
+    }
+
+    private static final HashMap<String, Integer> daysCache = new HashMap<String, Integer>();
+
+    /**
+     * 特殊处理：公历2月29日生日，以及农历12月30日生日 等
+     * 
+     * @param birthday_
+     * @param today_
+     * @return
+     */
+    public static int getWaitDays(final BaseCalendar birthday_, final BaseCalendar today_) {
+        String key = birthday_.toString2() + today_.toString2();
+        // System.out.println(key);
+        if (!daysCache.containsKey(key))
+            daysCache.put(key, getWaitDays_(birthday_, today_));
+        return daysCache.get(key);
+    }
+
+    private static int getWaitDays_(final BaseCalendar birthday_, final BaseCalendar today_) {
+        BaseCalendar birthday = birthday_.copy();
+        BaseCalendar today = today_.copy();
+
+        birthday.setYear(today.getYear());
+        int k = birthday.toString2().compareTo(today.toString2());
+        if (k < 0)
+            birthday.setYear(today.getYear() + 1);
+        else if (k == 0)
+            return 0;
+        else if (k > 0)
+            ;
+
+        try {
+            String b = birthday.toString2();
+            for (int cnt = 0; cnt < 400; cnt++) {
+                BaseCalendar next = today.next();
+                String a = today.toString2();
+                String c = next.toString2();
+                if (a.compareTo(b) <= 0 && c.compareTo(b) > 0)
+                    return cnt;
+                today = next;
+            }
+            return -1;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
     }
 
     public BaseCalendar(String str) throws Exception {
