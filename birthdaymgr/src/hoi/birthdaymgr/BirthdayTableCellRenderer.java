@@ -118,14 +118,22 @@ public class BirthdayTableCellRenderer extends DefaultTableCellRenderer {
                 comp.setText(String.format("%s%d月%d号 %d.%d岁 昨天", type, //
                         birthday.getMonth(), birthday.getDay(), //
                         kmonth / 12, kmonth % 12));
+            else if (len == 0)
+                comp.setText(String.format("%s%d月%d号 %d.%d岁 今天", type, //
+                        birthday.getMonth(), birthday.getDay(), //
+                        kmonth / 12, kmonth % 12));
+            else if (len == 1)
+                comp.setText(String.format("%s%d月%d号 %d.%d岁 明天", type, //
+                        birthday.getMonth(), birthday.getDay(), //
+                        kmonth / 12, kmonth % 12));
+            else if (len == 2)
+                comp.setText(String.format("%s%d月%d号 %d.%d岁 后天", type, //
+                        birthday.getMonth(), birthday.getDay(), //
+                        kmonth / 12, kmonth % 12));
             else if (len > 0)
                 comp.setText(String.format("%s%d月%d号 %d.%d岁 %d天", type, //
                         birthday.getMonth(), birthday.getDay(), //
                         kmonth / 12, kmonth % 12, len));
-            else if (len == 0)
-                comp.setText(String.format("%s%d月%d号 %d.%d岁 生日", type, //
-                        birthday.getMonth(), birthday.getDay(), //
-                        kmonth / 12, kmonth % 12));
             else
                 comp.setText(String.format("%s%d月%d号 %d.%d岁 出错", type, //
                         birthday.getMonth(), birthday.getDay(), //
