@@ -1,5 +1,14 @@
 package hoi.birthdaymgr;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PipedInputStream;
+import java.io.PipedOutputStream;
+import java.util.Properties;
+
 public class BMgrRecord {
 
     protected Boolean selected = false;
@@ -9,26 +18,67 @@ public class BMgrRecord {
     protected String notes = "";
     protected String time = "";
 
-    public BMgrRecord() {
+    public String[] getContents() {
+        return new String[] {
+                name, birthday, website, notes, time };
     }
 
-    public BMgrRecord(String line) {
-        String[] items = line.trim().split("\\|", 5);
-        setName(items[0]);
-        setBirthday(items[1]);
-        setWebsite(items[2]);
-        setNotes(items[3]);
-        setTime(items[4]);
+    public void setContents(String[] contents) {
+        name = contents[0];
+        birthday = contents[1];
+        website = contents[2];
+        notes = contents[3];
+        time = contents[4];
     }
 
-    public String toString() {
-        StringBuffer buffer = new StringBuffer();
-        buffer.append(getName() + "|");
-        buffer.append(getBirthday() + "|");
-        buffer.append(getWebsite() + "|");
-        buffer.append(getNotes() + "|");
-        buffer.append(getTime());
-        return buffer.toString().trim();
+    public static BMgrRecord loadFromXMLString(String page) throws IOException {
+        Properties props = new Properties();
+        PipedInputStream pis = new PipedInputStream();
+        PipedOutputStream pos = new PipedOutputStream();
+        BufferedWriter bWriter = new BufferedWriter(new OutputStreamWriter(pos));
+
+        pos.connect(pis);
+        bWriter.write(page.trim());
+        bWriter.close();
+        props.loadFromXML(pis);
+        pis.close();
+
+        BMgrRecord record = new BMgrRecord();
+        record.setName(props.getProperty("name"));
+        record.setBirthday(props.getProperty("birthday"));
+        record.setWebsite(props.getProperty("website"));
+        record.setNotes(props.getProperty("notes"));
+        record.setTime(props.getProperty("time"));
+        return record;
+    }
+
+    public static String saveAsXMLString(BMgrRecord record) throws IOException {
+        Properties props = new Properties();
+        props.setProperty("name", record.getName());
+        props.setProperty("birthday", record.getBirthday());
+        props.setProperty("website", record.getWebsite());
+        props.setProperty("notes", record.getNotes());
+        props.setProperty("time", record.getTime());
+        PipedInputStream pis = new PipedInputStream();
+        PipedOutputStream pos = new PipedOutputStream();
+        BufferedReader bReader = new BufferedReader(new InputStreamReader(pis));
+
+        pos.connect(pis);
+        props.storeToXML(pos, null);
+        pos.close();
+        String page = "", line;
+        while ((line = bReader.readLine()) != null)
+            page += line.trim() + "\n";
+        bReader.close();
+        return page.trim();
+    }
+
+    public static void main(String[] args) throws IOException {
+        BMgrRecord record = new BMgrRecord();
+        record.setName("杨全海");
+        System.out.println(record.getName());
+        record = loadFromXMLString(saveAsXMLString(record));
+        System.out.println(record.getName());
     }
 
     public boolean isEmptyRecord() {
