@@ -44,10 +44,9 @@ public class BirthdayTableCellRenderer extends DefaultTableCellRenderer {
         Color bg = null;
 
         JTable.DropLocation dropLocation = table.getDropLocation();
-        if (dropLocation != null && !dropLocation.isInsertRow() && !dropLocation.isInsertColumn() && dropLocation.getRow() == row && dropLocation.getColumn() == column) {
-
+        if (dropLocation != null && !dropLocation.isInsertRow() && !dropLocation.isInsertColumn() && //
+                dropLocation.getRow() == row && dropLocation.getColumn() == column) {
             bg = UIManager.getColor("Table.dropCellBackground");
-
             isSelected = true;
         }
 
@@ -58,13 +57,8 @@ public class BirthdayTableCellRenderer extends DefaultTableCellRenderer {
         }
 
         if (hasFocus) {
-
             if (!isSelected && table.isCellEditable(row, column)) {
                 Color col;
-                col = UIManager.getColor("Table.focusCellForeground");
-                if (col != null) {
-                    super.setForeground(col);
-                }
                 col = UIManager.getColor("Table.focusCellBackground");
                 if (col != null) {
                     super.setBackground(col);
