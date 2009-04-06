@@ -146,6 +146,11 @@ public class BMgrTableModel extends AbstractTableModel {
         fireTableRowsInserted(dataVector.size() - 1, dataVector.size() - 1);
     }
 
+    public void addEmptyRow2() {
+        dataVector.add(0, new BMgrRecord());
+        fireTableRowsInserted(dataVector.size() - 1, dataVector.size() - 1);
+    }
+
     public void deleteRows(int[] rows) {
         Arrays.sort(rows);
         for (int i = rows.length - 1; i >= 0; i--)
