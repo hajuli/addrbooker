@@ -38,7 +38,7 @@ public class BMgrTable extends JTable implements MouseMotionListener, MouseListe
         if (convertColumnIndexToModel(column) == BMgrTableModel.TIME_INDEX) {
             //String sValue = getValueAt(row, column).toString().trim();
             JComboBox comboBox = new JComboBox();
-            //comboBox.addItem(sValue);
+            comboBox.addItem("[Disabled]");
             String current = new SimpleDateFormat("yyyy-M-d").format(new Date());
             //if (!current.equals(sValue))
             comboBox.addItem(current);

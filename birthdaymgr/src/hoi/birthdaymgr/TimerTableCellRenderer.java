@@ -50,6 +50,8 @@ public class TimerTableCellRenderer extends DefaultTableCellRenderer {
         while (true) {
             if (str.trim().equals(""))
                 break;//comp.setBackground(Color.WHITE);
+            else if (str.trim().equals("[Disabled]"))
+                comp.setBackground(Color.CYAN);
             else
                 comp.setBackground(Color.GRAY);
 
