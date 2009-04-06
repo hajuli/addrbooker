@@ -24,11 +24,16 @@ public class BMgrRecord {
     }
 
     public void setContents(String[] contents) {
-        name = contents[0];
-        birthday = contents[1];
-        website = contents[2];
-        notes = contents[3];
-        time = contents[4];
+        if (contents.length > 0)
+            name = contents[0];
+        if (contents.length > 1)
+            birthday = contents[1];
+        if (contents.length > 2)
+            website = contents[2];
+        if (contents.length > 3)
+            notes = contents[3];
+        if (contents.length > 4)
+            time = contents[4];
     }
 
     public String toString() {
