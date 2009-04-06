@@ -39,6 +39,7 @@ public abstract class BaseCalendar {
      * @return
      */
     public static int getWaitDays(final BaseCalendar birthday_, final BaseCalendar today_) {
+        assert birthday_.getClass().toString().equals(today_.getClass().toString());
         String key = birthday_.toString2() + today_.toString2();
         if (!daysCache.containsKey(key))
             daysCache.put(key, getWaitDays_(birthday_, today_));
@@ -53,6 +54,7 @@ public abstract class BaseCalendar {
      * @return
      */
     public static int getWaitDays2(final BaseCalendar history_, final BaseCalendar today_) {
+        assert history_.getClass().toString().equals(today_.getClass().toString());
         String key = history_.toString2() + today_.toString2();
         if (!daysCache2.containsKey(key))
             daysCache2.put(key, getWaitDays2_(history_, today_));
