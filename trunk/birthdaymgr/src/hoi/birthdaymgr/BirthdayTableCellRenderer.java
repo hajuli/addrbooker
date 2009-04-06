@@ -67,26 +67,27 @@ public class BirthdayTableCellRenderer extends DefaultTableCellRenderer {
         }
         // -----------------------------------------------------------------------
 
-        BaseCalendar birthday, today;
         while (true) {
             if (str.trim().equals(""))
                 break;//comp.setBackground(Color.WHITE);
             else
                 comp.setBackground(Color.GRAY);
+
+            BaseCalendar birthday, today;
             if (type.equals("农历")) {
                 try {
                     birthday = new LunarCalendar(str);
+                    today = LunarCalendar.today();
                 } catch (Exception ignore) {
                     break;
                 }
-                today = LunarCalendar.today();
             } else {
                 try {
                     birthday = new SolarCalendar(str);
+                    today = SolarCalendar.today();
                 } catch (Exception ignore) {
                     break;
                 }
-                today = SolarCalendar.today();
             }
             int kmonth = today.getYear() * 12 + today.getMonth() - //
                     birthday.getYear() * 12 - birthday.getMonth();
@@ -139,6 +140,7 @@ public class BirthdayTableCellRenderer extends DefaultTableCellRenderer {
                         kmonth / 12, kmonth % 12));
             break;
         }
+
         return comp;
     }
 }
