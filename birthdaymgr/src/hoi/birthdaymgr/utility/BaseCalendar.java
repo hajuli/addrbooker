@@ -29,6 +29,7 @@ public abstract class BaseCalendar {
     }
 
     private static final HashMap<String, Integer> daysCache = new HashMap<String, Integer>();
+    private static final HashMap<String, Integer> daysCache2 = new HashMap<String, Integer>();
 
     /**
      * 特殊处理：公历2月29日生日，以及农历12月30日生日 等
@@ -39,10 +40,23 @@ public abstract class BaseCalendar {
      */
     public static int getWaitDays(final BaseCalendar birthday_, final BaseCalendar today_) {
         String key = birthday_.toString2() + today_.toString2();
-        // System.out.println(key);
         if (!daysCache.containsKey(key))
             daysCache.put(key, getWaitDays_(birthday_, today_));
         return daysCache.get(key);
+    }
+
+    /**
+     * 如果在30天内，返回结果精确；长时间就不保证 结果精确
+     * 
+     * @param history_
+     * @param today_
+     * @return
+     */
+    public static int getWaitDays2(final BaseCalendar history_, final BaseCalendar today_) {
+        String key = history_.toString2() + today_.toString2();
+        if (!daysCache2.containsKey(key))
+            daysCache2.put(key, getWaitDays2_(history_, today_));
+        return daysCache2.get(key);
     }
 
     private static int getWaitDays_(final BaseCalendar birthday_, final BaseCalendar today_) {
@@ -69,6 +83,25 @@ public abstract class BaseCalendar {
                 today = next;
             }
             return -1;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
+
+    private static int getWaitDays2_(final BaseCalendar history, final BaseCalendar today) {
+        if (history.toString2().compareTo(today.toString2()) > 0) // 输入时间不对
+            return -1;
+
+        try {
+            BaseCalendar history_ = history.copy();
+            for (int cnt = 0; cnt < 30; cnt++) {
+                if (history_.toString2().compareTo(today.toString2()) >= 0)
+                    return cnt;
+                history_ = history_.next();
+            }
+            return today.getYear() * 365 + today.getMonth() * 30 + today.getDay() - //
+                    history.getYear() * 365 - history.getMonth() * 30 - history.getDay();
         } catch (Exception e) {
             e.printStackTrace();
             return -1;
