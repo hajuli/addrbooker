@@ -36,12 +36,13 @@ public class BMgrTable extends JTable implements MouseMotionListener, MouseListe
 
     public TableCellEditor getCellEditor(int row, int column) {
         if (convertColumnIndexToModel(column) == BMgrTableModel.TIME_INDEX) {
-            String sValue = getValueAt(row, column).toString().trim();
+            //String sValue = getValueAt(row, column).toString().trim();
             JComboBox comboBox = new JComboBox();
-            comboBox.addItem(sValue);
+            //comboBox.addItem(sValue);
             String current = new SimpleDateFormat("yyyy-M-d").format(new Date());
-            if (!current.equals(sValue))
-                comboBox.addItem(current);
+            //if (!current.equals(sValue))
+            comboBox.addItem(current);
+            comboBox.setEditable(true);
             return new DefaultCellEditor(comboBox);
         } else {
             return super.getCellEditor(row, column);
