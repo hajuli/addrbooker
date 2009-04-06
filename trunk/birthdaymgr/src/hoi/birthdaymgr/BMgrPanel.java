@@ -140,7 +140,7 @@ public class BMgrPanel extends JPanel implements ActionListener {
             table.setRowSelectionInterval(row + 1, row + 1);
         }
 
-        table.setColumnSelectionInterval(0, 0);
+        table.setColumnSelectionInterval(1, 1);
     }
 
     class InteractiveRenderer extends DefaultTableCellRenderer {
