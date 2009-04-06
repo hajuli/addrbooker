@@ -121,7 +121,7 @@ public class BMgrPanel extends JPanel implements ActionListener {
         if (obj == deleteButton) {
             tableModel.deleteSelectedRows();
         } else if (obj == addNewRowButton) {
-            tableModel.addEmptyRow();
+            tableModel.addEmptyRow2();
         } else if (obj == saveButton) {
             tableModel.save();
         } else if (obj == reloadButton) {
